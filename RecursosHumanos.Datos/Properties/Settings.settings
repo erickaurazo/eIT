@@ -1,0 +1,102 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="RecursosHumanos.Datos.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ExoticsProducerPackingConnectionString2" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=ESTCHIMU005\MSSQLSERVER2014;Initial Catalog=ExoticsProducerPacking;Persist Security Info=True;User ID=sa&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=ESTCHIMU005\MSSQLSERVER2014;Initial Catalog=ExoticsProducerPacking;Persist Security Info=True;User ID=sa</Value>
+    </Setting>
+    <Setting Name="ExoticsProducerPackingConnectionString3" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=ESTCHIMU005\MSSQLSERVER2014;Initial Catalog=ExoticsProducerPacking;Persist Security Info=True;User ID=sa;Password=estanisl@o.2021&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=ESTCHIMU005\MSSQLSERVER2014;Initial Catalog=ExoticsProducerPacking;Persist Security Info=True;User ID=sa;Password=estanisl@o.2021</Value>
+    </Setting>
+    <Setting Name="ESTANISLAO2017ConnectionString1" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=ESTCHIMU005\MSSQLSERVER2014;Initial Catalog=ExoticsProducerPacking;Persist Security Info=True;User ID=sa;Password=estanisl@o.2021&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=ESTCHIMU005\MSSQLSERVER2014;Initial Catalog=ExoticsProducerPacking;Persist Security Info=True;User ID=sa;Password=estanisl@o.2021</Value>
+    </Setting>
+    <Setting Name="agricolasanjuan2014ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=ESTCHIMU005\MSSQLSERVER2014;Initial Catalog=ExoticsProducerPacking;Persist Security Info=True;User ID=sa;Password=15022006&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=ESTCHIMU005\MSSQLSERVER2014;Initial Catalog=ExoticsProducerPacking;Persist Security Info=True;User ID=sa;Password=15022006</Value>
+    </Setting>
+    <Setting Name="ESTANISLAO2017ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=ESTCHIMU005\MSSQLSERVER2014;Initial Catalog=ExoticsProducerPacking;Persist Security Info=True;User ID=sa;Password=amadeus2010&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=ESTCHIMU005\MSSQLSERVER2014;Initial Catalog=ExoticsProducerPacking;Persist Security Info=True;User ID=sa;Password=amadeus2010</Value>
+    </Setting>
+    <Setting Name="ESTANISLAO2017ConnectionString2" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=ESTCHIMU005\MSSQLSERVER2014;Initial Catalog=ExoticsProducerPacking;Persist Security Info=True;User ID=sa;Password=estanisl@o.2021&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=ESTCHIMU005\MSSQLSERVER2014;Initial Catalog=ExoticsProducerPacking;Persist Security Info=True;User ID=sa;Password=estanisl@o.2021</Value>
+    </Setting>
+    <Setting Name="ExoticsProducerPackingConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=ESTCHIMU005\MSSQLSERVER2014;Initial Catalog=ExoticsProducerPacking;Integrated Security=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=ESTCHIMU005\MSSQLSERVER2014;Initial Catalog=ExoticsProducerPacking;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="ExoticsProducerPackingConnectionString1" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=ESTCHIMU005\MSSQLSERVER2014;Initial Catalog=ExoticsProducerPacking;Persist Security Info=True;User ID=sa;Password=estanisl@o.2021&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=ESTCHIMU005\MSSQLSERVER2014;Initial Catalog=ExoticsProducerPacking;Persist Security Info=True;User ID=sa;Password=estanisl@o.2021</Value>
+    </Setting>
+    <Setting Name="ExoticsProducerPackingConnectionString4" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=ESTCHIMU005;Initial Catalog=ExoticsProducerPacking;Persist Security Info=True;User ID=sa;Password=estanisl@o.2021&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=ESTCHIMU005;Initial Catalog=ExoticsProducerPacking;Persist Security Info=True;User ID=sa;Password=estanisl@o.2021</Value>
+    </Setting>
+    <Setting Name="ExoticsProducerPackingConnectionBlueSoft" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=68.168.108.52;Initial Catalog=ExoticsProducerPacking;Persist Security Info=True;User ID=sa;Password=.1975Casa&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=68.168.108.52;Initial Catalog=ExoticsProducerPacking;Persist Security Info=True;User ID=sa;Password=.1975Casa</Value>
+    </Setting>
+    <Setting Name="ControlAsistenciaConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=162.244.65.140;Initial Catalog=ControlAsistencia;Persist Security Info=True;User ID=sa;Password=Ag1c0l@18tz&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=162.244.65.140;Initial Catalog=ControlAsistencia;Persist Security Info=True;User ID=sa;Password=Ag1c0l@18tz</Value>
+    </Setting>
+    <Setting Name="AGRICOLA2017ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=68.168.108.52;Initial Catalog=AGRICOLA2017;Persist Security Info=True;User ID=adminsanjose2;Password=Ag1c0l@18tz&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=68.168.108.52;Initial Catalog=AGRICOLA2017;Persist Security Info=True;User ID=adminsanjose2;Password=Ag1c0l@18tz</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

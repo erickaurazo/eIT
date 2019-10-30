@@ -1,0 +1,1134 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ExoticsProducerPacking" Class="RecursosHumanosDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=68.168.108.52;Initial Catalog=ExoticsProducerPacking;Persist Security Info=True;User ID=sa" SettingsObjectName="RecursosHumanos.Datos.Properties.Settings" SettingsPropertyName="ExoticsProducerPackingConnectionBlueSoft" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.PRIVILEGIOS" Member="PRIVILEGIOS">
+    <Type Name="PRIVILEGIOS">
+      <Column Name="IDEMPRESA" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="IDUSUARIO" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CLAVE" Type="System.String" DbType="Char(8) NOT NULL" CanBeNull="false" />
+      <Column Name="NINGUNO" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="CONSULTA" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="EXPORTA_IMPRIME" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="NUEVO" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="MODIFICA" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="ANULA" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="ELIMINA" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="VER_LOGS" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Association Name="USUARIO_PRIVILEGIOS" Member="USUARIO" ThisKey="IDUSUARIO" OtherKey="IDUSUARIO" Type="USUARIO" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VSJ_UsuariosSistemaActivos" Member="VSJ_UsuariosSistemaActivos">
+    <Type Name="VSJ_UsuariosSistemaActivos">
+      <Column Name="CodUsuario" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VSJ_FormulariosSistemaActivos" Member="VSJ_FormulariosSistemaActivos">
+    <Type Name="VSJ_FormulariosSistemaActivos">
+      <Column Name="clave" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Formulario" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PERSONAL_GENERAL" Member="PERSONAL_GENERAL">
+    <Type Name="PERSONAL_GENERAL">
+      <Column Name="IDCODIGOGENERAL" Type="System.String" DbType="Char(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ESTADO" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="ASIGNACION" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="A_MATERNO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="A_PATERNO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRES" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CODIGO_CONTROL" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="OBSERVACION" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="PERSONAL_FOTO" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="PERSONAL_FIRMA" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="SEXO" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="SINCRONIZA" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="TIPO_CUENTABANCO" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="AUTOGENERADOAFP" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CUENTA_BANCO" Type="System.String" DbType="VarChar(23)" CanBeNull="true" />
+      <Column Name="CUENTA_CTS" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DIRECCION_INTERIOR" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="DIRECCION_NUMERO" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="DIRECCION_REFERENCIA" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FECHA_NACIMIENTO" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="INICIO_AFP" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="INICIO_ONP" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AUTOGENERADOIPSS" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="NRODOCUMENTO" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="REGIMEN_PENSION" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="TELEFONO" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="TELEFONO2" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="CELULAR" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DESCRIPCION_VIA" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DESCRIPCION_ZONA" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FECHACREACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IDAFP" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="IDNACIONALIDAD" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="IDLUGARNAC" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="IDDOCIDENTIDAD" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="IDZONA" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="IDESTADOCIVIL" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="IDEPS" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="IDVIA" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="IDBANCOCTS" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="IDBANCO" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="IDUBIGEO" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="IDMONEDABANCO" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="IDMONEDACTS" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="IDPTOGENCODIGO" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="ESSALUD_VIDA" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="LISTA_NEGRA" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="IDCATEGORIA" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="TRABAJADORPENSIONISTA" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="IDTIPOPENSION" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="IDCLIEPROV" Type="System.String" DbType="Char(11)" CanBeNull="true" />
+      <Column Name="REGIMENLABORAL" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="SCTRSALUD" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="SCTRPENSION" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="IDSITUACIONEPS" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="IDREGIMEN" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="DISCAPACITADO" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="TIPOREMUNERACION" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="CONTROLINMEDIATO" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="SINDICALIZADO" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="DOMICILIADO" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="RUC" Type="System.String" DbType="Char(11)" CanBeNull="true" />
+      <Column Name="IDNIVELESTUDIO" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="IDMUNICIPALIDAD" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="SNOCTURNO" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="IDPERIODICIDAD" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="IDPAGOPLA" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="IDMOTIVCESE" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="RQUINTAEX" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="SESPECIAL" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="OIQUINTACAT" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="IDTIPOPENSIONP" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="IDREGIMENP" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="FECHA_RP" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AUTOGENERADOAFPP" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="IDSITUACIONP" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="IDPAGOPLAP" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="IDMOTIVCESEP" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="SPRACTICANTE" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="IMADRERESP" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="ICFPRO" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="IDMFORMATIVA" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="SMEDICO" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="IDCATFORMATIVA" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="JORNADA_MAXIMA" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="REGIMEN_ATIPICO" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="ASEGURA_PENSION" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="CATEGORIA_OCUPACIONAL" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="IDCONVENIO" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="RENUNCIA_SINDICATO" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="PROCEDENCIA" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="IDACTIVIDAD" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="IDLABOR" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="IDCCOSTO" Type="System.String" DbType="Char(12)" CanBeNull="true" />
+      <Column Name="IDREGIMENLABORAL" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="DIRECCION_DEPARTAMENTO" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="DIRECCION_MANZANA" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="DIRECCION_ETAPA" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="DIRECCION_BLOCK" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="DIRECCION_LOTE" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="DIRECCION_KILOMETRO" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="IDTIPOREGISTRO" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="IDREGIMENASEG_SALUD" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="IDCLIEPROV_TERCERO" Type="System.String" DbType="Char(11)" CanBeNull="true" />
+      <Column Name="idpaisemisor" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="idvia2" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="direccion_interior2" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="descripcion_via2" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="direccion_numero2" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="DIRECCION_DEPARTAMENTO2" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="DIRECCION_MANZANA2" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="DIRECCION_LOTE2" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="DIRECCION_KILOMETRO2" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="direccion_block2" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="direccion_etapa2" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="idzona2" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="DESCRIPCION_ZONA2" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="direccion_referencia2" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="idubigeo2" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="centroasistencial" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="idldn" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="fecha_aperturabanco" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecha_aperturacts" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="edad" Type="System.Decimal" DbType="Decimal(3,0)" CanBeNull="true" />
+      <Column Name="CUENTA_MODULO" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="CUENTA_SUBCUENTA" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="CUENTA_SUCURSAL" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="MIXTA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ANIO_EGRESO" Type="System.Decimal" DbType="Decimal(5,0)" CanBeNull="true" />
+      <Column Name="CARGO_PESQUERA" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="EDUCACION_COMPLETA" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="IDBASEDATOS" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IDCARRERA" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="IDCENTROESTUDIOS" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="IDINSTITUCION" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="PRODUCCION_PESQUERA" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="REGIMEN_EDU" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="SENATI" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.USUARIO" Member="USUARIO">
+    <Type Name="USUARIO">
+      <Column Name="IDUSUARIO" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PASSWORD" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ESTADO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="USR_NOMBRES" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="USR_INICIALES" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="FECHACREACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SINCRONIZA" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="VERBARRA" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="ESTIPO" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="IDUSUARIOTIPO" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="FIRMA" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="BLOQUEO" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="DURACION" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="idclieprov" Type="System.String" DbType="Char(11)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IDBASEDATOS" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IDMODULO" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="idCodigoGeneral" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="CARGO" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="AREA" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="IDCARGO" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="IDAREA" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Association Name="USUARIO_PRIVILEGIOS" Member="PRIVILEGIOS" ThisKey="IDUSUARIO" OtherKey="IDUSUARIO" Type="PRIVILEGIOS" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SJ_Semanas" Member="SJ_Semanas">
+    <Type Name="SJ_Semana">
+      <Column Name="año" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="semana" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="desde" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="hasta" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="observacion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SJ_RHOtrosMovimientoPlanilla" Member="SJ_RHOtrosMovimientoPlanillas">
+    <Type Name="SJ_RHOtrosMovimientoPlanilla">
+      <Column Name="idEmpresa" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="idOtrosDocumentos" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="tipo" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="tipoDocumentoMovimiento" Type="System.String" DbType="VarChar(18) NOT NULL" CanBeNull="false" />
+      <Column Name="IDDOCUMENTO" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="documento" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="numeroCertificado" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="actoMedico" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="centroMedico" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="fechaEmisionDocumento" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FECHA_FINAL_NOGENASIST" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FECHA_FINAL_GENASIST" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FECHA_INICIO_NOGENASIST" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FECHA_INICIO_GENASIST" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="descripcionDocumento" Type="System.String" DbType="VarChar(8000) NOT NULL" CanBeNull="false" />
+      <Column Name="duracion" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Column Name="horas" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Column Name="remitente" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="numeroOperacion" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="periodo" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="periodoPlanilla" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="idMotivoMemo" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="memorandum" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="idMotivoMovimiento" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="motivoMovimiento" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="idAtencion" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="idContingencia" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="IDCODIGOGENERAL" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="nombresCompletos" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="NRODOCUMENTO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="IDSUCURSAL" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="IDEMISOR" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="IDESTADO" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="dias" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idPlanilla" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="idCcosto" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="consumidor" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PLANILLA" Member="PLANILLA">
+    <Type Name="PLANILLA">
+      <Column Name="IDEMPRESA" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDPLANILLA" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BONIFICACION" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="ESTADO" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="COSTO_STANDAR" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="DIASTRABAJADOS" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="DIAS_DESCANSO" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="DIAS_SUBSIDIO" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="FALTAS" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="HORAS_FALTA" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="HORAS_DESCANSO" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="HORAS_DOBLES" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="HORAS_EXTRAS" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="HORAS_EXTRAS2" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="HORAS_EXTDOBLES" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="HORAS_FERIADO" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="HORAS_NOCTURNAS" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="HORAS_EXTNOCTU" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="HORAS_EXTNOCTU2" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="HORAS_DOBNOCTU" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="HORAS_NORMALES" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="HORAS_DIA" Type="System.Decimal" DbType="Decimal(2,0)" CanBeNull="true" />
+      <Column Name="HORAS_PERIODO" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="NRO_CORRELATIVO" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="NRO_SUELDOS" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="PERIODO" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="PLANILLA_DESACTIVA" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="SEMANA" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="SINCRONIZA" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="TIPOPLANILLA" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="TIPO_COSTEO" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="TIPO_ENVIO" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="FECHACREACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="VAR_COSTOC" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="VBASICO" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="IDCCOSTOGENERICO" Type="System.String" DbType="Char(12)" CanBeNull="true" />
+      <Column Name="IDSUCURSAL" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="IDSUBDIARIO" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="IDMONEDA" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="POR_RENDIMIENTO" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="RENDIMIENTO1" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="RENDIMIENTO2" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="RENDIMIENTO3" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="RENDIMIENTO4" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="RENDIMIENTO5" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="RENDIMIENTO6" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="RENDIMIENTO7" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="CENTRALIZAR" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="HORAS_FERIADON" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="HORAS_FERIADOE" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="INGRESO_RENDIMIENTO" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="MIXTA" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="DIAS_RENDIMIENTO" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="IDEMISOR" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="SERIE" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="PROCESADO" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="DIAS_FERIADO" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="FUNDO" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="IDCONSUMIDOR" Type="System.String" DbType="Char(12)" CanBeNull="true" />
+      <Column Name="VALOR_HDIA" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="VARIABLE_HDIA" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="FORMULA_HNORMALES" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="FORMULA_BONIFICACION" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DIAS_VACACIONES" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="HORAS_VACACIONES" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="DIAS_FERIADO_PERIODO" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="LIBROPLANILLAS" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="BASICO_SUELDOMINIMO" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="DDO_DOMINGO" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="PROVISIONAR" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="IDTIPOMOVIMIENTO" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="PLANSOLES_REMDOLAR" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="IDMONEDA_REMUNERACION" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="PLAN_HINIFIN" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="MESES_CALCULO_RENTA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DDOBLE_DOMINGO" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="DIAS_DESCANSO_GANADO" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="TIPOBASICO" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="HORAS_PERMISO" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="HORAS_TARDANZA" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="DIAS_PERMISO" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="HORAS_LABOR_FERIADO" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="TIEMPO_PARCIAL" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="DIAS_LICENCIA" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="DESTAJO_DOBLE" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="PROMEDIO_DESTAJO" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="HORAS_ANTERIOR" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="DOMINGOS" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="SABADOS" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="DESTAJO_FERIADO" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="BASICO_RENDIMIENTO" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="HEXT25_RENDIMIENTO" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="HEXT35_RENDIMIENTO" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="HDOBLE_RENDIMIENTO" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="HNOCEXT25_RENDIMIENTO" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="HNOCEXT35_RENDIMIENTO" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="HNOCDOBLE_RENDIMIENTO" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="DIAS_MAYOR4" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="HORAS_BAJADA" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="HORAS_DOBEXTNOCTU" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="DIAS_MATERNIDAD" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="DIAS_ANTERIOR" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="HORAS_FERIADO_ANTERIOR" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="REDONDEAR" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="PARAPRACTICANTE" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="DIAS_PATERNIDAD" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="asig_funcion" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="IDCOD_EQV" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IDHORARIOTRABAJO" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="SEMANA_ESVIDA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="rend_disgr" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="hext_acum_tdiurno" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="DIAS_SUSPENSION" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="HORAS_SUBSIDIO" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="bono_rend" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="HORAS_PATERNIDAD" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="dias_rend_real" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="DIAS_MES" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="MINUTOS_ALEATORIO" Type="System.Decimal" DbType="Decimal(3,0)" CanBeNull="true" />
+      <Column Name="PAGOPOR_HORAS" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="DIAS_VACACIONES2" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="SOLO_MARCACIONES" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="idoble_rendimiento" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="usaprogramadorhorario" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="BASICO_PROMDESTAJO" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="HORAS_EXTDOBLES2" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="HORAS_DOBEXTNOCTU2" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="HORAS_LACTANCIA" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="PERMISO_SINDICAL" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="hinicio_asist" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="dia_desc_fisico" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="INGR_REND_SINDOBLE" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="CONSIDERA_REFRI_HORAS" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="DIA_DESTAJO_FERIADO" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="dias_adopcion" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="faltas_pant" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="hdscto_pant" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="hext125_pant" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="hext135_pant" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="IDCFG_ENVIO_PLANILLA" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="hdbls_pant" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="dproyectado" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="HORAS_EXTRAS_SIMPLES" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="DSCTOCOMEDOR" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="USA_DSCTOCOMEDOR" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="INGR_REND_DOBLE" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="hfin_asist" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="tolerancia" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="dia_com_trab" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="ES_CONSTRUCCION" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="DIAS_PERMISO_SINDICAL" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="genasistenciadesdemarcas" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="origenccostoasistmarcas" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="dias_luto" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="hr_permiso_nr" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="hr_com_trab" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="hr_paternidad" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="hr_subs_enferm" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="hr_subs_matern" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="hr_suspension" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="hr_adopcion" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="hr_luto" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="BASICO_REINTEGRO" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="REIN_HORAS_NORMALES" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="REIN_HORAS_NOCTURNAS" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="REIN_HORAS_EXTRAS60" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="REIN_HORAS_EXTRAS100" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="REIN_HORAS_EXTSIMPLES" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="REIN_HORAS_FERIADO" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="REIN_HORAS_DESCMEDICO" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="REIN_DIAS_TRABAJADOS" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="REIN_DIAS_DESCGANADOS" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="REIN_DIAS_DESCMEDICO" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="REIN_DIAS_PATERNIDAD" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="REIN_DIAS_PERM_SINDICAL" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="REIN_DIAS_FALLECIMIENTO" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="REIN_DIAS_FERIADO_PERIODO" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="REIN_DIAS_COMPUTABLES_VAC" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="REIN_DIAS_COMPUTABLES_GRA" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="REIN_DIAS_COMPUTABLES_CTS" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="dia_intermitencia" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="produccion" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="SANCION_DISCIPLINARIA" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="CANTIDAD1" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="CANTIDAD2" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="CANTIDAD3" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="CANTIDAD4" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="CANTIDAD5" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="CANTIDAD6" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="CANTIDAD7" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="EMPAQUE1" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="EMPAQUE2" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="EMPAQUE3" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="EMPAQUE4" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="EMPAQUE5" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="EMPAQUE6" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="EMPAQUE7" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="BONO1" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="BONO2" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="BONO3" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="BONO4" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="BONO5" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="BONO6" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="BONO7" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="ES_4TA5TA" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="idconfig_correo" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="nombreadjunto" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="ruta_boleta" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="REDONDEO_RENDIMIENTO" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GRUPO_TRABAJO" Member="GRUPO_TRABAJO">
+    <Type Name="GRUPO_TRABAJO">
+      <Column Name="IDGRUPOTRABAJO" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ESTADO" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SINCRONIZA" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="FECHACREACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IDHORARIOTRABAJO" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HORARIO_TRABAJO" Member="HORARIO_TRABAJO">
+    <Type Name="HORARIO_TRABAJO">
+      <Column Name="IDHORARIOTRABAJO" Type="System.String" DbType="Char(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DESDE" Type="System.Decimal" DbType="Decimal(4,0)" CanBeNull="true" />
+      <Column Name="HASTA" Type="System.Decimal" DbType="Decimal(4,0)" CanBeNull="true" />
+      <Column Name="SINCRONIZA" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="FECHACREACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="mingreso" Type="System.Decimal" DbType="Decimal(4,0)" CanBeNull="true" />
+      <Column Name="msalida" Type="System.Decimal" DbType="Decimal(4,0)" CanBeNull="true" />
+      <Column Name="hrefrigerio" Type="System.Decimal" DbType="Decimal(4,0)" CanBeNull="true" />
+      <Column Name="mrefrigerio" Type="System.Decimal" DbType="Decimal(4,0)" CanBeNull="true" />
+      <Column Name="hextra" Type="System.Decimal" DbType="Decimal(4,0)" CanBeNull="true" />
+      <Column Name="mextra" Type="System.Decimal" DbType="Decimal(4,0)" CanBeNull="true" />
+      <Column Name="refhdesde" Type="System.Decimal" DbType="Decimal(4,0)" CanBeNull="true" />
+      <Column Name="refmdesde" Type="System.Decimal" DbType="Decimal(4,0)" CanBeNull="true" />
+      <Column Name="refhhasta" Type="System.Decimal" DbType="Decimal(4,0)" CanBeNull="true" />
+      <Column Name="refmhasta" Type="System.Decimal" DbType="Decimal(4,0)" CanBeNull="true" />
+      <Column Name="diasgte" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="slsalida" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="fds" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="amanecida" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="notardanza1" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="mtolerancia" Type="System.Decimal" DbType="Decimal(4,0)" CanBeNull="true" />
+      <Column Name="HDURMAX" Type="System.Decimal" DbType="Decimal(4,0)" CanBeNull="true" />
+      <Column Name="MDURMAX" Type="System.Decimal" DbType="Decimal(4,0)" CanBeNull="true" />
+      <Column Name="NO_SABADO" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="usartoleranciatardanza" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="usarefrigerio" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="usarmarcainicioingreso" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="usarmarcafinsalida" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="hinicio_mingreso" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" CanBeNull="false" />
+      <Column Name="minicio_mingreso" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" CanBeNull="false" />
+      <Column Name="hfin_msalida" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" CanBeNull="false" />
+      <Column Name="mfin_msalida" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" CanBeNull="false" />
+      <Column Name="horas_dia" Type="System.Decimal" DbType="Decimal(17,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HORARIO_REFRIGERIO" Member="HORARIO_REFRIGERIO">
+    <Type Name="HORARIO_REFRIGERIO">
+      <Column Name="IDHORARIO" Type="System.String" DbType="Char(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SINCRONIZA" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="FECHACREACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="HREFRIGERIO" Type="System.Decimal" DbType="Decimal(4,0)" CanBeNull="true" />
+      <Column Name="MREFRIGERIO" Type="System.Decimal" DbType="Decimal(4,0)" CanBeNull="true" />
+      <Column Name="REFHDESDE" Type="System.Decimal" DbType="Decimal(4,0)" CanBeNull="true" />
+      <Column Name="REFMDESDE" Type="System.Decimal" DbType="Decimal(4,0)" CanBeNull="true" />
+      <Column Name="REFHHASTA" Type="System.Decimal" DbType="Decimal(4,0)" CanBeNull="true" />
+      <Column Name="REFMHASTA" Type="System.Decimal" DbType="Decimal(4,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HORARIO_PERSONAL" Member="HORARIO_PERSONAL">
+    <Type Name="HORARIO_PERSONAL">
+      <Column Name="IDEMPRESA" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDPLANILLA" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDCODIGOGENERAL" Type="System.String" DbType="Char(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FECHA" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDHORARIOTRABAJO" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="IDMOTIVOMOVIMIENTO" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="IDDOCUMENTO" Type="System.String" DbType="Char(15) NOT NULL" CanBeNull="false" />
+      <Column Name="VENTANA" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="IDUSUARIO" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="FECHACREACION" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IDREFRIGERIO" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="observaciones" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ST_RepoteMarcacionPersonal" Member="ST_RepoteMarcacionPersonal">
+    <Type Name="ST_RepoteMarcacionPersonal" Id="ID1">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="DiaMes" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Dia" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Mes" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="IdPersonal" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="NombresCompletos" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Ingreso" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Salida" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TiempoFueraEmpresa" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Temp_ST_ReportePlanillaByConceptosRemuneracionSemanal" Member="Temp_ST_ReportePlanillaByConceptosRemuneracionSemanal">
+    <Type Name="Temp_ST_ReportePlanillaByConceptosRemuneracionSemanal" Id="ID2">
+      <Column Name="item" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SEMANA" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="PERIODO_PLANILLA" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="CODIGO_EMPLEADO" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="SUCURSAL" Type="System.String" DbType="Char(70)" CanBeNull="true" />
+      <Column Name="AREA_TRABAJO" Type="System.String" DbType="Char(70)" CanBeNull="true" />
+      <Column Name="CARGO_EMPLEADO" Type="System.String" DbType="Char(70)" CanBeNull="true" />
+      <Column Name="APELLIDO_PATERNO" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="APELLIDO_MATERNO" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="NOMBRES_COMPLETO" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="IDBANCO" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="CUENTA_BANCO" Type="System.String" DbType="Char(25)" CanBeNull="true" />
+      <Column Name="BASICO" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="DNI" Type="System.String" DbType="Char(12)" CanBeNull="true" />
+      <Column Name="IDAFP" Type="System.String" DbType="Char(12)" CanBeNull="true" />
+      <Column Name="DIAS_TRABAJADOS" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="DIAS_POR_RENDIMIENTO" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="HORAS_NORMALES" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="HORAS_EXTRAS_INC_25" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="HORAS_EXTRAS_INC_35" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="HORAS_DOBLES" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="DIAS_DESCANSO_MEDICO" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="DIAS_DE_LICENCIA_POR_PATERNIDAD_LEY_29409" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="BASICO_ACUMULADO" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="ASIGNACION_FAMILIAR" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="INGRESOS_POR_RENDIMIENTO" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="IMP_EXT_1_25" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="IMP_EXT_1_35" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="IMPUESTO_HORAS_DOBLES" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="DOMINICAL" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="REINTEGROS" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="MOVILIDAD_POR_FUNCION" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="IMPORTE_DESCANSO_MEDICO" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="LICENCIA_POR_PATERNIDAD" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="BONIFICACION_ASISTENCIA" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="BONIFICACION_POR_ALIMENTACION" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="BONIFICACION_PRODUCCION" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="TOTAL_INGRESOS_AFECTOS" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="TOTAL_INGRESOS" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="ONP" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="FONDO_PARA_AFP" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="SEGURO_AFP" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="COMISION_VARIABLE" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="DSC_JUDIC_DEM_1" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="DESCUENTO_POR_PRESTAMO" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="DESCUENTO_POR_RESPONSABILIDAD" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="TOTAL_DESCUENTOS" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="NETO_A_PAGAR" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="ESSALUD" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="TOTAL_APORTES_DEL_EMPLEADOR" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="FECHA_REGISTRO" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PERIODO_PLANILLA" Member="PERIODO_PLANILLA">
+    <Type Name="PERIODO_PLANILLA">
+      <Column Name="IDEMPRESA" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDPLANILLA" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ANIO" Type="System.String" DbType="Char(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PERIODO" Type="System.String" DbType="Char(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SEMANA" Type="System.String" DbType="Char(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FECHA_FIN" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CERRADO" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="FECHA_INI" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SINCRONIZA" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="FECHACREACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="QUINCENA" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="FECHA_TCAMBIO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FECHA_CTACTE_FINMES" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FECHA_CTACTE_QUINCENA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TCAMBIO" Type="System.Decimal" DbType="Decimal(17,6)" CanBeNull="true" />
+      <Column Name="CALCULANDO" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="CENTRALIZANDO" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="IDUSUARIO_CALCULO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="IDUSUARIO_CENTRALIZA" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="MAQUINA_CALCULO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="MAQUINA_CENTRALIZA" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TIPOPROCESO_CALCULO" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="TIPOPROCESO_CENTRALIZA" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="FECHA_CTS" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FECHA_GRATIFICACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FECHA_UTILIDAD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NUMEMISOR" Member="NUMEMISOR">
+    <Type Name="NUMEMISOR">
+      <Column Name="IDEMPRESA" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDEMISOR" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDDOCUMENTO" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SERIE" Type="System.String" DbType="Char(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NUMERO" Type="System.String" DbType="Char(7)" CanBeNull="true" />
+      <Column Name="ESTADO" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="ES_IMPORTACION" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="SINCRONIZA" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="FECHACREACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NLINEAS" Type="System.Decimal" DbType="Decimal(4,0)" CanBeNull="true" />
+      <Column Name="OBSERVACION" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="idtipoventa" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="PARADECLARACION_CE" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="IDDOCUMENTO_ALM" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="SERIE_ALM" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Association Name="NUMEMISOR_NUMEMISOR" Member="NUMEMISOR2" ThisKey="IDEMPRESA,IDEMISOR,IDDOCUMENTO,SERIE" OtherKey="IDEMPRESA,IDEMISOR,IDDOCUMENTO_ALM,SERIE_ALM" Type="NUMEMISOR" />
+      <Association Name="NUMEMISOR_NUMEMISOR" Member="NUMEMISOR1" ThisKey="IDEMPRESA,IDEMISOR,IDDOCUMENTO_ALM,SERIE_ALM" OtherKey="IDEMPRESA,IDEMISOR,IDDOCUMENTO,SERIE" Type="NUMEMISOR" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.sj_GetHorasEfectivasRemuneradas" Method="sj_GetHorasEfectivasRemuneradas">
+    <Parameter Name="fechaInicio" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="fechaFinal" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="tipoPlanilla" Type="System.String" DbType="Char(3)" />
+    <ElementType Name="sj_GetHorasEfectivasRemuneradasResult">
+      <Column Name="idcodigogeneral" Type="System.String" DbType="Char(8) NOT NULL" CanBeNull="false" />
+      <Column Name="PATERNO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MATERNO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DNI" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="[DIAS EFECTIVOS REMUNERADOS]" Member="DIAS_EFECTIVOS_REMUNERADOS" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SJ_RHPersonalLiquidado" Method="SJ_RHPersonalLiquidado">
+    <Parameter Name="Periodo" Parameter="periodo" Type="System.String" DbType="Char(6)" />
+    <Parameter Name="idplanilla" Type="System.String" DbType="Char(3)" />
+    <ElementType Name="SJ_RHPersonalLiquidadoResult">
+      <Column Name="idmovimiento" Type="System.String" DbType="Char(16)" CanBeNull="true" />
+      <Column Name="idcodigogeneral" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="ApeNom" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="documento" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="operacion" Type="System.String" DbType="VarChar(24)" CanBeNull="true" />
+      <Column Name="afp_dsc" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="estado_pers" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="calculo" Type="System.Decimal" DbType="Decimal(18,6) NOT NULL" CanBeNull="false" />
+      <Column Name="estado_doc" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="dsc_motivo" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_ingreso" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_cese" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SJ_RHPlanillaTipo" Method="SJ_RHPlanillaTipo">
+    <ElementType Name="SJ_RHPlanillaTipoResult">
+      <Column Name="idPlanilla" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="Planilla" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SJ_RHPrivilegioxUsuarioxFormulario" Method="SJ_RHPrivilegioxUsuarioxFormulario">
+    <Parameter Name="clave" Type="System.String" DbType="Char(8)" />
+    <Parameter Name="idUsuario" Type="System.String" DbType="Char(20)" />
+    <ElementType Name="SJ_RHPrivilegioxUsuarioxFormularioResult">
+      <Column Name="IDEMPRESA" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="IDUSUARIO" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CLAVE" Type="System.String" DbType="Char(8) NOT NULL" CanBeNull="false" />
+      <Column Name="NINGUNO" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="CONSULTA" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="EXPORTA_IMPRIME" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="NUEVO" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="MODIFICA" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="ANULA" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="ELIMINA" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="VER_LOGS" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SJ_PrivilegiosActualizar" Method="SJ_PrivilegiosActualizar">
+    <Parameter Name="idusuario" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="clave" Type="System.String" DbType="Char(10)" />
+    <Parameter Name="NINGUNO" Parameter="nINGUNO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CONSULTA" Parameter="cONSULTA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EXPORTA_IMPRIME" Parameter="eXPORTA_IMPRIME" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NUEVO" Parameter="nUEVO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MODIFICA" Parameter="mODIFICA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ANULA" Parameter="aNULA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ELIMINA" Parameter="eLIMINA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="VER_LOGS" Parameter="vER_LOGS" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SJ_PrivilegiosRegistrar" Method="SJ_PrivilegiosRegistrar">
+    <Parameter Name="idusuario" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="clave" Type="System.String" DbType="Char(10)" />
+    <Parameter Name="NINGUNO" Parameter="nINGUNO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CONSULTA" Parameter="cONSULTA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EXPORTA_IMPRIME" Parameter="eXPORTA_IMPRIME" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NUEVO" Parameter="nUEVO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MODIFICA" Parameter="mODIFICA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ANULA" Parameter="aNULA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ELIMINA" Parameter="eLIMINA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="VER_LOGS" Parameter="vER_LOGS" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SJ_PrivilegiosBuscarPrivilegioUsuario" Method="SJ_PrivilegiosBuscarPrivilegioUsuario">
+    <Parameter Name="idusuario" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="clave" Type="System.String" DbType="Char(10)" />
+    <ElementType Name="SJ_PrivilegiosBuscarPrivilegioUsuarioResult">
+      <Column Name="IDEMPRESA" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="IDUSUARIO" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CLAVE" Type="System.String" DbType="Char(8) NOT NULL" CanBeNull="false" />
+      <Column Name="NINGUNO" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="CONSULTA" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="EXPORTA_IMPRIME" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="NUEVO" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="MODIFICA" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="ANULA" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="ELIMINA" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="VER_LOGS" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SJ_PrivilegiosEliminar" Method="SJ_PrivilegiosEliminar">
+    <Parameter Name="idusuario" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="clave" Type="System.String" DbType="Char(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SJ_PrivilegiosDuplicados" Method="SJ_PrivilegiosDuplicados">
+    <ElementType Name="SJ_PrivilegiosDuplicadosResult">
+      <Column Name="idusuario" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="clave" Type="System.String" DbType="Char(8) NOT NULL" CanBeNull="false" />
+      <Column Name="DUPLICIDAD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SJ_PrivilegiosVerificarFinalizacionContratoTrabajador" Method="SJ_PrivilegiosVerificarFinalizacionContratoTrabajador">
+    <Parameter Name="idUsuario" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="periodo" Type="System.String" DbType="Char(4)" />
+    <ElementType Name="SJ_PrivilegiosVerificarFinalizacionContratoTrabajadorResult">
+      <Column Name="IDEMPRESA" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="IDCODIGOGENERAL" Type="System.String" DbType="Char(8) NOT NULL" CanBeNull="false" />
+      <Column Name="ITEM" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="FECHA_INGRESO" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FECHA_CESE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IDSITUACION" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="IDTIPO" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="FECHA_OCURRENCIA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MOTIVO_CESE" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="IDMOTIVO_CESE" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="IDGRUPO" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="IDTIPOTRABAJADOR" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="LIQUIDADO" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="NO_INDEMNIZACION" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="IDBASEDATOS" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SJ_PrivilegiosVerificarAperturaContratoTrabajador" Method="SJ_PrivilegiosVerificarAperturaContratoTrabajador">
+    <Parameter Name="idUsuario" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="periodo" Type="System.String" DbType="Char(4)" />
+    <ElementType Name="SJ_PrivilegiosVerificarAperturaContratoTrabajadorResult">
+      <Column Name="IDEMPRESA" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="IDCODIGOGENERAL" Type="System.String" DbType="Char(8) NOT NULL" CanBeNull="false" />
+      <Column Name="ITEM" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="FECHA_INGRESO" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FECHA_CESE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IDSITUACION" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="IDTIPO" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="FECHA_OCURRENCIA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MOTIVO_CESE" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="IDMOTIVO_CESE" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="IDGRUPO" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="IDTIPOTRABAJADOR" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="LIQUIDADO" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="NO_INDEMNIZACION" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="IDBASEDATOS" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SJ_PrivilegiosObtenerCargoAreaUsuarioSistema" Method="SJ_PrivilegiosObtenerCargoAreaUsuarioSistema">
+    <Parameter Name="idCodigoGeneral" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="periodo" Type="System.String" DbType="Char(4)" />
+    <ElementType Name="SJ_PrivilegiosObtenerCargoAreaUsuarioSistemaResult">
+      <Column Name="IDEMPRESA" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="IDUSUARIO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="IDCODIGOGENERAL" Type="System.String" DbType="Char(8) NOT NULL" CanBeNull="false" />
+      <Column Name="TRABAJADOR" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="CARGO" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="IDCARGO" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="AREA" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="codigoArea" Type="System.String" DbType="Char(12)" CanBeNull="true" />
+      <Column Name="ITEM" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="FECHA_INGRESO" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FECHA_CESE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IDSITUACION" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="FECHA_OCURRENCIA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LIQUIDADO" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_inicioplanilla" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SJ_PrivilegiosListaUsuarioSistemaxCodigo" Method="SJ_PrivilegiosListaUsuarioSistemaxCodigo">
+    <Parameter Name="idUsuario" Type="System.String" DbType="Char(20)" />
+    <ElementType Name="SJ_PrivilegiosListaUsuarioSistemaxCodigoResult">
+      <Column Name="IDUSUARIO" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ESTADO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="USR_NOMBRES" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="USR_INICIALES" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="FECHACREACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SINCRONIZA" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="VERBARRA" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="ESTIPO" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="IDUSUARIOTIPO" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="FIRMA" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="BLOQUEO" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="DURACION" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="idclieprov" Type="System.String" DbType="Char(11)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IDBASEDATOS" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IDMODULO" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="idCodigoGeneral" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="CARGO" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="AREA" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="IDCARGO" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="IDAREA" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="COLABORADOR" Type="System.String" DbType="VarChar(152) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SJ_RHPrivilegiosAccesosSistemas" Method="SJ_RHPrivilegiosAccesosSistemas">
+    <ElementType Name="SJ_RHPrivilegiosAccesosSistemasResult">
+      <Column Name="IDEMPRESA" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="IDUSUARIO" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="IDCODIGOGENERAL" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="NOMBRES" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="CARGO" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="AREA" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="CLAVE" Type="System.String" DbType="Char(8) NOT NULL" CanBeNull="false" />
+      <Column Name="MODULO" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="BARRA" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BARRAPADRE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="NINGUNO" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="CONSULTA" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="EXPORTA_IMPRIME" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="NUEVO" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="MODIFICA" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="ANULA" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="ELIMINA" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="VER_LOGS" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="POSICION" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SISTEMA" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="VENTANA" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ESTADO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SJ_PrivilegiosListaUsuarioSistema" Method="SJ_PrivilegiosListaUsuarioSistema">
+    <ElementType Name="SJ_PrivilegiosListaUsuarioSistemaResult">
+      <Column Name="IDUSUARIO" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="PASSWORD" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ESTADO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="USR_NOMBRES" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="USR_INICIALES" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="FECHACREACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SINCRONIZA" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="VERBARRA" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="ESTIPO" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="IDUSUARIOTIPO" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="FIRMA" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="BLOQUEO" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="DURACION" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="idclieprov" Type="System.String" DbType="Char(11)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IDBASEDATOS" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IDMODULO" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="idCodigoGeneral" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="CARGO" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="AREA" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="IDCARGO" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="IDAREA" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SJ_PrivilegiosNotificarAltaUsuarioSistema" Method="SJ_PrivilegiosNotificarAltaUsuarioSistema">
+    <Parameter Name="IDCODIGOGENERAL" Parameter="iDCODIGOGENERAL" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="periodo" Type="System.String" DbType="Char(4)" />
+    <Parameter Name="idUsuario" Type="System.String" DbType="Char(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SJ_PrivilegiosNotificarBajaUsuarioSistema" Method="SJ_PrivilegiosNotificarBajaUsuarioSistema">
+    <Parameter Name="IDCODIGOGENERAL" Parameter="iDCODIGOGENERAL" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="periodo" Type="System.String" DbType="Char(4)" />
+    <Parameter Name="idUsuario" Type="System.String" DbType="Char(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SJ_RHListarAsistenciaPersonalByPeriodo" Method="SJ_RHListarAsistenciaPersonalByPeriodo">
+    <Parameter Name="desde" Type="System.String" DbType="Char(10)" />
+    <Parameter Name="hasta" Type="System.String" DbType="Char(10)" />
+    <ElementType Name="SJ_RHListarAsistenciaPersonalByPeriodoResult">
+      <Column Name="idPlanilla" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="FECHA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="numeroSemanaRegistro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="añoFechaRegistro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="mesFechaRegistro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nombreMesFechaRegistro" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="nombreDiaFechaRegistro" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="NROASISTENCIA" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="IDCODIGOGENERAL" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="nombresTrabajador" Type="System.String" DbType="VarChar(153)" CanBeNull="true" />
+      <Column Name="nroDocumento" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="IDCONSUMIDOR" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="consumidor" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="IDACTIVIDAD" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="actividad" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IDLABOR" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="labor" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TOTAL_HORAS" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="grupoRepetido" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="idUnicoByLabor" Type="System.String" DbType="VarChar(9)" CanBeNull="true" />
+      <Column Name="idProyecto" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="proyecto" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SJ_RRHHRendimientoDiarioPersonalCampo" Method="SJ_RRHHRendimientoDiarioPersonalCampo">
+    <Parameter Name="desde" Type="System.String" DbType="Char(10)" />
+    <Parameter Name="hasta" Type="System.String" DbType="Char(10)" />
+    <Parameter Name="idActividad" Type="System.String" DbType="Char(4)" />
+    <Parameter Name="idLabor" Type="System.String" DbType="Char(4)" />
+    <ElementType Name="SJ_RRHHRendimientoDiarioPersonalCampoResult">
+      <Column Name="fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fechaHoraRegistro" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dniResponsable" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="nombresCompletosResponsable" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="idCodigoGeneral" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="dnirTrabajador" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="trabajador" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="idConsumidor" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="descripcionLote" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="idactividad" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="descripcionActividad" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="idLabor" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="descripcionLabor" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="idUnidadMedida" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Avance" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="standar" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="horasTrabajadas" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="observacion" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="esAvance" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="tareo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="jornalDiario" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="dominical" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="jornalDiarioExtra" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="totalPago" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SJ_RHMovimientoOtrosDocumentosPersonalGeneral" Method="SJ_RHMovimientoOtrosDocumentosPersonalGeneral">
+    <Parameter Name="idPlanilla" Type="System.String" DbType="Char(3)" />
+    <ElementType Name="SJ_RHMovimientoOtrosDocumentosPersonalGeneralResult">
+      <Column Name="tipo" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="tipoDocumentoMovimiento" Type="System.String" DbType="VarChar(18) NOT NULL" CanBeNull="false" />
+      <Column Name="iddocumento" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="documento" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="numeroOperacion" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="idplanilla" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="motivoMovimiento" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="memorandum" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SJ_RHMovimientoOtrosDocumentosPersonalGeneralByTipoDocumento" Method="SJ_RHMovimientoOtrosDocumentosPersonalGeneralByTipoDocumento">
+    <Parameter Name="idtipo" Type="System.String" DbType="Char(3)" />
+    <Parameter Name="iddocumento" Type="System.String" DbType="Char(4)" />
+    <Parameter Name="idplanilla" Type="System.String" DbType="Char(3)" />
+    <Parameter Name="idMotivoMemo" Type="System.String" DbType="Char(3)" />
+    <Parameter Name="idMotivoMovimiento" Type="System.String" DbType="Char(3)" />
+    <ElementType Name="SJ_RHMovimientoOtrosDocumentosPersonalGeneralByTipoDocumentoResult">
+      <Column Name="idEmpresa" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="idOtrosDocumentos" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="tipo" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="tipoDocumentoMovimiento" Type="System.String" DbType="VarChar(18) NOT NULL" CanBeNull="false" />
+      <Column Name="IDDOCUMENTO" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="documento" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="numeroCertificado" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="actoMedico" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="centroMedico" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="fechaEmisionDocumento" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FECHA_FINAL_NOGENASIST" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FECHA_FINAL_GENASIST" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FECHA_INICIO_NOGENASIST" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FECHA_INICIO_GENASIST" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="descripcionDocumento" Type="System.String" DbType="VarChar(8000) NOT NULL" CanBeNull="false" />
+      <Column Name="duracion" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Column Name="horas" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Column Name="remitente" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="numeroOperacion" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="periodo" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="periodoPlanilla" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="idMotivoMemo" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="memorandum" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="idMotivoMovimiento" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="motivoMovimiento" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="idAtencion" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="idContingencia" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="IDCODIGOGENERAL" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="nombresCompletos" Type="System.String" DbType="VarChar(152)" CanBeNull="true" />
+      <Column Name="NRODOCUMENTO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="IDSUCURSAL" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="IDEMISOR" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="IDESTADO" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="dias" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idPlanilla" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="idCcosto" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="consumidor" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SJ_RHMovimientoOtrosDocumentosPersonalGeneralPivot" Method="SJ_RHMovimientoOtrosDocumentosPersonalGeneralPivot">
+    <Parameter Name="idPlanilla" Type="System.String" DbType="Char(3)" />
+    <ElementType Name="SJ_RHMovimientoOtrosDocumentosPersonalGeneralPivotResult">
+      <Column Name="tipo" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="iddocumento" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="idMotivoMemo" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="idMotivoMovimiento" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="tipoDocumentoMovimiento" Type="System.String" DbType="VarChar(18) NOT NULL" CanBeNull="false" />
+      <Column Name="motivoMovimiento" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="memorandum" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="PAM" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="PAS" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="EMA" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="PRA" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="OBM" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="EMP" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.st_ControlSalidaPersonalListado" Method="st_ControlSalidaPersonalListado">
+    <Parameter Name="desde" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="hasta" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="st_ControlSalidaPersonalListadoResult">
+      <Column Name="IDEMPRESA" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="IDUNICO" Type="System.String" DbType="Char(15) NOT NULL" CanBeNull="false" />
+      <Column Name="IDSUCURSAL" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="IDDOCUMENTO" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="FECHA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DOCUMENTO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="IDRESPONSABLE" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="IDESTADO" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="SUC_DSC" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="EST_DSC" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="DESDEZKTIME" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+      <Column Name="GENASISTENCIA" Type="System.Decimal" DbType="Decimal(1,0) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ObtenerId" Method="ObtenerId">
+    <ElementType Name="ObtenerIdResult">
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ST_RepoteMarcacionPersonalByCodigoPersonal" Method="ST_RepoteMarcacionPersonalByCodigoPersonal">
+    <Parameter Name="Codigo" Parameter="codigo" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="Desde" Parameter="desde" Type="System.String" DbType="Char(10)" />
+    <Parameter Name="Hasta" Parameter="hasta" Type="System.String" DbType="Char(10)" />
+    <Parameter Name="Idplanilla" Parameter="idplanilla" Type="System.String" DbType="Char(3)" />
+    <Parameter Name="idPersonal" Type="System.String" DbType="Char(8)" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.ST_RepoteMarcacionPersonalByPlanilla" Method="ST_RepoteMarcacionPersonalByPlanilla">
+    <Parameter Name="Codigo" Parameter="codigo" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="Desde" Parameter="desde" Type="System.String" DbType="Char(10)" />
+    <Parameter Name="Hasta" Parameter="hasta" Type="System.String" DbType="Char(10)" />
+    <Parameter Name="Idplanilla" Parameter="idplanilla" Type="System.String" DbType="Char(3)" />
+    <Parameter Name="Idsubplanilla" Parameter="idsubplanilla" Type="System.String" DbType="Char(3)" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.ST_RepoteMarcacionPersonalByCodigoPersonalListado" Method="ST_RepoteMarcacionPersonalByCodigoPersonalListado">
+    <Parameter Name="Codigo" Parameter="codigo" Type="System.String" DbType="VarChar(17)" />
+    <ElementType Name="ST_RepoteMarcacionPersonalByCodigoPersonalListadoResult">
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="DiaMes" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Dia" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Mes" Type="System.String" DbType="VarChar(98)" CanBeNull="true" />
+      <Column Name="IdPersonal" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="NombresCompletos" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Ingreso" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Salida" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TiempoFueraEmpresa" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ST_PLAN_LISTA_PERSONAL" Method="ST_PLAN_LISTA_PERSONAL" IsComposable="true">
+    <Parameter Name="c_empr" Type="System.String" DbType="Char(3)" />
+    <Parameter Name="vc_user" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="ocultar_plan_ninguna" Type="System.Decimal" DbType="Decimal(1,0)" />
+    <Parameter Name="personal_externo" Type="System.Decimal" DbType="Decimal(1,0)" />
+    <Return Type="object" />
+  </Function>
+  <Function Name="dbo.ST_ReportePlanillaByConceptosRemuneracionSemanal" Method="ST_ReportePlanillaByConceptosRemuneracionSemanal">
+    <Parameter Name="SEMANA" Parameter="sEMANA" Type="System.String" DbType="VarChar(2)" />
+    <Parameter Name="PERIODO_PLANILLA" Parameter="pERIODO_PLANILLA" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="IDPLANILLA" Parameter="iDPLANILLA" Type="System.String" DbType="VarChar(4)" />
+    <ElementType IdRef="ID2" />
+  </Function>
+</Database>

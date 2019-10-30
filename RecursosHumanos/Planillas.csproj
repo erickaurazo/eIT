@@ -1,0 +1,824 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{28C78B4B-6973-4F70-94D3-9B71DAE96B2E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RecursosHumanos</RootNamespace>
+    <AssemblyName>ReporteConsumidorPorPlantasPorRacimo</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Design, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.TemplateEngine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.Enterprise.Viewing.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.DataSetConversion, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportAppServer.ObjectFactory, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DevSoftSolutionsControls">
+      <HintPath>..\..\..\..\..\..\..\Librerias\DevSoftSolutionsControls.dll</HintPath>
+    </Reference>
+    <Reference Include="DevSoftSolutionsDataAccess">
+      <HintPath>..\..\..\..\..\..\..\Librerias\DevSoftSolutionsDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="DevSoftSolutionsExtensions">
+      <HintPath>..\..\..\..\..\..\..\Librerias\DevSoftSolutionsExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DevSoftSolutionsMailing">
+      <HintPath>..\..\..\..\..\..\..\Librerias\DevSoftSolutionsMailing.dll</HintPath>
+    </Reference>
+    <Reference Include="EQATEC.Analytics.Monitor, Version=3.2.1.0, Culture=neutral, PublicKeyToken=213c7c68adb58a17, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\EQATEC.Analytics.Monitor.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\Aplicaciones\Librerias\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="MyControlsDataBinding">
+      <HintPath>..\..\..\..\..\..\..\Librerias\MyControlsDataBinding.dll</HintPath>
+    </Reference>
+    <Reference Include="RadControlSpy, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\RadControlSpy.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.WinControls, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Analytics, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.ChartView, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.ChartView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.GridView, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.GridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.PdfViewer, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.PdfViewer.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.PivotGrid, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.PivotGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadChart, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.RadChart.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadDiagram, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.RadDiagram.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadDock, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.RadDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadMarkupEditor, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.RadMarkupEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Scheduler, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Scheduler.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Aqua, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.Aqua.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Breeze, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.Breeze.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Desert, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.Desert.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.HighContrastBlack, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.HighContrastBlack.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2007Black, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.Office2007Black.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2007Silver, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.Office2007Silver.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2010Black, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.Office2010Black.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2010Blue, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.Office2010Blue.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2010Silver, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.Office2010Silver.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2013Dark, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.Office2013Dark.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2013Light, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.Office2013Light.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.TelerikMetro, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.TelerikMetro.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.TelerikMetroBlue, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.TelerikMetroBlue.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.TelerikMetroTouch, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.TelerikMetroTouch.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Dark, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.VisualStudio2012Dark.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Light, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.VisualStudio2012Light.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Windows7, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.Windows7.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Windows8, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.Windows8.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI.Design, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.UI.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="TelerikCommon, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\TelerikCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="TelerikData, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\TelerikData.dll</HintPath>
+    </Reference>
+    <Reference Include="TelerikExport, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin40\TelerikExport.dll</HintPath>
+    </Reference>
+    <Reference Include="ThemeViewer, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\ThemeViewer.exe</HintPath>
+    </Reference>
+    <Reference Include="VisualStyleBuilder, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\VisualStyleBuilder.exe</HintPath>
+    </Reference>
+    <Reference Include="VisualStyleBuilder.Design, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\VisualStyleBuilder.Design.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MotivosBloqueoAsistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MotivosBloqueoAsistencia.Designer.cs">
+      <DependentUpon>MotivosBloqueoAsistencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClaseTelerik\GridLocalizationProviderEspanol.cs" />
+    <Compile Include="ClaseTelerik\PivotGridLocalizationProviderEspanol.cs" />
+    <Compile Include="ClaseTelerik\RadMessageBoxLocalizationProviderEspañol.cs" />
+    <Compile Include="ClaseTelerik\RadPageViewLocalizationProviderEspañol.cs" />
+    <Compile Include="ClaseTelerik\RadWizardLocalizationProviderEspañol.cs" />
+    <Compile Include="ConsumidorMantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsumidorMantenimiento.Designer.cs">
+      <DependentUpon>ConsumidorMantenimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlIngresoSalidaPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlIngresoSalidaPersonal.Designer.cs">
+      <DependentUpon>ControlIngresoSalidaPersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlIngresoSalidaPersonalEdicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlIngresoSalidaPersonalEdicion.Designer.cs">
+      <DependentUpon>ControlIngresoSalidaPersonalEdicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DiasEfectivosRemunerados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiasEfectivosRemunerados.Designer.cs">
+      <DependentUpon>DiasEfectivosRemunerados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElegirPeriodo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ElegirPeriodo.Designer.cs">
+      <DependentUpon>ElegirPeriodo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnvioBoletaPagoRRHH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnvioBoletaPagoRRHH.Designer.cs">
+      <DependentUpon>EnvioBoletaPagoRRHH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Historial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Historial.Designer.cs">
+      <DependentUpon>Historial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImprimirIngresoSalidaPersonalDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ImprimirIngresoSalidaPersonalDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ImprimirIngresosSalidasPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImprimirIngresosSalidasPersonal.Designer.cs">
+      <DependentUpon>ImprimirIngresosSalidasPersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImprimirIngresosSalidasPersonalRPT.cs">
+      <DependentUpon>ImprimirIngresosSalidasPersonalRPT.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ImprimirIngresosSalidasPersonalVistaPrevia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImprimirIngresosSalidasPersonalVistaPrevia.Designer.cs">
+      <DependentUpon>ImprimirIngresosSalidasPersonalVistaPrevia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LaboresMantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LaboresMantenimiento.Designer.cs">
+      <DependentUpon>LaboresMantenimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LiquidacionPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LiquidacionPersonal.Designer.cs">
+      <DependentUpon>LiquidacionPersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MarcacionPuertaListado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MarcacionPuertaListado.Designer.cs">
+      <DependentUpon>MarcacionPuertaListado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MarcacionPuertaMantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MarcacionPuertaMantenimiento.Designer.cs">
+      <DependentUpon>MarcacionPuertaMantenimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MarcacionPuertaMantenimientoDepurar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MarcacionPuertaMantenimientoDepurar.Designer.cs">
+      <DependentUpon>MarcacionPuertaMantenimientoDepurar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MarcacionPuertaMantenimientoImportarMarcacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MarcacionPuertaMantenimientoImportarMarcacion.Designer.cs">
+      <DependentUpon>MarcacionPuertaMantenimientoImportarMarcacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MarcacionPuertaMantenimientoImportarMarcacionByPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MarcacionPuertaMantenimientoImportarMarcacionByPersonal.Designer.cs">
+      <DependentUpon>MarcacionPuertaMantenimientoImportarMarcacionByPersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MarcacionPuertaMantenimientoEdicionMarcacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MarcacionPuertaMantenimientoEdicionMarcacion.Designer.cs">
+      <DependentUpon>MarcacionPuertaMantenimientoEdicionMarcacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MarcacionPuertaMantenimientoTransferenciaMarcacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MarcacionPuertaMantenimientoTransferenciaMarcacion.Designer.cs">
+      <DependentUpon>MarcacionPuertaMantenimientoTransferenciaMarcacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovimientoAsistenciaListado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MovimientoAsistenciaListado.Designer.cs">
+      <DependentUpon>MovimientoAsistenciaListado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovimientoAsistenciaMantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MovimientoAsistenciaMantenimiento.Designer.cs">
+      <DependentUpon>MovimientoAsistenciaMantenimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PeriodoPlanillaEdicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PeriodoPlanillaEdicion.Designer.cs">
+      <DependentUpon>PeriodoPlanillaEdicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonalBloqueado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonalBloqueado.Designer.cs">
+      <DependentUpon>PersonalBloqueado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonalEdicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonalEdicion.Designer.cs">
+      <DependentUpon>PersonalEdicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonalListadoMantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonalListadoMantenimiento.Designer.cs">
+      <DependentUpon>PersonalListadoMantenimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlanillaTipoMantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlanillaTipoMantenimiento.Designer.cs">
+      <DependentUpon>PlanillaTipoMantenimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Privilegios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Privilegios.Designer.cs">
+      <DependentUpon>Privilegios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrivilegiosEdicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrivilegiosEdicion.Designer.cs">
+      <DependentUpon>PrivilegiosEdicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcesoOrdenarMarcaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcesoOrdenarMarcaciones.Designer.cs">
+      <DependentUpon>ProcesoOrdenarMarcaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcesoSinronizarAsistenciasEntreAplicaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcesoSinronizarAsistenciasEntreAplicaciones.Designer.cs">
+      <DependentUpon>ProcesoSinronizarAsistenciasEntreAplicaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcesoTransferenciaMarcacionesDeBiometricoASistemaDeAsistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcesoTransferenciaMarcacionesDeBiometricoASistemaDeAsistencia.Designer.cs">
+      <DependentUpon>ProcesoTransferenciaMarcacionesDeBiometricoASistemaDeAsistencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportAsistenciaPersonalASJBySistemasVarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportAsistenciaPersonalASJBySistemasVarios.Designer.cs">
+      <DependentUpon>ReportAsistenciaPersonalASJBySistemasVarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteAsistenciaMarcadorBiometricoMensualizado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteAsistenciaMarcadorBiometricoMensualizado.Designer.cs">
+      <DependentUpon>ReporteAsistenciaMarcadorBiometricoMensualizado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteAsistenciaPersonalByproyecto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteAsistenciaPersonalByproyecto.Designer.cs">
+      <DependentUpon>ReporteAsistenciaPersonalByproyecto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteDeAsistenciaSemanal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteDeAsistenciaSemanal.Designer.cs">
+      <DependentUpon>ReporteDeAsistenciaSemanal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteDeHorasDesarrolladasEnLaboresDeCampoByPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteDeHorasDesarrolladasEnLaboresDeCampoByPersonal.Designer.cs">
+      <DependentUpon>ReporteDeHorasDesarrolladasEnLaboresDeCampoByPersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteDetalleAsistenciaByPeriodo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteDetalleAsistenciaByPeriodo.Designer.cs">
+      <DependentUpon>ReporteDetalleAsistenciaByPeriodo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteListadoConsumidoreByNroPlantasByNroRacimos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteListadoConsumidoreByNroPlantasByNroRacimos.Designer.cs">
+      <DependentUpon>ReporteListadoConsumidoreByNroPlantasByNroRacimos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteListadoConsumidoreByNroPlantasByNroRacimosCambiarTipoConsumidor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteListadoConsumidoreByNroPlantasByNroRacimosCambiarTipoConsumidor.Designer.cs">
+      <DependentUpon>ReporteListadoConsumidoreByNroPlantasByNroRacimosCambiarTipoConsumidor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteListadoConsumidoreByNroPlantasByNroRacimosEdicionNroPlantasNroRacimos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteListadoConsumidoreByNroPlantasByNroRacimosEdicionNroPlantasNroRacimos.Designer.cs">
+      <DependentUpon>ReporteListadoConsumidoreByNroPlantasByNroRacimosEdicionNroPlantasNroRacimos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteMovimientoDesarrolloLaboresPersonalCampo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteMovimientoDesarrolloLaboresPersonalCampo.Designer.cs">
+      <DependentUpon>ReporteMovimientoDesarrolloLaboresPersonalCampo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportePlanillaByConceptosRemuneracionSemanal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportePlanillaByConceptosRemuneracionSemanal.Designer.cs">
+      <DependentUpon>ReportePlanillaByConceptosRemuneracionSemanal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteAsistenciaMarcadorBiometrico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteAsistenciaMarcadorBiometrico.Designer.cs">
+      <DependentUpon>ReporteAsistenciaMarcadorBiometrico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteRendimientoDiarioPersonalByActividad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteRendimientoDiarioPersonalByActividad.Designer.cs">
+      <DependentUpon>ReporteRendimientoDiarioPersonalByActividad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reporte\DiasEfectivosRemuneradosRpt.cs" />
+    <Compile Include="ResponsableMantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResponsableMantenimiento.Designer.cs">
+      <DependentUpon>ResponsableMantenimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RHHorarioRefrigrerio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RHHorarioRefrigrerio.Designer.cs">
+      <DependentUpon>RHHorarioRefrigrerio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RHHorarioTrabajo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RHHorarioTrabajo.Designer.cs">
+      <DependentUpon>RHHorarioTrabajo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RHPersonalGeneral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RHPersonalGeneral.Designer.cs">
+      <DependentUpon>RHPersonalGeneral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SeguimientoMemorandum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeguimientoMemorandum.Designer.cs">
+      <DependentUpon>SeguimientoMemorandum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElegirPlanilla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ElegirPlanilla.Designer.cs">
+      <DependentUpon>ElegirPlanilla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PeriodoPlanillaCatalogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PeriodoPlanillaCatalogo.Designer.cs">
+      <DependentUpon>PeriodoPlanillaCatalogo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlanillaMantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlanillaMantenimiento.Designer.cs">
+      <DependentUpon>PlanillaMantenimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios.Designer.cs">
+      <DependentUpon>Usuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UsuariosEdicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsuariosEdicion.Designer.cs">
+      <DependentUpon>UsuariosEdicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UtilControles.cs" />
+    <EmbeddedResource Include="MotivosBloqueoAsistencia.resx">
+      <DependentUpon>MotivosBloqueoAsistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsumidorMantenimiento.resx">
+      <DependentUpon>ConsumidorMantenimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlIngresoSalidaPersonal.resx">
+      <DependentUpon>ControlIngresoSalidaPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlIngresoSalidaPersonalEdicion.resx">
+      <DependentUpon>ControlIngresoSalidaPersonalEdicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiasEfectivosRemunerados.resx">
+      <DependentUpon>DiasEfectivosRemunerados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElegirPeriodo.resx">
+      <DependentUpon>ElegirPeriodo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnvioBoletaPagoRRHH.resx">
+      <DependentUpon>EnvioBoletaPagoRRHH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Historial.resx">
+      <DependentUpon>Historial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImprimirIngresosSalidasPersonal.resx">
+      <DependentUpon>ImprimirIngresosSalidasPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImprimirIngresosSalidasPersonalRPT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ImprimirIngresosSalidasPersonalRPT.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImprimirIngresosSalidasPersonalVistaPrevia.resx">
+      <DependentUpon>ImprimirIngresosSalidasPersonalVistaPrevia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LaboresMantenimiento.resx">
+      <DependentUpon>LaboresMantenimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiquidacionPersonal.resx">
+      <DependentUpon>LiquidacionPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MarcacionPuertaListado.resx">
+      <DependentUpon>MarcacionPuertaListado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MarcacionPuertaMantenimiento.resx">
+      <DependentUpon>MarcacionPuertaMantenimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MarcacionPuertaMantenimientoDepurar.resx">
+      <DependentUpon>MarcacionPuertaMantenimientoDepurar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MarcacionPuertaMantenimientoImportarMarcacion.resx">
+      <DependentUpon>MarcacionPuertaMantenimientoImportarMarcacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MarcacionPuertaMantenimientoImportarMarcacionByPersonal.resx">
+      <DependentUpon>MarcacionPuertaMantenimientoImportarMarcacionByPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MarcacionPuertaMantenimientoEdicionMarcacion.resx">
+      <DependentUpon>MarcacionPuertaMantenimientoEdicionMarcacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MarcacionPuertaMantenimientoTransferenciaMarcacion.resx">
+      <DependentUpon>MarcacionPuertaMantenimientoTransferenciaMarcacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovimientoAsistenciaListado.resx">
+      <DependentUpon>MovimientoAsistenciaListado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovimientoAsistenciaMantenimiento.resx">
+      <DependentUpon>MovimientoAsistenciaMantenimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PeriodoPlanillaEdicion.resx">
+      <DependentUpon>PeriodoPlanillaEdicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonalBloqueado.resx">
+      <DependentUpon>PersonalBloqueado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonalEdicion.resx">
+      <DependentUpon>PersonalEdicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonalListadoMantenimiento.resx">
+      <DependentUpon>PersonalListadoMantenimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanillaTipoMantenimiento.resx">
+      <DependentUpon>PlanillaTipoMantenimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Privilegios.resx">
+      <DependentUpon>Privilegios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrivilegiosEdicion.resx">
+      <DependentUpon>PrivilegiosEdicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcesoOrdenarMarcaciones.resx">
+      <DependentUpon>ProcesoOrdenarMarcaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcesoSinronizarAsistenciasEntreAplicaciones.resx">
+      <DependentUpon>ProcesoSinronizarAsistenciasEntreAplicaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcesoTransferenciaMarcacionesDeBiometricoASistemaDeAsistencia.resx">
+      <DependentUpon>ProcesoTransferenciaMarcacionesDeBiometricoASistemaDeAsistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ReportAsistenciaPersonalASJBySistemasVarios.resx">
+      <DependentUpon>ReportAsistenciaPersonalASJBySistemasVarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteAsistenciaMarcadorBiometricoMensualizado.resx">
+      <DependentUpon>ReporteAsistenciaMarcadorBiometricoMensualizado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteAsistenciaPersonalByproyecto.resx">
+      <DependentUpon>ReporteAsistenciaPersonalByproyecto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteDeAsistenciaSemanal.resx">
+      <DependentUpon>ReporteDeAsistenciaSemanal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteDeHorasDesarrolladasEnLaboresDeCampoByPersonal.resx">
+      <DependentUpon>ReporteDeHorasDesarrolladasEnLaboresDeCampoByPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteDetalleAsistenciaByPeriodo.resx">
+      <DependentUpon>ReporteDetalleAsistenciaByPeriodo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteListadoConsumidoreByNroPlantasByNroRacimos.resx">
+      <DependentUpon>ReporteListadoConsumidoreByNroPlantasByNroRacimos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteListadoConsumidoreByNroPlantasByNroRacimosCambiarTipoConsumidor.resx">
+      <DependentUpon>ReporteListadoConsumidoreByNroPlantasByNroRacimosCambiarTipoConsumidor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteListadoConsumidoreByNroPlantasByNroRacimosEdicionNroPlantasNroRacimos.resx">
+      <DependentUpon>ReporteListadoConsumidoreByNroPlantasByNroRacimosEdicionNroPlantasNroRacimos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteMovimientoDesarrolloLaboresPersonalCampo.resx">
+      <DependentUpon>ReporteMovimientoDesarrolloLaboresPersonalCampo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportePlanillaByConceptosRemuneracionSemanal.resx">
+      <DependentUpon>ReportePlanillaByConceptosRemuneracionSemanal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteAsistenciaMarcadorBiometrico.resx">
+      <DependentUpon>ReporteAsistenciaMarcadorBiometrico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteRendimientoDiarioPersonalByActividad.resx">
+      <DependentUpon>ReporteRendimientoDiarioPersonalByActividad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResponsableMantenimiento.resx">
+      <DependentUpon>ResponsableMantenimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RHHorarioRefrigrerio.resx">
+      <DependentUpon>RHHorarioRefrigrerio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RHHorarioTrabajo.resx">
+      <DependentUpon>RHHorarioTrabajo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RHPersonalGeneral.resx">
+      <DependentUpon>RHPersonalGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeguimientoMemorandum.resx">
+      <DependentUpon>SeguimientoMemorandum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElegirPlanilla.resx">
+      <DependentUpon>ElegirPlanilla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PeriodoPlanillaCatalogo.resx">
+      <DependentUpon>PeriodoPlanillaCatalogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanillaMantenimiento.resx">
+      <DependentUpon>PlanillaMantenimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios.resx">
+      <DependentUpon>Usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsuariosEdicion.resx">
+      <DependentUpon>UsuariosEdicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="ImprimirIngresoSalidaPersonalDS.xsc">
+      <DependentUpon>ImprimirIngresoSalidaPersonalDS.xsd</DependentUpon>
+    </None>
+    <None Include="ImprimirIngresoSalidaPersonalDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ImprimirIngresoSalidaPersonalDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ImprimirIngresoSalidaPersonalDS.xss">
+      <DependentUpon>ImprimirIngresoSalidaPersonalDS.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RecursosHumanos.Datos\Planillas.Datos.csproj">
+      <Project>{2E1F008A-B46B-4468-AA2E-ADC07766E444}</Project>
+      <Name>Planillas.Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RecursosHumanos.Negocios\Planillas.Negocios.csproj">
+      <Project>{0B277200-AFFF-4CF8-9556-18F9747CA9AE}</Project>
+      <Name>Planillas.Negocios</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{915BAA64-C7B0-4275-8D4C-B7982905DB2C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TransportistaMto.Datos</RootNamespace>
+    <AssemblyName>TransportistaMto.Datos</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AsistenciaBusByDia.cs" />
+    <Compile Include="AsistenciaPersonalAdministrativoDatos.cs" />
+    <Compile Include="Garita.cs" />
+    <Compile Include="oCabeceraImportacionParteTransporteTercerosByMovil.cs" />
+    <Compile Include="oClaseGeneral.cs" />
+    <Compile Include="DescuentoByInasistenciaRefrigerio.cs" />
+    <Compile Include="DistribucionFacturacionByConsumidorBySubPlanilla.cs" />
+    <Compile Include="oFechaAsistencia.cs" />
+    <Compile Include="FormatoImportacionMovimientoRecorridoInterLocalidades.cs" />
+    <Compile Include="HistorialObj.cs" />
+    <Compile Include="IndicadorAsistencia.cs" />
+    <Compile Include="MarcacionesPersonal.cs" />
+    <Compile Include="MovimientoTransporte.cs" />
+    <Compile Include="oConsultaConsolidadAsistenciaRefrigerio.cs" />
+    <Compile Include="oMovilidad.cs" />
+    <Compile Include="Paradero.cs" />
+    <Compile Include="PeriodoDia.cs" />
+    <Compile Include="PersonalAdministrativo.cs" />
+    <Compile Include="Grupo.cs" />
+    <Compile Include="MesesObj.cs" />
+    <Compile Include="PersonalCampo.cs" />
+    <Compile Include="ProgramacionRefrigerioMultiples.cs" />
+    <Compile Include="SJ_FacturacionPensiones.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SJ_FacturacionPensiones.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Refrigerio.cs" />
+    <Compile Include="RefrigerioAgrupado.cs" />
+    <Compile Include="SJ_FacturacionTransportista.cs">
+      <DependentUpon>SJ_FacturacionTransportista.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="SJ_FacturacionTransportista.designer.cs">
+      <DependentUpon>SJ_FacturacionTransportista.dbml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="TipoMovilidad.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SJ_FacturacionPensiones.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>SJ_FacturacionPensiones.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="SJ_FacturacionTransportista.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>SJ_FacturacionTransportista.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SJ_FacturacionPensiones.dbml.layout">
+      <DependentUpon>SJ_FacturacionPensiones.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SJ_FacturacionTransportista.dbml.layout">
+      <DependentUpon>SJ_FacturacionTransportista.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
