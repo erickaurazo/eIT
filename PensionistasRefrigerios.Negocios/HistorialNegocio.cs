@@ -1,16 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Data;
-using System.ComponentModel;
-using System.Reflection;
 using System.Configuration;
-using System.Transactions;
-using System.Globalization;
-using TransportistaMto.Datos;
+using Asistencia.Datos;
 
-namespace Transportista.Negocios
+namespace Asistencia.Negocios
 {
     public class HistorialNegocio
     {

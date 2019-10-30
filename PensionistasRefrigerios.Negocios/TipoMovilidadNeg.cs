@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using TransportistaMto.Datos;
+using System.Configuration;
+using System.Transactions;
+using MyControlsDataBinding.Busquedas;
+using Asistencia.Datos;
 
-namespace Transportista.Negocios
+namespace Asistencia.Negocios
 {
     public class TipoMovilidadNeg
     {

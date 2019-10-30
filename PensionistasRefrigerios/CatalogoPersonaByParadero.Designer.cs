@@ -378,7 +378,7 @@
             this.mnPrincipal.Name = "mnPrincipal";
             this.mnPrincipal.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.BarraSuperior});
-            this.mnPrincipal.Size = new System.Drawing.Size(1077, 62);
+            this.mnPrincipal.Size = new System.Drawing.Size(1077, 37);
             this.mnPrincipal.TabIndex = 186;
             this.mnPrincipal.ThemeName = "VisualStudio2012Light";
             // 
@@ -633,7 +633,7 @@
             // toolStripStatusLabel8
             // 
             this.toolStripStatusLabel8.Name = "toolStripStatusLabel8";
-            this.toolStripStatusLabel8.Size = new System.Drawing.Size(132, 17);
+            this.toolStripStatusLabel8.Size = new System.Drawing.Size(130, 17);
             this.toolStripStatusLabel8.Text = "  Tiempo Transcurrido : ";
             // 
             // lblTiempoTranscurrido
@@ -664,6 +664,7 @@
             this.Controls.Add(this.gbMantenimiento);
             this.Controls.Add(this.gbListado);
             this.Controls.Add(this.mnPrincipal);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CatalogoPersonaByParadero";
             this.Text = "Asignación de personal de paradero para transporte";
             this.Load += new System.EventHandler(this.CatalogoPersonaByParadero_Load);

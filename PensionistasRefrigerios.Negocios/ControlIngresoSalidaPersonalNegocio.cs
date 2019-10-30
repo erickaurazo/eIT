@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Transactions;
-using MyControlsDataBinding;
-using MyControlsDataBinding.Busquedas;
-using TransportistaMto.Datos;
 using System.Configuration;
+using System.Transactions;
+using Asistencia.Datos;
 
-namespace TransportistaMto.Negocios
+namespace Asistencia.Negocios
 {
     public class ControlIngresoSalidaPersonalNegocio
     {

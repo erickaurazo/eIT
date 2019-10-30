@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Configuration;
 using System.Transactions;
-using TransportistaMto.Datos;
+using MyControlsDataBinding.Busquedas;
+using Asistencia.Datos;
 
-namespace Transportista.Negocios
+namespace Asistencia.Negocios
 {
     public class SJ_RHRutaNegocios
     {        

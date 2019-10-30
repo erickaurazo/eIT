@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Transactions;
-using TransportistaMto.Datos;
 using System.Configuration;
+using Asistencia.Datos;
 
 
-namespace Transportista.Negocios
+namespace Asistencia.Negocios
 {
     public class SJ_ParaderoNegocio
     {
@@ -19,7 +17,7 @@ namespace Transportista.Negocios
 
             string cnx = string.Empty;
             cnx = ConfigurationManager.AppSettings["bd" + periodoConsulta.ToString()].ToString();
-            using (PensionRefrigeriosDataContext Contexto = new PensionRefrigeriosDataContext(cnx))
+            using (SJ_RHFacturacionTransportistaDataContext Contexto = new SJ_RHFacturacionTransportistaDataContext(cnx))
             {
                 Contexto.CommandTimeout = 99999;
 

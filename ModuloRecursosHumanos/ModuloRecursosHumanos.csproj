@@ -347,18 +347,6 @@
       <Project>{C511763B-5EFC-404A-AB18-CCC65405236C}</Project>
       <Name>FacturacionPensionTransportes</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RecursosHumanos.Datos\Planillas.Datos.csproj">
-      <Project>{2E1F008A-B46B-4468-AA2E-ADC07766E444}</Project>
-      <Name>Planillas.Datos</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RecursosHumanos.Negocios\Planillas.Negocios.csproj">
-      <Project>{0B277200-AFFF-4CF8-9556-18F9747CA9AE}</Project>
-      <Name>Planillas.Negocios</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RecursosHumanos\Planillas.csproj">
-      <Project>{28C78B4B-6973-4F70-94D3-9B71DAE96B2E}</Project>
-      <Name>Planillas</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

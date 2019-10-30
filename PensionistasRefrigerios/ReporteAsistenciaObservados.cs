@@ -21,10 +21,10 @@ using System.Configuration;
 using System.Collections;
 using Telerik.WinControls.UI.Localization;
 using System.Globalization;
-using TransportistaMto.Datos;
-using TransportistaMto.Negocios;
+using Asistencia.Datos;
+using Asistencia.Negocios;
 
-namespace Transportista
+namespace Asistencia
 {
     public partial class ReporteAsistenciaObservados : Form
     {

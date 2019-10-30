@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Configuration;
 using System.Transactions;
-using MyControlsDataBinding;
 using MyControlsDataBinding.Busquedas;
-using TransportistaMto.Datos;
+using Asistencia.Datos;
 
-namespace Transportista.Negocios
+namespace Asistencia.Negocios
 {
     public class TransportistaNegocio
     {

@@ -35,7 +35,6 @@
             this.RRHH = new System.Windows.Forms.ToolStripMenuItem();
             this.Salir = new System.Windows.Forms.ToolStripMenuItem();
             this.editMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.RRH3HCatalogoPensiones = new System.Windows.Forms.ToolStripMenuItem();
             this.RRHHCatalogoTransportistas = new System.Windows.Forms.ToolStripMenuItem();
             this.RRHHparaderos = new System.Windows.Forms.ToolStripMenuItem();
             this.RRHHpersonal = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,30 +46,12 @@
             this.RRH3HPrivilegiosDelSistema = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoDeBloqueoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.RRHHParteDeRecorridos = new System.Windows.Forms.ToolStripMenuItem();
-            this.RR3HHSubirPlanillaDePagoDeEfectivo = new System.Windows.Forms.ToolStripMenuItem();
-            this.RR3HHPagoDePlanilla = new System.Windows.Forms.ToolStripMenuItem();
-            this.RR3HHRegistroDeAsistenciaDelPersonal = new System.Windows.Forms.ToolStripMenuItem();
             this.RR3HHRegistroDeAsistenciaPersonalAdministrativo = new System.Windows.Forms.ToolStripMenuItem();
-            this.RR4HHModificarLongitudDeDigitosParaRegistroDeTrabajadores = new System.Windows.Forms.ToolStripMenuItem();
-            this.CajaBancosSolicitudARendir = new System.Windows.Forms.ToolStripMenuItem();
-            this.RRHHmovimientoDeTareoMovil = new System.Windows.Forms.ToolStripMenuItem();
             this.RRHHRegistroAsistencia = new System.Windows.Forms.ToolStripMenuItem();
             this.procesoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.RRHHconsolidadoDeMovimientoDeTransportista = new System.Windows.Forms.ToolStripMenuItem();
-            this.RR3HHFacturacionPension = new System.Windows.Forms.ToolStripMenuItem();
-            this.RRHHfacturacionTransportistas = new System.Windows.Forms.ToolStripMenuItem();
-            this.RRH3HMonitoreoMovimientoPension = new System.Windows.Forms.ToolStripMenuItem();
-            this.cons3olidadDeAsistenciaAPensionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.actualizarListadoParaSincronizacionATabletToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.RR3HHAsistenciaARefrigerios = new System.Windows.Forms.ToolStripMenuItem();
-            this.RRH3HReporteDeDistribuciónDeAsistenciaPersonal = new System.Windows.Forms.ToolStripMenuItem();
             this.RRH3HReporteDeAsistenciaPersonalAdministrativo = new System.Windows.Forms.ToolStripMenuItem();
-            this.RR3HHReporteDeAsisternciaDePersonalPorHorasTrabajadasEnCampo = new System.Windows.Forms.ToolStripMenuItem();
-            this.R3RHHReporteDeAsisternciaDePersonalPorRendimientoTabajosConRacimos = new System.Windows.Forms.ToolStripMenuItem();
-            this.RRH3HReporteDeRefrigeriosPorSubPlanilla = new System.Windows.Forms.ToolStripMenuItem();
-            this.RR3HHReporteDeDuplicidadEnRefrigeriosPorDia = new System.Windows.Forms.ToolStripMenuItem();
             this.RRHHReporteDeAsistenciaMóvilBuses = new System.Windows.Forms.ToolStripMenuItem();
             this.RRHHreportesDeIngresoYSalidaDeUnidadesDeTransportes = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDeAsistenciaDePersonalPorBusesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -142,7 +123,6 @@
             // editMenu
             // 
             this.editMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.RRH3HCatalogoPensiones,
             this.RRHHCatalogoTransportistas,
             this.RRHHparaderos,
             this.RRHHpersonal,
@@ -152,13 +132,6 @@
             this.editMenu.Name = "editMenu";
             this.editMenu.Size = new System.Drawing.Size(51, 20);
             this.editMenu.Text = "Tablas";
-            // 
-            // RRH3HCatalogoPensiones
-            // 
-            this.RRH3HCatalogoPensiones.Name = "RRH3HCatalogoPensiones";
-            this.RRH3HCatalogoPensiones.Size = new System.Drawing.Size(259, 22);
-            this.RRH3HCatalogoPensiones.Text = "Catálogo de pensiónes";
-            this.RRH3HCatalogoPensiones.Click += new System.EventHandler(this.pensionToolStripMenuItem_Click);
             // 
             // RRHHCatalogoTransportistas
             // 
@@ -236,145 +209,44 @@
             // viewMenu
             // 
             this.viewMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.RRHHParteDeRecorridos,
-            this.RR3HHSubirPlanillaDePagoDeEfectivo,
-            this.RR3HHPagoDePlanilla,
-            this.RR3HHRegistroDeAsistenciaDelPersonal,
             this.RR3HHRegistroDeAsistenciaPersonalAdministrativo,
-            this.RR4HHModificarLongitudDeDigitosParaRegistroDeTrabajadores,
-            this.CajaBancosSolicitudARendir,
-            this.RRHHmovimientoDeTareoMovil,
             this.RRHHRegistroAsistencia});
             this.viewMenu.Name = "viewMenu";
             this.viewMenu.Size = new System.Drawing.Size(84, 20);
             this.viewMenu.Text = "Movimiento";
             // 
-            // RRHHParteDeRecorridos
-            // 
-            this.RRHHParteDeRecorridos.Name = "RRHHParteDeRecorridos";
-            this.RRHHParteDeRecorridos.Size = new System.Drawing.Size(385, 22);
-            this.RRHHParteDeRecorridos.Text = "Movimiento de Partes de Recorridos";
-            this.RRHHParteDeRecorridos.Click += new System.EventHandler(this.parteDeRecorridosToolStripMenuItem_Click);
-            // 
-            // RR3HHSubirPlanillaDePagoDeEfectivo
-            // 
-            this.RR3HHSubirPlanillaDePagoDeEfectivo.Enabled = false;
-            this.RR3HHSubirPlanillaDePagoDeEfectivo.Name = "RR3HHSubirPlanillaDePagoDeEfectivo";
-            this.RR3HHSubirPlanillaDePagoDeEfectivo.Size = new System.Drawing.Size(385, 22);
-            this.RR3HHSubirPlanillaDePagoDeEfectivo.Text = "Subir planilla de pago de efectivo";
-            this.RR3HHSubirPlanillaDePagoDeEfectivo.Click += new System.EventHandler(this.subirPlanillaDePagoDeEfectivoToolStripMenuItem_Click);
-            // 
-            // RR3HHPagoDePlanilla
-            // 
-            this.RR3HHPagoDePlanilla.Enabled = false;
-            this.RR3HHPagoDePlanilla.Name = "RR3HHPagoDePlanilla";
-            this.RR3HHPagoDePlanilla.Size = new System.Drawing.Size(385, 22);
-            this.RR3HHPagoDePlanilla.Text = "Pago de planilla contrata";
-            this.RR3HHPagoDePlanilla.Click += new System.EventHandler(this.pagoDePlanillaToolStripMenuItem_Click);
-            // 
-            // RR3HHRegistroDeAsistenciaDelPersonal
-            // 
-            this.RR3HHRegistroDeAsistenciaDelPersonal.Name = "RR3HHRegistroDeAsistenciaDelPersonal";
-            this.RR3HHRegistroDeAsistenciaDelPersonal.Size = new System.Drawing.Size(385, 22);
-            this.RR3HHRegistroDeAsistenciaDelPersonal.Text = "Registro de asistencia a pensiones";
-            this.RR3HHRegistroDeAsistenciaDelPersonal.Click += new System.EventHandler(this.registroDeAsistenciaDelPersonalToolStripMenuItem_Click);
-            // 
             // RR3HHRegistroDeAsistenciaPersonalAdministrativo
             // 
             this.RR3HHRegistroDeAsistenciaPersonalAdministrativo.Name = "RR3HHRegistroDeAsistenciaPersonalAdministrativo";
-            this.RR3HHRegistroDeAsistenciaPersonalAdministrativo.Size = new System.Drawing.Size(385, 22);
+            this.RR3HHRegistroDeAsistenciaPersonalAdministrativo.Size = new System.Drawing.Size(318, 22);
             this.RR3HHRegistroDeAsistenciaPersonalAdministrativo.Text = "Registro de Asistencia Personal Administrativo";
             this.RR3HHRegistroDeAsistenciaPersonalAdministrativo.Click += new System.EventHandler(this.registroDeAsistenciaPersonalAdministrativoToolStripMenuItem_Click);
-            // 
-            // RR4HHModificarLongitudDeDigitosParaRegistroDeTrabajadores
-            // 
-            this.RR4HHModificarLongitudDeDigitosParaRegistroDeTrabajadores.Name = "RR4HHModificarLongitudDeDigitosParaRegistroDeTrabajadores";
-            this.RR4HHModificarLongitudDeDigitosParaRegistroDeTrabajadores.Size = new System.Drawing.Size(385, 22);
-            this.RR4HHModificarLongitudDeDigitosParaRegistroDeTrabajadores.Text = "Modificar longitud de digitos para Registro de Trabajadores";
-            // 
-            // CajaBancosSolicitudARendir
-            // 
-            this.CajaBancosSolicitudARendir.Name = "CajaBancosSolicitudARendir";
-            this.CajaBancosSolicitudARendir.Size = new System.Drawing.Size(385, 22);
-            this.CajaBancosSolicitudARendir.Text = "Solicitud a Rendir";
-            // 
-            // RRHHmovimientoDeTareoMovil
-            // 
-            this.RRHHmovimientoDeTareoMovil.Name = "RRHHmovimientoDeTareoMovil";
-            this.RRHHmovimientoDeTareoMovil.Size = new System.Drawing.Size(385, 22);
-            this.RRHHmovimientoDeTareoMovil.Text = "Movimiento de tareo movil";
             // 
             // RRHHRegistroAsistencia
             // 
             this.RRHHRegistroAsistencia.Name = "RRHHRegistroAsistencia";
-            this.RRHHRegistroAsistencia.Size = new System.Drawing.Size(385, 22);
+            this.RRHHRegistroAsistencia.Size = new System.Drawing.Size(318, 22);
             this.RRHHRegistroAsistencia.Text = "Registro de asistencia";
             this.RRHHRegistroAsistencia.Click += new System.EventHandler(this.RRHHRegistroAsistencia_Click);
             // 
             // procesoToolStripMenuItem
             // 
             this.procesoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.RRHHconsolidadoDeMovimientoDeTransportista,
-            this.RR3HHFacturacionPension,
-            this.RRHHfacturacionTransportistas,
-            this.RRH3HMonitoreoMovimientoPension,
-            this.cons3olidadDeAsistenciaAPensionesToolStripMenuItem,
             this.actualizarListadoParaSincronizacionATabletToolStripMenuItem});
             this.procesoToolStripMenuItem.Name = "procesoToolStripMenuItem";
             this.procesoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.procesoToolStripMenuItem.Text = "Proceso";
             // 
-            // RRHHconsolidadoDeMovimientoDeTransportista
-            // 
-            this.RRHHconsolidadoDeMovimientoDeTransportista.Name = "RRHHconsolidadoDeMovimientoDeTransportista";
-            this.RRHHconsolidadoDeMovimientoDeTransportista.Size = new System.Drawing.Size(354, 22);
-            this.RRHHconsolidadoDeMovimientoDeTransportista.Text = "Consolidado de Movimientos de Transportistas";
-            this.RRHHconsolidadoDeMovimientoDeTransportista.Click += new System.EventHandler(this.consolidadoDeMovimientoDeTransportistaToolStripMenuItem_Click);
-            // 
-            // RR3HHFacturacionPension
-            // 
-            this.RR3HHFacturacionPension.Name = "RR3HHFacturacionPension";
-            this.RR3HHFacturacionPension.Size = new System.Drawing.Size(354, 22);
-            this.RR3HHFacturacionPension.Text = "Facturación por el Servicio de Alimentación";
-            this.RR3HHFacturacionPension.Click += new System.EventHandler(this.facturacionPensionToolStripMenuItem_Click);
-            // 
-            // RRHHfacturacionTransportistas
-            // 
-            this.RRHHfacturacionTransportistas.Name = "RRHHfacturacionTransportistas";
-            this.RRHHfacturacionTransportistas.Size = new System.Drawing.Size(354, 22);
-            this.RRHHfacturacionTransportistas.Text = "Facturación por el Servicio de Transporte del personal";
-            this.RRHHfacturacionTransportistas.Click += new System.EventHandler(this.facturacionTransportistasToolStripMenuItem_Click);
-            // 
-            // RRH3HMonitoreoMovimientoPension
-            // 
-            this.RRH3HMonitoreoMovimientoPension.Name = "RRH3HMonitoreoMovimientoPension";
-            this.RRH3HMonitoreoMovimientoPension.Size = new System.Drawing.Size(354, 22);
-            this.RRH3HMonitoreoMovimientoPension.Text = "Monitoreo Movimiento Pensión";
-            this.RRH3HMonitoreoMovimientoPension.Click += new System.EventHandler(this.monitoreoMovimientoPensionToolStripMenuItem_Click);
-            // 
-            // cons3olidadDeAsistenciaAPensionesToolStripMenuItem
-            // 
-            this.cons3olidadDeAsistenciaAPensionesToolStripMenuItem.Name = "cons3olidadDeAsistenciaAPensionesToolStripMenuItem";
-            this.cons3olidadDeAsistenciaAPensionesToolStripMenuItem.Size = new System.Drawing.Size(354, 22);
-            this.cons3olidadDeAsistenciaAPensionesToolStripMenuItem.Text = "Consolidad de asistencia a pensiones";
-            this.cons3olidadDeAsistenciaAPensionesToolStripMenuItem.Click += new System.EventHandler(this.consolidadDeAsistenciaAPensionesToolStripMenuItem_Click);
-            // 
             // actualizarListadoParaSincronizacionATabletToolStripMenuItem
             // 
             this.actualizarListadoParaSincronizacionATabletToolStripMenuItem.Name = "actualizarListadoParaSincronizacionATabletToolStripMenuItem";
-            this.actualizarListadoParaSincronizacionATabletToolStripMenuItem.Size = new System.Drawing.Size(354, 22);
+            this.actualizarListadoParaSincronizacionATabletToolStripMenuItem.Size = new System.Drawing.Size(311, 22);
             this.actualizarListadoParaSincronizacionATabletToolStripMenuItem.Text = "Actualizar listado para sincronizacion a tablet";
             // 
             // toolsMenu
             // 
             this.toolsMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.RR3HHAsistenciaARefrigerios,
-            this.RRH3HReporteDeDistribuciónDeAsistenciaPersonal,
             this.RRH3HReporteDeAsistenciaPersonalAdministrativo,
-            this.RR3HHReporteDeAsisternciaDePersonalPorHorasTrabajadasEnCampo,
-            this.R3RHHReporteDeAsisternciaDePersonalPorRendimientoTabajosConRacimos,
-            this.RRH3HReporteDeRefrigeriosPorSubPlanilla,
-            this.RR3HHReporteDeDuplicidadEnRefrigeriosPorDia,
             this.RRHHReporteDeAsistenciaMóvilBuses,
             this.RRHHreportesDeIngresoYSalidaDeUnidadesDeTransportes,
             this.reporteDeAsistenciaDePersonalPorBusesToolStripMenuItem,
@@ -384,22 +256,6 @@
             this.toolsMenu.Size = new System.Drawing.Size(65, 20);
             this.toolsMenu.Text = "&Reportes";
             // 
-            // RR3HHAsistenciaARefrigerios
-            // 
-            this.RR3HHAsistenciaARefrigerios.AutoSize = false;
-            this.RR3HHAsistenciaARefrigerios.Name = "RR3HHAsistenciaARefrigerios";
-            this.RR3HHAsistenciaARefrigerios.Size = new System.Drawing.Size(469, 25);
-            this.RR3HHAsistenciaARefrigerios.Text = "Reporte de Asistencias a Refrigerios Personal";
-            this.RR3HHAsistenciaARefrigerios.Click += new System.EventHandler(this.asistenciaARefrigeriosToolStripMenuItem_Click);
-            // 
-            // RRH3HReporteDeDistribuciónDeAsistenciaPersonal
-            // 
-            this.RRH3HReporteDeDistribuciónDeAsistenciaPersonal.AutoSize = false;
-            this.RRH3HReporteDeDistribuciónDeAsistenciaPersonal.Name = "RRH3HReporteDeDistribuciónDeAsistenciaPersonal";
-            this.RRH3HReporteDeDistribuciónDeAsistenciaPersonal.Size = new System.Drawing.Size(469, 25);
-            this.RRH3HReporteDeDistribuciónDeAsistenciaPersonal.Text = "Reporte de Distribución de Asistencia Personal (Transferencia)";
-            this.RRH3HReporteDeDistribuciónDeAsistenciaPersonal.Click += new System.EventHandler(this.reporteDeDistribuciónDeAsistenciaPersonalToolStripMenuItem_Click);
-            // 
             // RRH3HReporteDeAsistenciaPersonalAdministrativo
             // 
             this.RRH3HReporteDeAsistenciaPersonalAdministrativo.AutoSize = false;
@@ -407,38 +263,6 @@
             this.RRH3HReporteDeAsistenciaPersonalAdministrativo.Size = new System.Drawing.Size(469, 25);
             this.RRH3HReporteDeAsistenciaPersonalAdministrativo.Text = "Reporte de Asistencia Personal Administrativo";
             this.RRH3HReporteDeAsistenciaPersonalAdministrativo.Click += new System.EventHandler(this.reporteDeAsistenciaPersonalAdministrativoToolStripMenuItem_Click);
-            // 
-            // RR3HHReporteDeAsisternciaDePersonalPorHorasTrabajadasEnCampo
-            // 
-            this.RR3HHReporteDeAsisternciaDePersonalPorHorasTrabajadasEnCampo.AutoSize = false;
-            this.RR3HHReporteDeAsisternciaDePersonalPorHorasTrabajadasEnCampo.Name = "RR3HHReporteDeAsisternciaDePersonalPorHorasTrabajadasEnCampo";
-            this.RR3HHReporteDeAsisternciaDePersonalPorHorasTrabajadasEnCampo.Size = new System.Drawing.Size(469, 25);
-            this.RR3HHReporteDeAsisternciaDePersonalPorHorasTrabajadasEnCampo.Text = "Reporte de Asisterncia de Personal por Horas Trabajadas en Campo";
-            this.RR3HHReporteDeAsisternciaDePersonalPorHorasTrabajadasEnCampo.Click += new System.EventHandler(this.reporteDeAsisternciaDePersonalPorHorasTrabajadasEnCampoToolStripMenuItem_Click);
-            // 
-            // R3RHHReporteDeAsisternciaDePersonalPorRendimientoTabajosConRacimos
-            // 
-            this.R3RHHReporteDeAsisternciaDePersonalPorRendimientoTabajosConRacimos.AutoSize = false;
-            this.R3RHHReporteDeAsisternciaDePersonalPorRendimientoTabajosConRacimos.Name = "R3RHHReporteDeAsisternciaDePersonalPorRendimientoTabajosConRacimos";
-            this.R3RHHReporteDeAsisternciaDePersonalPorRendimientoTabajosConRacimos.Size = new System.Drawing.Size(469, 25);
-            this.R3RHHReporteDeAsisternciaDePersonalPorRendimientoTabajosConRacimos.Text = "Reporte de Asisterncia de Personal por Rendimiento (Tabajos con Racimos)";
-            this.R3RHHReporteDeAsisternciaDePersonalPorRendimientoTabajosConRacimos.Click += new System.EventHandler(this.reporteDeAsisternciaDePersonalPorRendimientoTabajosConRacimosToolStripMenuItem_Click);
-            // 
-            // RRH3HReporteDeRefrigeriosPorSubPlanilla
-            // 
-            this.RRH3HReporteDeRefrigeriosPorSubPlanilla.AutoSize = false;
-            this.RRH3HReporteDeRefrigeriosPorSubPlanilla.Name = "RRH3HReporteDeRefrigeriosPorSubPlanilla";
-            this.RRH3HReporteDeRefrigeriosPorSubPlanilla.Size = new System.Drawing.Size(469, 25);
-            this.RRH3HReporteDeRefrigeriosPorSubPlanilla.Text = "Reporte de Refrigerios por Sub Planilla";
-            this.RRH3HReporteDeRefrigeriosPorSubPlanilla.Click += new System.EventHandler(this.reporteDeRefrigeriosPorSubPlanillaToolStripMenuItem_Click);
-            // 
-            // RR3HHReporteDeDuplicidadEnRefrigeriosPorDia
-            // 
-            this.RR3HHReporteDeDuplicidadEnRefrigeriosPorDia.AutoSize = false;
-            this.RR3HHReporteDeDuplicidadEnRefrigeriosPorDia.Name = "RR3HHReporteDeDuplicidadEnRefrigeriosPorDia";
-            this.RR3HHReporteDeDuplicidadEnRefrigeriosPorDia.Size = new System.Drawing.Size(469, 25);
-            this.RR3HHReporteDeDuplicidadEnRefrigeriosPorDia.Text = "Reporte de Duplicidad en refrigerios Por día";
-            this.RR3HHReporteDeDuplicidadEnRefrigeriosPorDia.Click += new System.EventHandler(this.reporteDeDuplicidadEnRefrigeriosPorDíaToolStripMenuItem_Click);
             // 
             // RRHHReporteDeAsistenciaMóvilBuses
             // 
@@ -451,28 +275,28 @@
             // RRHHreportesDeIngresoYSalidaDeUnidadesDeTransportes
             // 
             this.RRHHreportesDeIngresoYSalidaDeUnidadesDeTransportes.Name = "RRHHreportesDeIngresoYSalidaDeUnidadesDeTransportes";
-            this.RRHHreportesDeIngresoYSalidaDeUnidadesDeTransportes.Size = new System.Drawing.Size(468, 22);
+            this.RRHHreportesDeIngresoYSalidaDeUnidadesDeTransportes.Size = new System.Drawing.Size(366, 22);
             this.RRHHreportesDeIngresoYSalidaDeUnidadesDeTransportes.Text = "Reportes de Ingreso y Salida de unidades de transportes";
             this.RRHHreportesDeIngresoYSalidaDeUnidadesDeTransportes.Click += new System.EventHandler(this.RRHHreportesDeIngresoYSalidaDeUnidadesDeTransportes_Click);
             // 
             // reporteDeAsistenciaDePersonalPorBusesToolStripMenuItem
             // 
             this.reporteDeAsistenciaDePersonalPorBusesToolStripMenuItem.Name = "reporteDeAsistenciaDePersonalPorBusesToolStripMenuItem";
-            this.reporteDeAsistenciaDePersonalPorBusesToolStripMenuItem.Size = new System.Drawing.Size(468, 22);
+            this.reporteDeAsistenciaDePersonalPorBusesToolStripMenuItem.Size = new System.Drawing.Size(366, 22);
             this.reporteDeAsistenciaDePersonalPorBusesToolStripMenuItem.Text = "Reporte de asistencia de personal por buses";
             this.reporteDeAsistenciaDePersonalPorBusesToolStripMenuItem.Click += new System.EventHandler(this.ReporteDeAsistenciaDePersonalPorBusesToolStripMenuItem_Click);
             // 
             // RRHHreporteDeAsistenciaObservados
             // 
             this.RRHHreporteDeAsistenciaObservados.Name = "RRHHreporteDeAsistenciaObservados";
-            this.RRHHreporteDeAsistenciaObservados.Size = new System.Drawing.Size(468, 22);
+            this.RRHHreporteDeAsistenciaObservados.Size = new System.Drawing.Size(366, 22);
             this.RRHHreporteDeAsistenciaObservados.Text = "Reporte de asistencia observados";
             this.RRHHreporteDeAsistenciaObservados.Click += new System.EventHandler(this.RRHHreporteDeAsistenciaObservados_Click);
             // 
             // RRHHreporteDeAsistenciaEnPuertas
             // 
             this.RRHHreporteDeAsistenciaEnPuertas.Name = "RRHHreporteDeAsistenciaEnPuertas";
-            this.RRHHreporteDeAsistenciaEnPuertas.Size = new System.Drawing.Size(468, 22);
+            this.RRHHreporteDeAsistenciaEnPuertas.Size = new System.Drawing.Size(366, 22);
             this.RRHHreporteDeAsistenciaEnPuertas.Text = "Reporte de asistencia en garita";
             this.RRHHreporteDeAsistenciaEnPuertas.Click += new System.EventHandler(this.RRHHreporteDeAsistenciaEnPuertas_Click);
             // 
@@ -614,34 +438,17 @@
         private System.Windows.Forms.ToolStripMenuItem helpMenu;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.ToolTip toolTip;
-        private System.Windows.Forms.ToolStripMenuItem RRH3HCatalogoPensiones;
-        private System.Windows.Forms.ToolStripMenuItem RR3HHAsistenciaARefrigerios;
         private System.Windows.Forms.ToolStripMenuItem RRHHCatalogoTransportistas;
         private System.Windows.Forms.ToolStripMenuItem RRHHRutasRecorridoTransportista;
-        private System.Windows.Forms.ToolStripMenuItem RRHHParteDeRecorridos;
         private System.Windows.Forms.ToolStripMenuItem procesoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem RR3HHFacturacionPension;
-        private System.Windows.Forms.ToolStripMenuItem RRHHfacturacionTransportistas;
         private System.Windows.Forms.ToolStripMenuItem RRH3HPrivilegiosDelSistema;
-        private System.Windows.Forms.ToolStripMenuItem RR3HHSubirPlanillaDePagoDeEfectivo;
-        private System.Windows.Forms.ToolStripMenuItem RR3HHPagoDePlanilla;
-        private System.Windows.Forms.ToolStripMenuItem RR3HHRegistroDeAsistenciaDelPersonal;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel lblUsuario;
         private System.Windows.Forms.ToolStripStatusLabel lblUsuarioNombre;
         private System.Windows.Forms.ToolStripStatusLabel lblNombre;
         private System.Windows.Forms.ToolStripStatusLabel lblNombreDescripcion;
-        private System.Windows.Forms.ToolStripMenuItem RRHHconsolidadoDeMovimientoDeTransportista;
-        private System.Windows.Forms.ToolStripMenuItem RRH3HMonitoreoMovimientoPension;
-        private System.Windows.Forms.ToolStripMenuItem RRH3HReporteDeDistribuciónDeAsistenciaPersonal;
         private System.Windows.Forms.ToolStripMenuItem RRH3HReporteDeAsistenciaPersonalAdministrativo;
         private System.Windows.Forms.ToolStripMenuItem RR3HHRegistroDeAsistenciaPersonalAdministrativo;
-        private System.Windows.Forms.ToolStripMenuItem RR3HHReporteDeAsisternciaDePersonalPorHorasTrabajadasEnCampo;
-        private System.Windows.Forms.ToolStripMenuItem R3RHHReporteDeAsisternciaDePersonalPorRendimientoTabajosConRacimos;
-        private System.Windows.Forms.ToolStripMenuItem RRH3HReporteDeRefrigeriosPorSubPlanilla;
-        private System.Windows.Forms.ToolStripMenuItem RR4HHModificarLongitudDeDigitosParaRegistroDeTrabajadores;
-        private System.Windows.Forms.ToolStripMenuItem CajaBancosSolicitudARendir;
-        private System.Windows.Forms.ToolStripMenuItem RR3HHReporteDeDuplicidadEnRefrigeriosPorDia;
         private System.Windows.Forms.ToolStripMenuItem RRHHReporteDeAsistenciaMóvilBuses;
         private System.Windows.Forms.ToolStripMenuItem RRHHpersonal;
         private System.Windows.Forms.ToolStripMenuItem RRHHpersonalGeneral;
@@ -649,9 +456,7 @@
         private System.Windows.Forms.ToolStripMenuItem RRHHpersonalBloqueado;
         private System.Windows.Forms.ToolStripMenuItem RRHHpersonalPorPensión;
         private System.Windows.Forms.ToolStripMenuItem tipoDeBloqueoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem RRHHmovimientoDeTareoMovil;
         private System.Windows.Forms.ToolStripMenuItem RRHHRegistroAsistencia;
-        private System.Windows.Forms.ToolStripMenuItem cons3olidadDeAsistenciaAPensionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem RRHHparaderos;
         private System.Windows.Forms.ToolStripMenuItem RRHHreportesDeIngresoYSalidaDeUnidadesDeTransportes;
         private System.Windows.Forms.ToolStripMenuItem actualizarListadoParaSincronizacionATabletToolStripMenuItem;

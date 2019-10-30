@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Transportista.Properties {
+namespace Asistencia.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

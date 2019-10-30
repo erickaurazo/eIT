@@ -46,14 +46,14 @@
             this.txtRazonSocial = new MyControlsDataBinding.Controles.MyTextBoxSearchSimple(this.components);
             this.lblPlacaDestino = new System.Windows.Forms.Label();
             this.gbDestino = new System.Windows.Forms.GroupBox();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnActualizar = new System.Windows.Forms.Button();
-            this.txtRuta = new System.Windows.Forms.TextBox();
-            this.bgwHilo = new System.ComponentModel.BackgroundWorker();
             this.label1 = new System.Windows.Forms.Label();
             this.txtRutaCodigo = new MyControlsDataBinding.Controles.MyTextBoxSearchSimple(this.components);
             this.btnRuta = new MyControlsDataBinding.Controles.MyButtonSearchSimple(this.components);
             this.txtRutaDescripcion = new MyControlsDataBinding.Controles.MyTextBoxSearchSimple(this.components);
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.txtRuta = new System.Windows.Forms.TextBox();
+            this.bgwHilo = new System.ComponentModel.BackgroundWorker();
             this.gbRegistro.SuspendLayout();
             this.gbDestino.SuspendLayout();
             this.SuspendLayout();
@@ -260,42 +260,6 @@
             this.gbDestino.TabIndex = 202;
             this.gbDestino.TabStop = false;
             // 
-            // btnCancelar
-            // 
-            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnCancelar.Location = new System.Drawing.Point(408, 71);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(106, 26);
-            this.btnCancelar.TabIndex = 203;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.Location = new System.Drawing.Point(520, 71);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(106, 26);
-            this.btnActualizar.TabIndex = 202;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = true;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
-            // 
-            // txtRuta
-            // 
-            this.txtRuta.BackColor = System.Drawing.SystemColors.Control;
-            this.txtRuta.Enabled = false;
-            this.txtRuta.Location = new System.Drawing.Point(156, 120);
-            this.txtRuta.Name = "txtRuta";
-            this.txtRuta.Size = new System.Drawing.Size(482, 20);
-            this.txtRuta.TabIndex = 203;
-            this.txtRuta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // bgwHilo
-            // 
-            this.bgwHilo.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwHilo_DoWork);
-            this.bgwHilo.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwHilo_RunWorkerCompleted);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -363,6 +327,42 @@
             this.txtRutaDescripcion.TabIndex = 206;
             this.txtRutaDescripcion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnCancelar.Location = new System.Drawing.Point(408, 71);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(106, 26);
+            this.btnCancelar.TabIndex = 203;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Location = new System.Drawing.Point(520, 71);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(106, 26);
+            this.btnActualizar.TabIndex = 202;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // txtRuta
+            // 
+            this.txtRuta.BackColor = System.Drawing.SystemColors.Control;
+            this.txtRuta.Enabled = false;
+            this.txtRuta.Location = new System.Drawing.Point(156, 120);
+            this.txtRuta.Name = "txtRuta";
+            this.txtRuta.Size = new System.Drawing.Size(482, 20);
+            this.txtRuta.TabIndex = 203;
+            this.txtRuta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // bgwHilo
+            // 
+            this.bgwHilo.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwHilo_DoWork);
+            this.bgwHilo.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwHilo_RunWorkerCompleted);
+            // 
             // ActualizarPlaca
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -371,6 +371,7 @@
             this.Controls.Add(this.gbDestino);
             this.Controls.Add(this.gbRegistro);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ActualizarPlaca";

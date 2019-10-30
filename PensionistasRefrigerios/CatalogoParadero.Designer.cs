@@ -49,6 +49,7 @@
             this.btnEliminar = new Telerik.WinControls.UI.CommandBarButton();
             this.btnExportar = new Telerik.WinControls.UI.CommandBarButton();
             this.btnSalir = new Telerik.WinControls.UI.CommandBarButton();
+            this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
             this.bgwHilo = new System.ComponentModel.BackgroundWorker();
             this.lblPromedio = new System.Windows.Forms.ToolStripStatusLabel();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
@@ -89,7 +90,6 @@
             this.txtCodigo = new Telerik.WinControls.UI.RadTextBox();
             this.txtEstado = new Telerik.WinControls.UI.RadTextBox();
             this.lblEstadoDescripcion = new Telerik.WinControls.UI.RadLabel();
-            this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
             ((System.ComponentModel.ISupportInitialize)(this.mnPrincipal)).BeginInit();
             this.stsBarraEstado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gbListado)).BeginInit();
@@ -122,7 +122,7 @@
             this.mnPrincipal.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.BarraSuperior,
             this.commandBarRowElement1});
-            this.mnPrincipal.Size = new System.Drawing.Size(1125, 67);
+            this.mnPrincipal.Size = new System.Drawing.Size(1125, 62);
             this.mnPrincipal.TabIndex = 162;
             this.mnPrincipal.ThemeName = "VisualStudio2012Light";
             // 
@@ -297,6 +297,10 @@
             this.btnSalir.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnSalir.ToolTipText = "Salir";
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // commandBarRowElement1
+            // 
+            this.commandBarRowElement1.MinSize = new System.Drawing.Size(25, 25);
             // 
             // bgwHilo
             // 
@@ -742,10 +746,6 @@
             this.lblEstadoDescripcion.TabIndex = 5;
             this.lblEstadoDescripcion.Text = "Estado :";
             // 
-            // commandBarRowElement1
-            // 
-            this.commandBarRowElement1.MinSize = new System.Drawing.Size(25, 25);
-            // 
             // CatalogoParadero
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -754,6 +754,7 @@
             this.Controls.Add(this.gbListado);
             this.Controls.Add(this.stsBarraEstado);
             this.Controls.Add(this.mnPrincipal);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CatalogoParadero";
             this.Text = "Catálogo de paraderos para transporte";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

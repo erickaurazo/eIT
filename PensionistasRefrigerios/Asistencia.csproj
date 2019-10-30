@@ -1,0 +1,471 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C511763B-5EFC-404A-AB18-CCC65405236C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Asistencia</RootNamespace>
+    <AssemblyName>Asistencia</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>AgricolaSanJoseSAC.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EQATEC.Analytics.Monitor, Version=3.2.1.0, Culture=neutral, PublicKeyToken=213c7c68adb58a17, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\EQATEC.Analytics.Monitor.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="MyControlsDataBinding, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\MyControlsDataBinding.dll</HintPath>
+    </Reference>
+    <Reference Include="RadControlSpy, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\RadControlSpy.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.WinControls, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Analytics, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.ChartView, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.ChartView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.GridView, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.GridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.PdfViewer, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.PdfViewer.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.PivotGrid, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.PivotGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadChart, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.RadChart.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadDiagram, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.RadDiagram.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadDock, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.RadDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadMarkupEditor, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.RadMarkupEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Scheduler, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Scheduler.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Aqua, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.Aqua.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Breeze, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.Breeze.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Desert, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.Desert.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.HighContrastBlack, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.HighContrastBlack.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2007Black, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.Office2007Black.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2007Silver, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.Office2007Silver.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2010Black, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.Office2010Black.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2010Blue, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.Office2010Blue.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2010Silver, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.Office2010Silver.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2013Dark, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.Office2013Dark.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2013Light, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.Office2013Light.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.TelerikMetro, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.TelerikMetro.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.TelerikMetroBlue, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.TelerikMetroBlue.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.TelerikMetroTouch, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.TelerikMetroTouch.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Dark, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.VisualStudio2012Dark.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Light, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.VisualStudio2012Light.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Windows7, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.Windows7.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Windows8, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.Windows8.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI.Design, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.UI.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="TelerikCommon, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\TelerikCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="TelerikData, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\TelerikData.dll</HintPath>
+    </Reference>
+    <Reference Include="ThemeViewer, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\ThemeViewer.exe</HintPath>
+    </Reference>
+    <Reference Include="VisualStyleBuilder, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\VisualStyleBuilder.exe</HintPath>
+    </Reference>
+    <Reference Include="VisualStyleBuilder.Design, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\VisualStyleBuilder.Design.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Acceso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Acceso.Designer.cs">
+      <DependentUpon>Acceso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActualizarDNIObservado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActualizarDNIObservado.designer.cs">
+      <DependentUpon>ActualizarDNIObservado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActualizarPlaca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActualizarPlaca.Designer.cs">
+      <DependentUpon>ActualizarPlaca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CatalogoParadero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CatalogoParadero.Designer.cs">
+      <DependentUpon>CatalogoParadero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CatalogoPersonalBloqueadoParaAsistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CatalogoPersonalBloqueadoParaAsistencia.Designer.cs">
+      <DependentUpon>CatalogoPersonalBloqueadoParaAsistencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CatalogoPersonaByParadero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CatalogoPersonaByParadero.Designer.cs">
+      <DependentUpon>CatalogoPersonaByParadero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CatalogoTipoBloqueoAsistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CatalogoTipoBloqueoAsistencia.Designer.cs">
+      <DependentUpon>CatalogoTipoBloqueoAsistencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChartCellElement.cs" />
+    <Compile Include="ListadoAsistenciaTransferenciaBuses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListadoAsistenciaTransferenciaBuses.Designer.cs">
+      <DependentUpon>ListadoAsistenciaTransferenciaBuses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcesoAsociarParaderoATrabajadorPostTransferencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcesoAsociarParaderoATrabajadorPostTransferencia.Designer.cs">
+      <DependentUpon>ProcesoAsociarParaderoATrabajadorPostTransferencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CatalogoUbicacionParaderos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CatalogoUbicacionParaderos.Designer.cs">
+      <DependentUpon>CatalogoUbicacionParaderos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\GridLocalizationProviderEspanol.cs" />
+    <Compile Include="Helper\PivotGridLocalizationProviderEspanol.cs" />
+    <Compile Include="Helper\RadMessageBoxLocalizationProviderEspañol.cs" />
+    <Compile Include="Helper\RadPageViewLocalizationProviderEspañol.cs" />
+    <Compile Include="Helper\RadWizardLocalizationProviderEspañol.cs" />
+    <Compile Include="ReporteAsistenciaDiarioByPuertaIngreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteAsistenciaDiarioByPuertaIngreso.Designer.cs">
+      <DependentUpon>ReporteAsistenciaDiarioByPuertaIngreso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteAsistenciaObservados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteAsistenciaObservados.Designer.cs">
+      <DependentUpon>ReporteAsistenciaObservados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Historial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Historial.Designer.cs">
+      <DependentUpon>Historial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChoferBuscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChoferBuscar.Designer.cs">
+      <DependentUpon>ChoferBuscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BuscarPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarPersonal.Designer.cs">
+      <DependentUpon>BuscarPersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReporteUnidadesDeTransporteConIngresoPorFundo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteUnidadesDeTransporteConIngresoPorFundo.Designer.cs">
+      <DependentUpon>ReporteUnidadesDeTransporteConIngresoPorFundo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BuscarRuta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarRuta.designer.cs">
+      <DependentUpon>BuscarRuta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CatalogoRutasRecorrido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CatalogoRutasRecorrido.designer.cs">
+      <DependentUpon>CatalogoRutasRecorrido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\Series.cs" />
+    <Compile Include="Helper\SJ_Usuario.cs" />
+    <Compile Include="CatalogoEmpresasServiciosTransportePersonalCampo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CatalogoEmpresasServiciosTransportePersonalCampo.designer.cs">
+      <DependentUpon>CatalogoEmpresasServiciosTransportePersonalCampo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\UsuarioGlobal.cs" />
+    <EmbeddedResource Include="Acceso.resx">
+      <DependentUpon>Acceso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActualizarDNIObservado.resx">
+      <DependentUpon>ActualizarDNIObservado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActualizarPlaca.resx">
+      <DependentUpon>ActualizarPlaca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CatalogoParadero.resx">
+      <DependentUpon>CatalogoParadero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CatalogoPersonalBloqueadoParaAsistencia.resx">
+      <DependentUpon>CatalogoPersonalBloqueadoParaAsistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CatalogoPersonaByParadero.resx">
+      <DependentUpon>CatalogoPersonaByParadero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CatalogoTipoBloqueoAsistencia.resx">
+      <DependentUpon>CatalogoTipoBloqueoAsistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListadoAsistenciaTransferenciaBuses.resx">
+      <DependentUpon>ListadoAsistenciaTransferenciaBuses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcesoAsociarParaderoATrabajadorPostTransferencia.resx">
+      <DependentUpon>ProcesoAsociarParaderoATrabajadorPostTransferencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CatalogoUbicacionParaderos.resx">
+      <DependentUpon>CatalogoUbicacionParaderos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteAsistenciaDiarioByPuertaIngreso.resx">
+      <DependentUpon>ReporteAsistenciaDiarioByPuertaIngreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteAsistenciaObservados.resx">
+      <DependentUpon>ReporteAsistenciaObservados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Historial.resx">
+      <DependentUpon>Historial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChoferBuscar.resx">
+      <DependentUpon>ChoferBuscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BuscarPersonal.resx">
+      <DependentUpon>BuscarPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="BuscarRuta.resx">
+      <DependentUpon>BuscarRuta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CatalogoRutasRecorrido.resx">
+      <DependentUpon>CatalogoRutasRecorrido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CatalogoEmpresasServiciosTransportePersonalCampo.resx">
+      <DependentUpon>CatalogoEmpresasServiciosTransportePersonalCampo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteUnidadesDeTransporteConIngresoPorFundo.resx">
+      <DependentUpon>ReporteUnidadesDeTransporteConIngresoPorFundo.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AgricolaSanJoseSAC.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PensionistasRefrigerios.Datos\Asistencia.Datos.csproj">
+      <Project>{915BAA64-C7B0-4275-8D4C-B7982905DB2C}</Project>
+      <Name>Asistencia.Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PensionistasRefrigerios.Negocios\Asistencia.Negocios.csproj">
+      <Project>{1853DD3D-4649-4DF1-94CE-E0B0B393DE10}</Project>
+      <Name>Asistencia.Negocios</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

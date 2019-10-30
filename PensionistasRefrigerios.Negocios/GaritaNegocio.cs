@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using TransportistaMto.Datos;
+using Asistencia.Datos;
 
-namespace TransportistaMto.Negocios
+namespace Asistencia.Negocios
 {
-   public class GaritaNegocio
+    public class GaritaNegocio
     {
         private Garita garita;
 

@@ -1,24 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using TransportistaMto.Datos;
 using System.Configuration;
-using System.Transactions;
-using MyControlsDataBinding;
-using MyControlsDataBinding.Busquedas;
-using System.Data.OleDb;
 using System.Data;
-
-using MyControlsDataBinding.Clases;
-using MyControlsDataBinding.Controles;
-using MyControlsDataBinding.ControlesUsuario;
-using MyControlsDataBinding.Datos;
 using MyControlsDataBinding.Extensions;
 using System.Globalization;
-using System.Data.Odbc;
+using Asistencia.Datos;
 
-namespace TransportistaMto.Negocios
+namespace Asistencia.Negocios
 {
     public class AsistenciaNegocio
     {

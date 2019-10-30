@@ -7,8 +7,9 @@ using MyControlsDataBinding;
 using MyControlsDataBinding.Busquedas;
 using TransportistaMto.Datos;
 using System.Configuration;
+using Asistencia.Datos;
 
-namespace TransportistaMto.Negocios
+namespace Asistencia.Negocios
 {
     public class ASJ_RegistroTransferenciaTransportesNegocio
     {

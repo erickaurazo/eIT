@@ -20,12 +20,12 @@ namespace Transportista
 
         private void pensionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CatalogoPensiones frmHijo = new CatalogoPensiones();
-            frmHijo.MdiParent = this;
-            frmHijo.Show();
-            frmHijo.WindowState = FormWindowState.Maximized;
-            frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            statusStrip.Visible = false;
+            //CatalogoPensiones frmHijo = new CatalogoPensiones();
+            //frmHijo.MdiParent = this;
+            //frmHijo.Show();
+            //frmHijo.WindowState = FormWindowState.Maximized;
+            //frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            //statusStrip.Visible = false;
         }
 
         private void refrigerioPersonalToolStripMenuItem_Click(object sender, EventArgs e)
@@ -35,12 +35,12 @@ namespace Transportista
 
         private void asistenciaARefrigeriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ReporteAsistenciaRefrigerio frmHijo = new ReporteAsistenciaRefrigerio();
-            frmHijo.MdiParent = this;
-            frmHijo.Show();
-            frmHijo.WindowState = FormWindowState.Maximized;
-            frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            statusStrip.Visible = false;
+            //ReporteAsistenciaRefrigerio frmHijo = new ReporteAsistenciaRefrigerio();
+            //frmHijo.MdiParent = this;
+            //frmHijo.Show();
+            //frmHijo.WindowState = FormWindowState.Maximized;
+            //frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            //statusStrip.Visible = false;
         }
 
         private void Menu_Load(object sender, EventArgs e)
@@ -156,45 +156,35 @@ namespace Transportista
 
         private void parteDeRecorridosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MovimientoRecorridos frmHijo = new MovimientoRecorridos();
-            frmHijo.MdiParent = this;
-            frmHijo.Show();
-            frmHijo.WindowState = FormWindowState.Maximized;
-            frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            statusStrip.Visible = false;
+            //MovimientoRecorridos frmHijo = new MovimientoRecorridos();
+            //frmHijo.MdiParent = this;
+            //frmHijo.Show();
+            //frmHijo.WindowState = FormWindowState.Maximized;
+            //frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            //statusStrip.Visible = false;
         }
 
         private void facturacionPensionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FacturacionPensiones frmHijo = new FacturacionPensiones();
-            frmHijo.MdiParent = this;
-            frmHijo.WindowState = FormWindowState.Maximized;
-            frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            frmHijo.Show();
-            statusStrip.Visible = false;
+            //FacturacionPensiones frmHijo = new FacturacionPensiones();
+            //frmHijo.MdiParent = this;
+            //frmHijo.WindowState = FormWindowState.Maximized;
+            //frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            //frmHijo.Show();
+            //statusStrip.Visible = false;
         }
 
         private void subirPlanillaDePagoDeEfectivoToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            PagoCaja frmHijo = new PagoCaja();
-            frmHijo.MdiParent = this;
-            frmHijo.Show();
-            frmHijo.WindowState = FormWindowState.Maximized;
-            frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            statusStrip.Visible = false;
+          
 
 
         }
 
         private void pagoDePlanillaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PagoRegistroPlanilla frmHijo = new PagoRegistroPlanilla();
-            frmHijo.MdiParent = this;
-            frmHijo.Show();
-            frmHijo.WindowState = FormWindowState.Maximized;
-            frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            statusStrip.Visible = false;
+            
         }
 
 
@@ -205,13 +195,7 @@ namespace Transportista
         private void facturacionTransportistasToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            FacturacionMovilidades frmHijo = new FacturacionMovilidades();
-            frmHijo.MdiParent = this;
-            frmHijo.Show();
-            frmHijo.WindowState = FormWindowState.Maximized;
-            frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            statusStrip.Visible = false;
-            statusStrip.Visible = false;
+        
 
         }
 
@@ -252,12 +236,7 @@ namespace Transportista
 
         private void registroDeAsistenciaDelPersonalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MovimientoRegistroAsistenciaRefrigerio frmHijo = new MovimientoRegistroAsistenciaRefrigerio();
-            frmHijo.MdiParent = this;
-            frmHijo.Show();
-            frmHijo.WindowState = FormWindowState.Maximized;
-            frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            statusStrip.Visible = false;
+            
         }
 
         private void registroDeAsistenciasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -268,42 +247,32 @@ namespace Transportista
 
         private void registroDeAsistenciaPersonalAdministrativoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RegistroAsistenciaPersonalAdministrativo frmHijo = new RegistroAsistenciaPersonalAdministrativo();
-            frmHijo.MdiParent = this;
-            frmHijo.Show();
-            frmHijo.WindowState = FormWindowState.Maximized;
-            frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            statusStrip.Visible = false;
+            //RegistroAsistenciaPersonalAdministrativo frmHijo = new RegistroAsistenciaPersonalAdministrativo();
+            //frmHijo.MdiParent = this;
+            //frmHijo.Show();
+            //frmHijo.WindowState = FormWindowState.Maximized;
+            //frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            //statusStrip.Visible = false;
         }
 
         private void consolidadoDeMovimientoDeTransportistaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ConsolidadoMovimientoMovilidades frmHijo = new ConsolidadoMovimientoMovilidades();
-            frmHijo.MdiParent = this;
-            frmHijo.Show();
-            frmHijo.WindowState = FormWindowState.Maximized;
-            frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            statusStrip.Visible = false;
+            //ConsolidadoMovimientoMovilidades frmHijo = new ConsolidadoMovimientoMovilidades();
+            //frmHijo.MdiParent = this;
+            //frmHijo.Show();
+            //frmHijo.WindowState = FormWindowState.Maximized;
+            //frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            //statusStrip.Visible = false;
         }
 
         private void reporteDeAsisternciaDePersonalPorHorasTrabajadasEnCampoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ReporteAsistenciaPersonalLaboresCampoxHoras frmHijo = new ReporteAsistenciaPersonalLaboresCampoxHoras();
-            frmHijo.MdiParent = this;
-            frmHijo.Show();
-            frmHijo.WindowState = FormWindowState.Maximized;
-            frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            statusStrip.Visible = false;
+           
         }
 
         private void reporteDeAsisternciaDePersonalPorRendimientoTabajosConRacimosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ReporteAsistenciaPersonalLaboresCampoxRendimiento frmHijo = new ReporteAsistenciaPersonalLaboresCampoxRendimiento();
-            frmHijo.MdiParent = this;
-            frmHijo.Show();
-            frmHijo.WindowState = FormWindowState.Maximized;
-            frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            statusStrip.Visible = false;
+           
         }
 
         private void reporteDeRefrigeriosPorSubPlanillaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -348,22 +317,17 @@ namespace Transportista
 
         private void RRHHpersonalPorPensión_Click(object sender, EventArgs e)
         {
-            ProgramacionRefrigerioxPersonal frmHijo = new ProgramacionRefrigerioxPersonal();
-            frmHijo.MdiParent = this;
-            frmHijo.Show();
-            frmHijo.WindowState = FormWindowState.Maximized;
-            frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            statusStrip.Visible = false;
+           
         }
 
         private void consolidadDeAsistenciaAPensionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ConsolidadoAsistenciasRefrigerioByTransferencia frmHijo = new ConsolidadoAsistenciasRefrigerioByTransferencia();
-            frmHijo.MdiParent = this;
-            frmHijo.Show();
-            frmHijo.WindowState = FormWindowState.Maximized;
-            frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            statusStrip.Visible = false;
+            //ConsolidadoAsistenciasRefrigerioByTransferencia frmHijo = new ConsolidadoAsistenciasRefrigerioByTransferencia();
+            //frmHijo.MdiParent = this;
+            //frmHijo.Show();
+            //frmHijo.WindowState = FormWindowState.Maximized;
+            //frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            //statusStrip.Visible = false;
         }
 
         private void RRHHparaderos_Click(object sender, EventArgs e)

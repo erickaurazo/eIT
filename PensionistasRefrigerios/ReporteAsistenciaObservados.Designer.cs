@@ -75,6 +75,9 @@
             this.sbmTransferirTodasLasAsistenciasDelTrabajador = new System.Windows.Forms.ToolStripMenuItem();
             this.sbmActualizarCódigoControl = new System.Windows.Forms.ToolStripMenuItem();
             this.gbConsulta = new Telerik.WinControls.UI.RadGroupBox();
+            this.txtFechaHasta = new MyDataGridViewColumns.MyDataGridViewMaskedTextEditingControl();
+            this.txtFechaDesde = new MyDataGridViewColumns.MyDataGridViewMaskedTextEditingControl();
+            this.btnTransferirSeleccion = new Telerik.WinControls.UI.RadButton();
             this.txtPeriodo = new Telerik.WinControls.UI.RadSpinEditor();
             this.btnConsultar = new Telerik.WinControls.UI.RadButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -94,10 +97,7 @@
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
-            this.btnTransferirSeleccion = new Telerik.WinControls.UI.RadButton();
             this.bgwHiloTransferencia = new System.ComponentModel.BackgroundWorker();
-            this.txtFechaHasta = new MyDataGridViewColumns.MyDataGridViewMaskedTextEditingControl();
-            this.txtFechaDesde = new MyDataGridViewColumns.MyDataGridViewMaskedTextEditingControl();
             this.stsBarraEstado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gbDetalle)).BeginInit();
             this.gbDetalle.SuspendLayout();
@@ -109,11 +109,11 @@
             this.subMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gbConsulta)).BeginInit();
             this.gbConsulta.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnTransferirSeleccion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPeriodo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnConsultar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboMes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.menuPrincipal)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnTransferirSeleccion)).BeginInit();
             this.SuspendLayout();
             // 
             // stsBarraEstado
@@ -451,26 +451,26 @@
             this.sbmTransferirTodasLasAsistenciasDelTrabajador,
             this.sbmActualizarCódigoControl});
             this.subMenu.Name = "subMenu";
-            this.subMenu.Size = new System.Drawing.Size(308, 70);
+            this.subMenu.Size = new System.Drawing.Size(307, 70);
             // 
             // sbmTransferirEstaAsistencia
             // 
             this.sbmTransferirEstaAsistencia.Name = "sbmTransferirEstaAsistencia";
-            this.sbmTransferirEstaAsistencia.Size = new System.Drawing.Size(307, 22);
+            this.sbmTransferirEstaAsistencia.Size = new System.Drawing.Size(306, 22);
             this.sbmTransferirEstaAsistencia.Text = "Transferir esta asistencia";
             this.sbmTransferirEstaAsistencia.Click += new System.EventHandler(this.transferirEstaAsistenciaToolStripMenuItem_Click);
             // 
             // sbmTransferirTodasLasAsistenciasDelTrabajador
             // 
             this.sbmTransferirTodasLasAsistenciasDelTrabajador.Name = "sbmTransferirTodasLasAsistenciasDelTrabajador";
-            this.sbmTransferirTodasLasAsistenciasDelTrabajador.Size = new System.Drawing.Size(307, 22);
+            this.sbmTransferirTodasLasAsistenciasDelTrabajador.Size = new System.Drawing.Size(306, 22);
             this.sbmTransferirTodasLasAsistenciasDelTrabajador.Text = "Transferir todas las asistencias del trabajador";
             this.sbmTransferirTodasLasAsistenciasDelTrabajador.Click += new System.EventHandler(this.transferirTodasLasAsistenciasDelTrabajadorToolStripMenuItem_Click);
             // 
             // sbmActualizarCódigoControl
             // 
             this.sbmActualizarCódigoControl.Name = "sbmActualizarCódigoControl";
-            this.sbmActualizarCódigoControl.Size = new System.Drawing.Size(307, 22);
+            this.sbmActualizarCódigoControl.Size = new System.Drawing.Size(306, 22);
             this.sbmActualizarCódigoControl.Text = "Actualizar código control";
             this.sbmActualizarCódigoControl.Click += new System.EventHandler(this.actualizarCódigoControlToolStripMenuItem_Click);
             // 
@@ -497,6 +497,59 @@
             this.gbConsulta.TabIndex = 197;
             this.gbConsulta.Text = "Consulta ";
             this.gbConsulta.ThemeName = "VisualStudio2012Light";
+            // 
+            // txtFechaHasta
+            // 
+            this.txtFechaHasta.EditingControlDataGridView = null;
+            this.txtFechaHasta.EditingControlFormattedValue = "  /  /";
+            this.txtFechaHasta.EditingControlRowIndex = 0;
+            this.txtFechaHasta.EditingControlValueChanged = true;
+            this.txtFechaHasta.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
+            this.txtFechaHasta.Location = new System.Drawing.Point(209, 70);
+            this.txtFechaHasta.Mask = "00/00/0000";
+            this.txtFechaHasta.Name = "txtFechaHasta";
+            this.txtFechaHasta.P_EsEditable = false;
+            this.txtFechaHasta.P_EsModificable = false;
+            this.txtFechaHasta.P_ExigeInformacion = false;
+            this.txtFechaHasta.P_Hora = null;
+            this.txtFechaHasta.P_NombreColumna = null;
+            this.txtFechaHasta.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
+            this.txtFechaHasta.Size = new System.Drawing.Size(83, 22);
+            this.txtFechaHasta.TabIndex = 190;
+            this.txtFechaHasta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtFechaHasta.ValidatingType = typeof(System.DateTime);
+            // 
+            // txtFechaDesde
+            // 
+            this.txtFechaDesde.EditingControlDataGridView = null;
+            this.txtFechaDesde.EditingControlFormattedValue = "  /  /";
+            this.txtFechaDesde.EditingControlRowIndex = 0;
+            this.txtFechaDesde.EditingControlValueChanged = true;
+            this.txtFechaDesde.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
+            this.txtFechaDesde.Location = new System.Drawing.Point(125, 70);
+            this.txtFechaDesde.Mask = "00/00/0000";
+            this.txtFechaDesde.Name = "txtFechaDesde";
+            this.txtFechaDesde.P_EsEditable = false;
+            this.txtFechaDesde.P_EsModificable = false;
+            this.txtFechaDesde.P_ExigeInformacion = false;
+            this.txtFechaDesde.P_Hora = null;
+            this.txtFechaDesde.P_NombreColumna = null;
+            this.txtFechaDesde.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
+            this.txtFechaDesde.Size = new System.Drawing.Size(78, 22);
+            this.txtFechaDesde.TabIndex = 191;
+            this.txtFechaDesde.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtFechaDesde.ValidatingType = typeof(System.DateTime);
+            // 
+            // btnTransferirSeleccion
+            // 
+            this.btnTransferirSeleccion.Location = new System.Drawing.Point(406, 64);
+            this.btnTransferirSeleccion.Name = "btnTransferirSeleccion";
+            this.btnTransferirSeleccion.Size = new System.Drawing.Size(139, 25);
+            this.btnTransferirSeleccion.TabIndex = 189;
+            this.btnTransferirSeleccion.Text = "  &Transferir selecionados    ";
+            this.btnTransferirSeleccion.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTransferirSeleccion.ThemeName = "Windows8";
+            this.btnTransferirSeleccion.Click += new System.EventHandler(this.btnTransferirSeleccion_Click);
             // 
             // txtPeriodo
             // 
@@ -694,63 +747,10 @@
             this.bgwHilo.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwHilo_DoWork);
             this.bgwHilo.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwHilo_RunWorkerCompleted);
             // 
-            // btnTransferirSeleccion
-            // 
-            this.btnTransferirSeleccion.Location = new System.Drawing.Point(406, 64);
-            this.btnTransferirSeleccion.Name = "btnTransferirSeleccion";
-            this.btnTransferirSeleccion.Size = new System.Drawing.Size(139, 25);
-            this.btnTransferirSeleccion.TabIndex = 189;
-            this.btnTransferirSeleccion.Text = "  &Transferir selecionados    ";
-            this.btnTransferirSeleccion.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTransferirSeleccion.ThemeName = "Windows8";
-            this.btnTransferirSeleccion.Click += new System.EventHandler(this.btnTransferirSeleccion_Click);
-            // 
             // bgwHiloTransferencia
             // 
             this.bgwHiloTransferencia.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwHiloTransferencia_DoWork);
             this.bgwHiloTransferencia.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwHiloTransferencia_RunWorkerCompleted);
-            // 
-            // txtFechaHasta
-            // 
-            this.txtFechaHasta.EditingControlDataGridView = null;
-            this.txtFechaHasta.EditingControlFormattedValue = "  /  /";
-            this.txtFechaHasta.EditingControlRowIndex = 0;
-            this.txtFechaHasta.EditingControlValueChanged = true;
-            this.txtFechaHasta.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
-            this.txtFechaHasta.Location = new System.Drawing.Point(209, 70);
-            this.txtFechaHasta.Mask = "00/00/0000";
-            this.txtFechaHasta.Name = "txtFechaHasta";
-            this.txtFechaHasta.P_EsEditable = false;
-            this.txtFechaHasta.P_EsModificable = false;
-            this.txtFechaHasta.P_ExigeInformacion = false;
-            this.txtFechaHasta.P_Hora = null;
-            this.txtFechaHasta.P_NombreColumna = null;
-            this.txtFechaHasta.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
-            this.txtFechaHasta.Size = new System.Drawing.Size(83, 20);
-            this.txtFechaHasta.TabIndex = 190;
-            this.txtFechaHasta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtFechaHasta.ValidatingType = typeof(System.DateTime);
-            // 
-            // txtFechaDesde
-            // 
-            this.txtFechaDesde.EditingControlDataGridView = null;
-            this.txtFechaDesde.EditingControlFormattedValue = "  /  /";
-            this.txtFechaDesde.EditingControlRowIndex = 0;
-            this.txtFechaDesde.EditingControlValueChanged = true;
-            this.txtFechaDesde.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
-            this.txtFechaDesde.Location = new System.Drawing.Point(125, 70);
-            this.txtFechaDesde.Mask = "00/00/0000";
-            this.txtFechaDesde.Name = "txtFechaDesde";
-            this.txtFechaDesde.P_EsEditable = false;
-            this.txtFechaDesde.P_EsModificable = false;
-            this.txtFechaDesde.P_ExigeInformacion = false;
-            this.txtFechaDesde.P_Hora = null;
-            this.txtFechaDesde.P_NombreColumna = null;
-            this.txtFechaDesde.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
-            this.txtFechaDesde.Size = new System.Drawing.Size(78, 20);
-            this.txtFechaDesde.TabIndex = 191;
-            this.txtFechaDesde.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtFechaDesde.ValidatingType = typeof(System.DateTime);
             // 
             // ReporteAsistenciaObservados
             // 
@@ -761,6 +761,7 @@
             this.Controls.Add(this.gbDetalle);
             this.Controls.Add(this.gbConsulta);
             this.Controls.Add(this.menuPrincipal);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ReporteAsistenciaObservados";
             this.Text = "Reporte de asistencia observados";
             this.Load += new System.EventHandler(this.ReporteAsistenciaObservados_Load);
@@ -777,11 +778,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.gbConsulta)).EndInit();
             this.gbConsulta.ResumeLayout(false);
             this.gbConsulta.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnTransferirSeleccion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPeriodo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnConsultar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboMes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.menuPrincipal)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnTransferirSeleccion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

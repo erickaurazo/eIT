@@ -8,7 +8,7 @@ using MyControlsDataBinding.Busquedas;
 using TransportistaMto.Datos;
 using System.Configuration;
 
-namespace TransportistaMto.Negocios
+namespace Asistencia.Negocios
 {
     public class ASJ_TipoBloqueoParaAsistenciaNegocio
     {
