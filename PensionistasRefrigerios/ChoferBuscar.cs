@@ -1,48 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
 using Telerik.WinControls;
-using System.Globalization;
-using MyControlsDataBinding;
 using MyControlsDataBinding.Extensions;
-using MyControlsDataBinding.Controles;
-using MyControlsDataBinding.Datos;
-using MyControlsDataBinding.Busquedas;
-using MyControlsDataBinding.Clases;
-using MyControlsDataBinding.ControlesUsuario;
-using System.Collections;
-using TransportistaMto.Datos;
-using Transportista.Negocios;
 using System.Linq;
-using System.Configuration;
 using Telerik.WinControls.UI;
-using Telerik.WinControls.UI.Export;
-using System.IO;
 using Telerik.WinControls.UI.Localization;
-using TransportistaMto.Datos;
+using Asistencia.Negocios;
+using Asistencia.Datos;
 
 
-namespace Transportista
+namespace Asistencia
 {
     public partial class ChoferBuscar : Telerik.WinControls.UI.RadForm
     {
         private string rucTransportista;
         private string periodo;
-        private TransportistaNegocio Negocios;
+        private CarrierController Negocios;
         private List<SJ_RHTransportistaChoferListarResult> Choferes;
         public SJ_RHTransportistaChoferListarResult Chofer;
 
         public ChoferBuscar()
         {
             InitializeComponent();
-            RadGridLocalizationProvider.CurrentProvider = new Transportista.ClaseTelerik.GridLocalizationProviderEspanol();
-            RadPageViewLocalizationProvider.CurrentProvider = new Transportista.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
-            RadWizardLocalizationProvider.CurrentProvider = new Transportista.ClaseTelerik.RadWizardLocalizationProviderEspañol();
-            RadMessageLocalizationProvider.CurrentProvider = new Transportista.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
+            RadGridLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.GridLocalizationProviderEspanol();
+            RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
+            RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
+            RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
 
 
         }
@@ -68,7 +51,7 @@ namespace Transportista
                 {
                     if (this.periodo != "")
                     {
-                        Negocios = new TransportistaNegocio();
+                        Negocios = new CarrierController();
                         Choferes = new List<SJ_RHTransportistaChoferListarResult>();
 
                         Choferes = Negocios.ObtenerListaChoferesxTransportista(rucTransportista, this.periodo).ToList();

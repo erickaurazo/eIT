@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Transportista
+namespace Asistencia
 {
     public partial class CatalogoPersonaByParadero : Form
     {

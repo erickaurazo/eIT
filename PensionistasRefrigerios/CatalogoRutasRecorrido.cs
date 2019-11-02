@@ -1,90 +1,88 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
 using System.Windows.Forms;
 using Telerik.WinControls;
-using System.Globalization;
-using MyControlsDataBinding;
 using MyControlsDataBinding.Extensions;
-using MyControlsDataBinding.Controles;
-using MyControlsDataBinding.Datos;
-using MyControlsDataBinding.Busquedas;
-using MyControlsDataBinding.Clases;
-using MyControlsDataBinding.ControlesUsuario;
-using System.Collections;
-using Transportista.Negocios;
-
+using Asistencia.Negocios;
+using Asistencia.Datos;
 using System.Configuration;
 using Telerik.WinControls.UI;
 using Telerik.WinControls.UI.Export;
 using System.IO;
-using TransportistaMto.Datos;
 
-namespace Transportista
+namespace Asistencia
 {
     public partial class CatalogoRutasRecorrido : Telerik.WinControls.UI.RadForm
     {
-        private string Periodo;
-        private List<SJ_RHListaRutasResult> ListadoRutas;
-        private string CodigoRuta;
-        private string CodigoEstado;
-        private int posicionX;
-        private int posicionY;
-        private string Mensaje;
-        private SJ_RHRuta oRuta;
-        private SJ_RHRutaNegocios rutaNeg;
+        private string period;
+        private List<SJ_RHListaRutasResult> routes;
+        private string routeCode;
+        private string estatusCode;
+        private string msg;
+        private SJ_RHRuta route;
+        private SJ_RHRutaNegocios model;
         private bool exportVisualSettings;
         private string fileName;
+
+
         public CatalogoRutasRecorrido()
         {
             InitializeComponent();
             Inicio();
+            LimpiarFormulario();
+            RefreshList();
+            ActivarDesactivarControlEdicion(false);
+            btnNuevo.Enabled = true;
+            btnEditar.Enabled = true;
+            btnGrabar.Enabled = false;
+            btnActualizarLista.Enabled = true;
+            btnCancelar.Enabled = false;
+            btnEliminar.Enabled = true;
+            btnAnular.Enabled = true;
+            btnSalir.Enabled = true;
+            btnExportar.Enabled = true;
         }
 
         private void Inicio()
         {
             try
             {
-                Periodo = DateTime.Now.Year.ToString();
+                period = DateTime.Now.Year.ToString();
                 MyControlsDataBinding.Extensions.Globales.Servidor = ConfigurationManager.AppSettings["Servidor"].ToString();
                 MyControlsDataBinding.Extensions.Globales.UsuarioBaseDatos = ConfigurationManager.AppSettings["Usuario"].ToString();
-                MyControlsDataBinding.Extensions.Globales.BaseDatos = ConfigurationManager.AppSettings["BasesDatos" + Periodo].ToString();
+                MyControlsDataBinding.Extensions.Globales.BaseDatos = ConfigurationManager.AppSettings["BasesDatos" + period].ToString();
                 MyControlsDataBinding.Extensions.Globales.ClaveBaseDatos = ConfigurationManager.AppSettings["Clave"].ToString();
                 MyControlsDataBinding.Extensions.Globales.IdEmpresa = "001";
                 MyControlsDataBinding.Extensions.Globales.Empresa = "EMPRESA AGRICOLA SAN JOSE SA";
-                MyControlsDataBinding.Extensions.Globales.UsuarioSistema = "CHRISTIAN";
-                MyControlsDataBinding.Extensions.Globales.NombreUsuarioSistema = "Christian LLontop";
+                MyControlsDataBinding.Extensions.Globales.UsuarioSistema = "erick";
+                MyControlsDataBinding.Extensions.Globales.NombreUsuarioSistema = "Sistemas";
             }
             catch (Exception Ex)
             {
-                throw Ex;
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
+                return;
             }
         }
 
         private void FletePorMovilidad_Load(object sender, EventArgs e)
         {
 
-            gbTransportista.Enabled = false;
-            gbMantenimientoRegistros.Enabled = false;
-            btnMenu.Enabled = false;
-            bgwHilo.RunWorkerAsync();
+
+
         }
 
         private void ObtenerListaRutas()
         {
             SJ_RHRutaNegocios RutaNeg = new SJ_RHRutaNegocios();
-            ListadoRutas = new List<SJ_RHListaRutasResult>();
-            ListadoRutas = RutaNeg.ListarRutasDeRecorridos();
+            routes = new List<SJ_RHListaRutasResult>();
+            routes = RutaNeg.ListarRutasDeRecorridos();
 
         }
 
         private void MostrarListarRutas()
         {
-            this.dgvRutas.DataSource = ListadoRutas.ToDataTable<SJ_RHListaRutasResult>();
+            this.dgvRutas.DataSource = routes.ToDataTable<SJ_RHListaRutasResult>();
             this.dgvRutas.Refresh();
             this.dgvRutas.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
         }
@@ -95,15 +93,26 @@ namespace Transportista
         }
 
 
-        private void ActivarDesactivarControlEdicion(bool Estado)
+        private void ActivarDesactivarControlEdicion(bool estate)
         {
-            this.gbMantenimientoRegistros.Enabled = Estado;
-            this.gbTransportista.Enabled = !(Estado);
+            this.gbEdit.Enabled = estate;
+            this.gbList.Enabled = !estate;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+
+            LimpiarFormulario();
             ActivarDesactivarControlEdicion(false);
+            btnNuevo.Enabled = true;
+            btnEditar.Enabled = true;
+            btnGrabar.Enabled = false;
+            btnActualizarLista.Enabled = true;
+            btnCancelar.Enabled = false;
+            btnEliminar.Enabled = true;
+            btnAnular.Enabled = true;
+            btnSalir.Enabled = true;
+            btnExportar.Enabled = true;
         }
 
         private void btnGrabar_Click(object sender, EventArgs e)
@@ -112,76 +121,127 @@ namespace Transportista
             {
                 try
                 {
-                    ObtenerObjeto("RUTAS");
-                    RegistrarObjeto(oRuta);                    
-                    RadMessageBox.Show("Operación realizada Satisfactoriamente", "Sistema");
-                    dgvRutas.CurrentRow = dgvRutas.Rows[posicionX];
+                    SetRuta("RUTAS");
+                    if (chkGenerarIdaVuelta.Checked == true)
+                    {
+                        if (AddRutaIdaVuelta(route) != true)
+                        {
+                            RadMessageBox.Show("Los datos del fomulario no se pueden registrar, valor duplicado", "Sistema");
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        if (AddRuta(route) != true)
+                        {
+                            RadMessageBox.Show("Los datos del fomulario no se pueden registrar, valor duplicado", "Sistema");
+                            return;
+                        }
+
+                    }
+
+                    RadMessageBox.Show("Operación realizada satisfactoriamente", "Confirmación del sistema");
                     ActivarDesactivarControlEdicion(false);
 
-                    gbTransportista.Enabled = false;
-                    gbMantenimientoRegistros.Enabled = false;
-                    btnMenu.Enabled = false;
-                    bgwHilo.RunWorkerAsync();
+                    RefreshList();
+                    btnNuevo.Enabled = true;
+                    btnEditar.Enabled = true;
+                    btnGrabar.Enabled = false;
+                    btnActualizarLista.Enabled = true;
+                    btnCancelar.Enabled = false;
+                    btnEliminar.Enabled = true;
+                    btnAnular.Enabled = true;
+                    btnSalir.Enabled = true;
+                    btnExportar.Enabled = true;
 
                 }
                 catch (Exception Ex)
                 {
-                    throw Ex;
+                    MessageBox.Show(Ex.Message.ToString(), "MENSAJE EL SISTEMA");
+                    return;
                 }
             }
             else
             {
-                RadMessageBox.Show(Mensaje);
+                RadMessageBox.Show(msg);
             }
         }
 
-        private void RegistrarObjeto(SJ_RHRuta oRuta)
+        private bool AddRuta(SJ_RHRuta oRuta)
         {
+            bool estate = false;
             try
             {
-                if (oRuta == null)
+                if (oRuta.RutaDestino != null && oRuta.RutaOrigen != null)
                 {
-                    RadMessageBox.Show("No se puede guardar un ", "");
+                    if (oRuta.RutaDestino != string.Empty && oRuta.RutaOrigen != string.Empty)
+                    {
+                        model = new SJ_RHRutaNegocios();
+                        estate = model.AddRuta(oRuta);
+                        //this.txtCodigo.Text = Codigo.ToString();
+                    }
                 }
-                else
-                {
-                    rutaNeg = new SJ_RHRutaNegocios();
-                    Int32 Codigo = rutaNeg.Registrar(oRuta);
-                    this.txtCodigo.Text = Codigo.ToString();
-                }
-
 
             }
             catch (Exception Ex)
             {
 
-                throw Ex;
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE EL SISTEMA");
+                return false;
             }
+
+            return estate;
         }
 
-        private void ObtenerObjeto(string Objeto)
+
+        private bool AddRutaIdaVuelta(SJ_RHRuta oRuta)
+        {
+            bool estate = false;
+            try
+            {
+                if (oRuta.RutaDestino != null && oRuta.RutaOrigen != null)
+                {
+                    if (oRuta.RutaDestino != string.Empty && oRuta.RutaOrigen != string.Empty)
+                    {
+                        model = new SJ_RHRutaNegocios();
+                        estate = model.AddRutaIdaVuelta(oRuta);
+                        //this.txtCodigo.Text = Codigo.ToString();
+                    }
+                }
+
+            }
+            catch (Exception Ex)
+            {
+
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE EL SISTEMA");
+                return false;
+            }
+            return estate;
+        }
+
+        private void SetRuta(string nombreDelObjeto)
         {
             try
             {
-                switch (Objeto)
+                switch (nombreDelObjeto)
                 {
                     case "RUTAS":
                         #region Obtener Objeto Transportista()
                         try
                         {
-                            oRuta = new SJ_RHRuta();
-                            oRuta.Id = this.txtCodigo.Text.ToString() != "" ? Convert.ToInt32(this.txtCodigo.Text.ToString()) : 0;
-                            oRuta.RutaOrigen = this.txtOrigenId.Text.ToString() != "" ? this.txtOrigenId.Text.ToString() : "";
-                            oRuta.RutaDestino = this.txtDestinoId.Text.ToString() != "" ? this.txtDestinoId.Text.ToString() : "";
-                            oRuta.Distancia = this.txtDistancia.Text.ToString() != "" ? Convert.ToDecimal(this.txtDistancia.Text.ToString()) : 0;
-                            oRuta.TiempoViaje = this.txtDuracion.Text.ToString() != "" ? Convert.ToDecimal(this.txtDuracion.Text.ToString()) : 0;
-                            oRuta.Observacion = this.txtObservacion.Text.ToString() != "" ? this.txtObservacion.Text.ToString() : "";
-                            oRuta.IdEstado = this.txtIdEstado.Text.ToString();
-                            oRuta.abreviaturaRutaOrigen = txtAbreviaturaRutaOrigen.Text.ToString() != "" ? this.txtAbreviaturaRutaOrigen.Text.ToString() : "";
-                            oRuta.descripcionCortaOrigen = txtDescripcionCortaRutaOrigen.Text.ToString() != "" ? this.txtDescripcionCortaRutaOrigen.Text.ToString() : "";
-                            oRuta.abreviaturaRuraDestino = txtAbreviaturaRutaDestino.Text.ToString() != "" ? this.txtAbreviaturaRutaDestino.Text.ToString() : "";
-                            oRuta.descripcionCortaDestino = txtDescripcionCortaRutaDestino.Text.ToString() != "" ? this.txtDescripcionCortaRutaDestino.Text.ToString() : "";
-                            oRuta.esIngreso = chkEsIngreso.Checked == true ? "1" : "0";
+                            route = new SJ_RHRuta();
+                            route.Id = this.txtCodigo.Text.ToString() != "" ? Convert.ToInt32(this.txtCodigo.Text.ToString()) : 0;
+                            route.RutaOrigen = this.txtOrigenId.Text.ToString() != "" ? this.txtOrigenId.Text.ToString() : "";
+                            route.RutaDestino = this.txtDestinoId.Text.ToString() != "" ? this.txtDestinoId.Text.ToString() : "";
+                            route.Distancia = this.txtDistancia.Text.ToString() != "" ? Convert.ToDecimal(this.txtDistancia.Text.ToString()) : 0;
+                            route.TiempoViaje = this.txtDuracion.Text.ToString() != "" ? Convert.ToDecimal(this.txtDuracion.Text.ToString()) : 0;
+                            route.Observacion = this.txtObservacion.Text.ToString() != "" ? this.txtObservacion.Text.ToString() : "";
+                            route.IdEstado = this.txtIdEstado.Text.ToString();
+                            route.abreviaturaRutaOrigen = txtAbreviaturaRutaOrigen.Text.ToString() != "" ? this.txtAbreviaturaRutaOrigen.Text.ToString() : "";
+                            route.descripcionCortaOrigen = txtDescripcionCortaRutaOrigen.Text.ToString() != "" ? this.txtDescripcionCortaRutaOrigen.Text.ToString() : "";
+                            route.abreviaturaRuraDestino = txtAbreviaturaRutaDestino.Text.ToString() != "" ? this.txtAbreviaturaRutaDestino.Text.ToString() : "";
+                            route.descripcionCortaDestino = txtDescripcionCortaRutaDestino.Text.ToString() != "" ? this.txtDescripcionCortaRutaDestino.Text.ToString() : "";
+                            route.esIngreso = chkEsIngreso.Checked == true ? "1" : "0";
                         }
                         catch (Exception Ex)
                         {
@@ -208,37 +268,37 @@ namespace Transportista
         {
             Boolean estado = true;
 
-            Mensaje = "";
+            msg = "";
 
 
             if (txtEstado.Text.ToString().Trim() == "")
             {
-                Mensaje += "El documento debe tener un estado \n";
+                msg += "El documento debe tener un estado \n";
                 estado = false;
             }
 
             if (txtOrigenId.Text.ToString().Trim() == "")
             {
-                Mensaje += "El documento debe tener la ruta origen \n";
+                msg += "El documento debe tener la ruta origen \n";
                 estado = false;
             }
 
             if (txtDestinoId.Text.ToString().Trim() == "")
             {
-                Mensaje += "El documento debe tener la ruta destino \n";
+                msg += "El documento debe tener la ruta destino \n";
                 estado = false;
             }
 
 
             if (txtDistancia.Text.ToString().Trim() == "")
             {
-                Mensaje += "El documento debe tener la distancia aproximada \n";
+                msg += "El documento debe tener la distancia aproximada \n";
                 estado = false;
             }
 
             if (txtDuracion.Text.ToString().Trim() == "")
             {
-                Mensaje += "El documento debe tener una duración aproximada del recorrido \n";
+                msg += "El documento debe tener una duración aproximada del recorrido \n";
                 estado = false;
             }
 
@@ -249,47 +309,98 @@ namespace Transportista
 
         private void LimpiarFormulario()
         {
-            this.txtCodigo.Clear();
-            this.txtEstado.Clear();
-            this.txtIdEstado.Clear();
+            txtCodigo.Clear();
+            txtEstado.Clear();
+            txtIdEstado.Clear();
             txtOrigenId.Clear();
             txtRutaOrigen.Clear();
             txtDistancia.Clear();
             txtObservacion.Clear();
-            this.txtDuracion.Clear();
+            txtDuracion.Clear();
             txtDestinoId.Clear();
             txtRutaDestino.Clear();
-            this.txtEstado.Text = "Activo";
-            this.txtIdEstado.Text = "AC";
+            txtEstado.Text = "Activo";
+            txtIdEstado.Text = "AC";
+            txtAbreviaturaRutaOrigen.Clear();
+            txtDescripcionCortaRutaOrigen.Clear();
+            txtAbreviaturaRutaDestino.Clear();
+            txtDescripcionCortaRutaDestino.Clear();
             txtOrigenId.Focus();
-
-
+            chkEsIngreso.Checked = false;
+            chkGenerarIdaVuelta.Checked = false;
 
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            LimpiarFormulario();
-            ActivarDesactivarControlEdicion(true);
+            NewRegister();
+        }
+
+        private void NewRegister()
+        {
+            try
+            {
+                LimpiarFormulario();
+                ActivarDesactivarControlEdicion(true);
+                btnNuevo.Enabled = false;
+                btnEditar.Enabled = false;
+                btnGrabar.Enabled = true;
+                btnActualizarLista.Enabled = false;
+                btnCancelar.Enabled = true;
+                btnEliminar.Enabled = false;
+                btnAnular.Enabled = false;
+                btnSalir.Enabled = true;
+                btnExportar.Enabled = false;
+            }
+            catch (Exception Ex)
+            {
+
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE EL SISTEMA");
+                return;
+            }
         }
 
         private void btnActualizarLista_Click(object sender, EventArgs e)
         {
-            gbTransportista.Enabled = false;
-            gbMantenimientoRegistros.Enabled = false;
-            btnMenu.Enabled = false;
-            bgwHilo.RunWorkerAsync();
+            RefreshList();
+        }
+
+        private void RefreshList()
+        {
+            try
+            {
+                LimpiarFormulario();
+                gbList.Enabled = false;
+                gbEdit.Enabled = false;
+                btnMenu.Enabled = false;
+                bgwHilo.RunWorkerAsync();
+            }
+            catch (Exception Ex)
+            {
+
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE EL SISTEMA");
+                return;
+            }
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (CodigoEstado != "")
+            if (estatusCode != "")
             {
-                if (CodigoEstado != "AN")
+                if (estatusCode != "AN")
                 {
-                    posicionX = this.dgvRutas.CurrentRow.Index;
-                    posicionY = this.dgvRutas.CurrentColumn.Index;
+                    //posicionX = this.dgvRutas.CurrentRow.Index;
+                    //posicionY = this.dgvRutas.CurrentColumn.Index;
                     ActivarDesactivarControlEdicion(true);
+                    btnNuevo.Enabled = false;
+                    btnEditar.Enabled = false;
+                    btnGrabar.Enabled = true;
+                    btnActualizarLista.Enabled = false;
+                    btnCancelar.Enabled = true;
+                    btnEliminar.Enabled = false;
+                    btnAnular.Enabled = false;
+                    btnSalir.Enabled = true;
+                    btnExportar.Enabled = false;
                 }
                 else
                 {
@@ -311,19 +422,33 @@ namespace Transportista
         {
             try
             {
-                if (this.CodigoEstado != "")
+                if (this.estatusCode != "")
                 {
-                    if (this.CodigoEstado != "AN")
+                    if (this.estatusCode != "AN")
                     {
-                        posicionX = this.dgvRutas.CurrentRow.Index;
-                        posicionY = this.dgvRutas.CurrentColumn.Index;
+                        //posicionX = this.dgvRutas.CurrentRow.Index;
+                        //posicionY = this.dgvRutas.CurrentColumn.Index;
 
-                        rutaNeg = new SJ_RHRutaNegocios();
-                        rutaNeg.Anular(Convert.ToInt32(CodigoRuta));
+                        model = new SJ_RHRutaNegocios();
+                        model.Anular(Convert.ToInt32(routeCode));
                         RadMessageBox.Show("Anulado correctamente", "Atención");
                         ObtenerListaRutas();
 
-                        dgvRutas.CurrentRow = dgvRutas.Rows[posicionX];
+                        RefreshList();
+
+                        //dgvRutas.CurrentRow = dgvRutas.Rows[posicionX];
+                        ActivarDesactivarControlEdicion(false);
+                        btnNuevo.Enabled = true;
+                        btnEditar.Enabled = true;
+                        btnGrabar.Enabled = false;
+                        btnActualizarLista.Enabled = true;
+                        btnCancelar.Enabled = false;
+                        btnEliminar.Enabled = true;
+                        btnAnular.Enabled = true;
+                        btnSalir.Enabled = true;
+                        btnExportar.Enabled = true;
+
+
                     }
                     else
                     {
@@ -350,26 +475,40 @@ namespace Transportista
         {
             try
             {
-                if (this.CodigoEstado != "")
+                if (this.estatusCode != "")
                 {
-                    if (this.CodigoEstado != "AN")
+                    if (this.estatusCode != "AN")
                     {
-                        posicionX = this.dgvRutas.CurrentRow.Index;
-                        posicionY = this.dgvRutas.CurrentColumn.Index;
+                        //posicionX = this.dgvRutas.CurrentRow.Index;
+                        //posicionY = this.dgvRutas.CurrentColumn.Index;
 
-                        rutaNeg = new SJ_RHRutaNegocios();
-                        rutaNeg.Eliminar(Convert.ToInt32(CodigoRuta));
+                        model = new SJ_RHRutaNegocios();
+                        model.Eliminar(Convert.ToInt32(routeCode));
                         RadMessageBox.Show("Elimiado correctamente", "Atención");
                         ObtenerListaRutas();
 
-                        if (dgvRutas.RowCount >= posicionX)
-                        {
-                            dgvRutas.CurrentRow = dgvRutas.Rows[posicionX];
-                        }
-                        else
-                        {
-                            dgvRutas.CurrentRow = dgvRutas.Rows[dgvRutas.RowCount];
-                        }
+                        //if (dgvRutas.RowCount >= posicionX)
+                        //{
+                        //    dgvRutas.CurrentRow = dgvRutas.Rows[posicionX];
+                        //}
+                        //else
+                        //{
+                        //    dgvRutas.CurrentRow = dgvRutas.Rows[dgvRutas.RowCount];
+                        //}
+
+                        RefreshList();
+
+                        ActivarDesactivarControlEdicion(false);
+                        btnNuevo.Enabled = true;
+                        btnEditar.Enabled = true;
+                        btnGrabar.Enabled = false;
+                        btnActualizarLista.Enabled = true;
+                        btnCancelar.Enabled = false;
+                        btnEliminar.Enabled = true;
+                        btnAnular.Enabled = true;
+                        btnSalir.Enabled = true;
+                        btnExportar.Enabled = true;
+
 
                     }
                     else
@@ -384,7 +523,8 @@ namespace Transportista
             }
             catch (Exception Ex)
             {
-                throw Ex;
+                MessageBox.Show(Ex.Message.ToString(), "Mensaje del sistema");
+                return;
             }
         }
 
@@ -480,8 +620,8 @@ namespace Transportista
                 {
                     try
                     {
-                        CodigoRuta = dgvRutas.CurrentRow.Cells["chId"].Value != null ? Convert.ToString(dgvRutas.CurrentRow.Cells["chId"].Value.ToString()) : "";
-                        this.txtCodigo.Text = CodigoRuta;
+                        routeCode = dgvRutas.CurrentRow.Cells["chId"].Value != null ? Convert.ToString(dgvRutas.CurrentRow.Cells["chId"].Value.ToString()) : "";
+                        this.txtCodigo.Text = routeCode;
                         txtOrigenId.Text = dgvRutas.CurrentRow.Cells["chRutaOrigen"].Value != null ? Convert.ToString(dgvRutas.CurrentRow.Cells["chRutaOrigen"].Value.ToString()) : "";
                         txtRutaOrigen.Text =
                            ((dgvRutas.CurrentRow.Cells["chDepartamentoOrigen"].Value != null ? Convert.ToString(dgvRutas.CurrentRow.Cells["chDepartamentoOrigen"].Value.ToString()) : "") + " / " +
@@ -495,8 +635,8 @@ namespace Transportista
                             ((dgvRutas.CurrentRow.Cells["chDepartamentoDestino"].Value != null ? Convert.ToString(dgvRutas.CurrentRow.Cells["chDepartamentoDestino"].Value.ToString()) : "") + " / " +
                             (dgvRutas.CurrentRow.Cells["chProvinciaDestino"].Value != null ? Convert.ToString(dgvRutas.CurrentRow.Cells["chProvinciaDestino"].Value.ToString()) : "") + " / " +
                             (dgvRutas.CurrentRow.Cells["chDistritoDestino"].Value != null ? Convert.ToString(dgvRutas.CurrentRow.Cells["chDistritoDestino"].Value.ToString()) : ""));
-                        CodigoEstado = dgvRutas.CurrentRow.Cells["chId"].Value != null ? Convert.ToString(dgvRutas.CurrentRow.Cells["chIdEstado"].Value.ToString()) : "";
-                        this.txtIdEstado.Text = CodigoEstado;
+                        estatusCode = dgvRutas.CurrentRow.Cells["chId"].Value != null ? Convert.ToString(dgvRutas.CurrentRow.Cells["chIdEstado"].Value.ToString()) : "";
+                        this.txtIdEstado.Text = estatusCode;
                         this.txtEstado.Text = dgvRutas.CurrentRow.Cells["chId"].Value != null ? Convert.ToString(dgvRutas.CurrentRow.Cells["chEstado"].Value.ToString()) : "";
 
                         txtAbreviaturaRutaOrigen.Text = dgvRutas.CurrentRow.Cells["chabreviaturaRutaOrigen"].Value != null ? Convert.ToString(dgvRutas.CurrentRow.Cells["chabreviaturaRutaOrigen"].Value.ToString()) : "";
@@ -547,9 +687,50 @@ namespace Transportista
         private void bgwHilo_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             MostrarListarRutas();
-            gbTransportista.Enabled = !false;
-            gbMantenimientoRegistros.Enabled = !false;
+            gbList.Enabled = !false;
+            gbEdit.Enabled = false;
             btnMenu.Enabled = !false;
+
+            btnNuevo.Enabled = true;
+            btnEditar.Enabled = true;
+            btnGrabar.Enabled = false;
+            btnActualizarLista.Enabled = true;
+            btnCancelar.Enabled = false;
+            btnEliminar.Enabled = true;
+            btnAnular.Enabled = true;
+            btnSalir.Enabled = true;
+            btnExportar.Enabled = true;
+
+        }
+
+        private void chkEsIngreso_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAbreviaturaRutaOrigen_Leave(object sender, EventArgs e)
+        {
+            if (txtOrigenId.Text != string.Empty && txtRutaOrigen.Text != string.Empty)
+            {
+                // get abbreviated path name || obtener nombre abreviado de ruta origen
+                model = new SJ_RHRutaNegocios();
+                txtDescripcionCortaRutaOrigen.Text = model.GetSourceAbbreviatedPathName(period, txtAbreviaturaRutaOrigen.Text.ToString().Trim(), txtOrigenId.Text);
+            }
+        }
+
+        private void txtOrigenId_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAbreviaturaRutaDestino_Leave(object sender, EventArgs e)
+        {
+            if (txtDestinoId.Text != string.Empty && txtRutaDestino.Text != string.Empty)
+            {
+                // get abbreviated path name || obtener nombre abreviado de ruta destino
+                model = new SJ_RHRutaNegocios();
+                txtDescripcionCortaRutaDestino.Text = model.GetDestinationAbbreviatedPathName(period, txtAbreviaturaRutaDestino.Text.ToString().Trim(), txtDestinoId.Text);
+            }
         }
     }
 }

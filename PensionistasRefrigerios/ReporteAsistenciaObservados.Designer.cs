@@ -1,4 +1,4 @@
-﻿namespace Transportista
+﻿namespace Asistencia
 {
     partial class ReporteAsistenciaObservados
     {
@@ -763,7 +763,7 @@
             this.Controls.Add(this.menuPrincipal);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ReporteAsistenciaObservados";
-            this.Text = "Reporte de asistencia observados";
+            this.Text = "Reporte | Listado de asistencia de personal observado";
             this.Load += new System.EventHandler(this.ReporteAsistenciaObservados_Load);
             this.stsBarraEstado.ResumeLayout(false);
             this.stsBarraEstado.PerformLayout();

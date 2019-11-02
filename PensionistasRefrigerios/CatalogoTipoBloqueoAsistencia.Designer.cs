@@ -1,4 +1,4 @@
-﻿namespace Transportista
+﻿namespace Asistencia
 {
     partial class CatalogoTipoBloqueoAsistencia
     {
@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CatalogoTipoBloqueoAsistencia));
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn2 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
@@ -190,7 +190,7 @@
             // toolStripStatusLabel8
             // 
             this.toolStripStatusLabel8.Name = "toolStripStatusLabel8";
-            this.toolStripStatusLabel8.Size = new System.Drawing.Size(132, 17);
+            this.toolStripStatusLabel8.Size = new System.Drawing.Size(130, 17);
             this.toolStripStatusLabel8.Text = "  Tiempo Transcurrido : ";
             // 
             // lblTiempoTranscurrido
@@ -407,39 +407,39 @@
             this.dgvListado.MasterTemplate.AllowAddNewRow = false;
             this.dgvListado.MasterTemplate.AutoGenerateColumns = false;
             this.dgvListado.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn1.EnableExpressionEditor = false;
-            gridViewTextBoxColumn1.FieldName = "codigoPersonalTipoBloqueo";
-            gridViewTextBoxColumn1.HeaderText = "Código";
-            gridViewTextBoxColumn1.Name = "chcodigoPersonalTipoBloqueo";
-            gridViewTextBoxColumn1.Width = 40;
-            gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "descripcion";
-            gridViewTextBoxColumn2.HeaderText = "Descripción";
-            gridViewTextBoxColumn2.Name = "chdescripcion";
-            gridViewTextBoxColumn2.Width = 252;
-            gridViewTextBoxColumn3.EnableExpressionEditor = false;
-            gridViewTextBoxColumn3.FieldName = "color";
-            gridViewTextBoxColumn3.HeaderText = "Color";
-            gridViewTextBoxColumn3.Name = "chcolor";
-            gridViewTextBoxColumn3.Width = 72;
-            gridViewCheckBoxColumn1.EnableExpressionEditor = false;
-            gridViewCheckBoxColumn1.FieldName = "estado";
-            gridViewCheckBoxColumn1.HeaderText = "Estado";
-            gridViewCheckBoxColumn1.IsVisible = false;
-            gridViewCheckBoxColumn1.MinWidth = 20;
-            gridViewCheckBoxColumn1.Name = "chestado";
-            gridViewCheckBoxColumn1.Width = 43;
-            gridViewTextBoxColumn4.EnableExpressionEditor = false;
-            gridViewTextBoxColumn4.FieldName = "descripcionEstado";
-            gridViewTextBoxColumn4.HeaderText = "Estado";
-            gridViewTextBoxColumn4.Name = "chdescripcionEstado";
-            gridViewTextBoxColumn4.Width = 72;
+            gridViewTextBoxColumn5.EnableExpressionEditor = false;
+            gridViewTextBoxColumn5.FieldName = "codigoPersonalTipoBloqueo";
+            gridViewTextBoxColumn5.HeaderText = "Código";
+            gridViewTextBoxColumn5.Name = "chcodigoPersonalTipoBloqueo";
+            gridViewTextBoxColumn5.Width = 40;
+            gridViewTextBoxColumn6.EnableExpressionEditor = false;
+            gridViewTextBoxColumn6.FieldName = "descripcion";
+            gridViewTextBoxColumn6.HeaderText = "Descripción";
+            gridViewTextBoxColumn6.Name = "chdescripcion";
+            gridViewTextBoxColumn6.Width = 252;
+            gridViewTextBoxColumn7.EnableExpressionEditor = false;
+            gridViewTextBoxColumn7.FieldName = "color";
+            gridViewTextBoxColumn7.HeaderText = "Color";
+            gridViewTextBoxColumn7.Name = "chcolor";
+            gridViewTextBoxColumn7.Width = 72;
+            gridViewCheckBoxColumn2.EnableExpressionEditor = false;
+            gridViewCheckBoxColumn2.FieldName = "estado";
+            gridViewCheckBoxColumn2.HeaderText = "Estado";
+            gridViewCheckBoxColumn2.IsVisible = false;
+            gridViewCheckBoxColumn2.MinWidth = 20;
+            gridViewCheckBoxColumn2.Name = "chestado";
+            gridViewCheckBoxColumn2.Width = 43;
+            gridViewTextBoxColumn8.EnableExpressionEditor = false;
+            gridViewTextBoxColumn8.FieldName = "descripcionEstado";
+            gridViewTextBoxColumn8.HeaderText = "Estado";
+            gridViewTextBoxColumn8.Name = "chdescripcionEstado";
+            gridViewTextBoxColumn8.Width = 72;
             this.dgvListado.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3,
-            gridViewCheckBoxColumn1,
-            gridViewTextBoxColumn4});
+            gridViewTextBoxColumn5,
+            gridViewTextBoxColumn6,
+            gridViewTextBoxColumn7,
+            gridViewCheckBoxColumn2,
+            gridViewTextBoxColumn8});
             this.dgvListado.MasterTemplate.EnableAlternatingRowColor = true;
             this.dgvListado.MasterTemplate.EnableFiltering = true;
             this.dgvListado.MasterTemplate.ShowHeaderCellButtons = true;
@@ -491,9 +491,9 @@
             this.btnRRHH.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnRRHH.DisplayName = "Recursos Humanos";
             this.btnRRHH.DrawText = true;
-            this.btnRRHH.Image = global::Transportista.Properties.Resources.compras1;
+            this.btnRRHH.Image = ((System.Drawing.Image)(resources.GetObject("btnRRHH.Image")));
             this.btnRRHH.Name = "btnRRHH";
-            this.btnRRHH.Text = "     Compras";
+            this.btnRRHH.Text = "  Recursos Humanos";
             this.btnRRHH.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRRHH.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnRRHH.ToolTipText = "Recursos Humanos";
@@ -643,6 +643,7 @@
             this.Controls.Add(this.gbListado);
             this.Controls.Add(this.mnPrincipal);
             this.Controls.Add(this.stsBarraEstado);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CatalogoTipoBloqueoAsistencia";
             this.Text = "Motivos para bloqueo para asistencia";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

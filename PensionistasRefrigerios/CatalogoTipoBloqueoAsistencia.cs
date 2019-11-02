@@ -2,31 +2,20 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Linq;
 using System.Windows.Forms;
-using System.Globalization;
-using MyControlsDataBinding;
 using MyControlsDataBinding.Extensions;
-using MyControlsDataBinding.Controles;
-using MyControlsDataBinding.Datos;
-using MyControlsDataBinding.Busquedas;
-using MyControlsDataBinding.Clases;
-using MyControlsDataBinding.ControlesUsuario;
-using System.Collections;
 using Telerik.WinControls.UI.Localization;
 using Telerik.WinControls.UI;
 using Telerik.WinControls.UI.Export;
 using Telerik.WinControls;
 using System.IO;
 using System.Configuration;
+using Asistencia.Negocios;
+using Asistencia.Datos;
 
-using TransportistaMto.Datos;
-using Transportista.Negocios;
-using TransportistaMto.Negocios;
 
-namespace Transportista
+namespace Asistencia
 {
 
     public partial class CatalogoTipoBloqueoAsistencia : Form
@@ -36,7 +25,7 @@ namespace Transportista
         private string fileName;
         private bool exportVisualSettings;        
 
-        private ASJ_TipoBloqueoParaAsistenciaNegocio modelo;
+        private TipoBloqueoParaAsistenciaController modelo;
         private List<ASJ_ObtenerListadoDeTipoPersonalbloqueadoResult> listado;        
         private ASJ_ObtenerListadoDeTipoPersonalbloqueadoResult oTipoBloqueoSeleccionado;
         private ASJ_PersonalTipoBloqueo personalBloqueo;
@@ -44,10 +33,10 @@ namespace Transportista
         public CatalogoTipoBloqueoAsistencia()
         {
             InitializeComponent();
-            RadGridLocalizationProvider.CurrentProvider = new Transportista.ClaseTelerik.GridLocalizationProviderEspanol();
-            RadPageViewLocalizationProvider.CurrentProvider = new Transportista.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
-            RadWizardLocalizationProvider.CurrentProvider = new Transportista.ClaseTelerik.RadWizardLocalizationProviderEspañol();
-            RadMessageLocalizationProvider.CurrentProvider = new Transportista.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
+            RadGridLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.GridLocalizationProviderEspanol();
+            RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
+            RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
+            RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
             Inicio();
             Consultar();
         }
@@ -80,7 +69,7 @@ namespace Transportista
 
         private void bgwHilo_DoWork(object sender, DoWorkEventArgs e)
         {
-            modelo = new ASJ_TipoBloqueoParaAsistenciaNegocio();
+            modelo = new TipoBloqueoParaAsistenciaController();
             listado = new List<ASJ_ObtenerListadoDeTipoPersonalbloqueadoResult>();
             listado = modelo.ObtenerListadoTipoBloqueo(periodoConsulta).ToList();
 

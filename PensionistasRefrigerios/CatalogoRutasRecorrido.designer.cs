@@ -1,4 +1,4 @@
-﻿namespace Transportista
+﻿namespace Asistencia
 {
     partial class CatalogoRutasRecorrido
     {
@@ -30,27 +30,29 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CatalogoRutasRecorrido));
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.ConditionalFormattingObject conditionalFormattingObject1 = new Telerik.WinControls.UI.ConditionalFormattingObject();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn15 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn16 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn17 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn18 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn19 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            this.gbMantenimientoRegistros = new Telerik.WinControls.UI.RadGroupBox();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn39 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn40 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.ConditionalFormattingObject conditionalFormattingObject3 = new Telerik.WinControls.UI.ConditionalFormattingObject();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn41 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn42 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn43 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn44 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn45 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn46 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn47 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn48 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn49 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn50 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn51 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn52 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn53 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn54 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn55 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn56 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn57 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            this.gbEdit = new Telerik.WinControls.UI.RadGroupBox();
+            this.chkGenerarIdaVuelta = new System.Windows.Forms.CheckBox();
+            this.chkEsIngreso = new System.Windows.Forms.CheckBox();
             this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.gbRutaDestino = new Telerik.WinControls.UI.RadGroupBox();
@@ -87,11 +89,11 @@
             this.txtEstado = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.dgvRutas = new Telerik.WinControls.UI.RadGridView();
-            this.gbTransportista = new Telerik.WinControls.UI.RadGroupBox();
+            this.gbList = new Telerik.WinControls.UI.RadGroupBox();
             this.btnMenu = new Telerik.WinControls.UI.RadCommandBar();
             this.BarraSuperior = new Telerik.WinControls.UI.CommandBarRowElement();
             this.BarraModulo = new Telerik.WinControls.UI.CommandBarStripElement();
-            this.btnRRHH = new Telerik.WinControls.UI.CommandBarButton();
+            this.btnTransportes = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarStripElement3 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.btnNuevo = new Telerik.WinControls.UI.CommandBarButton();
             this.btnActualizarLista = new Telerik.WinControls.UI.CommandBarButton();
@@ -103,10 +105,10 @@
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
-            this.chkEsIngreso = new System.Windows.Forms.CheckBox();
             this.bgwHilo = new System.ComponentModel.BackgroundWorker();
-            ((System.ComponentModel.ISupportInitialize)(this.gbMantenimientoRegistros)).BeginInit();
-            this.gbMantenimientoRegistros.SuspendLayout();
+            this.commandBarRowElement1 = new Telerik.WinControls.UI.CommandBarRowElement();
+            ((System.ComponentModel.ISupportInitialize)(this.gbEdit)).BeginInit();
+            this.gbEdit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
@@ -141,45 +143,70 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRutas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRutas.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gbTransportista)).BeginInit();
-            this.gbTransportista.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gbList)).BeginInit();
+            this.gbList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
-            // gbMantenimientoRegistros
+            // gbEdit
             // 
-            this.gbMantenimientoRegistros.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
-            this.gbMantenimientoRegistros.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.gbEdit.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.gbEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbMantenimientoRegistros.Controls.Add(this.chkEsIngreso);
-            this.gbMantenimientoRegistros.Controls.Add(this.radLabel6);
-            this.gbMantenimientoRegistros.Controls.Add(this.radGroupBox1);
-            this.gbMantenimientoRegistros.Controls.Add(this.radLabel5);
-            this.gbMantenimientoRegistros.Controls.Add(this.txtDuracion);
-            this.gbMantenimientoRegistros.Controls.Add(this.radLabel10);
-            this.gbMantenimientoRegistros.Controls.Add(this.radLabel8);
-            this.gbMantenimientoRegistros.Controls.Add(this.txtDistancia);
-            this.gbMantenimientoRegistros.Controls.Add(this.txtIdEstado);
-            this.gbMantenimientoRegistros.Controls.Add(this.radLabel7);
-            this.gbMantenimientoRegistros.Controls.Add(this.btnGrabar);
-            this.gbMantenimientoRegistros.Controls.Add(this.btnCancelar);
-            this.gbMantenimientoRegistros.Controls.Add(this.radLabel4);
-            this.gbMantenimientoRegistros.Controls.Add(this.txtObservacion);
-            this.gbMantenimientoRegistros.Controls.Add(this.radLabel1);
-            this.gbMantenimientoRegistros.Controls.Add(this.txtCodigo);
-            this.gbMantenimientoRegistros.Controls.Add(this.txtEstado);
-            this.gbMantenimientoRegistros.Controls.Add(this.radLabel2);
-            this.gbMantenimientoRegistros.Enabled = false;
-            this.gbMantenimientoRegistros.HeaderText = " Mantenimiento";
-            this.gbMantenimientoRegistros.Location = new System.Drawing.Point(734, 39);
-            this.gbMantenimientoRegistros.Name = "gbMantenimientoRegistros";
-            this.gbMantenimientoRegistros.Padding = new System.Windows.Forms.Padding(2, 22, 2, 2);
-            this.gbMantenimientoRegistros.Size = new System.Drawing.Size(549, 576);
-            this.gbMantenimientoRegistros.TabIndex = 0;
-            this.gbMantenimientoRegistros.Tag = "";
-            this.gbMantenimientoRegistros.Text = " Mantenimiento";
-            this.gbMantenimientoRegistros.ThemeName = "Windows8";
+            this.gbEdit.Controls.Add(this.chkGenerarIdaVuelta);
+            this.gbEdit.Controls.Add(this.chkEsIngreso);
+            this.gbEdit.Controls.Add(this.radLabel6);
+            this.gbEdit.Controls.Add(this.radGroupBox1);
+            this.gbEdit.Controls.Add(this.radLabel5);
+            this.gbEdit.Controls.Add(this.txtDuracion);
+            this.gbEdit.Controls.Add(this.radLabel10);
+            this.gbEdit.Controls.Add(this.radLabel8);
+            this.gbEdit.Controls.Add(this.txtDistancia);
+            this.gbEdit.Controls.Add(this.txtIdEstado);
+            this.gbEdit.Controls.Add(this.radLabel7);
+            this.gbEdit.Controls.Add(this.btnGrabar);
+            this.gbEdit.Controls.Add(this.btnCancelar);
+            this.gbEdit.Controls.Add(this.radLabel4);
+            this.gbEdit.Controls.Add(this.txtObservacion);
+            this.gbEdit.Controls.Add(this.radLabel1);
+            this.gbEdit.Controls.Add(this.txtCodigo);
+            this.gbEdit.Controls.Add(this.txtEstado);
+            this.gbEdit.Controls.Add(this.radLabel2);
+            this.gbEdit.Enabled = false;
+            this.gbEdit.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office;
+            this.gbEdit.HeaderText = " Mantenimiento";
+            this.gbEdit.Location = new System.Drawing.Point(734, 39);
+            this.gbEdit.Name = "gbEdit";
+            this.gbEdit.Padding = new System.Windows.Forms.Padding(2, 22, 2, 2);
+            this.gbEdit.Size = new System.Drawing.Size(549, 576);
+            this.gbEdit.TabIndex = 0;
+            this.gbEdit.Tag = "";
+            this.gbEdit.Text = " Mantenimiento";
+            this.gbEdit.ThemeName = "VisualStudio2012Light";
+            // 
+            // chkGenerarIdaVuelta
+            // 
+            this.chkGenerarIdaVuelta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkGenerarIdaVuelta.AutoSize = true;
+            this.chkGenerarIdaVuelta.Location = new System.Drawing.Point(416, 283);
+            this.chkGenerarIdaVuelta.Name = "chkGenerarIdaVuelta";
+            this.chkGenerarIdaVuelta.Size = new System.Drawing.Size(128, 17);
+            this.chkGenerarIdaVuelta.TabIndex = 27;
+            this.chkGenerarIdaVuelta.Text = "Generar ida y vuelta";
+            this.chkGenerarIdaVuelta.UseVisualStyleBackColor = true;
+            // 
+            // chkEsIngreso
+            // 
+            this.chkEsIngreso.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkEsIngreso.AutoSize = true;
+            this.chkEsIngreso.Location = new System.Drawing.Point(425, 315);
+            this.chkEsIngreso.Name = "chkEsIngreso";
+            this.chkEsIngreso.Size = new System.Drawing.Size(119, 17);
+            this.chkEsIngreso.TabIndex = 26;
+            this.chkEsIngreso.Text = "Es ruta de ingreso";
+            this.chkEsIngreso.UseVisualStyleBackColor = true;
+            this.chkEsIngreso.CheckedChanged += new System.EventHandler(this.chkEsIngreso_CheckedChanged);
             // 
             // radLabel6
             // 
@@ -196,14 +223,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.radGroupBox1.Controls.Add(this.gbRutaDestino);
             this.radGroupBox1.Controls.Add(this.gbRutaOrigen);
-            this.radGroupBox1.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office;
             this.radGroupBox1.HeaderText = "Descripción de rutas";
             this.radGroupBox1.Location = new System.Drawing.Point(5, 53);
             this.radGroupBox1.Name = "radGroupBox1";
             this.radGroupBox1.Size = new System.Drawing.Size(539, 216);
             this.radGroupBox1.TabIndex = 7;
             this.radGroupBox1.Text = "Descripción de rutas";
-            this.radGroupBox1.ThemeName = "Windows8";
+            this.radGroupBox1.ThemeName = "VisualStudio2012Light";
             // 
             // gbRutaDestino
             // 
@@ -218,13 +244,14 @@
             this.gbRutaDestino.Controls.Add(this.lblAbreviaturaRutaDestino);
             this.gbRutaDestino.Controls.Add(this.txtAbreviaturaRutaDestino);
             this.gbRutaDestino.Controls.Add(this.txtRutaDestino);
+            this.gbRutaDestino.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office;
             this.gbRutaDestino.HeaderText = "Ruta Destino ";
             this.gbRutaDestino.Location = new System.Drawing.Point(5, 117);
             this.gbRutaDestino.Name = "gbRutaDestino";
             this.gbRutaDestino.Size = new System.Drawing.Size(530, 81);
             this.gbRutaDestino.TabIndex = 163;
             this.gbRutaDestino.Text = "Ruta Destino ";
-            this.gbRutaDestino.ThemeName = "Windows8";
+            this.gbRutaDestino.ThemeName = "VisualStudio2012Light";
             // 
             // radLabel11
             // 
@@ -334,6 +361,7 @@
             this.txtAbreviaturaRutaDestino.TabIndex = 163;
             this.txtAbreviaturaRutaDestino.TabStop = false;
             this.txtAbreviaturaRutaDestino.ThemeName = "VisualStudio2012Light";
+            this.txtAbreviaturaRutaDestino.Leave += new System.EventHandler(this.txtAbreviaturaRutaDestino_Leave);
             // 
             // gbRutaOrigen
             // 
@@ -348,13 +376,14 @@
             this.gbRutaOrigen.Controls.Add(this.txtOrigenId);
             this.gbRutaOrigen.Controls.Add(this.txtRutaOrigen);
             this.gbRutaOrigen.Controls.Add(this.btnOrigen);
+            this.gbRutaOrigen.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office;
             this.gbRutaOrigen.HeaderText = "Ruta Origen";
             this.gbRutaOrigen.Location = new System.Drawing.Point(4, 30);
             this.gbRutaOrigen.Name = "gbRutaOrigen";
             this.gbRutaOrigen.Size = new System.Drawing.Size(530, 81);
             this.gbRutaOrigen.TabIndex = 26;
             this.gbRutaOrigen.Text = "Ruta Origen";
-            this.gbRutaOrigen.ThemeName = "Windows8";
+            this.gbRutaOrigen.ThemeName = "VisualStudio2012Light";
             // 
             // lblDescripcionCortaRutaOrigen
             // 
@@ -395,6 +424,7 @@
             this.txtAbreviaturaRutaOrigen.TabIndex = 163;
             this.txtAbreviaturaRutaOrigen.TabStop = false;
             this.txtAbreviaturaRutaOrigen.ThemeName = "VisualStudio2012Light";
+            this.txtAbreviaturaRutaOrigen.Leave += new System.EventHandler(this.txtAbreviaturaRutaOrigen_Leave);
             // 
             // radLabel3
             // 
@@ -425,6 +455,7 @@
             this.txtOrigenId.TabIndex = 10;
             this.txtOrigenId.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtOrigenId.TextChanged += new System.EventHandler(this.txtOrigenId_TextChanged);
+            this.txtOrigenId.Leave += new System.EventHandler(this.txtOrigenId_Leave);
             // 
             // btnOrigen
             // 
@@ -476,6 +507,7 @@
             // txtDuracion
             // 
             this.txtDuracion.Location = new System.Drawing.Point(168, 282);
+            this.txtDuracion.MaxLength = 4;
             this.txtDuracion.Name = "txtDuracion";
             this.txtDuracion.Size = new System.Drawing.Size(77, 20);
             this.txtDuracion.TabIndex = 20;
@@ -502,6 +534,7 @@
             // txtDistancia
             // 
             this.txtDistancia.Location = new System.Drawing.Point(169, 315);
+            this.txtDistancia.MaxLength = 6;
             this.txtDistancia.Name = "txtDistancia";
             this.txtDistancia.Size = new System.Drawing.Size(77, 20);
             this.txtDistancia.TabIndex = 17;
@@ -531,12 +564,12 @@
             // btnGrabar
             // 
             this.btnGrabar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnGrabar.Location = new System.Drawing.Point(329, 547);
+            this.btnGrabar.Location = new System.Drawing.Point(326, 547);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(102, 24);
             this.btnGrabar.TabIndex = 25;
             this.btnGrabar.Text = "Grabar";
-            this.btnGrabar.ThemeName = "Windows8";
+            this.btnGrabar.ThemeName = "VisualStudio2012Light";
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
             // btnCancelar
@@ -547,7 +580,7 @@
             this.btnCancelar.Size = new System.Drawing.Size(102, 24);
             this.btnCancelar.TabIndex = 24;
             this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.ThemeName = "Windows8";
+            this.btnCancelar.ThemeName = "VisualStudio2012Light";
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // radLabel4
@@ -625,140 +658,140 @@
             // 
             this.dgvRutas.MasterTemplate.AllowAddNewRow = false;
             this.dgvRutas.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn1.EnableExpressionEditor = false;
-            gridViewTextBoxColumn1.FieldName = "Id";
-            gridViewTextBoxColumn1.HeaderText = "Id";
-            gridViewTextBoxColumn1.IsVisible = false;
-            gridViewTextBoxColumn1.Name = "chId";
-            conditionalFormattingObject1.CellBackColor = System.Drawing.Color.Empty;
-            conditionalFormattingObject1.CellFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            conditionalFormattingObject1.CellForeColor = System.Drawing.Color.Empty;
-            conditionalFormattingObject1.Name = "NewCondition";
-            conditionalFormattingObject1.RowBackColor = System.Drawing.Color.Empty;
-            conditionalFormattingObject1.RowFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            conditionalFormattingObject1.RowForeColor = System.Drawing.Color.Empty;
-            gridViewTextBoxColumn2.ConditionalFormattingObjectList.Add(conditionalFormattingObject1);
-            gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "RutaOrigen";
-            gridViewTextBoxColumn2.HeaderText = "RutaOrigen";
-            gridViewTextBoxColumn2.IsVisible = false;
-            gridViewTextBoxColumn2.Name = "chRutaOrigen";
-            gridViewTextBoxColumn3.EnableExpressionEditor = false;
-            gridViewTextBoxColumn3.FieldName = "DepartamentoOrigen";
-            gridViewTextBoxColumn3.HeaderText = "DepartamentoOrigen";
-            gridViewTextBoxColumn3.IsVisible = false;
-            gridViewTextBoxColumn3.Name = "chDepartamentoOrigen";
-            gridViewTextBoxColumn3.Width = 120;
-            gridViewTextBoxColumn4.EnableExpressionEditor = false;
-            gridViewTextBoxColumn4.FieldName = "ProvinciaOrigen";
-            gridViewTextBoxColumn4.HeaderText = "ProvinciaOrigen";
-            gridViewTextBoxColumn4.IsVisible = false;
-            gridViewTextBoxColumn4.Name = "chProvinciaOrigen";
-            gridViewTextBoxColumn4.Width = 120;
-            gridViewTextBoxColumn5.EnableExpressionEditor = false;
-            gridViewTextBoxColumn5.FieldName = "abreviaturaRutaOrigen";
-            gridViewTextBoxColumn5.HeaderText = "Abrev. O";
-            gridViewTextBoxColumn5.Name = "chabreviaturaRutaOrigen";
-            gridViewTextBoxColumn5.Width = 63;
-            gridViewTextBoxColumn6.EnableExpressionEditor = false;
-            gridViewTextBoxColumn6.FieldName = "descripcionCortaOrigen";
-            gridViewTextBoxColumn6.HeaderText = "Origen";
-            gridViewTextBoxColumn6.Name = "chdescripcionCortaOrigen";
-            gridViewTextBoxColumn6.Width = 185;
-            gridViewTextBoxColumn7.EnableExpressionEditor = false;
-            gridViewTextBoxColumn7.FieldName = "DistritoOrigen";
-            gridViewTextBoxColumn7.HeaderText = "DistritoOrigen";
-            gridViewTextBoxColumn7.IsVisible = false;
-            gridViewTextBoxColumn7.Name = "chDistritoOrigen";
-            gridViewTextBoxColumn7.Width = 190;
-            gridViewTextBoxColumn8.EnableExpressionEditor = false;
-            gridViewTextBoxColumn8.FieldName = "RutaDestino";
-            gridViewTextBoxColumn8.HeaderText = "RutaDestino";
-            gridViewTextBoxColumn8.IsVisible = false;
-            gridViewTextBoxColumn8.Name = "chRutaDestino";
-            gridViewTextBoxColumn9.EnableExpressionEditor = false;
-            gridViewTextBoxColumn9.FieldName = "DepartamentoDestino";
-            gridViewTextBoxColumn9.HeaderText = "DepartamentoDestino";
-            gridViewTextBoxColumn9.IsVisible = false;
-            gridViewTextBoxColumn9.Name = "chDepartamentoDestino";
-            gridViewTextBoxColumn9.Width = 120;
-            gridViewTextBoxColumn10.EnableExpressionEditor = false;
-            gridViewTextBoxColumn10.FieldName = "ProvinciaDestino";
-            gridViewTextBoxColumn10.HeaderText = "ProvinciaDestino";
-            gridViewTextBoxColumn10.IsVisible = false;
-            gridViewTextBoxColumn10.Name = "chProvinciaDestino";
-            gridViewTextBoxColumn10.Width = 120;
-            gridViewTextBoxColumn11.EnableExpressionEditor = false;
-            gridViewTextBoxColumn11.FieldName = "abreviaturaRuraDestino";
-            gridViewTextBoxColumn11.HeaderText = "Abrev. D";
-            gridViewTextBoxColumn11.Name = "chabreviaturaRuraDestino";
-            gridViewTextBoxColumn11.Width = 57;
-            gridViewTextBoxColumn12.EnableExpressionEditor = false;
-            gridViewTextBoxColumn12.FieldName = "DistritoDestino";
-            gridViewTextBoxColumn12.HeaderText = "DistritoDestino";
-            gridViewTextBoxColumn12.IsVisible = false;
-            gridViewTextBoxColumn12.Name = "chDistritoDestino";
-            gridViewTextBoxColumn12.Width = 286;
-            gridViewTextBoxColumn13.EnableExpressionEditor = false;
-            gridViewTextBoxColumn13.FieldName = "descripcionCortaDestino";
-            gridViewTextBoxColumn13.HeaderText = "Destino";
-            gridViewTextBoxColumn13.Name = "chdescripcionCortaDestino";
-            gridViewTextBoxColumn13.Width = 187;
-            gridViewTextBoxColumn14.EnableExpressionEditor = false;
-            gridViewTextBoxColumn14.FieldName = "Distancia";
-            gridViewTextBoxColumn14.FormatString = "{0:N2} Km";
-            gridViewTextBoxColumn14.HeaderText = "Distancia";
-            gridViewTextBoxColumn14.Name = "chDistancia";
-            gridViewTextBoxColumn14.Width = 108;
-            gridViewTextBoxColumn15.EnableExpressionEditor = false;
-            gridViewTextBoxColumn15.FieldName = "TiempoViaje";
-            gridViewTextBoxColumn15.FormatString = "{0:N2} Hrs";
-            gridViewTextBoxColumn15.HeaderText = "Duración Viaje";
-            gridViewTextBoxColumn15.Name = "chDuracionViaje";
-            gridViewTextBoxColumn15.Width = 95;
-            gridViewTextBoxColumn16.EnableExpressionEditor = false;
-            gridViewTextBoxColumn16.FieldName = "Observacion";
-            gridViewTextBoxColumn16.HeaderText = "Observacion";
-            gridViewTextBoxColumn16.IsVisible = false;
-            gridViewTextBoxColumn16.Name = "chObservacion";
-            gridViewTextBoxColumn17.EnableExpressionEditor = false;
-            gridViewTextBoxColumn17.FieldName = "IdEstado";
-            gridViewTextBoxColumn17.HeaderText = "IdEstado";
-            gridViewTextBoxColumn17.IsVisible = false;
-            gridViewTextBoxColumn17.Name = "chIdEstado";
-            gridViewTextBoxColumn17.Width = 120;
-            gridViewTextBoxColumn18.EnableExpressionEditor = false;
-            gridViewTextBoxColumn18.FieldName = "Estado";
-            gridViewTextBoxColumn18.HeaderText = "Estado";
-            gridViewTextBoxColumn18.IsVisible = false;
-            gridViewTextBoxColumn18.Name = "chEstado";
-            gridViewTextBoxColumn18.Width = 110;
-            gridViewTextBoxColumn19.EnableExpressionEditor = false;
-            gridViewTextBoxColumn19.FieldName = "esIngreso";
-            gridViewTextBoxColumn19.HeaderText = "esIngreso";
-            gridViewTextBoxColumn19.IsVisible = false;
-            gridViewTextBoxColumn19.Name = "chesIngreso";
-            gridViewTextBoxColumn19.Width = 46;
+            gridViewTextBoxColumn39.EnableExpressionEditor = false;
+            gridViewTextBoxColumn39.FieldName = "Id";
+            gridViewTextBoxColumn39.HeaderText = "Id";
+            gridViewTextBoxColumn39.IsVisible = false;
+            gridViewTextBoxColumn39.Name = "chId";
+            conditionalFormattingObject3.CellBackColor = System.Drawing.Color.Empty;
+            conditionalFormattingObject3.CellFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            conditionalFormattingObject3.CellForeColor = System.Drawing.Color.Empty;
+            conditionalFormattingObject3.Name = "NewCondition";
+            conditionalFormattingObject3.RowBackColor = System.Drawing.Color.Empty;
+            conditionalFormattingObject3.RowFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            conditionalFormattingObject3.RowForeColor = System.Drawing.Color.Empty;
+            gridViewTextBoxColumn40.ConditionalFormattingObjectList.Add(conditionalFormattingObject3);
+            gridViewTextBoxColumn40.EnableExpressionEditor = false;
+            gridViewTextBoxColumn40.FieldName = "RutaOrigen";
+            gridViewTextBoxColumn40.HeaderText = "RutaOrigen";
+            gridViewTextBoxColumn40.IsVisible = false;
+            gridViewTextBoxColumn40.Name = "chRutaOrigen";
+            gridViewTextBoxColumn41.EnableExpressionEditor = false;
+            gridViewTextBoxColumn41.FieldName = "DepartamentoOrigen";
+            gridViewTextBoxColumn41.HeaderText = "DepartamentoOrigen";
+            gridViewTextBoxColumn41.IsVisible = false;
+            gridViewTextBoxColumn41.Name = "chDepartamentoOrigen";
+            gridViewTextBoxColumn41.Width = 120;
+            gridViewTextBoxColumn42.EnableExpressionEditor = false;
+            gridViewTextBoxColumn42.FieldName = "ProvinciaOrigen";
+            gridViewTextBoxColumn42.HeaderText = "ProvinciaOrigen";
+            gridViewTextBoxColumn42.IsVisible = false;
+            gridViewTextBoxColumn42.Name = "chProvinciaOrigen";
+            gridViewTextBoxColumn42.Width = 120;
+            gridViewTextBoxColumn43.EnableExpressionEditor = false;
+            gridViewTextBoxColumn43.FieldName = "abreviaturaRutaOrigen";
+            gridViewTextBoxColumn43.HeaderText = "Abrev. O";
+            gridViewTextBoxColumn43.Name = "chabreviaturaRutaOrigen";
+            gridViewTextBoxColumn43.Width = 63;
+            gridViewTextBoxColumn44.EnableExpressionEditor = false;
+            gridViewTextBoxColumn44.FieldName = "descripcionCortaOrigen";
+            gridViewTextBoxColumn44.HeaderText = "Origen";
+            gridViewTextBoxColumn44.Name = "chdescripcionCortaOrigen";
+            gridViewTextBoxColumn44.Width = 185;
+            gridViewTextBoxColumn45.EnableExpressionEditor = false;
+            gridViewTextBoxColumn45.FieldName = "DistritoOrigen";
+            gridViewTextBoxColumn45.HeaderText = "DistritoOrigen";
+            gridViewTextBoxColumn45.IsVisible = false;
+            gridViewTextBoxColumn45.Name = "chDistritoOrigen";
+            gridViewTextBoxColumn45.Width = 190;
+            gridViewTextBoxColumn46.EnableExpressionEditor = false;
+            gridViewTextBoxColumn46.FieldName = "RutaDestino";
+            gridViewTextBoxColumn46.HeaderText = "RutaDestino";
+            gridViewTextBoxColumn46.IsVisible = false;
+            gridViewTextBoxColumn46.Name = "chRutaDestino";
+            gridViewTextBoxColumn47.EnableExpressionEditor = false;
+            gridViewTextBoxColumn47.FieldName = "DepartamentoDestino";
+            gridViewTextBoxColumn47.HeaderText = "DepartamentoDestino";
+            gridViewTextBoxColumn47.IsVisible = false;
+            gridViewTextBoxColumn47.Name = "chDepartamentoDestino";
+            gridViewTextBoxColumn47.Width = 120;
+            gridViewTextBoxColumn48.EnableExpressionEditor = false;
+            gridViewTextBoxColumn48.FieldName = "ProvinciaDestino";
+            gridViewTextBoxColumn48.HeaderText = "ProvinciaDestino";
+            gridViewTextBoxColumn48.IsVisible = false;
+            gridViewTextBoxColumn48.Name = "chProvinciaDestino";
+            gridViewTextBoxColumn48.Width = 120;
+            gridViewTextBoxColumn49.EnableExpressionEditor = false;
+            gridViewTextBoxColumn49.FieldName = "abreviaturaRuraDestino";
+            gridViewTextBoxColumn49.HeaderText = "Abrev. D";
+            gridViewTextBoxColumn49.Name = "chabreviaturaRuraDestino";
+            gridViewTextBoxColumn49.Width = 57;
+            gridViewTextBoxColumn50.EnableExpressionEditor = false;
+            gridViewTextBoxColumn50.FieldName = "DistritoDestino";
+            gridViewTextBoxColumn50.HeaderText = "DistritoDestino";
+            gridViewTextBoxColumn50.IsVisible = false;
+            gridViewTextBoxColumn50.Name = "chDistritoDestino";
+            gridViewTextBoxColumn50.Width = 286;
+            gridViewTextBoxColumn51.EnableExpressionEditor = false;
+            gridViewTextBoxColumn51.FieldName = "descripcionCortaDestino";
+            gridViewTextBoxColumn51.HeaderText = "Destino";
+            gridViewTextBoxColumn51.Name = "chdescripcionCortaDestino";
+            gridViewTextBoxColumn51.Width = 187;
+            gridViewTextBoxColumn52.EnableExpressionEditor = false;
+            gridViewTextBoxColumn52.FieldName = "Distancia";
+            gridViewTextBoxColumn52.FormatString = "{0:N2} Km";
+            gridViewTextBoxColumn52.HeaderText = "Distancia";
+            gridViewTextBoxColumn52.Name = "chDistancia";
+            gridViewTextBoxColumn52.Width = 108;
+            gridViewTextBoxColumn53.EnableExpressionEditor = false;
+            gridViewTextBoxColumn53.FieldName = "TiempoViaje";
+            gridViewTextBoxColumn53.FormatString = "{0:N2} Hrs";
+            gridViewTextBoxColumn53.HeaderText = "Duración Viaje";
+            gridViewTextBoxColumn53.Name = "chDuracionViaje";
+            gridViewTextBoxColumn53.Width = 95;
+            gridViewTextBoxColumn54.EnableExpressionEditor = false;
+            gridViewTextBoxColumn54.FieldName = "Observacion";
+            gridViewTextBoxColumn54.HeaderText = "Observacion";
+            gridViewTextBoxColumn54.IsVisible = false;
+            gridViewTextBoxColumn54.Name = "chObservacion";
+            gridViewTextBoxColumn55.EnableExpressionEditor = false;
+            gridViewTextBoxColumn55.FieldName = "IdEstado";
+            gridViewTextBoxColumn55.HeaderText = "IdEstado";
+            gridViewTextBoxColumn55.IsVisible = false;
+            gridViewTextBoxColumn55.Name = "chIdEstado";
+            gridViewTextBoxColumn55.Width = 120;
+            gridViewTextBoxColumn56.EnableExpressionEditor = false;
+            gridViewTextBoxColumn56.FieldName = "Estado";
+            gridViewTextBoxColumn56.HeaderText = "Estado";
+            gridViewTextBoxColumn56.IsVisible = false;
+            gridViewTextBoxColumn56.Name = "chEstado";
+            gridViewTextBoxColumn56.Width = 110;
+            gridViewTextBoxColumn57.EnableExpressionEditor = false;
+            gridViewTextBoxColumn57.FieldName = "esIngreso";
+            gridViewTextBoxColumn57.HeaderText = "esIngreso";
+            gridViewTextBoxColumn57.IsVisible = false;
+            gridViewTextBoxColumn57.Name = "chesIngreso";
+            gridViewTextBoxColumn57.Width = 46;
             this.dgvRutas.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4,
-            gridViewTextBoxColumn5,
-            gridViewTextBoxColumn6,
-            gridViewTextBoxColumn7,
-            gridViewTextBoxColumn8,
-            gridViewTextBoxColumn9,
-            gridViewTextBoxColumn10,
-            gridViewTextBoxColumn11,
-            gridViewTextBoxColumn12,
-            gridViewTextBoxColumn13,
-            gridViewTextBoxColumn14,
-            gridViewTextBoxColumn15,
-            gridViewTextBoxColumn16,
-            gridViewTextBoxColumn17,
-            gridViewTextBoxColumn18,
-            gridViewTextBoxColumn19});
+            gridViewTextBoxColumn39,
+            gridViewTextBoxColumn40,
+            gridViewTextBoxColumn41,
+            gridViewTextBoxColumn42,
+            gridViewTextBoxColumn43,
+            gridViewTextBoxColumn44,
+            gridViewTextBoxColumn45,
+            gridViewTextBoxColumn46,
+            gridViewTextBoxColumn47,
+            gridViewTextBoxColumn48,
+            gridViewTextBoxColumn49,
+            gridViewTextBoxColumn50,
+            gridViewTextBoxColumn51,
+            gridViewTextBoxColumn52,
+            gridViewTextBoxColumn53,
+            gridViewTextBoxColumn54,
+            gridViewTextBoxColumn55,
+            gridViewTextBoxColumn56,
+            gridViewTextBoxColumn57});
             this.dgvRutas.MasterTemplate.EnableAlternatingRowColor = true;
             this.dgvRutas.MasterTemplate.EnableFiltering = true;
             this.dgvRutas.MasterTemplate.MultiSelect = true;
@@ -773,20 +806,21 @@
             this.dgvRutas.ThemeName = "VisualStudio2012Light";
             this.dgvRutas.SelectionChanged += new System.EventHandler(this.dgvRutas_SelectionChanged);
             // 
-            // gbTransportista
+            // gbList
             // 
-            this.gbTransportista.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
-            this.gbTransportista.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.gbList.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.gbList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbTransportista.Controls.Add(this.dgvRutas);
-            this.gbTransportista.HeaderText = "Rutas";
-            this.gbTransportista.Location = new System.Drawing.Point(12, 43);
-            this.gbTransportista.Name = "gbTransportista";
-            this.gbTransportista.Size = new System.Drawing.Size(712, 567);
-            this.gbTransportista.TabIndex = 26;
-            this.gbTransportista.Text = "Rutas";
-            this.gbTransportista.ThemeName = "VisualStudio2012Light";
+            this.gbList.Controls.Add(this.dgvRutas);
+            this.gbList.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office;
+            this.gbList.HeaderText = "Rutas";
+            this.gbList.Location = new System.Drawing.Point(12, 43);
+            this.gbList.Name = "gbList";
+            this.gbList.Size = new System.Drawing.Size(712, 567);
+            this.gbList.TabIndex = 26;
+            this.gbList.Text = "Rutas";
+            this.gbList.ThemeName = "VisualStudio2012Light";
             // 
             // btnMenu
             // 
@@ -812,23 +846,23 @@
             // 
             this.BarraModulo.DisplayName = "commandBarStripElement2";
             this.BarraModulo.Items.AddRange(new Telerik.WinControls.UI.RadCommandBarBaseItem[] {
-            this.btnRRHH});
+            this.btnTransportes});
             this.BarraModulo.Name = "commandBarStripElement2";
             this.BarraModulo.Text = "";
             // 
-            // btnRRHH
+            // btnTransportes
             // 
-            this.btnRRHH.AccessibleDescription = "RecursosHumanos";
-            this.btnRRHH.AccessibleName = "RecursosHumanos";
-            this.btnRRHH.DisplayName = "Recursos Humanos";
-            this.btnRRHH.DrawText = true;
-            this.btnRRHH.Image = global::Transportista.Properties.Resources.compras1;
-            this.btnRRHH.ImageAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRRHH.Name = "btnRRHH";
-            this.btnRRHH.Text = "    Compras";
-            this.btnRRHH.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRRHH.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRRHH.ToolTipText = "Recursos Humanos";
+            this.btnTransportes.AccessibleDescription = "Transportes";
+            this.btnTransportes.AccessibleName = "Transportes";
+            this.btnTransportes.DisplayName = "   Transporte";
+            this.btnTransportes.DrawText = true;
+            this.btnTransportes.Image = ((System.Drawing.Image)(resources.GetObject("btnTransportes.Image")));
+            this.btnTransportes.ImageAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTransportes.Name = "btnTransportes";
+            this.btnTransportes.Text = "   Transportes";
+            this.btnTransportes.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTransportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTransportes.ToolTipText = "Transportes";
             // 
             // commandBarStripElement3
             // 
@@ -937,21 +971,14 @@
             this.btnSalir.ToolTipText = "Salir";
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // chkEsIngreso
-            // 
-            this.chkEsIngreso.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkEsIngreso.AutoSize = true;
-            this.chkEsIngreso.Location = new System.Drawing.Point(425, 283);
-            this.chkEsIngreso.Name = "chkEsIngreso";
-            this.chkEsIngreso.Size = new System.Drawing.Size(119, 17);
-            this.chkEsIngreso.TabIndex = 26;
-            this.chkEsIngreso.Text = "Es ruta de ingreso";
-            this.chkEsIngreso.UseVisualStyleBackColor = true;
-            // 
             // bgwHilo
             // 
             this.bgwHilo.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwHilo_DoWork);
             this.bgwHilo.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwHilo_RunWorkerCompleted);
+            // 
+            // commandBarRowElement1
+            // 
+            this.commandBarRowElement1.MinSize = new System.Drawing.Size(25, 25);
             // 
             // CatalogoRutasRecorrido
             // 
@@ -959,20 +986,21 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1295, 627);
             this.Controls.Add(this.btnMenu);
-            this.Controls.Add(this.gbTransportista);
-            this.Controls.Add(this.gbMantenimientoRegistros);
+            this.Controls.Add(this.gbList);
+            this.Controls.Add(this.gbEdit);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CatalogoRutasRecorrido";
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.Text = "Administración de Ruta de Recorrido";
-            this.ThemeName = "Windows8";
+            this.Text = "Catálogo|  Definición de rutas|  Registro";
+            this.ThemeName = "VisualStudio2012Light";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FletePorMovilidad_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gbMantenimientoRegistros)).EndInit();
-            this.gbMantenimientoRegistros.ResumeLayout(false);
-            this.gbMantenimientoRegistros.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gbEdit)).EndInit();
+            this.gbEdit.ResumeLayout(false);
+            this.gbEdit.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
@@ -1009,8 +1037,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRutas.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRutas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gbTransportista)).EndInit();
-            this.gbTransportista.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gbList)).EndInit();
+            this.gbList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
@@ -1020,7 +1048,7 @@
 
         #endregion
 
-        private Telerik.WinControls.UI.RadGroupBox gbMantenimientoRegistros;
+        private Telerik.WinControls.UI.RadGroupBox gbEdit;
         private Telerik.WinControls.UI.RadLabel radLabel10;
         private Telerik.WinControls.UI.RadLabel radLabel8;
         private Telerik.WinControls.UI.RadTextBox txtDistancia;
@@ -1047,11 +1075,11 @@
         private Telerik.WinControls.UI.RadLabel radLabel5;
         private Telerik.WinControls.UI.RadTextBox txtDuracion;
         private Telerik.WinControls.UI.RadLabel radLabel6;
-        private Telerik.WinControls.UI.RadGroupBox gbTransportista;
+        private Telerik.WinControls.UI.RadGroupBox gbList;
         private Telerik.WinControls.UI.RadCommandBar btnMenu;
         private Telerik.WinControls.UI.CommandBarRowElement BarraSuperior;
         private Telerik.WinControls.UI.CommandBarStripElement BarraModulo;
-        private Telerik.WinControls.UI.CommandBarButton btnRRHH;
+        private Telerik.WinControls.UI.CommandBarButton btnTransportes;
         private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement3;
         private Telerik.WinControls.UI.CommandBarButton btnNuevo;
         private Telerik.WinControls.UI.CommandBarButton btnActualizarLista;
@@ -1075,5 +1103,7 @@
         private Telerik.WinControls.UI.RadTextBox txtAbreviaturaRutaDestino;
         private System.Windows.Forms.CheckBox chkEsIngreso;
         private System.ComponentModel.BackgroundWorker bgwHilo;
+        private Telerik.WinControls.UI.CommandBarRowElement commandBarRowElement1;
+        private System.Windows.Forms.CheckBox chkGenerarIdaVuelta;
     }
 }

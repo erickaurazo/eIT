@@ -49,25 +49,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AsistenciaNegocio.cs" />
-    <Compile Include="ASJ_PersonalBloqueoNegocio.cs" />
-    <Compile Include="ASJ_TipoBloqueoParaAsistenciaNegocio.cs" />
-    <Compile Include="ASJ_RegistroTransferenciaTransportesNegocio.cs" />
-    <Compile Include="Class1.cs" />
-    <Compile Include="ControlIngresoSalidaPersonalNegocio.cs" />
-    <Compile Include="DestinoMovilidad.cs" />
-    <Compile Include="GaritaNegocio.cs" />
-    <Compile Include="HistorialNegocio.cs" />
-    <Compile Include="LoginNegocio.cs" />
-    <Compile Include="Mes.cs" />
-    <Compile Include="SJM_PersonaParaderoNegocios.cs" />
-    <Compile Include="SJ_ParaderoNegocio.cs" />
-    <Compile Include="SJ_ParaderosNegocio.cs" />
+    <Compile Include="AsistenciaController.cs" />
+    <Compile Include="FormsController.cs" />
+    <Compile Include="PersonalBloqueoController.cs" />
+    <Compile Include="TipoBloqueoParaAsistenciaController.cs" />
+    <Compile Include="RegistroTransferenciaTransportesController.cs" />
+    <Compile Include="ControlIngresoSalidaPersonalController.cs" />
+    <Compile Include="DestinoMovilidadController.cs" />
+    <Compile Include="GaritaController.cs" />
+    <Compile Include="HistorialController.cs" />
+    <Compile Include="LoginController.cs" />
+    <Compile Include="MesController.cs" />
+    <Compile Include="ModuloSistemaController.cs" />
+    <Compile Include="PersonaParaderoController.cs" />
+    <Compile Include="WhereaboutsController.cs" />
+    <Compile Include="ParaderosController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SJ_RHRutaNegocio.cs" />
-    <Compile Include="SJ_SemanaNegocio.cs" />
-    <Compile Include="TipoMovilidadNeg.cs" />
-    <Compile Include="TransportistaNegocio.cs" />
+    <Compile Include="RoutesController.cs" />
+    <Compile Include="SemanaController.cs" />
+    <Compile Include="TipoMovilidadController.cs" />
+    <Compile Include="CarrierController.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PensionistasRefrigerios.Datos\Asistencia.Datos.csproj">

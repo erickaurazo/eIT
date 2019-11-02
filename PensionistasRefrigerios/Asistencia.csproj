@@ -226,11 +226,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Acceso.cs">
+    <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Acceso.Designer.cs">
-      <DependentUpon>Acceso.cs</DependentUpon>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="ActualizarDNIObservado.cs">
       <SubType>Form</SubType>
@@ -268,18 +268,21 @@
     <Compile Include="CatalogoTipoBloqueoAsistencia.Designer.cs">
       <DependentUpon>CatalogoTipoBloqueoAsistencia.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChartCellElement.cs" />
+    <Compile Include="Formularios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios.Designer.cs">
+      <DependentUpon>Formularios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\ChartCellElement.cs" />
+    <Compile Include="Helper\ComboBoxHelper.cs" />
+    <Compile Include="Helper\ExportToExcelHelper.cs" />
+    <Compile Include="Helper\TreeviewHelper.cs" />
     <Compile Include="ListadoAsistenciaTransferenciaBuses.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ListadoAsistenciaTransferenciaBuses.Designer.cs">
       <DependentUpon>ListadoAsistenciaTransferenciaBuses.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ProcesoAsociarParaderoATrabajadorPostTransferencia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ProcesoAsociarParaderoATrabajadorPostTransferencia.Designer.cs">
-      <DependentUpon>ProcesoAsociarParaderoATrabajadorPostTransferencia.cs</DependentUpon>
     </Compile>
     <Compile Include="CatalogoUbicacionParaderos.cs">
       <SubType>Form</SubType>
@@ -292,6 +295,18 @@
     <Compile Include="Helper\RadMessageBoxLocalizationProviderEspañol.cs" />
     <Compile Include="Helper\RadPageViewLocalizationProviderEspañol.cs" />
     <Compile Include="Helper\RadWizardLocalizationProviderEspañol.cs" />
+    <Compile Include="Modulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo.Designer.cs">
+      <DependentUpon>Modulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Privilegio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Privilegio.Designer.cs">
+      <DependentUpon>Privilegio.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReporteAsistenciaDiarioByPuertaIngreso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -322,12 +337,6 @@
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="BuscarPersonal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BuscarPersonal.Designer.cs">
-      <DependentUpon>BuscarPersonal.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReporteUnidadesDeTransporteConIngresoPorFundo.cs">
@@ -335,12 +344,6 @@
     </Compile>
     <Compile Include="ReporteUnidadesDeTransporteConIngresoPorFundo.Designer.cs">
       <DependentUpon>ReporteUnidadesDeTransporteConIngresoPorFundo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BuscarRuta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BuscarRuta.designer.cs">
-      <DependentUpon>BuscarRuta.cs</DependentUpon>
     </Compile>
     <Compile Include="CatalogoRutasRecorrido.cs">
       <SubType>Form</SubType>
@@ -350,15 +353,21 @@
     </Compile>
     <Compile Include="Helper\Series.cs" />
     <Compile Include="Helper\SJ_Usuario.cs" />
-    <Compile Include="CatalogoEmpresasServiciosTransportePersonalCampo.cs">
+    <Compile Include="CatalogoEmpresaDeServicioDeTransporteDePersonal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CatalogoEmpresasServiciosTransportePersonalCampo.designer.cs">
-      <DependentUpon>CatalogoEmpresasServiciosTransportePersonalCampo.cs</DependentUpon>
+    <Compile Include="CatalogoEmpresaDeServicioDeTransporteDePersonal.designer.cs">
+      <DependentUpon>CatalogoEmpresaDeServicioDeTransporteDePersonal.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\UsuarioGlobal.cs" />
-    <EmbeddedResource Include="Acceso.resx">
-      <DependentUpon>Acceso.cs</DependentUpon>
+    <Compile Include="ReporteVencimientoDocumentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteVencimientoDocumentos.Designer.cs">
+      <DependentUpon>ReporteVencimientoDocumentos.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ActualizarDNIObservado.resx">
       <DependentUpon>ActualizarDNIObservado.cs</DependentUpon>
@@ -378,14 +387,20 @@
     <EmbeddedResource Include="CatalogoTipoBloqueoAsistencia.resx">
       <DependentUpon>CatalogoTipoBloqueoAsistencia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios.resx">
+      <DependentUpon>Formularios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ListadoAsistenciaTransferenciaBuses.resx">
       <DependentUpon>ListadoAsistenciaTransferenciaBuses.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProcesoAsociarParaderoATrabajadorPostTransferencia.resx">
-      <DependentUpon>ProcesoAsociarParaderoATrabajadorPostTransferencia.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CatalogoUbicacionParaderos.resx">
       <DependentUpon>CatalogoUbicacionParaderos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo.resx">
+      <DependentUpon>Modulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Privilegio.resx">
+      <DependentUpon>Privilegio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteAsistenciaDiarioByPuertaIngreso.resx">
       <DependentUpon>ReporteAsistenciaDiarioByPuertaIngreso.cs</DependentUpon>
@@ -402,9 +417,6 @@
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BuscarPersonal.resx">
-      <DependentUpon>BuscarPersonal.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -416,19 +428,19 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="BuscarRuta.resx">
-      <DependentUpon>BuscarRuta.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CatalogoRutasRecorrido.resx">
       <DependentUpon>CatalogoRutasRecorrido.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CatalogoEmpresasServiciosTransportePersonalCampo.resx">
-      <DependentUpon>CatalogoEmpresasServiciosTransportePersonalCampo.cs</DependentUpon>
+    <EmbeddedResource Include="CatalogoEmpresaDeServicioDeTransporteDePersonal.resx">
+      <DependentUpon>CatalogoEmpresaDeServicioDeTransporteDePersonal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteUnidadesDeTransporteConIngresoPorFundo.resx">
       <DependentUpon>ReporteUnidadesDeTransporteConIngresoPorFundo.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="app.config">
+    <EmbeddedResource Include="ReporteVencimientoDocumentos.resx">
+      <DependentUpon>ReporteVencimientoDocumentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Image\app.config">
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\Settings.settings">
@@ -446,6 +458,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AgricolaSanJoseSAC.ico" />
+    <Content Include="Resources\10.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PensionistasRefrigerios.Datos\Asistencia.Datos.csproj">
@@ -457,9 +470,7 @@
       <Name>Asistencia.Negocios</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

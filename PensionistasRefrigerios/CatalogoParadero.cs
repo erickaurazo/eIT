@@ -2,36 +2,24 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Linq;
 using System.Windows.Forms;
-using System.Globalization;
-using MyControlsDataBinding;
 using MyControlsDataBinding.Extensions;
-using MyControlsDataBinding.Controles;
-using MyControlsDataBinding.Datos;
-using MyControlsDataBinding.Busquedas;
-using MyControlsDataBinding.Clases;
-using MyControlsDataBinding.ControlesUsuario;
-using System.Collections;
 using Telerik.WinControls.UI.Localization;
 using Telerik.WinControls.UI;
 using Telerik.WinControls.UI.Export;
 using Telerik.WinControls;
 using System.IO;
 using System.Configuration;
+using Asistencia.Datos;
+using Asistencia.Negocios;
 
-using TransportistaMto.Datos;
-using Transportista.Negocios;
-using TransportistaMto.Negocios;
-
-namespace Transportista
+namespace Asistencia
 {
     public partial class CatalogoParadero : Form
     {
         private string periodo = DateTime.Now.Year.ToString();
-        private SJ_ParaderosNegocio modelo;
+        private ParaderosController modelo;
         private List<SJ_Paraderos> listado;
         private SJ_Paraderos oSJ_Paraderos;
         private string periodoConsulta;
@@ -41,10 +29,10 @@ namespace Transportista
         public CatalogoParadero()
         {
             InitializeComponent();
-            RadGridLocalizationProvider.CurrentProvider = new Transportista.ClaseTelerik.GridLocalizationProviderEspanol();
-            RadPageViewLocalizationProvider.CurrentProvider = new Transportista.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
-            RadWizardLocalizationProvider.CurrentProvider = new Transportista.ClaseTelerik.RadWizardLocalizationProviderEspañol();
-            RadMessageLocalizationProvider.CurrentProvider = new Transportista.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
+            RadGridLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.GridLocalizationProviderEspanol();
+            RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
+            RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
+            RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
             Inicio();
             Consultar();
         }
@@ -90,7 +78,7 @@ namespace Transportista
 
         private void bgwHilo_DoWork(object sender, DoWorkEventArgs e)
         {
-            modelo = new SJ_ParaderosNegocio();
+            modelo = new ParaderosController();
             listado = new List<SJ_Paraderos>();
             listado = modelo.ListarTodos(periodo).ToList();
         }
@@ -171,7 +159,7 @@ namespace Transportista
             {
                 if (oSJ_Paraderos.ESTADO == 1 && oSJ_Paraderos.IdParadero != string.Empty)
                 {
-                    modelo = new SJ_ParaderosNegocio();
+                    modelo = new ParaderosController();
                     oSJ_Paraderos = new SJ_Paraderos();
                     oSJ_Paraderos.IdEmpresa = this.txtEmpresaCodigo.Text.Trim();
                     oSJ_Paraderos.IdParadero = this.txtCodigo.Text.Trim();

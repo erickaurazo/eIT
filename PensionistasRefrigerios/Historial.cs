@@ -1,30 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using Transportista.Negocios;
-using MyControlsDataBinding;
-using MyControlsDataBinding.Busquedas;
-using MyControlsDataBinding.Clases;
-using MyControlsDataBinding.Controles;
-using MyControlsDataBinding.ControlesUsuario;
-using MyControlsDataBinding.Datos;
 using MyControlsDataBinding.Extensions;
-using System.Configuration;
-using TransportistaMto.Datos;
+using Asistencia.Negocios;
+using Asistencia.Datos;
 
-
-namespace Transportista
+namespace Asistencia
 {
     public partial class Historial : Form
     {
 
         List<HistorialObj> listadoHistorial;
-        HistorialNegocio negocios;
+        HistorialController negocios;
         string codHistorial, formulario = string.Empty;
         private string tabla;
 
@@ -62,7 +51,7 @@ namespace Transportista
                 if (formulario == "0") /*0 ES PROPIO*/
                 {
                     listadoHistorial = new List<HistorialObj>();
-                    negocios = new HistorialNegocio();
+                    negocios = new HistorialController();
 
                     listadoHistorial = negocios.ListarHistorialSJ(codHistorial.ToString().Trim().PadLeft(16, '0'), tabla).ToList();
                 }

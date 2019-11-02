@@ -1,36 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Linq;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-using Transportista.Negocios;
-using MyControlsDataBinding.Busquedas;
-using MyControlsDataBinding.Clases;
-using MyControlsDataBinding.Controles;
-using MyControlsDataBinding.ControlesUsuario;
-using MyControlsDataBinding.Datos;
 using MyControlsDataBinding.Extensions;
-using Telerik.WinControls.UI;
-using Telerik.WinControls;
-using Telerik.WinControls.UI.Export;
-using System.IO;
 using System.Configuration;
-using System.Collections;
-using Telerik.WinControls.UI.Localization;
-using System.Globalization;
-using TransportistaMto.Datos;
-using TransportistaMto.Negocios;
+using Asistencia.Datos;
+using Asistencia.Negocios;
 
-namespace Transportista
+
+namespace Asistencia
 {
     public partial class ActualizarPlaca : Form
     {
         private string periodo;
         private SJ_ListarAsistenciaSalidaUnidadesTransportePersonalByPeriodoResult registroResumen;
-        private ASJ_RegistroTransferenciaTransportesNegocio negocio;
+        private RegistroTransferenciaTransportesController negocio;
         private string placaNueva;
         private string codigoRuta;
 
@@ -97,7 +80,7 @@ namespace Transportista
 
         private void bgwHilo_DoWork(object sender, DoWorkEventArgs e)
         {
-            negocio = new ASJ_RegistroTransferenciaTransportesNegocio();
+            negocio = new RegistroTransferenciaTransportesController();
             negocio.ActualizarPlaca(periodo, registroResumen, placaNueva, codigoRuta);
         }
 

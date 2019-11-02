@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Telerik.WinControls.UI;
 
-namespace Transportista.ClaseTelerik
+namespace Asistencia.ClaseTelerik
 {
     public class RadPageViewLocalizationProviderEspañol : RadPageViewLocalizationProvider
     {

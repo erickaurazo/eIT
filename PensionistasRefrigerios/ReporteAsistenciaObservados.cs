@@ -3,26 +3,17 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Linq;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-using Transportista.Negocios;
-using MyControlsDataBinding.Busquedas;
-using MyControlsDataBinding.Clases;
-using MyControlsDataBinding.Controles;
-using MyControlsDataBinding.ControlesUsuario;
-using MyControlsDataBinding.Datos;
 using MyControlsDataBinding.Extensions;
 using Telerik.WinControls.UI;
 using Telerik.WinControls;
 using Telerik.WinControls.UI.Export;
 using System.IO;
 using System.Configuration;
-using System.Collections;
 using Telerik.WinControls.UI.Localization;
-using System.Globalization;
 using Asistencia.Datos;
 using Asistencia.Negocios;
+using Asistencia;
 
 namespace Asistencia
 {
@@ -33,22 +24,22 @@ namespace Asistencia
         private bool exportVisualSettings;
         private string hasta;
         private string periodo;
-        private ASJ_RegistroTransferenciaTransportesNegocio negocio;
+        private RegistroTransferenciaTransportesController negocio;
         private List<ASJ_ReporteAsistenciaObservadosResult> listadoAsistenciaObservados;
         private List<ASJ_ReporteAsistenciaObservadosResult> listadoAsistenciaObservadosSelecionados;
         private ASJ_ReporteAsistenciaObservadosResult registroObservado;
 
-        public Mes MesesNeg { get; private set; }
-        public ControlIngresoSalidaPersonalNegocio AsistenciaModelo { get; private set; }
+        public MesController MesesNeg { get; private set; }
+        public ControlIngresoSalidaPersonalController AsistenciaModelo { get; private set; }
 
         public ReporteAsistenciaObservados()
         {
             InitializeComponent();
             Inicio();
-            RadGridLocalizationProvider.CurrentProvider = new Transportista.ClaseTelerik.GridLocalizationProviderEspanol();
-            RadPageViewLocalizationProvider.CurrentProvider = new Transportista.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
-            RadWizardLocalizationProvider.CurrentProvider = new Transportista.ClaseTelerik.RadWizardLocalizationProviderEspañol();
-            RadMessageLocalizationProvider.CurrentProvider = new Transportista.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
+            RadGridLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.GridLocalizationProviderEspanol();
+            RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
+            RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
+            RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
             CargarMeses();
             ObtenerFechasIniciales();
             
@@ -87,7 +78,7 @@ namespace Asistencia
         private void CargarMeses()
         {
 
-            MesesNeg = new Mes();
+            MesesNeg = new MesController();
             cboMes.DisplayMember = "descripcion";
             cboMes.ValueMember = "valor";
             //cboMes.DataSource = MesesNeg.ListarMeses().Where(x => x.Valor != "13" && x.Valor != "00").ToList();
@@ -263,7 +254,7 @@ namespace Asistencia
 
         private void bgwHilo_DoWork(object sender, DoWorkEventArgs e)
         {
-            negocio = new ASJ_RegistroTransferenciaTransportesNegocio();
+            negocio = new RegistroTransferenciaTransportesController();
             listadoAsistenciaObservados = new List<ASJ_ReporteAsistenciaObservadosResult>();
             listadoAsistenciaObservados = negocio.ReporteAsistenciaObservados(periodo, desde, hasta).ToList();
         }
@@ -404,7 +395,7 @@ namespace Asistencia
                 {
                     if (registroObservado.nombres.Trim().ToUpper() != "DESCONOCIDO")
                     {
-                        AsistenciaModelo = new ControlIngresoSalidaPersonalNegocio();
+                        AsistenciaModelo = new ControlIngresoSalidaPersonalController();
                         AsistenciaModelo.TransferirAsistenciaObservada(periodo, registroObservado);
                         Consultar();
                     }
@@ -420,7 +411,7 @@ namespace Asistencia
                 {
                     if (registroObservado.nombres.Trim().ToUpper() != "DESCONOCIDO")
                     {
-                        AsistenciaModelo = new ControlIngresoSalidaPersonalNegocio();
+                        AsistenciaModelo = new ControlIngresoSalidaPersonalController();
                         AsistenciaModelo.TransferirAsistenciasObservadaByPersona(periodo, registroObservado);
                         Consultar();
                     }
@@ -466,7 +457,7 @@ namespace Asistencia
         {
             try
             {
-                negocio = new ASJ_RegistroTransferenciaTransportesNegocio();
+                negocio = new RegistroTransferenciaTransportesController();
                 listadoAsistenciaObservadosSelecionados = new List<ASJ_ReporteAsistenciaObservadosResult>();
                 listadoAsistenciaObservadosSelecionados = listadoAsistenciaObservados.Where(x => x.selecionado == 1).ToList();
 
@@ -474,13 +465,13 @@ namespace Asistencia
                 {
                     foreach (var item in listadoAsistenciaObservadosSelecionados)
                     {
-                        AsistenciaModelo = new ControlIngresoSalidaPersonalNegocio();
+                        AsistenciaModelo = new ControlIngresoSalidaPersonalController();
                         AsistenciaModelo.TransferirAsistenciasObservadaByPersona(periodo, item);
                     }
                     
                 }
 
-                negocio = new ASJ_RegistroTransferenciaTransportesNegocio();
+                negocio = new RegistroTransferenciaTransportesController();
                 listadoAsistenciaObservados = new List<ASJ_ReporteAsistenciaObservadosResult>();
                 listadoAsistenciaObservados = negocio.ReporteAsistenciaObservados(periodo, desde, hasta).ToList();
             }

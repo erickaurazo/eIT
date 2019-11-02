@@ -1,4 +1,4 @@
-﻿namespace Transportista
+﻿namespace Asistencia
 {
     partial class Menu
     {
@@ -41,10 +41,11 @@
             this.RRHHpersonalGeneral = new System.Windows.Forms.ToolStripMenuItem();
             this.RRHHpersonalPorParadero = new System.Windows.Forms.ToolStripMenuItem();
             this.RRHHpersonalBloqueado = new System.Windows.Forms.ToolStripMenuItem();
-            this.RRHHpersonalPorPensión = new System.Windows.Forms.ToolStripMenuItem();
             this.RRHHRutasRecorridoTransportista = new System.Windows.Forms.ToolStripMenuItem();
             this.RRH3HPrivilegiosDelSistema = new System.Windows.Forms.ToolStripMenuItem();
-            this.tipoDeBloqueoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.RRHHtipoDeBloqueo = new System.Windows.Forms.ToolStripMenuItem();
+            this.RRHHModuloSistema = new System.Windows.Forms.ToolStripMenuItem();
+            this.RRHHformularioDeSistema = new System.Windows.Forms.ToolStripMenuItem();
             this.viewMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.RR3HHRegistroDeAsistenciaPersonalAdministrativo = new System.Windows.Forms.ToolStripMenuItem();
             this.RRHHRegistroAsistencia = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,6 +58,7 @@
             this.reporteDeAsistenciaDePersonalPorBusesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RRHHreporteDeAsistenciaObservados = new System.Windows.Forms.ToolStripMenuItem();
             this.RRHHreporteDeAsistenciaEnPuertas = new System.Windows.Forms.ToolStripMenuItem();
+            this.RRHHReporteDeVencimientodEDocumentos = new System.Windows.Forms.ToolStripMenuItem();
             this.windowsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.newWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cascadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,6 +74,9 @@
             this.lblUsuarioNombre = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblNombre = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblNombreDescripcion = new System.Windows.Forms.ToolStripStatusLabel();
+            this.privilegiosYAccesosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.configuracionDelSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.utilitariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -85,13 +90,14 @@
             this.viewMenu,
             this.procesoToolStripMenuItem,
             this.toolsMenu,
+            this.utilitariosToolStripMenuItem,
             this.windowsMenu,
             this.helpMenu});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.MdiWindowListItem = this.windowsMenu;
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip.Size = new System.Drawing.Size(688, 24);
+            this.menuStrip.Size = new System.Drawing.Size(663, 24);
             this.menuStrip.TabIndex = 11;
             this.menuStrip.Text = "MenuPrincipal";
             // 
@@ -128,7 +134,11 @@
             this.RRHHpersonal,
             this.RRHHRutasRecorridoTransportista,
             this.RRH3HPrivilegiosDelSistema,
-            this.tipoDeBloqueoToolStripMenuItem});
+            this.RRHHtipoDeBloqueo,
+            this.RRHHModuloSistema,
+            this.RRHHformularioDeSistema,
+            this.privilegiosYAccesosToolStripMenuItem,
+            this.configuracionDelSistemaToolStripMenuItem});
             this.editMenu.Name = "editMenu";
             this.editMenu.Size = new System.Drawing.Size(51, 20);
             this.editMenu.Text = "Tablas";
@@ -152,8 +162,7 @@
             this.RRHHpersonal.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.RRHHpersonalGeneral,
             this.RRHHpersonalPorParadero,
-            this.RRHHpersonalBloqueado,
-            this.RRHHpersonalPorPensión});
+            this.RRHHpersonalBloqueado});
             this.RRHHpersonal.Name = "RRHHpersonal";
             this.RRHHpersonal.Size = new System.Drawing.Size(259, 22);
             this.RRHHpersonal.Text = "Personal";
@@ -178,13 +187,6 @@
             this.RRHHpersonalBloqueado.Text = "Personal bloqueado";
             this.RRHHpersonalBloqueado.Click += new System.EventHandler(this.RRHHpersonalBloqueado_Click);
             // 
-            // RRHHpersonalPorPensión
-            // 
-            this.RRHHpersonalPorPensión.Name = "RRHHpersonalPorPensión";
-            this.RRHHpersonalPorPensión.Size = new System.Drawing.Size(190, 22);
-            this.RRHHpersonalPorPensión.Text = "Personal por pensión";
-            this.RRHHpersonalPorPensión.Click += new System.EventHandler(this.RRHHpersonalPorPensión_Click);
-            // 
             // RRHHRutasRecorridoTransportista
             // 
             this.RRHHRutasRecorridoTransportista.Name = "RRHHRutasRecorridoTransportista";
@@ -199,12 +201,26 @@
             this.RRH3HPrivilegiosDelSistema.Size = new System.Drawing.Size(259, 22);
             this.RRH3HPrivilegiosDelSistema.Text = "Privilegios de Sistema";
             // 
-            // tipoDeBloqueoToolStripMenuItem
+            // RRHHtipoDeBloqueo
             // 
-            this.tipoDeBloqueoToolStripMenuItem.Name = "tipoDeBloqueoToolStripMenuItem";
-            this.tipoDeBloqueoToolStripMenuItem.Size = new System.Drawing.Size(259, 22);
-            this.tipoDeBloqueoToolStripMenuItem.Text = "Tipo de bloqueo para asistencia";
-            this.tipoDeBloqueoToolStripMenuItem.Click += new System.EventHandler(this.tipoDeBloqueoToolStripMenuItem_Click);
+            this.RRHHtipoDeBloqueo.Name = "RRHHtipoDeBloqueo";
+            this.RRHHtipoDeBloqueo.Size = new System.Drawing.Size(259, 22);
+            this.RRHHtipoDeBloqueo.Text = "Tipo de bloqueo para asistencia";
+            this.RRHHtipoDeBloqueo.Click += new System.EventHandler(this.tipoDeBloqueoToolStripMenuItem_Click);
+            // 
+            // RRHHModuloSistema
+            // 
+            this.RRHHModuloSistema.Name = "RRHHModuloSistema";
+            this.RRHHModuloSistema.Size = new System.Drawing.Size(259, 22);
+            this.RRHHModuloSistema.Text = "Modulo de sistema";
+            this.RRHHModuloSistema.Click += new System.EventHandler(this.RRHHmenu_Click);
+            // 
+            // RRHHformularioDeSistema
+            // 
+            this.RRHHformularioDeSistema.Name = "RRHHformularioDeSistema";
+            this.RRHHformularioDeSistema.Size = new System.Drawing.Size(259, 22);
+            this.RRHHformularioDeSistema.Text = "Formulario de Sistema";
+            this.RRHHformularioDeSistema.Click += new System.EventHandler(this.RRHHformularioDeSistema_Click);
             // 
             // viewMenu
             // 
@@ -251,7 +267,8 @@
             this.RRHHreportesDeIngresoYSalidaDeUnidadesDeTransportes,
             this.reporteDeAsistenciaDePersonalPorBusesToolStripMenuItem,
             this.RRHHreporteDeAsistenciaObservados,
-            this.RRHHreporteDeAsistenciaEnPuertas});
+            this.RRHHreporteDeAsistenciaEnPuertas,
+            this.RRHHReporteDeVencimientodEDocumentos});
             this.toolsMenu.Name = "toolsMenu";
             this.toolsMenu.Size = new System.Drawing.Size(65, 20);
             this.toolsMenu.Text = "&Reportes";
@@ -299,6 +316,13 @@
             this.RRHHreporteDeAsistenciaEnPuertas.Size = new System.Drawing.Size(366, 22);
             this.RRHHreporteDeAsistenciaEnPuertas.Text = "Reporte de asistencia en garita";
             this.RRHHreporteDeAsistenciaEnPuertas.Click += new System.EventHandler(this.RRHHreporteDeAsistenciaEnPuertas_Click);
+            // 
+            // RRHHReporteDeVencimientodEDocumentos
+            // 
+            this.RRHHReporteDeVencimientodEDocumentos.Name = "RRHHReporteDeVencimientodEDocumentos";
+            this.RRHHReporteDeVencimientodEDocumentos.Size = new System.Drawing.Size(366, 22);
+            this.RRHHReporteDeVencimientodEDocumentos.Text = "Reporte de vencimientod e documentos";
+            this.RRHHReporteDeVencimientodEDocumentos.Click += new System.EventHandler(this.RRHHReporteDeVencimientodEDocumentos_Click);
             // 
             // windowsMenu
             // 
@@ -362,9 +386,9 @@
             this.lblUsuarioNombre,
             this.lblNombre,
             this.lblNombreDescripcion});
-            this.statusStrip.Location = new System.Drawing.Point(0, 463);
+            this.statusStrip.Location = new System.Drawing.Point(0, 407);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(688, 22);
+            this.statusStrip.Size = new System.Drawing.Size(663, 22);
             this.statusStrip.TabIndex = 17;
             this.statusStrip.Text = "StatusStrip";
             // 
@@ -396,10 +420,28 @@
             this.lblNombreDescripcion.Size = new System.Drawing.Size(400, 17);
             this.lblNombreDescripcion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // privilegiosYAccesosToolStripMenuItem
+            // 
+            this.privilegiosYAccesosToolStripMenuItem.Name = "privilegiosYAccesosToolStripMenuItem";
+            this.privilegiosYAccesosToolStripMenuItem.Size = new System.Drawing.Size(259, 22);
+            this.privilegiosYAccesosToolStripMenuItem.Text = "Privilegios y accesos";
+            // 
+            // configuracionDelSistemaToolStripMenuItem
+            // 
+            this.configuracionDelSistemaToolStripMenuItem.Name = "configuracionDelSistemaToolStripMenuItem";
+            this.configuracionDelSistemaToolStripMenuItem.Size = new System.Drawing.Size(259, 22);
+            this.configuracionDelSistemaToolStripMenuItem.Text = "Configuracion del sistema";
+            // 
+            // utilitariosToolStripMenuItem
+            // 
+            this.utilitariosToolStripMenuItem.Name = "utilitariosToolStripMenuItem";
+            this.utilitariosToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+            this.utilitariosToolStripMenuItem.Text = "Utilitarios";
+            // 
             // Menu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.ClientSize = new System.Drawing.Size(688, 485);
+            this.ClientSize = new System.Drawing.Size(663, 429);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -454,8 +496,7 @@
         private System.Windows.Forms.ToolStripMenuItem RRHHpersonalGeneral;
         private System.Windows.Forms.ToolStripMenuItem RRHHpersonalPorParadero;
         private System.Windows.Forms.ToolStripMenuItem RRHHpersonalBloqueado;
-        private System.Windows.Forms.ToolStripMenuItem RRHHpersonalPorPensión;
-        private System.Windows.Forms.ToolStripMenuItem tipoDeBloqueoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem RRHHtipoDeBloqueo;
         private System.Windows.Forms.ToolStripMenuItem RRHHRegistroAsistencia;
         private System.Windows.Forms.ToolStripMenuItem RRHHparaderos;
         private System.Windows.Forms.ToolStripMenuItem RRHHreportesDeIngresoYSalidaDeUnidadesDeTransportes;
@@ -463,5 +504,11 @@
         private System.Windows.Forms.ToolStripMenuItem reporteDeAsistenciaDePersonalPorBusesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem RRHHreporteDeAsistenciaObservados;
         private System.Windows.Forms.ToolStripMenuItem RRHHreporteDeAsistenciaEnPuertas;
+        private System.Windows.Forms.ToolStripMenuItem RRHHReporteDeVencimientodEDocumentos;
+        private System.Windows.Forms.ToolStripMenuItem RRHHModuloSistema;
+        private System.Windows.Forms.ToolStripMenuItem RRHHformularioDeSistema;
+        private System.Windows.Forms.ToolStripMenuItem privilegiosYAccesosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem configuracionDelSistemaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem utilitariosToolStripMenuItem;
     }
 }

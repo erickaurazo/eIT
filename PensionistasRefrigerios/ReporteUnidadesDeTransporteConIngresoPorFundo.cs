@@ -11,7 +11,7 @@ using Telerik.WinControls;
 using Telerik.WinControls.UI;
 using Telerik.WinControls.UI.Export;
 
-namespace Transportista
+namespace Asistencia
 {
     public partial class ReporteUnidadesDeTransporteConIngresoPorFundo : Form
     {

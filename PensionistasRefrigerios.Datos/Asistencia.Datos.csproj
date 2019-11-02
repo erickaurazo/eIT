@@ -43,7 +43,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AsistenciaBusByDia.cs" />
+    <Compile Include="BDAsistencia.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDAsistencia.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Garita.cs" />
+    <Compile Include="ModuleSystem.cs" />
     <Compile Include="oClaseGeneral.cs" />
     <Compile Include="oFechaAsistencia.cs" />
     <Compile Include="HistorialObj.cs" />
@@ -58,36 +64,28 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="DBMAsistencia.cs">
-      <DependentUpon>DBMAsistencia.dbml</DependentUpon>
-    </Compile>
-    <Compile Include="DBMAsistencia.designer.cs">
-      <DependentUpon>DBMAsistencia.dbml</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
     <Compile Include="TipoMovilidad.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="BDAsistencia.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>BDAsistencia.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DBMAsistencia.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>DBMAsistencia.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="DBMAsistencia.dbml.layout">
-      <DependentUpon>DBMAsistencia.dbml</DependentUpon>
+    <None Include="BDAsistencia.dbml.layout">
+      <DependentUpon>BDAsistencia.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

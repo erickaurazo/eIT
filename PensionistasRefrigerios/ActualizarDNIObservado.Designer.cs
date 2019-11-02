@@ -1,4 +1,4 @@
-﻿namespace Transportista
+﻿namespace Asistencia
 {
     partial class ActualizarDNIObservado
     {
@@ -211,7 +211,7 @@
             this.MinimizeBox = false;
             this.Name = "ActualizarDNIObservado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Actualizar número de DNI observado";
+            this.Text = "Movimiento|  Registro de asistencia del personal|  Actualizar DNI observado";
             this.Load += new System.EventHandler(this.ActualizarDNIObservado_Load);
             this.gbDestino.ResumeLayout(false);
             this.gbDestino.PerformLayout();

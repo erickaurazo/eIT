@@ -1,4 +1,4 @@
-﻿namespace Transportista
+﻿namespace Asistencia
 {
     partial class ActualizarPlaca
     {
@@ -375,7 +375,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ActualizarPlaca";
-            this.Text = "Actualizar de placa";
+            this.Text = "Movimiento|  Registro de asistencia|  Actualizar de placa y/o ruta";
             this.Load += new System.EventHandler(this.ActualizarPlaca_Load);
             this.gbRegistro.ResumeLayout(false);
             this.gbRegistro.PerformLayout();

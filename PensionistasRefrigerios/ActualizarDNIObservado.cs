@@ -1,31 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Linq;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-using Transportista.Negocios;
-using MyControlsDataBinding.Busquedas;
-using MyControlsDataBinding.Clases;
-using MyControlsDataBinding.Controles;
-using MyControlsDataBinding.ControlesUsuario;
-using MyControlsDataBinding.Datos;
 using MyControlsDataBinding.Extensions;
-using Telerik.WinControls.UI;
-using Telerik.WinControls;
-using Telerik.WinControls.UI.Export;
-using System.IO;
 using System.Configuration;
-using System.Collections;
-using Telerik.WinControls.UI.Localization;
-using System.Globalization;
-using TransportistaMto.Datos;
-using TransportistaMto.Negocios;
+using Asistencia.Negocios;
+using Asistencia.Datos;
 
-
-namespace Transportista
+namespace Asistencia
 {
     public partial class ActualizarDNIObservado : Form
     {
@@ -35,7 +15,7 @@ namespace Transportista
         private string nombres;
         private string dni;
 
-        public ControlIngresoSalidaPersonalNegocio AsistenciaModelo { get; private set; }
+        public ControlIngresoSalidaPersonalController AsistenciaModelo { get; private set; }
 
         public ActualizarDNIObservado()
         {
@@ -99,7 +79,7 @@ namespace Transportista
                 {
                     if (this.txtDNI.Text.Trim() != string.Empty && this.txtNombres.Text.Trim() != string.Empty)
                     {
-                        AsistenciaModelo = new ControlIngresoSalidaPersonalNegocio();
+                        AsistenciaModelo = new ControlIngresoSalidaPersonalController();
                         AsistenciaModelo.ActualizarDNIAsistenciaObservada(this.periodo, this.iDCONTROLINGRESO, this.iTEM, this.txtDNI.Text.Trim());
                         MessageBox.Show("Actualizado correctamente","MENSAJE DEL SISTEMA");
                     }

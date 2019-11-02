@@ -11,5 +11,7 @@ namespace Asistencia.Datos
         public string Descripcion { get; set; }
         public string Valor { get; set; }
         public string Id { get; set; }
+
+        public int Code { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace Transportista
+﻿namespace Asistencia
 {
     partial class ListadoAsistenciaTransferenciaBuses
     {
@@ -191,7 +191,7 @@
             this.menuPrincipal.Name = "menuPrincipal";
             this.menuPrincipal.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.BarraSuperior});
-            this.menuPrincipal.Size = new System.Drawing.Size(1182, 37);
+            this.menuPrincipal.Size = new System.Drawing.Size(1182, 62);
             this.menuPrincipal.TabIndex = 191;
             this.menuPrincipal.Text = "Nuevo";
             this.menuPrincipal.ThemeName = "VisualStudio2012Light";
@@ -225,7 +225,7 @@
             this.btnRRHH.DrawText = true;
             this.btnRRHH.Image = ((System.Drawing.Image)(resources.GetObject("btnRRHH.Image")));
             this.btnRRHH.Name = "btnRRHH";
-            this.btnRRHH.Text = "     Recursos Humanos";
+            this.btnRRHH.Text = "  Recursos Humanos";
             this.btnRRHH.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRRHH.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnRRHH.ToolTipText = "Recursos Humanos";

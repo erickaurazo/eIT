@@ -1,4 +1,4 @@
-﻿namespace Transportista
+﻿namespace Asistencia
 {
     partial class ChoferBuscar
     {
@@ -33,6 +33,7 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChoferBuscar));
             this.gbMovilidad = new Telerik.WinControls.UI.RadGroupBox();
             this.dgvChofer = new Telerik.WinControls.UI.RadGridView();
             this.btnCancelar = new Telerik.WinControls.UI.RadButton();
@@ -93,12 +94,12 @@
             gridViewTextBoxColumn3.FieldName = "Nombres";
             gridViewTextBoxColumn3.HeaderText = "Nombres";
             gridViewTextBoxColumn3.Name = "chNombres";
-            gridViewTextBoxColumn3.Width = 417;
+            gridViewTextBoxColumn3.Width = 418;
             gridViewTextBoxColumn4.EnableExpressionEditor = false;
             gridViewTextBoxColumn4.FieldName = "TipoLicencia";
             gridViewTextBoxColumn4.HeaderText = "Licencia";
             gridViewTextBoxColumn4.Name = "chTipoLicencia";
-            gridViewTextBoxColumn4.Width = 169;
+            gridViewTextBoxColumn4.Width = 170;
             gridViewTextBoxColumn5.EnableExpressionEditor = false;
             gridViewTextBoxColumn5.FieldName = "IdTransportista";
             gridViewTextBoxColumn5.HeaderText = "IdTransportista";
@@ -154,6 +155,7 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.gbMovilidad);
             this.Controls.Add(this.btnAceptar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ChoferBuscar";
             // 
             // 

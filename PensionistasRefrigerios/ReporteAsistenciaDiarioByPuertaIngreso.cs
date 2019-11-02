@@ -1,50 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using System.Data.OleDb;
-using System.Data.Odbc;
 using System.Configuration;
-using MyControlsDataBinding;
-using MyControlsDataBinding.Busquedas;
-using MyControlsDataBinding.Clases;
-using MyControlsDataBinding.Controles;
-using MyControlsDataBinding.ControlesUsuario;
-using MyControlsDataBinding.Datos;
 using MyControlsDataBinding.Extensions;
 using System.Globalization;
-using Transportista.Negocios;
 using Telerik.WinControls.UI.Localization;
 using Telerik.WinControls.UI;
 using Telerik.WinControls;
-using TransportistaMto.Datos;
-using TransportistaMto.Negocios;
-using Telerik.WinControls;
-using Telerik.WinControls.UI;
 using Telerik.WinControls.UI.Export;
 using System.IO;
+using Asistencia.Negocios;
+using Asistencia.Datos;
 
-namespace Transportista
+namespace Asistencia
 {
     public partial class ReporteAsistenciaDiarioByPuertaIngreso : Form
     {
         private string periodo;
-        private SJ_SemanaNegocio modeloSemana;
-        private SJ_Semana oSemana;
-        private SJ_Semana oSemanaConsulta;
+        private SemanaController modeloSemana;
+        private SJ_Semanas oSemana;
+        private SJ_Semanas oSemanaConsulta;
         private List<Garita> listadoPuertasDeGarita;
-        private GaritaNegocio garitaNegocio;
+        private GaritaController garitaNegocio;
         private string desde;
         private string hasta;
         private string desdeP;
         private string hastaP;
         private string idPlanilla;
         private char? idGarita;
-        private AsistenciaNegocio negocio;
+        private AsistenciaController negocio;
         private List<ASJ_ReporteAsistenciaDiariaByPuertaIngresoResult> listado;
         private List<ASJ_ReporteAsistenciaDiariaByPuertaIngresoResult> listadoAgrupado;
         private List<ASJ_ReporteAsistenciaByPuertaResult> listadoDetalleByMarcacionByDatos;
@@ -59,10 +45,10 @@ namespace Transportista
         public ReporteAsistenciaDiarioByPuertaIngreso()
         {
             InitializeComponent();
-            RadGridLocalizationProvider.CurrentProvider = new Transportista.ClaseTelerik.GridLocalizationProviderEspanol();
-            RadPageViewLocalizationProvider.CurrentProvider = new Transportista.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
-            RadWizardLocalizationProvider.CurrentProvider = new Transportista.ClaseTelerik.RadWizardLocalizationProviderEspañol();
-            RadMessageLocalizationProvider.CurrentProvider = new Transportista.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
+            RadGridLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.GridLocalizationProviderEspanol();
+            RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
+            RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
+            RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
             Inicio();
             CargarCombos();
 
@@ -122,14 +108,14 @@ namespace Transportista
 
         private void CargarCombos()
         {
-            Mes Meses = new Mes();
+            MesController Meses = new MesController();
             cboMes.DisplayMember = "descripcion";
             cboMes.ValueMember = "valor";
             cboMes.DataSource = Meses.ListarMeses().ToList();
             cboMes.SelectedValue = DateTime.Now.ToString("13");
 
             listadoPuertasDeGarita = new List<Garita>();
-            garitaNegocio = new GaritaNegocio();
+            garitaNegocio = new GaritaController();
             cboGarita.ValueMember = "codigo";
             cboGarita.DisplayMember = "descripcion";
             cboGarita.DataSource = garitaNegocio.Listado().ToList();
@@ -144,11 +130,11 @@ namespace Transportista
             this.txtFechaHasta.Text = DateTime.Now.ToShortDateString();
 
 
-            modeloSemana = new SJ_SemanaNegocio();
-            oSemana = new SJ_Semana();
-            oSemanaConsulta = new SJ_Semana();
+            modeloSemana = new SemanaController();
+            oSemana = new SJ_Semanas();
+            oSemanaConsulta = new SJ_Semanas();
             oSemana.año = Convert.ToInt32(this.txtPeriodo.Value);
-            oSemanaConsulta = modeloSemana.ObtenerSemanaPorNroSemana(oSemana);
+            oSemanaConsulta = modeloSemana.ObtenerSemanaPorNroSemana(oSemana, DateTime.Now.Year.ToString());
             int numeroSemana = CultureInfo.CurrentUICulture.Calendar.GetWeekOfYear(DateTime.Now, CalendarWeekRule.FirstDay, DateTime.Now.DayOfWeek) - 1;
 
 
@@ -394,7 +380,7 @@ namespace Transportista
         {
             try
             {
-                negocio = new AsistenciaNegocio();
+                negocio = new AsistenciaController();
                 listado = new List<ASJ_ReporteAsistenciaDiariaByPuertaIngresoResult>();
                 listado = negocio.Listado(periodo, desde, hasta, idPlanilla, idGarita).ToList();
 

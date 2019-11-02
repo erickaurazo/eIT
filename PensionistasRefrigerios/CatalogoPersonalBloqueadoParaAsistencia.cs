@@ -2,31 +2,20 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Linq;
 using System.Windows.Forms;
-using System.Globalization;
-using MyControlsDataBinding;
 using MyControlsDataBinding.Extensions;
-using MyControlsDataBinding.Controles;
-using MyControlsDataBinding.Datos;
-using MyControlsDataBinding.Busquedas;
-using MyControlsDataBinding.Clases;
-using MyControlsDataBinding.ControlesUsuario;
-using System.Collections;
 using Telerik.WinControls.UI.Localization;
 using Telerik.WinControls.UI;
 using Telerik.WinControls.UI.Export;
 using Telerik.WinControls;
 using System.IO;
 using System.Configuration;
+using Asistencia.Datos;
+using Asistencia.Negocios;
 
-using TransportistaMto.Datos;
-using Transportista.Negocios;
-using TransportistaMto.Negocios;
 
-namespace Transportista
+namespace Asistencia
 {
     public partial class CatalogoPersonalBloqueadoParaAsistencia : Form
     {
@@ -36,8 +25,8 @@ namespace Transportista
         private bool exportVisualSettings;
 
         private List<ASJ_ObtenerListadoDePersonalbloqueadoResult> listado = new List<ASJ_ObtenerListadoDePersonalbloqueadoResult>();
-        private ASJ_TipoBloqueoParaAsistenciaNegocio modeloTipoBloqueo;
-        private ASJ_PersonalBloqueoNegocio modeloPersonalBloqueado;
+        private TipoBloqueoParaAsistenciaController modeloTipoBloqueo;
+        private PersonalBloqueoController modeloPersonalBloqueado;
         private ASJ_ObtenerListadoDePersonalbloqueadoResult oBloqueo;
         private ASJ_PersonalBloqueo oPersonalBloqueada;
         private ASJ_PersonalBloqueo oPersonaBloqueada;
@@ -46,10 +35,10 @@ namespace Transportista
         public CatalogoPersonalBloqueadoParaAsistencia()
         {
             InitializeComponent();
-            RadGridLocalizationProvider.CurrentProvider = new Transportista.ClaseTelerik.GridLocalizationProviderEspanol();
-            RadPageViewLocalizationProvider.CurrentProvider = new Transportista.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
-            RadWizardLocalizationProvider.CurrentProvider = new Transportista.ClaseTelerik.RadWizardLocalizationProviderEspañol();
-            RadMessageLocalizationProvider.CurrentProvider = new Transportista.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
+            RadGridLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.GridLocalizationProviderEspanol();
+            RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
+            RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
+            RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
             Inicio();
             CargarComboMotivoBloqueo();
             Consultar();
@@ -60,7 +49,7 @@ namespace Transportista
 
 
             listaTipoBloqueos = new List<ASJ_ObtenerListadoDeTipoPersonalbloqueadoResult>();
-            modeloTipoBloqueo = new ASJ_TipoBloqueoParaAsistenciaNegocio();
+            modeloTipoBloqueo = new TipoBloqueoParaAsistenciaController();
             listaTipoBloqueos = modeloTipoBloqueo.ObtenerListadoTipoBloqueo(this.periodo).ToList();
 
             cboMotivoBloqueo.DisplayMember = "descripcion";
@@ -186,7 +175,7 @@ namespace Transportista
 
         private void bgwHilo_DoWork(object sender, DoWorkEventArgs e)
         {
-            modeloPersonalBloqueado = new ASJ_PersonalBloqueoNegocio();
+            modeloPersonalBloqueado = new PersonalBloqueoController();
             listado = new List<ASJ_ObtenerListadoDePersonalbloqueadoResult>();
             listado = modeloPersonalBloqueado.ObtenerListado(periodo).ToList();
 
@@ -316,7 +305,7 @@ namespace Transportista
             {
                 if (oPersonaBloqueada.codigoPersonalBloqueo > 0)
                 {                    
-                    modeloPersonalBloqueado = new ASJ_PersonalBloqueoNegocio();
+                    modeloPersonalBloqueado = new PersonalBloqueoController();
                     modeloPersonalBloqueado.Anular(periodo, oPersonaBloqueada);
                     gbListado.Enabled = !false;
                     gbMantenimiento.Enabled = !true;
@@ -342,7 +331,7 @@ namespace Transportista
         {
             if (oPersonaBloqueada.codigoPersonalBloqueo > 0)
             {
-                modeloPersonalBloqueado = new ASJ_PersonalBloqueoNegocio();
+                modeloPersonalBloqueado = new PersonalBloqueoController();
                 modeloPersonalBloqueado.Eliminar(periodo, oPersonaBloqueada);
                 gbListado.Enabled = !false;
                 gbMantenimiento.Enabled = !true;
@@ -483,7 +472,7 @@ namespace Transportista
                             {
                                 oPersonaBloqueada.inicioBloqueo = Convert.ToDateTime(this.txtFechaDesde.Text);
                             }
-                            if (this.txtFechaHasta.Text != string.Empty && this.txtFechaHasta.Text != "__/__/____")
+                            if (this.txtFechaHasta.Text != string.Empty && this.txtFechaHasta.Text != string.Empty)
                             {
                                 oPersonaBloqueada.terminoBloqueo = Convert.ToDateTime(this.txtFechaHasta.Text);
                             }
@@ -495,7 +484,7 @@ namespace Transportista
                             oPersonaBloqueada.observaciones = this.txtObservaciones.Text.Trim();
                             oPersonaBloqueada.estado = 1;
 
-                            modeloPersonalBloqueado = new ASJ_PersonalBloqueoNegocio();
+                            modeloPersonalBloqueado = new PersonalBloqueoController();
                             string resultadoConsulta = modeloPersonalBloqueado.Grabar(periodo, oPersonaBloqueada);
                             MessageBox.Show(resultadoConsulta, "MENSAJE DEL SISTEMA");
                             gbListado.Enabled = !false;

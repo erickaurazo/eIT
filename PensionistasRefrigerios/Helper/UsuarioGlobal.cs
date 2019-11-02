@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using TransportistaMto.Datos;
+﻿using Asistencia.Datos;
 
-
-namespace Transportista
+namespace Asistencia
 {
     static class UsuarioGlobales
     {

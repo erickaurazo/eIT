@@ -87,5 +87,15 @@ namespace Asistencia.Datos.Properties {
                 return ((string)(this["AGRICOLA2017ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=BLUESOFT;Initial Catalog=AGRICOLA2017;Integrated Security=True")]
+        public string AGRICOLA2017ConnectionString1 {
+            get {
+                return ((string)(this["AGRICOLA2017ConnectionString1"]));
+            }
+        }
     }
 }

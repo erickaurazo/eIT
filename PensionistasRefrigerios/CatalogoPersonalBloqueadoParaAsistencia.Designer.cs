@@ -1,4 +1,4 @@
-﻿namespace Transportista
+﻿namespace Asistencia
 {
     partial class CatalogoPersonalBloqueadoParaAsistencia
     {
@@ -30,19 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CatalogoPersonalBloqueadoParaAsistencia));
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn1 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn15 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn16 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn17 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn2 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn18 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn19 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn20 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn21 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn22 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.Data.SortDescriptor sortDescriptor2 = new Telerik.WinControls.Data.SortDescriptor();
             this.gbMantenimiento = new Telerik.WinControls.UI.RadGroupBox();
             this.chkEsPeriodo = new System.Windows.Forms.CheckBox();
             this.lblHasta = new Telerik.WinControls.UI.RadLabel();
@@ -151,19 +151,19 @@
             this.gbMantenimiento.Controls.Add(this.radLabel2);
             this.gbMantenimiento.Enabled = false;
             this.gbMantenimiento.HeaderText = " Mantenimiento";
-            this.gbMantenimiento.Location = new System.Drawing.Point(473, 45);
+            this.gbMantenimiento.Location = new System.Drawing.Point(517, 43);
             this.gbMantenimiento.Name = "gbMantenimiento";
             this.gbMantenimiento.Padding = new System.Windows.Forms.Padding(2, 22, 2, 2);
-            this.gbMantenimiento.Size = new System.Drawing.Size(583, 390);
+            this.gbMantenimiento.Size = new System.Drawing.Size(571, 390);
             this.gbMantenimiento.TabIndex = 192;
             this.gbMantenimiento.Tag = "";
             this.gbMantenimiento.Text = " Mantenimiento";
-            this.gbMantenimiento.ThemeName = "VisualStudio2012Light";
+            this.gbMantenimiento.ThemeName = "Windows8";
             // 
             // chkEsPeriodo
             // 
             this.chkEsPeriodo.AutoSize = true;
-            this.chkEsPeriodo.Location = new System.Drawing.Point(487, 135);
+            this.chkEsPeriodo.Location = new System.Drawing.Point(456, 135);
             this.chkEsPeriodo.Name = "chkEsPeriodo";
             this.chkEsPeriodo.Size = new System.Drawing.Size(87, 17);
             this.chkEsPeriodo.TabIndex = 188;
@@ -172,7 +172,7 @@
             // 
             // lblHasta
             // 
-            this.lblHasta.Location = new System.Drawing.Point(292, 134);
+            this.lblHasta.Location = new System.Drawing.Point(274, 134);
             this.lblHasta.Name = "lblHasta";
             this.lblHasta.Size = new System.Drawing.Size(40, 18);
             this.lblHasta.TabIndex = 186;
@@ -186,7 +186,7 @@
             this.txtFechaHasta.EditingControlRowIndex = 0;
             this.txtFechaHasta.EditingControlValueChanged = true;
             this.txtFechaHasta.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
-            this.txtFechaHasta.Location = new System.Drawing.Point(345, 132);
+            this.txtFechaHasta.Location = new System.Drawing.Point(327, 132);
             this.txtFechaHasta.Mask = "00/00/0000";
             this.txtFechaHasta.Name = "txtFechaHasta";
             this.txtFechaHasta.P_EsEditable = false;
@@ -203,7 +203,7 @@
             // 
             // lblFechaDesde
             // 
-            this.lblFechaDesde.Location = new System.Drawing.Point(121, 134);
+            this.lblFechaDesde.Location = new System.Drawing.Point(103, 134);
             this.lblFechaDesde.Name = "lblFechaDesde";
             this.lblFechaDesde.Size = new System.Drawing.Size(43, 18);
             this.lblFechaDesde.TabIndex = 4;
@@ -217,7 +217,7 @@
             this.txtFechaDesde.EditingControlRowIndex = 0;
             this.txtFechaDesde.EditingControlValueChanged = true;
             this.txtFechaDesde.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
-            this.txtFechaDesde.Location = new System.Drawing.Point(174, 132);
+            this.txtFechaDesde.Location = new System.Drawing.Point(156, 132);
             this.txtFechaDesde.Mask = "00/00/0000";
             this.txtFechaDesde.Name = "txtFechaDesde";
             this.txtFechaDesde.P_EsEditable = false;
@@ -239,7 +239,7 @@
             this.btnBuscarPersonal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarPersonal.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarPersonal.Image")));
             this.btnBuscarPersonal.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBuscarPersonal.Location = new System.Drawing.Point(27, 50);
+            this.btnBuscarPersonal.Location = new System.Drawing.Point(9, 50);
             this.btnBuscarPersonal.Name = "btnBuscarPersonal";
             this.btnBuscarPersonal.P_CampoCodigo = "rtrim(idcodigoGeneral)";
             this.btnBuscarPersonal.P_CampoDescripcion = "rtrim(nombres) +\' \' + rtrim(a_paterno) +\' \' + rtrim(a_Materno)";
@@ -262,7 +262,7 @@
             this.txtPersonalCodigo.BackColor = System.Drawing.Color.White;
             this.txtPersonalCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPersonalCodigo.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.txtPersonalCodigo.Location = new System.Drawing.Point(115, 54);
+            this.txtPersonalCodigo.Location = new System.Drawing.Point(97, 53);
             this.txtPersonalCodigo.MaxLength = 9;
             this.txtPersonalCodigo.Name = "txtPersonalCodigo";
             this.txtPersonalCodigo.P_BotonEnlace = this.btnBuscarPersonal;
@@ -283,7 +283,7 @@
             this.txtPersonalNombresCompletos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPersonalNombresCompletos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPersonalNombresCompletos.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPersonalNombresCompletos.Location = new System.Drawing.Point(187, 54);
+            this.txtPersonalNombresCompletos.Location = new System.Drawing.Point(169, 54);
             this.txtPersonalNombresCompletos.Name = "txtPersonalNombresCompletos";
             this.txtPersonalNombresCompletos.P_BotonEnlace = null;
             this.txtPersonalNombresCompletos.P_BuscarSoloCodigoExacto = false;
@@ -294,12 +294,12 @@
             this.txtPersonalNombresCompletos.P_NombreColumna = null;
             this.txtPersonalNombresCompletos.P_TipoDato = MyControlsDataBinding.Extensions.EnumTipoDato.Texto;
             this.txtPersonalNombresCompletos.ReadOnly = true;
-            this.txtPersonalNombresCompletos.Size = new System.Drawing.Size(387, 21);
+            this.txtPersonalNombresCompletos.Size = new System.Drawing.Size(379, 21);
             this.txtPersonalNombresCompletos.TabIndex = 181;
             // 
             // lblEmpresa
             // 
-            this.lblEmpresa.Location = new System.Drawing.Point(60, 55);
+            this.lblEmpresa.Location = new System.Drawing.Point(42, 55);
             this.lblEmpresa.Name = "lblEmpresa";
             this.lblEmpresa.Size = new System.Drawing.Size(54, 18);
             this.lblEmpresa.TabIndex = 182;
@@ -318,14 +318,14 @@
             "Green",
             "HotTrack",
             "Yellow"});
-            this.cboMotivoBloqueo.Location = new System.Drawing.Point(120, 94);
+            this.cboMotivoBloqueo.Location = new System.Drawing.Point(102, 94);
             this.cboMotivoBloqueo.Name = "cboMotivoBloqueo";
             this.cboMotivoBloqueo.Size = new System.Drawing.Size(204, 21);
             this.cboMotivoBloqueo.TabIndex = 28;
             // 
             // radLabel3
             // 
-            this.radLabel3.Location = new System.Drawing.Point(36, 94);
+            this.radLabel3.Location = new System.Drawing.Point(18, 94);
             this.radLabel3.Name = "radLabel3";
             this.radLabel3.Size = new System.Drawing.Size(78, 18);
             this.radLabel3.TabIndex = 27;
@@ -333,7 +333,7 @@
             // 
             // txtIdEstado
             // 
-            this.txtIdEstado.Location = new System.Drawing.Point(327, 20);
+            this.txtIdEstado.Location = new System.Drawing.Point(309, 20);
             this.txtIdEstado.Name = "txtIdEstado";
             this.txtIdEstado.Size = new System.Drawing.Size(37, 20);
             this.txtIdEstado.TabIndex = 4;
@@ -344,7 +344,7 @@
             // 
             // radLabel7
             // 
-            this.radLabel7.Location = new System.Drawing.Point(269, 22);
+            this.radLabel7.Location = new System.Drawing.Point(251, 22);
             this.radLabel7.Name = "radLabel7";
             this.radLabel7.Size = new System.Drawing.Size(55, 18);
             this.radLabel7.TabIndex = 3;
@@ -377,7 +377,7 @@
             // 
             // lblDescripcion
             // 
-            this.lblDescripcion.Location = new System.Drawing.Point(44, 163);
+            this.lblDescripcion.Location = new System.Drawing.Point(26, 163);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(70, 18);
             this.lblDescripcion.TabIndex = 14;
@@ -387,18 +387,18 @@
             // 
             this.txtObservaciones.AutoSize = false;
             this.txtObservaciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtObservaciones.Location = new System.Drawing.Point(121, 163);
+            this.txtObservaciones.Location = new System.Drawing.Point(103, 163);
             this.txtObservaciones.MaxLength = 250;
             this.txtObservaciones.Multiline = true;
             this.txtObservaciones.Name = "txtObservaciones";
-            this.txtObservaciones.Size = new System.Drawing.Size(455, 106);
+            this.txtObservaciones.Size = new System.Drawing.Size(445, 122);
             this.txtObservaciones.TabIndex = 15;
             this.txtObservaciones.TabStop = false;
             this.txtObservaciones.ThemeName = "VisualStudio2012Light";
             // 
             // radLabel1
             // 
-            this.radLabel1.Location = new System.Drawing.Point(64, 20);
+            this.radLabel1.Location = new System.Drawing.Point(46, 20);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(48, 18);
             this.radLabel1.TabIndex = 1;
@@ -409,7 +409,7 @@
             // 
             this.txtCodigo.Enabled = false;
             this.txtCodigo.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtCodigo.Location = new System.Drawing.Point(115, 20);
+            this.txtCodigo.Location = new System.Drawing.Point(97, 20);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.ReadOnly = true;
             this.txtCodigo.Size = new System.Drawing.Size(109, 20);
@@ -421,10 +421,10 @@
             // txtEstado
             // 
             this.txtEstado.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtEstado.Location = new System.Drawing.Point(421, 20);
+            this.txtEstado.Location = new System.Drawing.Point(403, 20);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.ReadOnly = true;
-            this.txtEstado.Size = new System.Drawing.Size(153, 20);
+            this.txtEstado.Size = new System.Drawing.Size(145, 20);
             this.txtEstado.TabIndex = 6;
             this.txtEstado.TabStop = false;
             this.txtEstado.Text = "ACTIVO";
@@ -433,7 +433,7 @@
             // 
             // radLabel2
             // 
-            this.radLabel2.Location = new System.Drawing.Point(373, 21);
+            this.radLabel2.Location = new System.Drawing.Point(355, 21);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(45, 18);
             this.radLabel2.TabIndex = 5;
@@ -450,10 +450,10 @@
             this.gbListado.Location = new System.Drawing.Point(12, 45);
             this.gbListado.Name = "gbListado";
             this.gbListado.Padding = new System.Windows.Forms.Padding(2, 22, 2, 2);
-            this.gbListado.Size = new System.Drawing.Size(455, 392);
+            this.gbListado.Size = new System.Drawing.Size(499, 392);
             this.gbListado.TabIndex = 191;
             this.gbListado.Text = "Listado";
-            this.gbListado.ThemeName = "VisualStudio2012Light";
+            this.gbListado.ThemeName = "Windows8";
             // 
             // dgvListado
             // 
@@ -470,101 +470,101 @@
             this.dgvListado.MasterTemplate.AllowAddNewRow = false;
             this.dgvListado.MasterTemplate.AutoGenerateColumns = false;
             this.dgvListado.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn1.EnableExpressionEditor = false;
-            gridViewTextBoxColumn1.FieldName = "codigoPersonalBloqueo";
-            gridViewTextBoxColumn1.HeaderText = "codigoPersonalBloqueo";
-            gridViewTextBoxColumn1.IsVisible = false;
-            gridViewTextBoxColumn1.Name = "chcodigoPersonalBloqueo";
-            gridViewTextBoxColumn1.Width = 40;
-            gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "codigoPersonalGeneral";
-            gridViewTextBoxColumn2.HeaderText = "Cod.";
-            gridViewTextBoxColumn2.Name = "chcodigoPersonalGeneral";
-            gridViewTextBoxColumn2.Width = 43;
-            gridViewTextBoxColumn3.EnableExpressionEditor = false;
-            gridViewTextBoxColumn3.FieldName = "nombres";
-            gridViewTextBoxColumn3.HeaderText = "Nombres";
-            gridViewTextBoxColumn3.Name = "chnombres";
-            gridViewTextBoxColumn3.SortOrder = Telerik.WinControls.UI.RadSortOrder.Descending;
-            gridViewTextBoxColumn3.Width = 155;
-            gridViewTextBoxColumn4.EnableExpressionEditor = false;
-            gridViewTextBoxColumn4.FieldName = "codigoBloqueo";
-            gridViewTextBoxColumn4.HeaderText = "codigoBloqueo";
-            gridViewTextBoxColumn4.IsVisible = false;
-            gridViewTextBoxColumn4.Name = "chcodigoBloqueo";
-            gridViewTextBoxColumn4.Width = 44;
-            gridViewTextBoxColumn5.EnableExpressionEditor = false;
-            gridViewTextBoxColumn5.FieldName = "bloqueo";
-            gridViewTextBoxColumn5.HeaderText = "bloqueo";
-            gridViewTextBoxColumn5.Name = "chbloqueo";
-            gridViewTextBoxColumn5.Width = 44;
-            gridViewTextBoxColumn6.EnableExpressionEditor = false;
-            gridViewTextBoxColumn6.FieldName = "esPeriodo";
-            gridViewTextBoxColumn6.HeaderText = "esPeriodo";
-            gridViewTextBoxColumn6.IsVisible = false;
-            gridViewTextBoxColumn6.Name = "chesPeriodo";
-            gridViewTextBoxColumn6.Width = 46;
-            gridViewDateTimeColumn1.EnableExpressionEditor = false;
-            gridViewDateTimeColumn1.FieldName = "fechaRegistro";
-            gridViewDateTimeColumn1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            gridViewDateTimeColumn1.FormatString = "{0:d}";
-            gridViewDateTimeColumn1.HeaderText = "Registro";
-            gridViewDateTimeColumn1.IsVisible = false;
-            gridViewDateTimeColumn1.Name = "chfechaRegistro";
-            gridViewDateTimeColumn1.Width = 46;
-            gridViewTextBoxColumn7.EnableExpressionEditor = false;
-            gridViewTextBoxColumn7.FieldName = "inicioBloqueo";
-            gridViewTextBoxColumn7.FormatString = "{0:d}";
-            gridViewTextBoxColumn7.HeaderText = "inicioBloqueo";
-            gridViewTextBoxColumn7.Name = "chinicioBloqueo";
-            gridViewTextBoxColumn7.Width = 43;
-            gridViewTextBoxColumn8.EnableExpressionEditor = false;
-            gridViewTextBoxColumn8.FieldName = "terminoBloqueo";
-            gridViewTextBoxColumn8.FormatString = "{0:d}";
-            gridViewTextBoxColumn8.HeaderText = "terminoBloqueo";
-            gridViewTextBoxColumn8.Name = "chterminoBloqueo";
-            gridViewTextBoxColumn8.Width = 38;
-            gridViewTextBoxColumn9.EnableExpressionEditor = false;
-            gridViewTextBoxColumn9.FieldName = "observaciones";
-            gridViewTextBoxColumn9.HeaderText = "observaciones";
-            gridViewTextBoxColumn9.Name = "chobservaciones";
-            gridViewTextBoxColumn9.Width = 81;
-            gridViewTextBoxColumn10.EnableExpressionEditor = false;
-            gridViewTextBoxColumn10.FieldName = "estado";
-            gridViewTextBoxColumn10.HeaderText = "estado";
-            gridViewTextBoxColumn10.IsVisible = false;
-            gridViewTextBoxColumn10.Name = "chestado";
-            gridViewTextBoxColumn10.Width = 42;
-            gridViewTextBoxColumn11.EnableExpressionEditor = false;
-            gridViewTextBoxColumn11.FieldName = "descripcionEstado";
-            gridViewTextBoxColumn11.HeaderText = "Estado";
-            gridViewTextBoxColumn11.Name = "chdescripcionEstado";
-            gridViewTextBoxColumn11.Width = 35;
+            gridViewTextBoxColumn12.EnableExpressionEditor = false;
+            gridViewTextBoxColumn12.FieldName = "codigoPersonalBloqueo";
+            gridViewTextBoxColumn12.HeaderText = "codigoPersonalBloqueo";
+            gridViewTextBoxColumn12.IsVisible = false;
+            gridViewTextBoxColumn12.Name = "chcodigoPersonalBloqueo";
+            gridViewTextBoxColumn12.Width = 40;
+            gridViewTextBoxColumn13.EnableExpressionEditor = false;
+            gridViewTextBoxColumn13.FieldName = "codigoPersonalGeneral";
+            gridViewTextBoxColumn13.HeaderText = "Cod.";
+            gridViewTextBoxColumn13.Name = "chcodigoPersonalGeneral";
+            gridViewTextBoxColumn13.Width = 47;
+            gridViewTextBoxColumn14.EnableExpressionEditor = false;
+            gridViewTextBoxColumn14.FieldName = "nombres";
+            gridViewTextBoxColumn14.HeaderText = "Nombres";
+            gridViewTextBoxColumn14.Name = "chnombres";
+            gridViewTextBoxColumn14.SortOrder = Telerik.WinControls.UI.RadSortOrder.Descending;
+            gridViewTextBoxColumn14.Width = 171;
+            gridViewTextBoxColumn15.EnableExpressionEditor = false;
+            gridViewTextBoxColumn15.FieldName = "codigoBloqueo";
+            gridViewTextBoxColumn15.HeaderText = "codigoBloqueo";
+            gridViewTextBoxColumn15.IsVisible = false;
+            gridViewTextBoxColumn15.Name = "chcodigoBloqueo";
+            gridViewTextBoxColumn15.Width = 44;
+            gridViewTextBoxColumn16.EnableExpressionEditor = false;
+            gridViewTextBoxColumn16.FieldName = "bloqueo";
+            gridViewTextBoxColumn16.HeaderText = "bloqueo";
+            gridViewTextBoxColumn16.Name = "chbloqueo";
+            gridViewTextBoxColumn16.Width = 48;
+            gridViewTextBoxColumn17.EnableExpressionEditor = false;
+            gridViewTextBoxColumn17.FieldName = "esPeriodo";
+            gridViewTextBoxColumn17.HeaderText = "esPeriodo";
+            gridViewTextBoxColumn17.IsVisible = false;
+            gridViewTextBoxColumn17.Name = "chesPeriodo";
+            gridViewTextBoxColumn17.Width = 46;
+            gridViewDateTimeColumn2.EnableExpressionEditor = false;
+            gridViewDateTimeColumn2.FieldName = "fechaRegistro";
+            gridViewDateTimeColumn2.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            gridViewDateTimeColumn2.FormatString = "{0:d}";
+            gridViewDateTimeColumn2.HeaderText = "Registro";
+            gridViewDateTimeColumn2.IsVisible = false;
+            gridViewDateTimeColumn2.Name = "chfechaRegistro";
+            gridViewDateTimeColumn2.Width = 46;
+            gridViewTextBoxColumn18.EnableExpressionEditor = false;
+            gridViewTextBoxColumn18.FieldName = "inicioBloqueo";
+            gridViewTextBoxColumn18.FormatString = "{0:d}";
+            gridViewTextBoxColumn18.HeaderText = "inicioBloqueo";
+            gridViewTextBoxColumn18.Name = "chinicioBloqueo";
+            gridViewTextBoxColumn18.Width = 47;
+            gridViewTextBoxColumn19.EnableExpressionEditor = false;
+            gridViewTextBoxColumn19.FieldName = "terminoBloqueo";
+            gridViewTextBoxColumn19.FormatString = "{0:d}";
+            gridViewTextBoxColumn19.HeaderText = "terminoBloqueo";
+            gridViewTextBoxColumn19.Name = "chterminoBloqueo";
+            gridViewTextBoxColumn19.Width = 42;
+            gridViewTextBoxColumn20.EnableExpressionEditor = false;
+            gridViewTextBoxColumn20.FieldName = "observaciones";
+            gridViewTextBoxColumn20.HeaderText = "observaciones";
+            gridViewTextBoxColumn20.Name = "chobservaciones";
+            gridViewTextBoxColumn20.Width = 89;
+            gridViewTextBoxColumn21.EnableExpressionEditor = false;
+            gridViewTextBoxColumn21.FieldName = "estado";
+            gridViewTextBoxColumn21.HeaderText = "estado";
+            gridViewTextBoxColumn21.IsVisible = false;
+            gridViewTextBoxColumn21.Name = "chestado";
+            gridViewTextBoxColumn21.Width = 42;
+            gridViewTextBoxColumn22.EnableExpressionEditor = false;
+            gridViewTextBoxColumn22.FieldName = "descripcionEstado";
+            gridViewTextBoxColumn22.HeaderText = "Estado";
+            gridViewTextBoxColumn22.Name = "chdescripcionEstado";
+            gridViewTextBoxColumn22.Width = 39;
             this.dgvListado.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4,
-            gridViewTextBoxColumn5,
-            gridViewTextBoxColumn6,
-            gridViewDateTimeColumn1,
-            gridViewTextBoxColumn7,
-            gridViewTextBoxColumn8,
-            gridViewTextBoxColumn9,
-            gridViewTextBoxColumn10,
-            gridViewTextBoxColumn11});
+            gridViewTextBoxColumn12,
+            gridViewTextBoxColumn13,
+            gridViewTextBoxColumn14,
+            gridViewTextBoxColumn15,
+            gridViewTextBoxColumn16,
+            gridViewTextBoxColumn17,
+            gridViewDateTimeColumn2,
+            gridViewTextBoxColumn18,
+            gridViewTextBoxColumn19,
+            gridViewTextBoxColumn20,
+            gridViewTextBoxColumn21,
+            gridViewTextBoxColumn22});
             this.dgvListado.MasterTemplate.EnableAlternatingRowColor = true;
             this.dgvListado.MasterTemplate.EnableFiltering = true;
             this.dgvListado.MasterTemplate.ShowHeaderCellButtons = true;
-            sortDescriptor1.Direction = System.ComponentModel.ListSortDirection.Descending;
-            sortDescriptor1.PropertyName = "chnombres";
+            sortDescriptor2.Direction = System.ComponentModel.ListSortDirection.Descending;
+            sortDescriptor2.PropertyName = "chnombres";
             this.dgvListado.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
-            sortDescriptor1});
+            sortDescriptor2});
             this.dgvListado.Name = "dgvListado";
             this.dgvListado.ReadOnly = true;
             this.dgvListado.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgvListado.ShowHeaderCellButtons = true;
-            this.dgvListado.Size = new System.Drawing.Size(451, 368);
+            this.dgvListado.Size = new System.Drawing.Size(495, 368);
             this.dgvListado.TabIndex = 0;
             this.dgvListado.ThemeName = "VisualStudio2012Light";
             this.dgvListado.SelectionChanged += new System.EventHandler(this.dgvListado_SelectionChanged);
@@ -608,9 +608,9 @@
             this.btnRRHH.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnRRHH.DisplayName = "Recursos Humanos";
             this.btnRRHH.DrawText = true;
-            this.btnRRHH.Image = global::Transportista.Properties.Resources.compras1;
+            this.btnRRHH.Image = ((System.Drawing.Image)(resources.GetObject("btnRRHH.Image")));
             this.btnRRHH.Name = "btnRRHH";
-            this.btnRRHH.Text = "     Compras";
+            this.btnRRHH.Text = "  Recursos Humanos";
             this.btnRRHH.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRRHH.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnRRHH.ToolTipText = "Recursos Humanos";
@@ -839,7 +839,7 @@
             // toolStripStatusLabel8
             // 
             this.toolStripStatusLabel8.Name = "toolStripStatusLabel8";
-            this.toolStripStatusLabel8.Size = new System.Drawing.Size(132, 17);
+            this.toolStripStatusLabel8.Size = new System.Drawing.Size(130, 17);
             this.toolStripStatusLabel8.Text = "  Tiempo Transcurrido : ";
             // 
             // lblTiempoTranscurrido
@@ -874,8 +874,9 @@
             this.Controls.Add(this.gbListado);
             this.Controls.Add(this.mnPrincipal);
             this.Controls.Add(this.stsBarraEstado);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CatalogoPersonalBloqueadoParaAsistencia";
-            this.Text = "Listado de Personal bloqueado para ingreso a labores";
+            this.Text = "Catálogo|  Alta y baja de personal observado| Registro";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.CatalogoPerosnalBloqueadoParaAsistencia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gbMantenimiento)).EndInit();

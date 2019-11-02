@@ -2,38 +2,28 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Linq;
 using System.Windows.Forms;
 using Telerik.WinControls;
-using System.Globalization;
-using MyControlsDataBinding;
 using MyControlsDataBinding.Extensions;
-using MyControlsDataBinding.Controles;
-using MyControlsDataBinding.Datos;
-using MyControlsDataBinding.Busquedas;
-using MyControlsDataBinding.Clases;
-using MyControlsDataBinding.ControlesUsuario;
-using System.Collections;
-using Transportista.Negocios;
 
 using System.Configuration;
 using Telerik.WinControls.UI;
 using Telerik.WinControls.UI.Export;
 using System.IO;
 using Telerik.WinControls.UI.Localization;
-using TransportistaMto.Datos;
+using Asistencia.Datos;
+using Asistencia.Negocios;
 
-namespace Transportista
+namespace Asistencia
 {
     public partial class CatalogoUbicacionParaderos : Form
     {
         private string periodo;
-        private SJ_ParaderoNegocio modelo;
+        private WhereaboutsController modelo;
         private List<Paradero> ListaParaderos;
         private Paradero oParadero;
-        private SJ_Paradero oParaderoRegistro;
+        private SJ_Paraderos oParaderoRegistro;
         private string nombreArchivo;
         private bool exportVisualSettings;
         private List<Grupo> listadoTipoParadero;
@@ -41,10 +31,10 @@ namespace Transportista
         public CatalogoUbicacionParaderos()
         {
             InitializeComponent();
-            RadGridLocalizationProvider.CurrentProvider = new Transportista.ClaseTelerik.GridLocalizationProviderEspanol();
-            RadPageViewLocalizationProvider.CurrentProvider = new Transportista.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
-            RadWizardLocalizationProvider.CurrentProvider = new Transportista.ClaseTelerik.RadWizardLocalizationProviderEspañol();
-            RadMessageLocalizationProvider.CurrentProvider = new Transportista.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
+            RadGridLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.GridLocalizationProviderEspanol();
+            RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
+            RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
+            RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
             Inicio();
             CargarComboTipoParadero();
 
@@ -52,7 +42,7 @@ namespace Transportista
 
         private void CargarComboTipoParadero()
         {
-            modelo = new SJ_ParaderoNegocio();
+            modelo = new WhereaboutsController();
             listadoTipoParadero = new List<Grupo>();
             listadoTipoParadero = modelo.ObtenerListadoTipoParaderos();
             this.cboTipo.DisplayMember = "Descripcion";
@@ -100,7 +90,7 @@ namespace Transportista
 
             try
             {
-                modelo = new SJ_ParaderoNegocio();
+                modelo = new WhereaboutsController();
                 ListaParaderos = new List<Paradero>();
                 ListaParaderos = modelo.ObtenerListaParaderos(periodo).ToList();
             }
@@ -205,7 +195,7 @@ namespace Transportista
             oParadero = new Paradero();
             if (dgvPension != null && dgvPension.Rows.Count > 0)
             {
-                if (dgvPension.CurrentRow != null && dgvPension.CurrentRow.Cells["chIdParadero"].Value != null && dgvPension.CurrentRow.Cells["chIdParadero"].Value.ToString().Trim() !=  string.Empty);
+                if (dgvPension.CurrentRow != null && dgvPension.CurrentRow.Cells["chIdParadero"].Value != null && dgvPension.CurrentRow.Cells["chIdParadero"].Value.ToString().Trim() != string.Empty);
                 {
                     this.txtCodigo.Text = dgvPension.CurrentRow.Cells["chIdParadero"].Value.ToString().Trim();
                     this.txtDescripcionParadero.Text = dgvPension.CurrentRow.Cells["chParadero"].Value != null ? dgvPension.CurrentRow.Cells["chParadero"].Value.ToString().Trim() : string.Empty;
@@ -313,7 +303,7 @@ namespace Transportista
                 if (this.txtDescripcionParadero.Text.ToString().Trim() != "")
                 {
                     #region Obtener objeto()
-                    oParaderoRegistro = new SJ_Paradero();
+                    oParaderoRegistro = new SJ_Paraderos();
                     oParaderoRegistro.IdParadero = this.txtCodigo.Text.ToString().Trim();
                     oParaderoRegistro.DescripcionParadero = this.txtDescripcionParadero.Text.ToString().Trim();
                     oParaderoRegistro.Observacion = this.txtObservación.Text.ToString().Trim();
@@ -519,7 +509,7 @@ namespace Transportista
             btnSalir.Enabled = false;
             if (oParadero != null && (oParadero.estado == 1 || oParadero.estado == 0))
             {
-                modelo = new SJ_ParaderoNegocio();
+                modelo = new WhereaboutsController();
                 modelo.CambiarEstadoDocumento(periodo, oParadero);
                 RealizarConsulta();
             }
@@ -554,7 +544,7 @@ namespace Transportista
             btnSalir.Enabled = false;
             if (oParadero != null && (oParadero.estado == 1 || oParadero.estado == 0))
             {
-                modelo = new SJ_ParaderoNegocio();
+                modelo = new WhereaboutsController();
                 modelo.Eliminar(periodo, oParadero);
                 RealizarConsulta();
             }

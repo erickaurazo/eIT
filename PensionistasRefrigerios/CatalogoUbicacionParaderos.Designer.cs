@@ -1,4 +1,4 @@
-﻿namespace Transportista
+﻿namespace Asistencia
 {
     partial class CatalogoUbicacionParaderos
     {
@@ -202,7 +202,7 @@
             // toolStripStatusLabel8
             // 
             this.toolStripStatusLabel8.Name = "toolStripStatusLabel8";
-            this.toolStripStatusLabel8.Size = new System.Drawing.Size(132, 17);
+            this.toolStripStatusLabel8.Size = new System.Drawing.Size(130, 17);
             this.toolStripStatusLabel8.Text = "  Tiempo Transcurrido : ";
             // 
             // lblTiempoTranscurrido
@@ -263,9 +263,9 @@
             this.btnRRHH.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnRRHH.DisplayName = "Recursos Humanos";
             this.btnRRHH.DrawText = true;
-            this.btnRRHH.Image = global::Transportista.Properties.Resources.compras1;
+            this.btnRRHH.Image = ((System.Drawing.Image)(resources.GetObject("btnRRHH.Image")));
             this.btnRRHH.Name = "btnRRHH";
-            this.btnRRHH.Text = "     Compras";
+            this.btnRRHH.Text = "     RRHH";
             this.btnRRHH.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRRHH.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnRRHH.ToolTipText = "Recursos Humanos";
@@ -723,6 +723,7 @@
             this.Controls.Add(this.gbListadoParaderos);
             this.Controls.Add(this.radCommandBar1);
             this.Controls.Add(this.stsBarraEstado);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CatalogoUbicacionParaderos";
             this.Text = "Catálogo de ubicación de paraderos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

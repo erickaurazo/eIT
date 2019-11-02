@@ -14,11 +14,11 @@ using Telerik.WinControls.UI.Localization;
 using Asistencia.Negocios;
 using Asistencia.Datos;
 
-namespace Transportista
+namespace Asistencia
 {
     public partial class ListadoAsistenciaTransferenciaBuses : Form
     {
-        private ASJ_RegistroTransferenciaTransportesNegocio negocio;
+        private RegistroTransferenciaTransportesController negocio;
         private List<ASJ_ListarRegistroMarcacionPersonalEnBusesResult> listado;
         private List<SJ_ListarAsistenciaSalidaUnidadesTransportePersonalByPeriodoResult> listadoByCostos;
 
@@ -34,7 +34,7 @@ namespace Transportista
         private int incluirRecorridosInternos;
 
         public string Hasta { get; private set; }
-        public Mes MesesNeg { get; private set; }
+        public MesController MesesNeg { get; private set; }
         public string HastaC { get; private set; }
 
         public ListadoAsistenciaTransferenciaBuses()
@@ -144,7 +144,7 @@ namespace Transportista
         private void CargarMeses()
         {
 
-            MesesNeg = new Mes();
+            MesesNeg = new MesController();
             cboMes.DisplayMember = "descripcion";
             cboMes.ValueMember = "valor";
             //cboMes.DataSource = MesesNeg.ListarMeses().Where(x => x.Valor != "13" && x.Valor != "00").ToList();
@@ -174,7 +174,7 @@ namespace Transportista
 
         private void bgwHilo_DoWork(object sender, DoWorkEventArgs e)
         {
-            negocio = new ASJ_RegistroTransferenciaTransportesNegocio();
+            negocio = new RegistroTransferenciaTransportesController();
             listado = new List<ASJ_ListarRegistroMarcacionPersonalEnBusesResult>();
             listadoByCostos = new List<SJ_ListarAsistenciaSalidaUnidadesTransportePersonalByPeriodoResult>();
             listado = negocio.ObtenerListadoRegistroMarcacionPersonalEnBuses(DateTime.Now.Year.ToString(), desde, Hasta).ToList();

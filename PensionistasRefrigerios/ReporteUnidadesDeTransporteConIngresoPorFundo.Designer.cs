@@ -1,4 +1,4 @@
-﻿namespace Transportista
+﻿namespace Asistencia
 {
     partial class ReporteUnidadesDeTransporteConIngresoPorFundo
     {
@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn1 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn16 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn4 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn17 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn18 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn19 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn20 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.Data.SortDescriptor sortDescriptor4 = new Telerik.WinControls.Data.SortDescriptor();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteUnidadesDeTransporteConIngresoPorFundo));
             this.gbRegistros = new Telerik.WinControls.UI.RadGroupBox();
             this.dgvAsistenciaPersonalAdm = new Telerik.WinControls.UI.RadGridView();
@@ -52,7 +52,7 @@
             this.menuPrincipal = new Telerik.WinControls.UI.RadCommandBar();
             this.BarraSuperior = new Telerik.WinControls.UI.CommandBarRowElement();
             this.BarraModulo = new Telerik.WinControls.UI.CommandBarStripElement();
-            this.btnRRHH = new Telerik.WinControls.UI.CommandBarButton();
+            this.btnTransportes = new Telerik.WinControls.UI.CommandBarButton();
             this.commandBarStripElement3 = new Telerik.WinControls.UI.CommandBarStripElement();
             this.btnNuevo = new Telerik.WinControls.UI.CommandBarButton();
             this.btnExportar = new Telerik.WinControls.UI.CommandBarButton();
@@ -124,55 +124,55 @@
             this.dgvAsistenciaPersonalAdm.MasterTemplate.AllowAddNewRow = false;
             this.dgvAsistenciaPersonalAdm.MasterTemplate.AutoGenerateColumns = false;
             this.dgvAsistenciaPersonalAdm.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn1.EnableExpressionEditor = false;
-            gridViewTextBoxColumn1.FieldName = "nroOrden";
-            gridViewTextBoxColumn1.HeaderText = "Nro. orden";
-            gridViewTextBoxColumn1.Name = "chnroOrden";
-            gridViewTextBoxColumn1.Width = 93;
-            gridViewDateTimeColumn1.EnableExpressionEditor = false;
-            gridViewDateTimeColumn1.ExcelExportFormatString = "{0:d}";
-            gridViewDateTimeColumn1.ExcelExportType = Telerik.WinControls.UI.Export.DisplayFormatType.ShortDate;
-            gridViewDateTimeColumn1.FieldName = "fecha";
-            gridViewDateTimeColumn1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            gridViewDateTimeColumn1.FormatString = "{0:d}";
-            gridViewDateTimeColumn1.HeaderText = "Fecha";
-            gridViewDateTimeColumn1.Name = "chfecha";
-            gridViewDateTimeColumn1.Width = 76;
-            gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "categoriaMovilidad";
-            gridViewTextBoxColumn2.HeaderText = "Categoría";
-            gridViewTextBoxColumn2.Name = "chcategoriaMovilidad";
-            gridViewTextBoxColumn2.Width = 169;
-            gridViewTextBoxColumn3.EnableExpressionEditor = false;
-            gridViewTextBoxColumn3.FieldName = "transportista";
-            gridViewTextBoxColumn3.HeaderText = "Empresa de Transporte";
-            gridViewTextBoxColumn3.Name = "chtransportista";
-            gridViewTextBoxColumn3.Width = 308;
-            gridViewTextBoxColumn4.EnableExpressionEditor = false;
-            gridViewTextBoxColumn4.FieldName = "placa";
-            gridViewTextBoxColumn4.HeaderText = "Placa";
-            gridViewTextBoxColumn4.Name = "chplaca";
-            gridViewTextBoxColumn4.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
-            gridViewTextBoxColumn4.Width = 128;
-            gridViewTextBoxColumn5.EnableExpressionEditor = false;
-            gridViewTextBoxColumn5.FieldName = "puntoSalida";
-            gridViewTextBoxColumn5.HeaderText = "Punto de Ingreso";
-            gridViewTextBoxColumn5.Name = "chpuntoSalida";
-            gridViewTextBoxColumn5.Width = 179;
+            gridViewTextBoxColumn16.EnableExpressionEditor = false;
+            gridViewTextBoxColumn16.FieldName = "nroOrden";
+            gridViewTextBoxColumn16.HeaderText = "Nro. orden";
+            gridViewTextBoxColumn16.Name = "chnroOrden";
+            gridViewTextBoxColumn16.Width = 93;
+            gridViewDateTimeColumn4.EnableExpressionEditor = false;
+            gridViewDateTimeColumn4.ExcelExportFormatString = "{0:d}";
+            gridViewDateTimeColumn4.ExcelExportType = Telerik.WinControls.UI.Export.DisplayFormatType.ShortDate;
+            gridViewDateTimeColumn4.FieldName = "fecha";
+            gridViewDateTimeColumn4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            gridViewDateTimeColumn4.FormatString = "{0:d}";
+            gridViewDateTimeColumn4.HeaderText = "Fecha";
+            gridViewDateTimeColumn4.Name = "chfecha";
+            gridViewDateTimeColumn4.Width = 76;
+            gridViewTextBoxColumn17.EnableExpressionEditor = false;
+            gridViewTextBoxColumn17.FieldName = "categoriaMovilidad";
+            gridViewTextBoxColumn17.HeaderText = "Categoría";
+            gridViewTextBoxColumn17.Name = "chcategoriaMovilidad";
+            gridViewTextBoxColumn17.Width = 169;
+            gridViewTextBoxColumn18.EnableExpressionEditor = false;
+            gridViewTextBoxColumn18.FieldName = "transportista";
+            gridViewTextBoxColumn18.HeaderText = "Empresa de Transporte";
+            gridViewTextBoxColumn18.Name = "chtransportista";
+            gridViewTextBoxColumn18.Width = 308;
+            gridViewTextBoxColumn19.EnableExpressionEditor = false;
+            gridViewTextBoxColumn19.FieldName = "placa";
+            gridViewTextBoxColumn19.HeaderText = "Placa";
+            gridViewTextBoxColumn19.Name = "chplaca";
+            gridViewTextBoxColumn19.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
+            gridViewTextBoxColumn19.Width = 128;
+            gridViewTextBoxColumn20.EnableExpressionEditor = false;
+            gridViewTextBoxColumn20.FieldName = "puntoSalida";
+            gridViewTextBoxColumn20.HeaderText = "Punto de Ingreso";
+            gridViewTextBoxColumn20.Name = "chpuntoSalida";
+            gridViewTextBoxColumn20.Width = 179;
             this.dgvAsistenciaPersonalAdm.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewDateTimeColumn1,
-            gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4,
-            gridViewTextBoxColumn5});
+            gridViewTextBoxColumn16,
+            gridViewDateTimeColumn4,
+            gridViewTextBoxColumn17,
+            gridViewTextBoxColumn18,
+            gridViewTextBoxColumn19,
+            gridViewTextBoxColumn20});
             this.dgvAsistenciaPersonalAdm.MasterTemplate.EnableAlternatingRowColor = true;
             this.dgvAsistenciaPersonalAdm.MasterTemplate.EnableFiltering = true;
             this.dgvAsistenciaPersonalAdm.MasterTemplate.MultiSelect = true;
             this.dgvAsistenciaPersonalAdm.MasterTemplate.SelectionMode = Telerik.WinControls.UI.GridViewSelectionMode.CellSelect;
-            sortDescriptor1.PropertyName = "chplaca";
+            sortDescriptor4.PropertyName = "chplaca";
             this.dgvAsistenciaPersonalAdm.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
-            sortDescriptor1});
+            sortDescriptor4});
             this.dgvAsistenciaPersonalAdm.Name = "dgvAsistenciaPersonalAdm";
             this.dgvAsistenciaPersonalAdm.ReadOnly = true;
             this.dgvAsistenciaPersonalAdm.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -335,7 +335,7 @@
             this.menuPrincipal.Name = "menuPrincipal";
             this.menuPrincipal.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.BarraSuperior});
-            this.menuPrincipal.Size = new System.Drawing.Size(994, 62);
+            this.menuPrincipal.Size = new System.Drawing.Size(994, 37);
             this.menuPrincipal.TabIndex = 213;
             this.menuPrincipal.Text = "Nuevo";
             this.menuPrincipal.ThemeName = "VisualStudio2012Light";
@@ -355,24 +355,24 @@
             this.BarraModulo.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.BarraModulo.DisplayName = "commandBarStripElement2";
             this.BarraModulo.Items.AddRange(new Telerik.WinControls.UI.RadCommandBarBaseItem[] {
-            this.btnRRHH});
+            this.btnTransportes});
             this.BarraModulo.Name = "commandBarStripElement2";
             this.BarraModulo.Text = "";
             this.BarraModulo.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             // 
-            // btnRRHH
+            // btnTransportes
             // 
-            this.btnRRHH.AccessibleDescription = "RecursosHumanos";
-            this.btnRRHH.AccessibleName = "RecursosHumanos";
-            this.btnRRHH.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.btnRRHH.DisplayName = "Recursos Humanos";
-            this.btnRRHH.DrawText = true;
-            this.btnRRHH.Image = ((System.Drawing.Image)(resources.GetObject("btnRRHH.Image")));
-            this.btnRRHH.Name = "btnRRHH";
-            this.btnRRHH.Text = "     Recursos Humanos";
-            this.btnRRHH.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRRHH.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.btnRRHH.ToolTipText = "     Recursos Humanos";
+            this.btnTransportes.AccessibleDescription = "Transportes";
+            this.btnTransportes.AccessibleName = "Transportes";
+            this.btnTransportes.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.btnTransportes.DisplayName = "Transportes";
+            this.btnTransportes.DrawText = true;
+            this.btnTransportes.Image = ((System.Drawing.Image)(resources.GetObject("btnTransportes.Image")));
+            this.btnTransportes.Name = "btnTransportes";
+            this.btnTransportes.Text = "    Transportes  ";
+            this.btnTransportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTransportes.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.btnTransportes.ToolTipText = "Transportes";
             // 
             // commandBarStripElement3
             // 
@@ -517,7 +517,7 @@
             // toolStripStatusLabel8
             // 
             this.toolStripStatusLabel8.Name = "toolStripStatusLabel8";
-            this.toolStripStatusLabel8.Size = new System.Drawing.Size(132, 17);
+            this.toolStripStatusLabel8.Size = new System.Drawing.Size(130, 17);
             this.toolStripStatusLabel8.Text = "  Tiempo Transcurrido : ";
             // 
             // lblTiempoTranscurrido
@@ -568,8 +568,9 @@
             this.Controls.Add(this.menuPrincipal);
             this.Controls.Add(this.gbConsulta);
             this.Controls.Add(this.gbRegistros);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ReporteUnidadesDeTransporteConIngresoPorFundo";
-            this.Text = "Reporte de ingreso de unidades de transporte distribuido por fundo";
+            this.Text = "Reporte | Listado de ingreso de unidad de transporte de personal por Puerta";
             ((System.ComponentModel.ISupportInitialize)(this.gbRegistros)).EndInit();
             this.gbRegistros.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsistenciaPersonalAdm.MasterTemplate)).EndInit();
@@ -607,7 +608,7 @@
         private Telerik.WinControls.UI.RadCommandBar menuPrincipal;
         private Telerik.WinControls.UI.CommandBarRowElement BarraSuperior;
         private Telerik.WinControls.UI.CommandBarStripElement BarraModulo;
-        private Telerik.WinControls.UI.CommandBarButton btnRRHH;
+        private Telerik.WinControls.UI.CommandBarButton btnTransportes;
         private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement3;
         private Telerik.WinControls.UI.CommandBarButton btnNuevo;
         private Telerik.WinControls.UI.CommandBarButton btnExportar;
