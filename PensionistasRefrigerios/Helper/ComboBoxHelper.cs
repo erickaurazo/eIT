@@ -16,7 +16,15 @@ namespace Asistencia.Helper
         {
             List<Grupo> result = new List<Grupo>();
             result.Add(new Grupo { Code = 1, Descripcion = "Activo" });
-            result.Add(new Grupo { Code = 0, Descripcion = "ANULADO" });
+            result.Add(new Grupo { Code = 0, Descripcion = "Anulado" });
+            return result;
+        }
+
+        public List<Grupo> GetComboBoxStatusUser()
+        {
+            List<Grupo> result = new List<Grupo>();
+            result.Add(new Grupo { Codigo = "1", Descripcion = "Activo" });
+            result.Add(new Grupo { Codigo = "0", Descripcion = "Anulado" });
             return result;
         }
 
@@ -92,12 +100,82 @@ namespace Asistencia.Helper
                           {
                               Codigo = j.Key.barraPadre.Trim(),
                               Descripcion = formModul.Where(
-                                  x => x.moduloCodigo.Trim() == j.Key.barraPadre.Trim()) != null ? 
-                                  formModul.Where(x => x.Jerarquia.Trim() == j.Key.barraPadre.Trim()).Single().descripcion : 
+                                  x => x.moduloCodigo.Trim() == j.Key.barraPadre.Trim()) != null ?
+                                  formModul.Where(x => x.Jerarquia.Trim() == j.Key.barraPadre.Trim()).Single().descripcion :
                                   string.Empty
                           }
                          ).ToList();
             }
+
+            return result;
+        }
+
+
+
+
+        public List<Grupo> GetComboBoxLocal()
+        {
+            List<Grupo> result = new List<Grupo>();
+            result.Add(new Grupo { Codigo = "0", Descripcion = "-- Seleccionar item --" });
+            result.Add(new Grupo { Codigo = "BALSA", Descripcion = "BALSA" });
+            result.Add(new Grupo { Codigo = "IMP", Descripcion = "IMP" });
+            result.Add(new Grupo { Codigo = "SAN JOSE", Descripcion = "SAN JOSE" });
+            result.Add(new Grupo { Codigo = "SANTA MARIA", Descripcion = "SANTA MARIA" });
+            result.Add(new Grupo { Codigo = "TABLAZO", Descripcion = "TABLAZO" });
+            return result;
+        }
+
+        public List<Grupo> GetComboBoxAccessLevel()
+        {
+            List<Grupo> result = new List<Grupo>();
+            result.Add(new Grupo { Codigo = "0", Descripcion = "-- Seleccionar item --" });
+            result.Add(new Grupo { Codigo = "1", Descripcion = "Administrador".ToUpper() });
+            result.Add(new Grupo { Codigo = "2", Descripcion = "Usuario".ToUpper() });
+            result.Add(new Grupo { Codigo = "3", Descripcion = "Soporte".ToUpper() });
+            return result;
+        }
+
+        public List<Grupo> GetComboBoxBranchOffice()
+        {
+            List<Grupo> result = new List<Grupo>();
+            result.Add(new Grupo { Codigo = "0", Descripcion = "-- Seleccionar item --" });
+            result.Add(new Grupo { Codigo = "001", Descripcion = "Piura".ToUpper() });
+            result.Add(new Grupo { Codigo = "002", Descripcion = "Sullana".ToUpper() });
+            result.Add(new Grupo { Codigo = "003", Descripcion = "Catacaos".ToUpper() });
+            return result;
+        }
+
+        public List<Grupo> GetComboBoxDoorAccess()
+        {
+            List<Grupo> result = new List<Grupo>();
+            result.Add(new Grupo { Codigo = "0", Descripcion = "-- Seleccionar item --" });
+            result.Add(new Grupo { Codigo = "1", Descripcion = "BOTA" });
+            result.Add(new Grupo { Codigo = "2", Descripcion = "BALSA" });
+            result.Add(new Grupo { Codigo = "3", Descripcion = "TABLAZO" });
+            result.Add(new Grupo { Codigo = "4", Descripcion = "SANTA MARIA" });
+            result.Add(new Grupo { Codigo = "5", Descripcion = "IMP" });
+            result.Add(new Grupo { Codigo = "6", Descripcion = "PCK VID ASJ" });
+            result.Add(new Grupo { Codigo = "7", Descripcion = "PCK VID ASR" });
+            result.Add(new Grupo { Codigo = "8", Descripcion = "PCK BANANO" });
+            result.Add(new Grupo { Codigo = "9", Descripcion = "COMEDOR ASJ" });
+            result.Add(new Grupo { Codigo = "10", Descripcion = "COMEDOR PCK VID ASJ" });
+            result.Add(new Grupo { Codigo = "11", Descripcion = "COMEDOR PCK VID ASS" });
+            return result;
+        }
+        public List<Grupo> GetComboBoxAreaAccess()
+        {
+            List<Grupo> result = new List<Grupo>();
+            result.Add(new Grupo { Codigo = "0", Descripcion = "-- Seleccionar item --" });
+            result.Add(new Grupo { Codigo = "balsa".ToUpper(), Descripcion = "balsa".ToUpper() });
+            result.Add(new Grupo { Codigo = "Bota".ToUpper(), Descripcion = "Bota".ToUpper() });
+            result.Add(new Grupo { Codigo = "Imp".ToUpper(), Descripcion = "Imp".ToUpper() });
+            result.Add(new Grupo { Codigo = "RRHH".ToUpper(), Descripcion = "RRHH".ToUpper() });
+            result.Add(new Grupo { Codigo = "Sistemas".ToUpper(), Descripcion = "Sistemas".ToUpper() });
+            result.Add(new Grupo { Codigo = "Tablazo".ToUpper(), Descripcion = "Tablazo".ToUpper() });
+            result.Add(new Grupo { Codigo = "Transporte".ToUpper(), Descripcion = "Transporte".ToUpper() });
+            result.Add(new Grupo { Codigo = "VIGILANCIA".ToUpper(), Descripcion = "VIGILANCIA".ToUpper() });
+            result.Add(new Grupo { Codigo = "PCK ASJ".ToUpper(), Descripcion = "PCK ASJ".ToUpper() });
+            result.Add(new Grupo { Codigo = "PCK ASR".ToUpper(), Descripcion = "PCK ASR".ToUpper() });
 
             return result;
         }

@@ -564,6 +564,7 @@ namespace Asistencia
 
         private void btnAtras_Click(object sender, EventArgs e)
         {
+            ClearForm();
             gbEdition.Enabled = false;
             gbList.Enabled = true;
             btnNuevo.Enabled = true;

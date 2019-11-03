@@ -301,11 +301,17 @@
     <Compile Include="Modulo.Designer.cs">
       <DependentUpon>Modulo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Privilegio.cs">
+    <Compile Include="Privileges.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Privilegio.Designer.cs">
-      <DependentUpon>Privilegio.cs</DependentUpon>
+    <Compile Include="Privileges.Designer.cs">
+      <DependentUpon>Privileges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users.Designer.cs">
+      <DependentUpon>Users.cs</DependentUpon>
     </Compile>
     <Compile Include="ReporteAsistenciaDiarioByPuertaIngreso.cs">
       <SubType>Form</SubType>
@@ -399,8 +405,11 @@
     <EmbeddedResource Include="Modulo.resx">
       <DependentUpon>Modulo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Privilegio.resx">
-      <DependentUpon>Privilegio.cs</DependentUpon>
+    <EmbeddedResource Include="Privileges.resx">
+      <DependentUpon>Privileges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users.resx">
+      <DependentUpon>Users.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteAsistenciaDiarioByPuertaIngreso.resx">
       <DependentUpon>ReporteAsistenciaDiarioByPuertaIngreso.cs</DependentUpon>

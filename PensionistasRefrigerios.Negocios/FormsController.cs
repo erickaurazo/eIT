@@ -73,8 +73,7 @@ namespace Asistencia.Negocios
 
         private string ObtenerJerarquía(string periodo, string jerarquia)
         {
-            string cnx, hierarchy = string.Empty;
-            
+            string cnx, hierarchy = string.Empty;            
             cnx = ConfigurationManager.AppSettings["bd" + periodo];
             using (BDAsistenciaDataContext contexto = new BDAsistenciaDataContext(cnx))
             {

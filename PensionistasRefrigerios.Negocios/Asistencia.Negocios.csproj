@@ -62,6 +62,7 @@
     <Compile Include="MesController.cs" />
     <Compile Include="ModuloSistemaController.cs" />
     <Compile Include="PersonaParaderoController.cs" />
+    <Compile Include="UsersController.cs" />
     <Compile Include="WhereaboutsController.cs" />
     <Compile Include="ParaderosController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -211,8 +211,6 @@ namespace Asistencia.Negocios
 
         }
 
-
-
         public List<Grupo> ObtenerListadoTipoParaderos()
         {
             List<Grupo> listadoTipoParaderos = new List<Grupo>();
