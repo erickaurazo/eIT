@@ -69,5 +69,31 @@ namespace Asistencia.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;!--##Configuracion Inicial--&gt;
+        ///usuario: sa
+        ///clave: .1975Casa
+        ///instanciaMotordbLocal: BLUESOFT
+        ///instanciaMotordbPublica: BLUESOFT
+        ///baseDatos01:GoSolution
+        ///baseDatos02:GoSolution
+        ///baseDatos03:GoSolution
+        ///baseDatos04:GoSolution.
+        /// </summary>
+        internal static string Init {
+            get {
+                return ResourceManager.GetString("Init", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a .
+        /// </summary>
+        internal static string TextFile1 {
+            get {
+                return ResourceManager.GetString("TextFile1", resourceCulture);
+            }
+        }
     }
 }

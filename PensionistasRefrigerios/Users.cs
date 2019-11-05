@@ -31,6 +31,12 @@ namespace Asistencia
         private List<Grupo> listDoorAccessComboBox;
         private List<Grupo> listStatudByComboBox;
         private ComboBoxHelper modelComboBox;
+        private string _conection;
+        private ASJ_USUARIOS _user;
+        private string _companyId;
+
+
+
 
         public Users()
         {
@@ -42,6 +48,23 @@ namespace Asistencia
             Inicio();
             RefreshList();
         }
+
+        public Users(string conection, ASJ_USUARIOS user, string companyId)
+        {
+            InitializeComponent();
+            _conection = conection;
+            _user = user;
+            _companyId = companyId;
+
+            RadGridLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.GridLocalizationProviderEspanol();
+            RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
+            RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
+            RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
+            Inicio();
+            RefreshList();
+        }
+
+
 
         public void Inicio()
         {
@@ -70,7 +93,6 @@ namespace Asistencia
             ImagePrimitive searchIcon = new ImagePrimitive();
             searchIcon.Image = imageList1.Images[4];
             searchIcon.Alignment = ContentAlignment.MiddleRight;
-
             //this.txtFormulario.TextBoxElement.Children.Add(searchIcon);
             //this.txtFormulario.TextBoxElement.TextBoxItem.Alignment = ContentAlignment.MiddleLeft;
             //this.txtFormulario.TextBoxElement.TextBoxItem.StretchHorizontally = false;
@@ -139,8 +161,6 @@ namespace Asistencia
             cboPuerta.SelectedValue = "0";
             cboSucursal.SelectedValue = "0";
             cboLocal.SelectedValue = "0";
-
-
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -161,7 +181,6 @@ namespace Asistencia
                 btnEliminarRegistro.Enabled = false;
                 btnSave.Enabled = true;
                 btnAtras.Enabled = true;
-
                 txtUserCode.ReadOnly = true;
                 txtPersonalCode.ReadOnly = true;
                 txtPersonalFullName.ReadOnly = true;
@@ -204,8 +223,7 @@ namespace Asistencia
                     user.SUCURSAL = cboSucursal.SelectedText.ToString().Trim();
                     user.id_puerta = Convert.ToInt32(cboPuerta.SelectedValue.ToString().Trim());
                     user.SUCURSAL = cboPuerta.SelectedText.ToString().Trim();
-
-                    if (model.AddUser(period, user) == true)
+                    if (model.AddUser(period, user, _companyId) == true)
                     {
                         MessageBox.Show("Operacion realizada satisfactoriamente", "Confirmación del sistema");
                         gbEdition.Enabled = false;
@@ -232,8 +250,6 @@ namespace Asistencia
                 MessageBox.Show("Faltan datos para poder registrar el formulario", "Confirmación del sistema");
                 return;
             }
-
-
         }
 
         private bool ValidateForm()
@@ -292,13 +308,11 @@ namespace Asistencia
 
         private void ChangeStatus()
         {
-
             if (this.txtUserCode.Text.Trim() != string.Empty && this.txtFullName.Text.Trim() != string.Empty)
             {
-
                 ASJ_USUARIOS user = new ASJ_USUARIOS();
                 user.IdUsuario = txtUserCode.Text.Trim();
-                if (model.ChangeStateUser(period, user) == true)
+                if (model.ChangeStateUser(period, user, _companyId) == true)
                 {
                     MessageBox.Show("Operacion realizada satisfactoriamente", "Confirmación del sistema");
                     gbEdition.Enabled = false;
@@ -312,22 +326,17 @@ namespace Asistencia
                     btnAtras.Enabled = false;
                     RefreshList();
                 }
-
                 else
                 {
                     MessageBox.Show("Faltan datos para poder registrar el formulario", "Confirmación del sistema");
                     return;
                 }
-
             }
             else
             {
                 MessageBox.Show("Faltan datos para poder registrar el formulario", "Confirmación del sistema");
                 return;
             }
-
-
-
         }
 
         private void btnEliminarRegistro_Click(object sender, EventArgs e)
@@ -337,13 +346,11 @@ namespace Asistencia
 
         private void Remove()
         {
-
             if (this.txtUserCode.Text.Trim() != string.Empty && this.txtFullName.Text.Trim() != string.Empty)
             {
-
                 ASJ_USUARIOS user = new ASJ_USUARIOS();
                 user.IdUsuario = txtUserCode.Text.Trim();
-                if (model.RemoveUser(period, user) == true)
+                if (model.RemoveUser(period, user, _companyId) == true)
                 {
                     MessageBox.Show("Operacion realizada satisfactoriamente", "Confirmación del sistema");
                     gbEdition.Enabled = false;
@@ -357,13 +364,11 @@ namespace Asistencia
                     btnAtras.Enabled = false;
                     RefreshList();
                 }
-
                 else
                 {
                     MessageBox.Show("Faltan datos para poder registrar el formulario", "Confirmación del sistema");
                     return;
                 }
-
             }
             else
             {
@@ -456,7 +461,7 @@ namespace Asistencia
             {
                 users = new List<ASJ_USUARIOS>();
                 model = new UsersController();
-                users = model.GetListAllUser(period).ToList();
+                users = model.GetListAllUser(period, _companyId).ToList();
                 modelComboBox = new ComboBoxHelper();
 
                 listAreaByComboBox = new List<Grupo>();
@@ -565,7 +570,7 @@ namespace Asistencia
             {
                 if (ValidateForm() == true)
                 {
-                    Privileges ofrm = new Privileges(this.txtUserCode.Text.Trim(), this.txtFullName.Text.Trim());
+                    Privileges ofrm = new Privileges(this.txtUserCode.Text.Trim(), this.txtFullName.Text.Trim(), _conection, _user, _companyId);
                     ofrm.ShowDialog();
                 }
             }

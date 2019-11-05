@@ -59,6 +59,9 @@ namespace Asistencia
         private bool duplicado;
         private string tradename;
         private string period;
+        private string _conection;
+        private ASJ_USUARIOS _user;
+        private string _companyId;
 
         #endregion
 
@@ -78,6 +81,26 @@ namespace Asistencia
             gbList.Enabled = false;
             bgwHilo.RunWorkerAsync();
 
+        }
+
+        public CatalogoEmpresaDeServicioDeTransporteDePersonal(string conection, ASJ_USUARIOS user, string companyId)
+        {
+            InitializeComponent();
+            _conection = conection;
+            _user = user;
+            _companyId = companyId;
+            RadGridLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.GridLocalizationProviderEspanol();
+            RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
+            RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
+            RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
+            Inicio();
+            period = DateTime.Now.Year.ToString();
+            ObtenerListacboTipoMovilidad();
+            ObtenerListaTransportistas();
+            gbEdit.Enabled = false;
+            gbTransporte.Enabled = false;
+            gbList.Enabled = false;
+            bgwHilo.RunWorkerAsync();
         }
 
         private void Transportista_Load(object sender, EventArgs e)

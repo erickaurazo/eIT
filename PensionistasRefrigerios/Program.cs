@@ -15,8 +15,8 @@ namespace Asistencia
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Menu());
-            Application.Run(new Users());
+            Application.Run(new Menu());
+            //Application.Run(new Formularios());
 
         }
     }

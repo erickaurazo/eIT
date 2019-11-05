@@ -19,17 +19,23 @@ namespace Asistencia
         private UsersController model;
         private List<PrivilegesByUser> privileges;
         private string period;
+        private string _conection;
+        private ASJ_USUARIOS _user;
+        private string _companyId;
 
         public Privileges()
         {
             InitializeComponent();
         }
 
-        public Privileges(string userId, string fullName)
+        public Privileges(string userId, string fullName, string conection, ASJ_USUARIOS user, string companyId)
         {
             InitializeComponent();
             _userId = userId;
             _fullName = fullName;
+            _conection = conection;
+            _user = user;
+            _companyId = companyId;
             period = DateTime.Now.Year.ToString();
             this.txtFullName.Text = _fullName.Trim();
             this.txtUserCode.Text = _userId.Trim();
@@ -56,7 +62,7 @@ namespace Asistencia
         {
             model = new UsersController();
             privileges = new List<PrivilegesByUser>();
-            privileges = model.GetListPrivilegesByUser(period, _userId);
+            privileges = model.GetListPrivilegesByUser(period, _userId,_companyId);
         }
 
         private void bgwHilo_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -178,7 +184,7 @@ namespace Asistencia
                         });
                     }
 
-                    if (model.AddListPrivilegesByUser(period, privileges) == true)
+                    if (model.AddListPrivilegesByUser(period, privileges,_companyId) == true)
                     {
                         MessageBox.Show("Actualización correcta", "Confirmación del sistem");
                         RefreshList();

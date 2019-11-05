@@ -27,10 +27,66 @@ namespace Asistencia
         private List<Grupo> resultComboBoxForms;
         private List<Grupo> resultComboBoxParentForms;
         private FormularioSistema formByConsult;
+        private string _conection;
+        private ASJ_USUARIOS _user;
+        private string _companyId;
 
         public Formularios()
         {
             InitializeComponent();
+            period = DateTime.Now.Year.ToString();
+
+            LoadInitialForm();
+
+            RefreshList();
+
+
+            //LoadData();
+
+
+            RadMenuItem item = new RadMenuItem("None");
+            item.Click += new EventHandler(item_Click);
+            this.cbOrder.Items.Add(item);
+
+
+            item = new RadMenuItem("Ascending");
+            item.Click += new EventHandler(item_Click);
+            this.cbOrder.Items.Add(item);
+
+
+            item = new RadMenuItem("Descending");
+            item.Click += new EventHandler(item_Click);
+            this.cbOrder.Items.Add(item);
+
+
+            ImagePrimitive searchIcon = new ImagePrimitive();
+            searchIcon.Image = imageList1.Images[4];
+            searchIcon.Alignment = ContentAlignment.MiddleRight;
+
+            this.txtFormulario.TextBoxElement.Children.Add(searchIcon);
+            this.txtFormulario.TextBoxElement.TextBoxItem.Alignment = ContentAlignment.MiddleLeft;
+            this.txtFormulario.TextBoxElement.TextBoxItem.StretchHorizontally = false;
+            this.txtFormulario.TextBoxElement.TextBoxItem.HostedControl.MinimumSize = new Size(120, 0);
+            this.txtFormulario.TextBoxElement.TextBoxItem.PropertyChanged += new PropertyChangedEventHandler(TextBoxItem_PropertyChanged);
+            this.tvFormulario.TreeViewElement.AllowAlternatingRowColor = true;
+            this.tvFormulario.AllowEdit = false;
+            this.tvFormulario.AllowAdd = true;
+            this.tvFormulario.AllowRemove = true;
+            this.tvFormulario.ItemHeight = 27;
+            this.tvFormulario.AllowDefaultContextMenu = true;
+            this.AutoScroll = false;
+            //this.radPanel1.Text = "Subscriptions";
+
+
+        }
+
+        public Formularios(string conection, ASJ_USUARIOS user, string companyId)
+        {
+            InitializeComponent();
+            _conection = conection;
+            _user = user;
+            _companyId = companyId;
+
             period = DateTime.Now.Year.ToString();
 
             LoadInitialForm();

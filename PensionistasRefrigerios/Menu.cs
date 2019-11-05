@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Asistencia.Datos;
+using Asistencia.Negocios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,59 +9,39 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-
 namespace Asistencia
 {
     public partial class Menu : Form
     {
-        private string usuario;
+        private ASJ_USUARIOS _user;
+        private string _companyId;
+        private string _conection;
+        private UsersController modelPrivileges;
+        private List<PrivilegesByUser> privilegesByUser;
+
         public Menu()
         {
             InitializeComponent();
-        }
-
-        private void pensionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //CatalogoPensiones frmHijo = new CatalogoPensiones();
-            //frmHijo.MdiParent = this;
-            //frmHijo.Show();
-            //frmHijo.WindowState = FormWindowState.Maximized;
-            //frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            //statusStrip.Visible = false;
-        }
-
-        private void refrigerioPersonalToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void asistenciaARefrigeriosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //ReporteAsistenciaRefrigerio frmHijo = new ReporteAsistenciaRefrigerio();
-            //frmHijo.MdiParent = this;
-            //frmHijo.Show();
-            //frmHijo.WindowState = FormWindowState.Maximized;
-            //frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            //statusStrip.Visible = false;
-        }
-
-        private void Menu_Load(object sender, EventArgs e)
-        {
             Login ofrm = new Login();
             if (ofrm.ShowDialog() == DialogResult.OK)
             {
-                //MessageBox.Show("Bienvenido al Sistema", "Mensaje de Bienvenida");
-                usuario = ofrm.usuario;
-                lblUsuarioNombre.Text = ofrm.userSistema.IdUsuario != null ? ofrm.userSistema.IdUsuario : string.Empty;
-                lblNombreDescripcion.Text = ofrm.userSistema.NombreCompleto != null ? ofrm.userSistema.NombreCompleto : string.Empty;
-                ActivarModulo("", this);
+                //MessageBox.Show("Bienvenido al Sistema", "Mensaje de Bienvenida");                
+                _user = ofrm.user;
+                _companyId = ofrm.companyId != null ? ofrm.companyId.Trim() : string.Empty;
+                _conection = ofrm.conection != null ? ofrm.conection.Trim() : string.Empty;
+                bgwHilo.RunWorkerAsync();
             }
             else
             {
                 this.Dispose();
                 this.Close();
             }
-            ActivarModulo("", this);
+            //ActivarModulo(string.Empty, this);
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void ActivarModulo(string nombreModulo, Control control)
@@ -83,55 +65,78 @@ namespace Asistencia
 
             //CajaBancos.Enabled = true;
             //CajaBancos.Visible = true;
-            RRHH.Enabled = true;
-            RRHH.Visible = true;
+            GoSistema.Enabled = true;
+            GoSistema.Visible = true;
+            GoTransporte.Enabled = true;
+            GoTransporte.Visible = true;
+            GoPlanilla.Enabled = true;
+            GoPlanilla.Visible = true;
+            GoExportaciones.Enabled = true;
+            GoMantenimiento.Enabled = true;
+            GoMaquinaria.Enabled = true;
+            GoSanidad.Enabled = true;
+            GoEvaluacionAgricola.Enabled = true;
+            GoSistema.Enabled = true;
+            GoSalir.Enabled = true;
+
+            GoExportaciones.Visible = true;
+            GoMantenimiento.Visible = true;
+            GoMaquinaria.Visible = true;
+            GoSanidad.Visible = true;
+            GoEvaluacionAgricola.Visible = true;
+            GoSistema.Visible = true;
+            GoSalir.Visible = true;
+
         }
 
         public void CambiarOpcionesMenu(ToolStripItemCollection colOpcionesMenu, string nombreModulo)
         {
-            // recorrer el submenú
-            foreach (ToolStripItem itmOpcion in colOpcionesMenu)
+            if (this.bgwHilo.IsBusy != true)
             {
-                // restaurar el tipo de letra original
-                // si es una opción de menú normal...
-                if (itmOpcion.GetType() == typeof(ToolStripMenuItem))
+                // recorrer el submenú
+                foreach (ToolStripItem itmOpcion in colOpcionesMenu)
                 {
-                    // OJO que hay que colocar el texto que contiene el elemento ej. Imprimir
-                    if (itmOpcion.Name.ToUpper().Contains("RRHH") && nombreModulo == "RRHH")
+                    // restaurar el tipo de letra original
+                    // si es una opción de menú normal...
+                    if (itmOpcion.GetType() == typeof(ToolStripMenuItem))
                     {
-                        //Aqui lo deshabilitamos
-                        ((ToolStripMenuItem)itmOpcion).Enabled = true;
-                        ((ToolStripMenuItem)itmOpcion).Visible = true;
-                    }
-                    else if (itmOpcion.Name.ToUpper().Contains("CajaBancos".ToUpper()) && nombreModulo.ToUpper() == "CajaBancos".ToUpper())
-                    {
-                        ((ToolStripMenuItem)itmOpcion).Enabled = true;
-                        ((ToolStripMenuItem)itmOpcion).Visible = true;
-                    }
-                    else if (itmOpcion.Name.ToUpper().Contains("SALIR".ToUpper()))
-                    {
-                        ((ToolStripMenuItem)itmOpcion).Enabled = true;
-                        ((ToolStripMenuItem)itmOpcion).Visible = true;
-                    }
-                    else
-                    {
-                        ((ToolStripMenuItem)itmOpcion).Enabled = false;
-                        ((ToolStripMenuItem)itmOpcion).Visible = false;
-                    }
-                    // si esta opción a su vez despliega un nuevo submenú
-                    // llamar recursivamente a este método para cambiar sus opciones
-                    if (((ToolStripMenuItem)itmOpcion).DropDownItems.Count > 0)
-                    {
-                        this.CambiarOpcionesMenu(((ToolStripMenuItem)itmOpcion).DropDownItems, nombreModulo);
-                    }
+                        // OJO que hay que colocar el texto que contiene el elemento ej. Imprimir
+                        if (itmOpcion.Name.ToUpper().Contains("GoPlanilla".ToUpper()) && nombreModulo.ToUpper() == "GoPlanilla".ToUpper())
+                        {
+                            //Aqui lo deshabilitamos
+                            ((ToolStripMenuItem)itmOpcion).Enabled = true;
+                            ((ToolStripMenuItem)itmOpcion).Visible = true;
+                        }
+                        else if (itmOpcion.Name.ToUpper().Contains("GoTransportes".ToUpper()) && nombreModulo.ToUpper() == "GoTransportes".ToUpper())
+                        {
+                            ((ToolStripMenuItem)itmOpcion).Enabled = true;
+                            ((ToolStripMenuItem)itmOpcion).Visible = true;
+                        }
+                        else if (itmOpcion.Name.ToUpper().Contains("GoSistema".ToUpper()) && nombreModulo.ToUpper() == "GoSistema".ToUpper())
+                        {
+                            ((ToolStripMenuItem)itmOpcion).Enabled = true;
+                            ((ToolStripMenuItem)itmOpcion).Visible = true;
+                        }
+                        else
+                        {
+                            ((ToolStripMenuItem)itmOpcion).Enabled = false;
+                            ((ToolStripMenuItem)itmOpcion).Visible = false;
+                        }
+                        // si esta opción a su vez despliega un nuevo submenú
+                        // llamar recursivamente a este método para cambiar sus opciones
+                        if (((ToolStripMenuItem)itmOpcion).DropDownItems.Count > 0)
+                        {
+                            this.CambiarOpcionesMenu(((ToolStripMenuItem)itmOpcion).DropDownItems, nombreModulo);
+                        }
 
+                    }
                 }
             }
         }
 
         private void transportistaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CatalogoEmpresaDeServicioDeTransporteDePersonal frmHijo = new CatalogoEmpresaDeServicioDeTransporteDePersonal();
+            CatalogoEmpresaDeServicioDeTransporteDePersonal frmHijo = new CatalogoEmpresaDeServicioDeTransporteDePersonal(_conection, _user, _companyId);
             frmHijo.MdiParent = this;
             frmHijo.Show();
             frmHijo.WindowState = FormWindowState.Maximized;
@@ -141,173 +146,17 @@ namespace Asistencia
 
         private void rutaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CatalogoRutasRecorrido frmHijo = new CatalogoRutasRecorrido();
+            CatalogoRutasRecorrido frmHijo = new CatalogoRutasRecorrido(_conection, _user, _companyId);
             frmHijo.MdiParent = this;
             frmHijo.Show();
             frmHijo.WindowState = FormWindowState.Maximized;
             frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             statusStrip.Visible = false;
-        }
-
-        private void facturacionTransportistaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void parteDeRecorridosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //MovimientoRecorridos frmHijo = new MovimientoRecorridos();
-            //frmHijo.MdiParent = this;
-            //frmHijo.Show();
-            //frmHijo.WindowState = FormWindowState.Maximized;
-            //frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            //statusStrip.Visible = false;
-        }
-
-        private void facturacionPensionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //FacturacionPensiones frmHijo = new FacturacionPensiones();
-            //frmHijo.MdiParent = this;
-            //frmHijo.WindowState = FormWindowState.Maximized;
-            //frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            //frmHijo.Show();
-            //statusStrip.Visible = false;
-        }
-
-        private void subirPlanillaDePagoDeEfectivoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-
-
-
-        }
-
-        private void pagoDePlanillaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-
-
-
-        private void facturacionTransportistasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-
-
-        }
-
-        private void monitoreoMovimientoPensionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //MonitoreoMovimientoPension frmHijo = new MonitoreoMovimientoPension();
-            //frmHijo.MdiParent = this;
-            //frmHijo.Show();
-            ////frmHijo.WindowState = FormWindowState.Maximized;
-            //frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            //statusStrip.Visible = false;
-        }
-
-        private void reporteDeDistribuciónDeAsistenciaPersonalToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //ReporteAsistenciaRefrigerioTransferencia frmHijo = new ReporteAsistenciaRefrigerioTransferencia();
-            //frmHijo.MdiParent = this;
-            //frmHijo.Show();
-            ////frmHijo.WindowState = FormWindowState.Maximized;
-            //frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            //statusStrip.Visible = false;
-        }
-
-        private void reporteDeAsistenciaPersonalAdministrativoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //ReporteAsistenciaPersonalAdministrativo frmHijo = new ReporteAsistenciaPersonalAdministrativo();
-            //frmHijo.MdiParent = this;
-            //frmHijo.Show();
-            ////frmHijo.WindowState = FormWindowState.Maximized;
-            //frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            //statusStrip.Visible = false;
-        }
-
-        private void consolidadoDeAsistenciasToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void registroDeAsistenciaDelPersonalToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void registroDeAsistenciasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //MovimientoAsistenciaRefrigerioMatenimiento frmHijo = new MovimientoAsistenciaRefrigerioMatenimiento();
-
-        }
-
-        private void registroDeAsistenciaPersonalAdministrativoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //RegistroAsistenciaPersonalAdministrativo frmHijo = new RegistroAsistenciaPersonalAdministrativo();
-            //frmHijo.MdiParent = this;
-            //frmHijo.Show();
-            //frmHijo.WindowState = FormWindowState.Maximized;
-            //frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            //statusStrip.Visible = false;
-        }
-
-        private void consolidadoDeMovimientoDeTransportistaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //ConsolidadoMovimientoMovilidades frmHijo = new ConsolidadoMovimientoMovilidades();
-            //frmHijo.MdiParent = this;
-            //frmHijo.Show();
-            //frmHijo.WindowState = FormWindowState.Maximized;
-            //frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            //statusStrip.Visible = false;
-        }
-
-        private void reporteDeAsisternciaDePersonalPorHorasTrabajadasEnCampoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void reporteDeAsisternciaDePersonalPorRendimientoTabajosConRacimosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void reporteDeRefrigeriosPorSubPlanillaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //ReporteRefrigeriosPorSubPlanilla frmHijo = new ReporteRefrigeriosPorSubPlanilla();
-            //frmHijo.MdiParent = this;
-            //frmHijo.Show();
-            //frmHijo.WindowState = FormWindowState.Maximized;
-            //frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            //statusStrip.Visible = false;
-        }
-
-        private void RRHH_Click(object sender, EventArgs e)
-        {
-            ActivarModulo("RRHH", this);
-        }
-
-        private void cajaYBancoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ActivarModulo("CAJABANCOS", this);
-        }
-
-        private void reporteDeDuplicidadEnRefrigeriosPorDíaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //ReportePersonalConDuplicidadRefrigerios frmHijo = new ReportePersonalConDuplicidadRefrigerios();
-            //frmHijo.MdiParent = this;
-            //frmHijo.Show();
-            //frmHijo.WindowState = FormWindowState.Maximized;
-            //frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            //statusStrip.Visible = false;
         }
 
         private void RRHHReporteDeAsistenciaMóvilBuses_Click(object sender, EventArgs e)
         {
-            ListadoAsistenciaTransferenciaBuses frmHijo = new ListadoAsistenciaTransferenciaBuses();
+            ListadoAsistenciaTransferenciaBuses frmHijo = new ListadoAsistenciaTransferenciaBuses(_conection, _user, _companyId);
             frmHijo.MdiParent = this;
             frmHijo.Show();
             frmHijo.WindowState = FormWindowState.Maximized;
@@ -315,24 +164,9 @@ namespace Asistencia
             statusStrip.Visible = false;
         }
 
-        private void RRHHpersonalPorPensión_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void consolidadDeAsistenciaAPensionesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //ConsolidadoAsistenciasRefrigerioByTransferencia frmHijo = new ConsolidadoAsistenciasRefrigerioByTransferencia();
-            //frmHijo.MdiParent = this;
-            //frmHijo.Show();
-            //frmHijo.WindowState = FormWindowState.Maximized;
-            //frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            //statusStrip.Visible = false;
-        }
-
         private void RRHHparaderos_Click(object sender, EventArgs e)
         {
-            CatalogoParadero frmHijo = new CatalogoParadero();
+            CatalogoParadero frmHijo = new CatalogoParadero(_conection, _user, _companyId);
             frmHijo.MdiParent = this;
             frmHijo.Show();
             frmHijo.WindowState = FormWindowState.Maximized;
@@ -342,7 +176,7 @@ namespace Asistencia
 
         private void RRHHpersonalPorParadero_Click(object sender, EventArgs e)
         {
-            CatalogoPersonaByParadero frmHijo = new CatalogoPersonaByParadero();
+            CatalogoPersonaByParadero frmHijo = new CatalogoPersonaByParadero(_conection, _user, _companyId);
             frmHijo.MdiParent = this;
             frmHijo.Show();
             frmHijo.WindowState = FormWindowState.Maximized;
@@ -352,7 +186,7 @@ namespace Asistencia
 
         private void tipoDeBloqueoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CatalogoTipoBloqueoAsistencia frmHijo = new CatalogoTipoBloqueoAsistencia();
+            CatalogoTipoBloqueoAsistencia frmHijo = new CatalogoTipoBloqueoAsistencia(_conection, _user, _companyId);
             frmHijo.MdiParent = this;
             frmHijo.Show();
             frmHijo.WindowState = FormWindowState.Maximized;
@@ -362,7 +196,7 @@ namespace Asistencia
 
         private void RRHHpersonalBloqueado_Click(object sender, EventArgs e)
         {
-            CatalogoPersonalBloqueadoParaAsistencia frmHijo = new CatalogoPersonalBloqueadoParaAsistencia();
+            CatalogoPersonalBloqueadoParaAsistencia frmHijo = new CatalogoPersonalBloqueadoParaAsistencia(_conection, _user, _companyId);
             frmHijo.MdiParent = this;
             frmHijo.Show();
             frmHijo.WindowState = FormWindowState.Maximized;
@@ -370,19 +204,9 @@ namespace Asistencia
             statusStrip.Visible = false;
         }
 
-        private void RRHHreportesDeIngresoYSalidaDeUnidadesDeTransportes_Click(object sender, EventArgs e)
-        {
-            //ReporteControlUnidadHorarioSalidaTransportista frmHijo = new ReporteControlUnidadHorarioSalidaTransportista();
-            //frmHijo.MdiParent = this;
-            //frmHijo.Show();
-            //frmHijo.WindowState = FormWindowState.Maximized;
-            //frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            //statusStrip.Visible = false;
-        }
-
         private void RRHHRegistroAsistencia_Click(object sender, EventArgs e)
         {
-            ReporteAsistenciaDiarioByPuertaIngreso frmHijo = new ReporteAsistenciaDiarioByPuertaIngreso();
+            ReporteAsistenciaDiarioByPuertaIngreso frmHijo = new ReporteAsistenciaDiarioByPuertaIngreso(_conection, _user, _companyId);
             frmHijo.MdiParent = this;
             frmHijo.Show();
             frmHijo.WindowState = FormWindowState.Maximized;
@@ -392,7 +216,7 @@ namespace Asistencia
 
         private void RRHHreporteDeAsistenciaObservados_Click(object sender, EventArgs e)
         {
-            ReporteAsistenciaObservados frmHijo = new ReporteAsistenciaObservados();
+            ReporteAsistenciaObservados frmHijo = new ReporteAsistenciaObservados(_conection, _user, _companyId);
             frmHijo.MdiParent = this;
             frmHijo.Show();
             frmHijo.WindowState = FormWindowState.Maximized;
@@ -402,35 +226,27 @@ namespace Asistencia
 
         private void RRHHreporteDeAsistenciaEnPuertas_Click(object sender, EventArgs e)
         {
-            ReporteAsistenciaDiarioByPuertaIngreso frmHijo = new ReporteAsistenciaDiarioByPuertaIngreso();
+            ReporteAsistenciaDiarioByPuertaIngreso frmHijo = new ReporteAsistenciaDiarioByPuertaIngreso(_conection, _user, _companyId);
             frmHijo.MdiParent = this;
             frmHijo.Show();
             frmHijo.WindowState = FormWindowState.Maximized;
             frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             statusStrip.Visible = false;
-        }
-
-        private void ReporteDeAsistenciaDePersonalPorBusesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void RRHHReporteDeVencimientodEDocumentos_Click(object sender, EventArgs e)
         {
-
-            ReporteVencimientoDocumentos frmHijo = new ReporteVencimientoDocumentos();
+            ReporteVencimientoDocumentos frmHijo = new ReporteVencimientoDocumentos(_conection, _user, _companyId);
             frmHijo.MdiParent = this;
             frmHijo.Show();
             frmHijo.WindowState = FormWindowState.Maximized;
             frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             statusStrip.Visible = false;
-
         }
 
         private void RRHHmenu_Click(object sender, EventArgs e)
         {
-
-            Modulo frmHijo = new Modulo();
+            Modulo frmHijo = new Modulo(_conection, _user, _companyId);
             frmHijo.MdiParent = this;
             frmHijo.Show();
             frmHijo.WindowState = FormWindowState.Maximized;
@@ -440,14 +256,153 @@ namespace Asistencia
 
         private void RRHHformularioDeSistema_Click(object sender, EventArgs e)
         {
-
-            Formularios frmHijo = new Formularios();
+            Formularios frmHijo = new Formularios(_conection, _user, _companyId);
             frmHijo.MdiParent = this;
             frmHijo.Show();
             frmHijo.WindowState = FormWindowState.Maximized;
             frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             statusStrip.Visible = false;
-            
+
+        }
+
+        private void GoPlanilla_Click(object sender, EventArgs e)
+        {
+            ActivarModulo("GoPlanilla", this);
+        }
+
+        private void GoTransporte_Click(object sender, EventArgs e)
+        {
+            ActivarModulo("GoTransportes", this);
+        }
+
+        private void GoExportaciones_Click(object sender, EventArgs e)
+        {
+            ActivarModulo("GoEvaluaciones", this);
+        }
+
+        private void GoMantenimiento_Click(object sender, EventArgs e)
+        {
+            ActivarModulo("GoEvaluaciones", this);
+        }
+
+        private void GoMaquinaria_Click(object sender, EventArgs e)
+        {
+            ActivarModulo("GoEvaluaciones", this);
+        }
+
+        private void GoEvaluacionAgricola_Click(object sender, EventArgs e)
+        {
+            ActivarModulo("GoEvaluaciones", this);
+        }
+
+        private void GoSanidad_Click(object sender, EventArgs e)
+        {
+            ActivarModulo("GoEvaluaciones", this);
+        }
+
+        private void GoSistema_Click(object sender, EventArgs e)
+        {
+            ActivarModulo("GoSistema", this);
+        }
+
+        private void GoSalir_Click(object sender, EventArgs e)
+        {
+            if (this.bgwHilo.IsBusy == true)
+            {
+                MessageBox.Show("No puede cerrar la ventana, Existe un proceso ejecutandose",
+                                "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                this.Close();
+            }
+        }
+
+        private void GoSistemaCatalogoPrivilegios_Click(object sender, EventArgs e)
+        {
+            Users frmHijo = new Users(_conection, _user, _companyId);
+            frmHijo.MdiParent = this;
+            frmHijo.Show();
+            frmHijo.WindowState = FormWindowState.Maximized;
+            frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            statusStrip.Visible = false;
+        }
+
+        private void bgwHilo_DoWork(object sender, DoWorkEventArgs e)
+        {
+            GetPrivilesByUser();
+        }
+
+        private void GetPrivilesByUser()
+        {
+            try
+            {
+                modelPrivileges = new UsersController();
+                privilegesByUser = new List<PrivilegesByUser>();
+                privilegesByUser = modelPrivileges.GetListPrivilegesByUser(_conection, _user.IdUsuario.Trim(), _companyId.Trim());
+            }
+            catch (Exception Ex)
+            {
+
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
+                return;
+            }
+        }
+
+        private void bgwHilo_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            lblUsuarioNombre.Text = _user.IdUsuario != null ? _user.IdUsuario : string.Empty;
+            lblNombreDescripcion.Text = _user.NombreCompleto != null ? _user.NombreCompleto : string.Empty;
+        }
+
+        private void newWindowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (statusStrip.Visible == true)
+            {
+                statusStrip.Visible = false;
+            }
+            else
+            {
+                statusStrip.Visible = true;
+            }
+
+
+        }
+
+        private void Menu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (this.bgwHilo.IsBusy == true)
+            {
+                e.Cancel = true;
+                MessageBox.Show("No puede cerrar la ventana, Existe un proceso ejecutandose",
+                                "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void GoSistemaCatalogoConfiguracion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RRHHpersonalGeneral_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GoPlanillaProcesoActualizarListaSincronizacionATablets_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GoTransportesReporteIngresoSalidaBuses_Click(object sender, EventArgs e)
+        {
+            Users frmHijo = new Users();
+            frmHijo.MdiParent = this;
+            frmHijo.Show();
+            frmHijo.WindowState = FormWindowState.Maximized;
+            frmHijo.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            statusStrip.Visible = false;
         }
     }
 

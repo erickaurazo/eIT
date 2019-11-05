@@ -32,9 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MyControlsDataBinding, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Librerias\MyControlsDataBinding.dll</HintPath>
+    <Reference Include="MyControlsDataBinding">
+      <HintPath>C:\Librerias\MyControlsDataBinding.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Activities.Core.Presentation" />
@@ -50,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AsistenciaController.cs" />
+    <Compile Include="CompaniesController.cs" />
     <Compile Include="FormsController.cs" />
     <Compile Include="PersonalBloqueoController.cs" />
     <Compile Include="TipoBloqueoParaAsistenciaController.cs" />

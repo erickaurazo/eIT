@@ -26,10 +26,22 @@ namespace Asistencia
         private CarrierController model;
         private string period;
         private ExportToExcelHelper modelExcel;
+        private string _conection;
+        private ASJ_USUARIOS _user;
+        private string _companyId;
 
         public ReporteVencimientoDocumentos()
         {
             InitializeComponent();
+            RefreshList();
+        }
+
+        public ReporteVencimientoDocumentos(string conection, ASJ_USUARIOS user, string companyId)
+        {
+            InitializeComponent();
+            _conection = conection;
+            _user = user;
+            _companyId = companyId;
             RefreshList();
         }
 

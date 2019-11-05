@@ -13,5 +13,11 @@ namespace Asistencia.Datos
         public string Id { get; set; }
 
         public int Code { get; set; }
+
+        public string userBydb { get; set; }
+        public string passwordBydb { get; set; }
+
+        public string isntancePublic { get; set; }
+        public string isntanceLocal { get; set; }
     }
 }

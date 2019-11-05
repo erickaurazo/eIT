@@ -2,6 +2,8 @@
 using Asistencia.Negocios;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.IO;
 using System.Linq;
 using System.Text;
 using Telerik.WinControls.UI;
@@ -11,6 +13,7 @@ namespace Asistencia.Helper
 {
     public class ComboBoxHelper
     {
+        private CompaniesController companyModel;
 
         public List<Grupo> GetComboBoxStatus()
         {
@@ -110,9 +113,6 @@ namespace Asistencia.Helper
             return result;
         }
 
-
-
-
         public List<Grupo> GetComboBoxLocal()
         {
             List<Grupo> result = new List<Grupo>();
@@ -180,6 +180,93 @@ namespace Asistencia.Helper
             return result;
         }
 
+
+        public List<Grupo> GetComboBoxDBsByLogin()
+        {
+            string cnx = string.Empty;
+            var dbs = new List<Grupo>();
+            dbs.Add(new Grupo { Codigo = "000", Descripcion = "Seleccionar item" });
+            string path = Path.Combine(@"D:\Dev\ASJ\AsistenciaConfig.txt");
+            path = Path.GetFullPath(path);
+            string[] lines = System.IO.File.ReadAllLines(path);
+            int count = 0;
+            foreach (string line in lines)
+            {
+                count += 1;
+                switch (count)
+                {
+                    case 1:
+                        // dejalo pasar
+                        break;
+
+                    case 2:
+                        // usuario que se conecta a la base de datos
+                        break;
+
+                    case 3:
+                        // clave del usuario que se conecta a la base de datos
+                        break;
+
+                    case 4:
+                        //Instancia local
+                        break;
+
+                    case 5:
+                        //Instancia publica
+                        break;
+
+                    case 6:
+                        //Base de datos 1
+                        string[] db01 = line.Split(':');
+                        dbs.Add(new Grupo { Codigo = "001", Descripcion = db01[1].Trim() });
+                        break;
+
+                    case 7:
+                        //Base de datos 1
+                        string[] db02 = line.Split(':');
+                        dbs.Add(new Grupo { Codigo = "002", Descripcion = db02[1].Trim() });
+                        break;
+
+                    case 8:
+                        //Base de datos 1
+                        string[] db03 = line.Split(':');
+                        dbs.Add(new Grupo { Codigo = "003", Descripcion = db03[1].Trim() });
+                        break;
+
+                    case 9:
+                        //Base de datos 1
+                        string[] db04 = line.Split(':');
+                        dbs.Add(new Grupo { Codigo = "004", Descripcion = db04[1].Trim() });
+                        break;
+
+                    default:
+                        break;
+                }
+                // Use a tab to indent each line of the file.               
+            }
+
+            return dbs.ToList();
+        }
+
+
+
+        public List<Grupo> GetComboBoxCompanysByLogin(string cnx)
+        {
+            var companies = new List<Grupo>();
+            companyModel = new CompaniesController();
+            companies = companyModel.GetCompanies(cnx);
+            return companies;
+        }
+
+        public List<Grupo> GetComboBoxCompanysById(string db, string idCompany)
+        {
+            string cnx = string.Empty;
+            var companies = new List<Grupo>();
+            companyModel = new CompaniesController();
+            companies = companyModel.FindCompanyById(db, idCompany);
+            return companies;
+
+        }
 
     }
 }

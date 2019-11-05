@@ -32,6 +32,9 @@ namespace Asistencia
         private List<ASJ_ReporteAsistenciaObservadosResult> listadoAsistenciaObservados;
         private int incluirAsistenciaObervada;
         private int incluirRecorridosInternos;
+        private string _conection;
+        private ASJ_USUARIOS _user;
+        private string _companyId;
 
         public string Hasta { get; private set; }
         public MesController MesesNeg { get; private set; }
@@ -50,6 +53,21 @@ namespace Asistencia
 
             // ObtenerValoresConsultaBuscar();
 
+        }
+
+        public ListadoAsistenciaTransferenciaBuses(string conection, ASJ_USUARIOS user, string companyId)
+        {
+            InitializeComponent();
+            _conection = conection;
+            _user = user;
+            _companyId = companyId;
+            Inicio();
+            RadGridLocalizationProvider.CurrentProvider = new ClaseTelerik.GridLocalizationProviderEspanol();
+            RadPageViewLocalizationProvider.CurrentProvider = new ClaseTelerik.RadPageViewLocalizationProviderEspañol();
+            RadWizardLocalizationProvider.CurrentProvider = new ClaseTelerik.RadWizardLocalizationProviderEspañol();
+            RadMessageLocalizationProvider.CurrentProvider = new ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
+            CargarMeses();
+            ObtenerFechasIniciales();
         }
 
         protected override void OnLoad(EventArgs e)
@@ -107,7 +125,7 @@ namespace Asistencia
             GridViewSummaryRowItem items4 = new GridViewSummaryRowItem();
             items4.Add(new GridViewSummaryItem("chnombresObs", "Registros : {0:N0}; ", GridAggregateFunction.Count));
             this.dgvAsistenciaObservados.MasterTemplate.SummaryRowsTop.Add(items4);
-            
+
         }
 
 

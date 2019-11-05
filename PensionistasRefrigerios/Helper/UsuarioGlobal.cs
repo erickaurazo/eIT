@@ -1,8 +1,9 @@
 ﻿using Asistencia.Datos;
+using System.IO;
 
 namespace Asistencia
 {
-    static class UsuarioGlobales
+    static class UsuarioGlobal
     {
         public static string gbUsuario;
         public static string gbNombre;
@@ -11,12 +12,15 @@ namespace Asistencia
 
         public static void Inicializar()
         {
-            gbUsuario = "";
-            gbPerfil = "";
+            gbUsuario = string.Empty;
+            gbPerfil = string.Empty;
             gbNombre = string.Empty;
             sjUsuario = new ASJ_USUARIOS();
             sjUsuario.IdUsuario = string.Empty;
             sjUsuario.NombreCompleto = string.Empty;
         }
+
+       
+
     }
 }

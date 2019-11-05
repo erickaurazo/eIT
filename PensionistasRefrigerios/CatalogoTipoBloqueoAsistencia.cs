@@ -29,10 +29,27 @@ namespace Asistencia
         private List<ASJ_ObtenerListadoDeTipoPersonalbloqueadoResult> listado;        
         private ASJ_ObtenerListadoDeTipoPersonalbloqueadoResult oTipoBloqueoSeleccionado;
         private ASJ_PersonalTipoBloqueo personalBloqueo;
+        private string _conection;
+        private ASJ_USUARIOS _user;
+        private string _companyId;
 
         public CatalogoTipoBloqueoAsistencia()
         {
             InitializeComponent();
+            RadGridLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.GridLocalizationProviderEspanol();
+            RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
+            RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
+            RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
+            Inicio();
+            Consultar();
+        }
+
+        public CatalogoTipoBloqueoAsistencia(string conection, ASJ_USUARIOS user, string companyId)
+        {
+            InitializeComponent();
+            _conection = conection;
+            _user = user;
+            _companyId = companyId;
             RadGridLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.GridLocalizationProviderEspanol();
             RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
             RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();

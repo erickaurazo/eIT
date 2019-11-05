@@ -28,6 +28,9 @@ namespace Asistencia
         private List<ASJ_ReporteAsistenciaObservadosResult> listadoAsistenciaObservados;
         private List<ASJ_ReporteAsistenciaObservadosResult> listadoAsistenciaObservadosSelecionados;
         private ASJ_ReporteAsistenciaObservadosResult registroObservado;
+        private string _conection;
+        private ASJ_USUARIOS _user;
+        private string _companyId;
 
         public MesController MesesNeg { get; private set; }
         public ControlIngresoSalidaPersonalController AsistenciaModelo { get; private set; }
@@ -42,7 +45,22 @@ namespace Asistencia
             RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
             CargarMeses();
             ObtenerFechasIniciales();
-            
+
+        }
+
+        public ReporteAsistenciaObservados(string conection, ASJ_USUARIOS user, string companyId)
+        {
+            InitializeComponent();
+            _conection = conection;
+            _user = user;
+            _companyId = companyId;
+            Inicio();
+            RadGridLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.GridLocalizationProviderEspanol();
+            RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
+            RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
+            RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
+            CargarMeses();
+            ObtenerFechasIniciales();
         }
 
         protected override void OnLoad(EventArgs e)
@@ -344,12 +362,12 @@ namespace Asistencia
                                     if (resultadoConsulta != null && resultadoConsulta.ToList().Count > 0)
                                     {
                                         registroObservado = resultadoConsulta.ElementAt(0);
-                                        if (registroObservado.esimportado ==0)
+                                        if (registroObservado.esimportado == 0)
                                         {
                                             //sbmActualizarCódigoControl.Enabled = !false;
                                             if (registroObservado.nombres.ToString().Trim() != string.Empty && registroObservado.nombres.ToString().Trim() != "DESCONOCIDO")
                                             {
-                                                if (registroObservado.observacion.ToString().Trim() == string.Empty )
+                                                if (registroObservado.observacion.ToString().Trim() == string.Empty)
                                                 {
                                                     sbmActualizarCódigoControl.Enabled = false;
                                                     sbmTransferirEstaAsistencia.Enabled = !false;
@@ -369,9 +387,9 @@ namespace Asistencia
 
                                             }
 
-                                         
+
                                         }
-                                       
+
                                     }
                                 }
                                 catch (Exception Ex)
@@ -427,8 +445,8 @@ namespace Asistencia
                 {
                     if (registroObservado.nombres.Trim().ToUpper() == "DESCONOCIDO")
                     {
-                        ActualizarDNIObservado oFrm = new ActualizarDNIObservado(periodo,registroObservado.IDCONTROLINGRESO, registroObservado.ITEM, registroObservado.nombres.ToString(), registroObservado.idpersonal.ToString());
-                        oFrm.ShowDialog();                        
+                        ActualizarDNIObservado oFrm = new ActualizarDNIObservado(periodo, registroObservado.IDCONTROLINGRESO, registroObservado.ITEM, registroObservado.nombres.ToString(), registroObservado.idpersonal.ToString());
+                        oFrm.ShowDialog();
                         Consultar();
                     }
                 }
@@ -438,7 +456,7 @@ namespace Asistencia
         private void btnTransferirSeleccion_Click(object sender, EventArgs e)
         {
             try
-            {                
+            {
                 menuPrincipal.Enabled = false;
                 gbConsulta.Enabled = false;
                 gbDetalle.Enabled = false;
@@ -461,14 +479,14 @@ namespace Asistencia
                 listadoAsistenciaObservadosSelecionados = new List<ASJ_ReporteAsistenciaObservadosResult>();
                 listadoAsistenciaObservadosSelecionados = listadoAsistenciaObservados.Where(x => x.selecionado == 1).ToList();
 
-                if (listadoAsistenciaObservadosSelecionados != null  && listadoAsistenciaObservadosSelecionados.ToList().Count > 0)
+                if (listadoAsistenciaObservadosSelecionados != null && listadoAsistenciaObservadosSelecionados.ToList().Count > 0)
                 {
                     foreach (var item in listadoAsistenciaObservadosSelecionados)
                     {
                         AsistenciaModelo = new ControlIngresoSalidaPersonalController();
                         AsistenciaModelo.TransferirAsistenciasObservadaByPersona(periodo, item);
                     }
-                    
+
                 }
 
                 negocio = new RegistroTransferenciaTransportesController();

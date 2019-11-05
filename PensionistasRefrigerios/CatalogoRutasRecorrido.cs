@@ -24,11 +24,34 @@ namespace Asistencia
         private SJ_RHRutaNegocios model;
         private bool exportVisualSettings;
         private string fileName;
-
+        private string _conection;
+        private ASJ_USUARIOS _user;
+        private string _companyId;
 
         public CatalogoRutasRecorrido()
         {
             InitializeComponent();
+            Inicio();
+            LimpiarFormulario();
+            RefreshList();
+            ActivarDesactivarControlEdicion(false);
+            btnNuevo.Enabled = true;
+            btnEditar.Enabled = true;
+            btnGrabar.Enabled = false;
+            btnActualizarLista.Enabled = true;
+            btnCancelar.Enabled = false;
+            btnEliminar.Enabled = true;
+            btnAnular.Enabled = true;
+            btnSalir.Enabled = true;
+            btnExportar.Enabled = true;
+        }
+
+        public CatalogoRutasRecorrido(string conection, ASJ_USUARIOS user, string companyId)
+        {
+            InitializeComponent();
+            _conection = conection;
+            _user = user;
+            _companyId = companyId;
             Inicio();
             LimpiarFormulario();
             RefreshList();
@@ -51,7 +74,7 @@ namespace Asistencia
                 period = DateTime.Now.Year.ToString();
                 MyControlsDataBinding.Extensions.Globales.Servidor = ConfigurationManager.AppSettings["Servidor"].ToString();
                 MyControlsDataBinding.Extensions.Globales.UsuarioBaseDatos = ConfigurationManager.AppSettings["Usuario"].ToString();
-                MyControlsDataBinding.Extensions.Globales.BaseDatos = ConfigurationManager.AppSettings["BasesDatos" + period].ToString();
+                MyControlsDataBinding.Extensions.Globales.BaseDatos = ConfigurationManager.AppSettings[_conection].ToString();
                 MyControlsDataBinding.Extensions.Globales.ClaveBaseDatos = ConfigurationManager.AppSettings["Clave"].ToString();
                 MyControlsDataBinding.Extensions.Globales.IdEmpresa = "001";
                 MyControlsDataBinding.Extensions.Globales.Empresa = "EMPRESA AGRICOLA SAN JOSE SA";

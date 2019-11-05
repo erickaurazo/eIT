@@ -96,9 +96,6 @@ namespace Asistencia.Datos
     partial void InsertPrivilegioFormulario(PrivilegioFormulario instance);
     partial void UpdatePrivilegioFormulario(PrivilegioFormulario instance);
     partial void DeletePrivilegioFormulario(PrivilegioFormulario instance);
-    partial void InsertASJ_USUARIOS(ASJ_USUARIOS instance);
-    partial void UpdateASJ_USUARIOS(ASJ_USUARIOS instance);
-    partial void DeleteASJ_USUARIOS(ASJ_USUARIOS instance);
     partial void InsertFormularioSistema(FormularioSistema instance);
     partial void UpdateFormularioSistema(FormularioSistema instance);
     partial void DeleteFormularioSistema(FormularioSistema instance);
@@ -108,6 +105,9 @@ namespace Asistencia.Datos
     partial void InsertSJ_RHTransportistaContrato(SJ_RHTransportistaContrato instance);
     partial void UpdateSJ_RHTransportistaContrato(SJ_RHTransportistaContrato instance);
     partial void DeleteSJ_RHTransportistaContrato(SJ_RHTransportistaContrato instance);
+    partial void InsertASJ_USUARIOS(ASJ_USUARIOS instance);
+    partial void UpdateASJ_USUARIOS(ASJ_USUARIOS instance);
+    partial void DeleteASJ_USUARIOS(ASJ_USUARIOS instance);
     #endregion
 		
 		public BDAsistenciaDataContext() : 
@@ -332,14 +332,6 @@ namespace Asistencia.Datos
 			}
 		}
 		
-		public System.Data.Linq.Table<ASJ_USUARIOS> ASJ_USUARIOS
-		{
-			get
-			{
-				return this.GetTable<ASJ_USUARIOS>();
-			}
-		}
-		
 		public System.Data.Linq.Table<FormularioSistema> FormularioSistema
 		{
 			get
@@ -361,6 +353,14 @@ namespace Asistencia.Datos
 			get
 			{
 				return this.GetTable<SJ_RHTransportistaContrato>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ASJ_USUARIOS> ASJ_USUARIOS
+		{
+			get
+			{
+				return this.GetTable<ASJ_USUARIOS>();
 			}
 		}
 		
@@ -11096,356 +11096,6 @@ namespace Asistencia.Datos
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ASJ_USUARIOS")]
-	public partial class ASJ_USUARIOS : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _IdUsuario;
-		
-		private string _IdCodigoGeneral;
-		
-		private string _Password;
-		
-		private string _NombreCompleto;
-		
-		private string _AREA;
-		
-		private string _email;
-		
-		private string _idestado;
-		
-		private string _Local;
-		
-		private string _nivel;
-		
-		private string _IDSUCURSAL;
-		
-		private string _SUCURSAL;
-		
-		private int _id_puerta;
-		
-		private string _puerta;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdUsuarioChanging(string value);
-    partial void OnIdUsuarioChanged();
-    partial void OnIdCodigoGeneralChanging(string value);
-    partial void OnIdCodigoGeneralChanged();
-    partial void OnPasswordChanging(string value);
-    partial void OnPasswordChanged();
-    partial void OnNombreCompletoChanging(string value);
-    partial void OnNombreCompletoChanged();
-    partial void OnAREAChanging(string value);
-    partial void OnAREAChanged();
-    partial void OnemailChanging(string value);
-    partial void OnemailChanged();
-    partial void OnidestadoChanging(string value);
-    partial void OnidestadoChanged();
-    partial void OnLocalChanging(string value);
-    partial void OnLocalChanged();
-    partial void OnnivelChanging(string value);
-    partial void OnnivelChanged();
-    partial void OnIDSUCURSALChanging(string value);
-    partial void OnIDSUCURSALChanged();
-    partial void OnSUCURSALChanging(string value);
-    partial void OnSUCURSALChanged();
-    partial void Onid_puertaChanging(int value);
-    partial void Onid_puertaChanged();
-    partial void OnpuertaChanging(string value);
-    partial void OnpuertaChanged();
-    #endregion
-		
-		public ASJ_USUARIOS()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdUsuario", DbType="VarChar(20) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string IdUsuario
-		{
-			get
-			{
-				return this._IdUsuario;
-			}
-			set
-			{
-				if ((this._IdUsuario != value))
-				{
-					this.OnIdUsuarioChanging(value);
-					this.SendPropertyChanging();
-					this._IdUsuario = value;
-					this.SendPropertyChanged("IdUsuario");
-					this.OnIdUsuarioChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdCodigoGeneral", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string IdCodigoGeneral
-		{
-			get
-			{
-				return this._IdCodigoGeneral;
-			}
-			set
-			{
-				if ((this._IdCodigoGeneral != value))
-				{
-					this.OnIdCodigoGeneralChanging(value);
-					this.SendPropertyChanging();
-					this._IdCodigoGeneral = value;
-					this.SendPropertyChanged("IdCodigoGeneral");
-					this.OnIdCodigoGeneralChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string Password
-		{
-			get
-			{
-				return this._Password;
-			}
-			set
-			{
-				if ((this._Password != value))
-				{
-					this.OnPasswordChanging(value);
-					this.SendPropertyChanging();
-					this._Password = value;
-					this.SendPropertyChanged("Password");
-					this.OnPasswordChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NombreCompleto", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
-		public string NombreCompleto
-		{
-			get
-			{
-				return this._NombreCompleto;
-			}
-			set
-			{
-				if ((this._NombreCompleto != value))
-				{
-					this.OnNombreCompletoChanging(value);
-					this.SendPropertyChanging();
-					this._NombreCompleto = value;
-					this.SendPropertyChanged("NombreCompleto");
-					this.OnNombreCompletoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AREA", DbType="VarChar(50)")]
-		public string AREA
-		{
-			get
-			{
-				return this._AREA;
-			}
-			set
-			{
-				if ((this._AREA != value))
-				{
-					this.OnAREAChanging(value);
-					this.SendPropertyChanging();
-					this._AREA = value;
-					this.SendPropertyChanged("AREA");
-					this.OnAREAChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="VarChar(60)")]
-		public string email
-		{
-			get
-			{
-				return this._email;
-			}
-			set
-			{
-				if ((this._email != value))
-				{
-					this.OnemailChanging(value);
-					this.SendPropertyChanging();
-					this._email = value;
-					this.SendPropertyChanged("email");
-					this.OnemailChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idestado", DbType="Char(10)")]
-		public string idestado
-		{
-			get
-			{
-				return this._idestado;
-			}
-			set
-			{
-				if ((this._idestado != value))
-				{
-					this.OnidestadoChanging(value);
-					this.SendPropertyChanging();
-					this._idestado = value;
-					this.SendPropertyChanged("idestado");
-					this.OnidestadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Local", DbType="VarChar(50)")]
-		public string Local
-		{
-			get
-			{
-				return this._Local;
-			}
-			set
-			{
-				if ((this._Local != value))
-				{
-					this.OnLocalChanging(value);
-					this.SendPropertyChanging();
-					this._Local = value;
-					this.SendPropertyChanged("Local");
-					this.OnLocalChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nivel", DbType="Char(10) NOT NULL", CanBeNull=false)]
-		public string nivel
-		{
-			get
-			{
-				return this._nivel;
-			}
-			set
-			{
-				if ((this._nivel != value))
-				{
-					this.OnnivelChanging(value);
-					this.SendPropertyChanging();
-					this._nivel = value;
-					this.SendPropertyChanged("nivel");
-					this.OnnivelChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDSUCURSAL", DbType="Char(3) NOT NULL", CanBeNull=false)]
-		public string IDSUCURSAL
-		{
-			get
-			{
-				return this._IDSUCURSAL;
-			}
-			set
-			{
-				if ((this._IDSUCURSAL != value))
-				{
-					this.OnIDSUCURSALChanging(value);
-					this.SendPropertyChanging();
-					this._IDSUCURSAL = value;
-					this.SendPropertyChanged("IDSUCURSAL");
-					this.OnIDSUCURSALChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SUCURSAL", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string SUCURSAL
-		{
-			get
-			{
-				return this._SUCURSAL;
-			}
-			set
-			{
-				if ((this._SUCURSAL != value))
-				{
-					this.OnSUCURSALChanging(value);
-					this.SendPropertyChanging();
-					this._SUCURSAL = value;
-					this.SendPropertyChanged("SUCURSAL");
-					this.OnSUCURSALChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_puerta", DbType="Int NOT NULL")]
-		public int id_puerta
-		{
-			get
-			{
-				return this._id_puerta;
-			}
-			set
-			{
-				if ((this._id_puerta != value))
-				{
-					this.Onid_puertaChanging(value);
-					this.SendPropertyChanging();
-					this._id_puerta = value;
-					this.SendPropertyChanged("id_puerta");
-					this.Onid_puertaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_puerta", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
-		public string puerta
-		{
-			get
-			{
-				return this._puerta;
-			}
-			set
-			{
-				if ((this._puerta != value))
-				{
-					this.OnpuertaChanging(value);
-					this.SendPropertyChanging();
-					this._puerta = value;
-					this.SendPropertyChanged("puerta");
-					this.OnpuertaChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.FormularioSistema")]
 	public partial class FormularioSistema : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -12084,6 +11734,380 @@ namespace Asistencia.Datos
 					this._TypeDocumentId = value;
 					this.SendPropertyChanged("TypeDocumentId");
 					this.OnTypeDocumentIdChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ASJ_USUARIOS")]
+	public partial class ASJ_USUARIOS : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _IdUsuario;
+		
+		private string _IdCodigoGeneral;
+		
+		private string _Password;
+		
+		private string _NombreCompleto;
+		
+		private string _AREA;
+		
+		private string _email;
+		
+		private string _idestado;
+		
+		private string _Local;
+		
+		private string _nivel;
+		
+		private string _IDSUCURSAL;
+		
+		private string _SUCURSAL;
+		
+		private int _id_puerta;
+		
+		private string _puerta;
+		
+		private string _EmpresaID;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdUsuarioChanging(string value);
+    partial void OnIdUsuarioChanged();
+    partial void OnIdCodigoGeneralChanging(string value);
+    partial void OnIdCodigoGeneralChanged();
+    partial void OnPasswordChanging(string value);
+    partial void OnPasswordChanged();
+    partial void OnNombreCompletoChanging(string value);
+    partial void OnNombreCompletoChanged();
+    partial void OnAREAChanging(string value);
+    partial void OnAREAChanged();
+    partial void OnemailChanging(string value);
+    partial void OnemailChanged();
+    partial void OnidestadoChanging(string value);
+    partial void OnidestadoChanged();
+    partial void OnLocalChanging(string value);
+    partial void OnLocalChanged();
+    partial void OnnivelChanging(string value);
+    partial void OnnivelChanged();
+    partial void OnIDSUCURSALChanging(string value);
+    partial void OnIDSUCURSALChanged();
+    partial void OnSUCURSALChanging(string value);
+    partial void OnSUCURSALChanged();
+    partial void Onid_puertaChanging(int value);
+    partial void Onid_puertaChanged();
+    partial void OnpuertaChanging(string value);
+    partial void OnpuertaChanged();
+    partial void OnEmpresaIDChanging(string value);
+    partial void OnEmpresaIDChanged();
+    #endregion
+		
+		public ASJ_USUARIOS()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdUsuario", DbType="VarChar(20) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string IdUsuario
+		{
+			get
+			{
+				return this._IdUsuario;
+			}
+			set
+			{
+				if ((this._IdUsuario != value))
+				{
+					this.OnIdUsuarioChanging(value);
+					this.SendPropertyChanging();
+					this._IdUsuario = value;
+					this.SendPropertyChanged("IdUsuario");
+					this.OnIdUsuarioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdCodigoGeneral", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string IdCodigoGeneral
+		{
+			get
+			{
+				return this._IdCodigoGeneral;
+			}
+			set
+			{
+				if ((this._IdCodigoGeneral != value))
+				{
+					this.OnIdCodigoGeneralChanging(value);
+					this.SendPropertyChanging();
+					this._IdCodigoGeneral = value;
+					this.SendPropertyChanged("IdCodigoGeneral");
+					this.OnIdCodigoGeneralChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string Password
+		{
+			get
+			{
+				return this._Password;
+			}
+			set
+			{
+				if ((this._Password != value))
+				{
+					this.OnPasswordChanging(value);
+					this.SendPropertyChanging();
+					this._Password = value;
+					this.SendPropertyChanged("Password");
+					this.OnPasswordChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NombreCompleto", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
+		public string NombreCompleto
+		{
+			get
+			{
+				return this._NombreCompleto;
+			}
+			set
+			{
+				if ((this._NombreCompleto != value))
+				{
+					this.OnNombreCompletoChanging(value);
+					this.SendPropertyChanging();
+					this._NombreCompleto = value;
+					this.SendPropertyChanged("NombreCompleto");
+					this.OnNombreCompletoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AREA", DbType="VarChar(50)")]
+		public string AREA
+		{
+			get
+			{
+				return this._AREA;
+			}
+			set
+			{
+				if ((this._AREA != value))
+				{
+					this.OnAREAChanging(value);
+					this.SendPropertyChanging();
+					this._AREA = value;
+					this.SendPropertyChanged("AREA");
+					this.OnAREAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="VarChar(60)")]
+		public string email
+		{
+			get
+			{
+				return this._email;
+			}
+			set
+			{
+				if ((this._email != value))
+				{
+					this.OnemailChanging(value);
+					this.SendPropertyChanging();
+					this._email = value;
+					this.SendPropertyChanged("email");
+					this.OnemailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idestado", DbType="Char(10)")]
+		public string idestado
+		{
+			get
+			{
+				return this._idestado;
+			}
+			set
+			{
+				if ((this._idestado != value))
+				{
+					this.OnidestadoChanging(value);
+					this.SendPropertyChanging();
+					this._idestado = value;
+					this.SendPropertyChanged("idestado");
+					this.OnidestadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Local", DbType="VarChar(50)")]
+		public string Local
+		{
+			get
+			{
+				return this._Local;
+			}
+			set
+			{
+				if ((this._Local != value))
+				{
+					this.OnLocalChanging(value);
+					this.SendPropertyChanging();
+					this._Local = value;
+					this.SendPropertyChanged("Local");
+					this.OnLocalChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nivel", DbType="Char(10) NOT NULL", CanBeNull=false)]
+		public string nivel
+		{
+			get
+			{
+				return this._nivel;
+			}
+			set
+			{
+				if ((this._nivel != value))
+				{
+					this.OnnivelChanging(value);
+					this.SendPropertyChanging();
+					this._nivel = value;
+					this.SendPropertyChanged("nivel");
+					this.OnnivelChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDSUCURSAL", DbType="Char(3) NOT NULL", CanBeNull=false)]
+		public string IDSUCURSAL
+		{
+			get
+			{
+				return this._IDSUCURSAL;
+			}
+			set
+			{
+				if ((this._IDSUCURSAL != value))
+				{
+					this.OnIDSUCURSALChanging(value);
+					this.SendPropertyChanging();
+					this._IDSUCURSAL = value;
+					this.SendPropertyChanged("IDSUCURSAL");
+					this.OnIDSUCURSALChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SUCURSAL", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string SUCURSAL
+		{
+			get
+			{
+				return this._SUCURSAL;
+			}
+			set
+			{
+				if ((this._SUCURSAL != value))
+				{
+					this.OnSUCURSALChanging(value);
+					this.SendPropertyChanging();
+					this._SUCURSAL = value;
+					this.SendPropertyChanged("SUCURSAL");
+					this.OnSUCURSALChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_puerta", DbType="Int NOT NULL")]
+		public int id_puerta
+		{
+			get
+			{
+				return this._id_puerta;
+			}
+			set
+			{
+				if ((this._id_puerta != value))
+				{
+					this.Onid_puertaChanging(value);
+					this.SendPropertyChanging();
+					this._id_puerta = value;
+					this.SendPropertyChanged("id_puerta");
+					this.Onid_puertaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_puerta", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string puerta
+		{
+			get
+			{
+				return this._puerta;
+			}
+			set
+			{
+				if ((this._puerta != value))
+				{
+					this.OnpuertaChanging(value);
+					this.SendPropertyChanging();
+					this._puerta = value;
+					this.SendPropertyChanged("puerta");
+					this.OnpuertaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpresaID", DbType="Char(3)")]
+		public string EmpresaID
+		{
+			get
+			{
+				return this._EmpresaID;
+			}
+			set
+			{
+				if ((this._EmpresaID != value))
+				{
+					this.OnEmpresaIDChanging(value);
+					this.SendPropertyChanging();
+					this._EmpresaID = value;
+					this.SendPropertyChanged("EmpresaID");
+					this.OnEmpresaIDChanged();
 				}
 			}
 		}

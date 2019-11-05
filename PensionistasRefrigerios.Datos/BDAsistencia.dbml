@@ -502,23 +502,6 @@
       <Association Name="FormularioSistema_PrivilegioFormulario" Member="FormularioSistema" ThisKey="formularioCodigo" OtherKey="formularioCodigo" Type="FormularioSistema" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.ASJ_USUARIOS" Member="ASJ_USUARIOS">
-    <Type Name="ASJ_USUARIOS">
-      <Column Name="IdUsuario" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="IdCodigoGeneral" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="Password" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="NombreCompleto" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
-      <Column Name="AREA" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="email" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
-      <Column Name="idestado" Type="System.String" DbType="Char(10)" CanBeNull="true" />
-      <Column Name="Local" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="nivel" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
-      <Column Name="IDSUCURSAL" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
-      <Column Name="SUCURSAL" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="id_puerta" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="puerta" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
   <Table Name="dbo.FormularioSistema" Member="FormularioSistema">
     <Type Name="FormularioSistema">
       <Column Name="formularioCodigo" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -551,6 +534,24 @@
       <Column Name="Observacion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
       <Column Name="IdEstado" Type="System.String" DbType="Char(2)" CanBeNull="true" />
       <Column Name="TypeDocumentId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ASJ_USUARIOS" Member="ASJ_USUARIOS">
+    <Type Name="ASJ_USUARIOS">
+      <Column Name="IdUsuario" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdCodigoGeneral" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="NombreCompleto" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="AREA" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="idestado" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="Local" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="nivel" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="IDSUCURSAL" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="SUCURSAL" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="id_puerta" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="puerta" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="EmpresaID" Type="System.String" DbType="Char(3)" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.ASJ_ActualizarAsistenciaObservada" Method="ASJ_ActualizarAsistenciaObservada">

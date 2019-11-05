@@ -31,10 +31,28 @@ namespace Asistencia
         private ASJ_PersonalBloqueo oPersonalBloqueada;
         private ASJ_PersonalBloqueo oPersonaBloqueada;
         private List<ASJ_ObtenerListadoDeTipoPersonalbloqueadoResult> listaTipoBloqueos;
+        private string _conection;
+        private ASJ_USUARIOS _user;
+        private string _companyId;
 
         public CatalogoPersonalBloqueadoParaAsistencia()
         {
             InitializeComponent();
+            RadGridLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.GridLocalizationProviderEspanol();
+            RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
+            RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
+            RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
+            Inicio();
+            CargarComboMotivoBloqueo();
+            Consultar();
+        }
+
+        public CatalogoPersonalBloqueadoParaAsistencia(string conection, ASJ_USUARIOS user, string companyId)
+        {
+            InitializeComponent();
+            _conection = conection;
+            _user = user;
+            _companyId = companyId;
             RadGridLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.GridLocalizationProviderEspanol();
             RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
             RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
@@ -304,7 +322,7 @@ namespace Asistencia
             try
             {
                 if (oPersonaBloqueada.codigoPersonalBloqueo > 0)
-                {                    
+                {
                     modeloPersonalBloqueado = new PersonalBloqueoController();
                     modeloPersonalBloqueado.Anular(periodo, oPersonaBloqueada);
                     gbListado.Enabled = !false;
@@ -458,7 +476,7 @@ namespace Asistencia
             {
                 if (this.txtEstado.Text != "1")
                 {
-                    if (this.txtPersonalCodigo.Text != string.Empty )
+                    if (this.txtPersonalCodigo.Text != string.Empty)
                     {
                         if (this.txtPersonalNombresCompletos.Text != string.Empty)
                         {
@@ -499,7 +517,7 @@ namespace Asistencia
                             Consultar();
                         }
                     }
-                   
+
                 }
             }
             catch (IOException ex)

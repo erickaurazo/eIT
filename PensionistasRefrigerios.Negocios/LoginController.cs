@@ -9,64 +9,56 @@ namespace Asistencia.Negocios
 {
     public class LoginController
     {
-        private Boolean Validado;
-        private ASJ_USUARIOS oSJUsuario;
-        private List<Grupo> listadoBaseDatos;
-        private List<Grupo> listadoEmpresa;
-        private Grupo Empresa;
-        private Grupo oBaseDatos;
+        //private Boolean Validado;
+        //private ASJ_USUARIOS oSJUsuario;
+        //private List<Grupo> listadoBaseDatos;
+        //private List<Grupo> listadoEmpresa;
+        //private Grupo Empresa;
+        //private Grupo oBaseDatos;
 
-        public Boolean VerificarSesion(string user, string clave)
-        {
-            Validado = false;
+        public ASJ_USUARIOS CheckStatusSession(string userName, string password, string companyId, string db)
+        {            
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + DateTime.Now.Year];
+            ASJ_USUARIOS user = new ASJ_USUARIOS();
+            user = new ASJ_USUARIOS { IdUsuario = string.Empty, Password = string.Empty, nivel = "1", idestado = "0", EmpresaID = companyId.Trim() };
+            cnx = ConfigurationManager.AppSettings[db];
             using (BDAsistenciaDataContext contexto = new BDAsistenciaDataContext(cnx))
             {
-                if (contexto.ASJ_USUARIOS.Where(x => x.IdUsuario == user && x.Password == clave && x.idestado == "1").ToList().Count == 1)
+                var result = contexto.ASJ_USUARIOS.Where(x => x.IdUsuario == userName && x.EmpresaID.Trim() == companyId.Trim()).ToList();
+                if (result != null && result.Count == 1)
                 {
-                    oSJUsuario = new ASJ_USUARIOS();
-                    oSJUsuario = contexto.ASJ_USUARIOS.Where(x => x.IdUsuario == user && x.Password == clave && x.idestado == "1").Single();
-                    Validado = true;
-                }
-                else
-                {
-                    oSJUsuario = new ASJ_USUARIOS() { IdUsuario = "", Password = "", nivel = "1", idestado = "0" };
-                    Validado = false;
+                    user = new ASJ_USUARIOS();
+                    user = result.Single() ;
                 }
             }
 
-            return Validado;
+            return user;
         }
 
-        public ASJ_USUARIOS ObtenerUsuario(string user, string clave)
+        public ASJ_USUARIOS GetUserById(string userName, string password, string companyId, string db)
         {
-            Validado = false;
             string cnx = string.Empty;
+            var user = new ASJ_USUARIOS();
+            user = new ASJ_USUARIOS { IdUsuario = "", Password = "", nivel = "1", idestado = "0", EmpresaID = companyId.Trim() };
 
-            cnx = ConfigurationManager.AppSettings["bd" + DateTime.Now.Year];
-
+            cnx = ConfigurationManager.AppSettings[db];
             using (BDAsistenciaDataContext contexto = new BDAsistenciaDataContext(cnx))
             {
-                if (contexto.ASJ_USUARIOS.Where(x => x.IdUsuario == user && x.Password == clave && x.idestado == "1").ToList().Count == 1)
+                var result = contexto.ASJ_USUARIOS.Where(x => x.IdUsuario == userName && x.Password == password && x.idestado == "1" && x.EmpresaID.Trim() == companyId.Trim()).ToList();
+                if (result != null && result.Count == 1)
                 {
-                    oSJUsuario = new ASJ_USUARIOS();
-                    oSJUsuario = contexto.ASJ_USUARIOS.Where(x => x.IdUsuario == user && x.Password == clave && x.idestado == "1").Single();
-                    Validado = true;
-                }
-                else
-                {
-                    oSJUsuario = new ASJ_USUARIOS() { IdUsuario = "", Password = "", nivel = "1", idestado = "0" };
-                    Validado = false;
+                    user = new ASJ_USUARIOS();
+                    user = result.Single();
                 }
             }
 
-            return oSJUsuario;
+            return user;
         }
 
-        public List<Grupo> ListarBasesDatos()
+        public List<Grupo> GetDatabases()
         {
             bool resultadoConexionInternet = false;
+            Grupo oBaseDatos;
             try
             {
                 using (var client = new WebClient())
@@ -80,7 +72,7 @@ namespace Asistencia.Negocios
                 resultadoConexionInternet = false; ;
             }
 
-            listadoBaseDatos = new List<Grupo>();
+            List<Grupo> listadoBaseDatos = new List<Grupo>();
             if (resultadoConexionInternet == true)
             {
                 oBaseDatos = new Grupo() { Id = "10", Descripcion = "AGRICOLA2017 | Publica".ToUpper() };
@@ -92,22 +84,6 @@ namespace Asistencia.Negocios
             listadoBaseDatos.Add(oBaseDatos);
 
             return listadoBaseDatos;
-        }
-
-        public List<Grupo> ListarEmpresa()
-        {
-            string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + DateTime.Now.Year];
-
-            using (BDAsistenciaDataContext contexto = new BDAsistenciaDataContext(cnx))
-            {
-                listadoEmpresa = new List<Grupo>();
-                Empresa = new Grupo() { Id = contexto.EMPRESAS.FirstOrDefault().IDEMPRESA != null ? contexto.EMPRESAS.FirstOrDefault().IDEMPRESA.Trim().ToUpper() : string.Empty, Descripcion = contexto.EMPRESAS.FirstOrDefault().RAZON_SOCIAL != null ? contexto.EMPRESAS.FirstOrDefault().RAZON_SOCIAL.Trim().ToUpper() : string.Empty };
-                listadoEmpresa.Add(Empresa);
-            }
-
-            return listadoEmpresa;
-
         }
     }
 }

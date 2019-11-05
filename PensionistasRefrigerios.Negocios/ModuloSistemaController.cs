@@ -11,12 +11,12 @@ namespace Asistencia.Negocios
     public class ModuloSistemaController
     {
 
-        public bool AddModulo(ModuloSistema modulo, string periodo)
+        public bool AddModulo(ModuloSistema modulo, string conection)
         {
             bool estate = false;
             string cnx = string.Empty;
             FormularioSistema formularioSistema = new FormularioSistema();
-            cnx = ConfigurationManager.AppSettings["bd" + periodo].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
 
             using (TransactionScope scope = new TransactionScope())
             {
@@ -134,11 +134,11 @@ namespace Asistencia.Negocios
             return nombre;
         }
 
-        public bool RemoveModulo(ModuloSistema modulo, string periodo)
+        public bool RemoveModulo(ModuloSistema modulo, string conection)
         {
             bool estate = false;
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + periodo.ToString().Substring(0, 4)].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext context = new BDAsistenciaDataContext(cnx))
             {
                 context.CommandTimeout = 999909999;
@@ -146,12 +146,12 @@ namespace Asistencia.Negocios
             return estate;
         }
 
-        public bool ChangeState(ModuloSistema modulo, string periodo)
+        public bool ChangeState(ModuloSistema modulo, string conection)
         {
             bool estate = false;
             string cnx = string.Empty;
             FormularioSistema formularioSistema = new FormularioSistema();
-            cnx = ConfigurationManager.AppSettings["bd" + periodo.ToString().Substring(0, 4)].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext context = new BDAsistenciaDataContext(cnx))
             {
 
@@ -181,11 +181,11 @@ namespace Asistencia.Negocios
             return estate;
         }
 
-        public List<ModuleSystem> GetListAll(string periodo)
+        public List<ModuleSystem> GetListAll(string conection)
         {
             var result = new List<ModuleSystem>();
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + periodo.ToString().Substring(0, 4)].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext context = new BDAsistenciaDataContext(cnx))
             {
                 context.CommandTimeout = 999909999;

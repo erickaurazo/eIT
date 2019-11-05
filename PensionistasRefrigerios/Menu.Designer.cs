@@ -32,40 +32,51 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.RRHH = new System.Windows.Forms.ToolStripMenuItem();
-            this.Salir = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoPlanilla = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoTransporte = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoExportaciones = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.GoMantenimiento = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoMaquinaria = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.GoSanidad = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoEvaluacionAgricola = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.GoSistema = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoSalir = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.editMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.RRHHCatalogoTransportistas = new System.Windows.Forms.ToolStripMenuItem();
-            this.RRHHparaderos = new System.Windows.Forms.ToolStripMenuItem();
-            this.RRHHpersonal = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoSistemaCatalogoConfiguracion = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoTransportesCatalogoEmpresaTransporte = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoSistemaCatalogoFormularios = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoTransportesCatalogoParadero = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoPlanillaCatalogoPersonal = new System.Windows.Forms.ToolStripMenuItem();
             this.RRHHpersonalGeneral = new System.Windows.Forms.ToolStripMenuItem();
-            this.RRHHpersonalPorParadero = new System.Windows.Forms.ToolStripMenuItem();
-            this.RRHHpersonalBloqueado = new System.Windows.Forms.ToolStripMenuItem();
-            this.RRHHRutasRecorridoTransportista = new System.Windows.Forms.ToolStripMenuItem();
-            this.RRH3HPrivilegiosDelSistema = new System.Windows.Forms.ToolStripMenuItem();
-            this.RRHHtipoDeBloqueo = new System.Windows.Forms.ToolStripMenuItem();
-            this.RRHHModuloSistema = new System.Windows.Forms.ToolStripMenuItem();
-            this.RRHHformularioDeSistema = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoPlanillaCatalogoPersonalAsignarParadero = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoPlanillaCatalogoPersonalObservados = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoSistemaCatalogoPrivilegios = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoSistemaCatalogoModulos = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoTransportesCatalogoRuta = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoPlanillaCatalogoTipoObservado = new System.Windows.Forms.ToolStripMenuItem();
             this.viewMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.RR3HHRegistroDeAsistenciaPersonalAdministrativo = new System.Windows.Forms.ToolStripMenuItem();
-            this.RRHHRegistroAsistencia = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoPlanillaMovimientoRegistroAsistencia = new System.Windows.Forms.ToolStripMenuItem();
             this.procesoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.actualizarListadoParaSincronizacionATabletToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoPlanillaProcesoActualizarListaSincronizacionATablets = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.RRH3HReporteDeAsistenciaPersonalAdministrativo = new System.Windows.Forms.ToolStripMenuItem();
-            this.RRHHReporteDeAsistenciaMóvilBuses = new System.Windows.Forms.ToolStripMenuItem();
-            this.RRHHreportesDeIngresoYSalidaDeUnidadesDeTransportes = new System.Windows.Forms.ToolStripMenuItem();
-            this.reporteDeAsistenciaDePersonalPorBusesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.RRHHreporteDeAsistenciaObservados = new System.Windows.Forms.ToolStripMenuItem();
-            this.RRHHreporteDeAsistenciaEnPuertas = new System.Windows.Forms.ToolStripMenuItem();
-            this.RRHHReporteDeVencimientodEDocumentos = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoTransportesReporteAsistenciaByTablets = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoTransportesReporteIngresoSalidaBuses = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoPlanillaReporteAsistenciaObservadas = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoPlanillaReporteReporteAsistencia = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoTransportesReporteVencimientoDocumentos = new System.Windows.Forms.ToolStripMenuItem();
+            this.utilitariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoSistemaUtilitariosElegirPeriodo = new System.Windows.Forms.ToolStripMenuItem();
             this.windowsMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.newWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cascadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tileVerticalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tileHorizontalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.arrangeIconsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoSistemaNewWindows = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoSistemaCascade = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoSistematileVertical = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoSistemaTileHorizontal = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoSistemacloseAll = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoSistemaArrangeIcons = new System.Windows.Forms.ToolStripMenuItem();
             this.helpMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
@@ -74,9 +85,7 @@
             this.lblUsuarioNombre = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblNombre = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblNombreDescripcion = new System.Windows.Forms.ToolStripStatusLabel();
-            this.privilegiosYAccesosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.configuracionDelSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.utilitariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bgwHilo = new System.ComponentModel.BackgroundWorker();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -104,274 +113,377 @@
             // fileMenu
             // 
             this.fileMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.RRHH,
-            this.Salir});
+            this.GoPlanilla,
+            this.GoTransporte,
+            this.GoExportaciones,
+            this.toolStripSeparator1,
+            this.GoMantenimiento,
+            this.GoMaquinaria,
+            this.toolStripSeparator3,
+            this.GoSanidad,
+            this.GoEvaluacionAgricola,
+            this.toolStripSeparator2,
+            this.GoSistema,
+            this.GoSalir,
+            this.toolStripSeparator4});
             this.fileMenu.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
             this.fileMenu.Name = "fileMenu";
             this.fileMenu.Size = new System.Drawing.Size(60, 20);
             this.fileMenu.Text = "&Sistema";
             // 
-            // RRHH
+            // GoPlanilla
             // 
-            this.RRHH.Image = ((System.Drawing.Image)(resources.GetObject("RRHH.Image")));
-            this.RRHH.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.RRHH.Name = "RRHH";
-            this.RRHH.Size = new System.Drawing.Size(157, 22);
-            this.RRHH.Text = "Administrativos";
-            this.RRHH.Click += new System.EventHandler(this.RRHH_Click);
+            this.GoPlanilla.Image = ((System.Drawing.Image)(resources.GetObject("GoPlanilla.Image")));
+            this.GoPlanilla.Name = "GoPlanilla";
+            this.GoPlanilla.Size = new System.Drawing.Size(192, 22);
+            this.GoPlanilla.Text = "Planillas";
+            this.GoPlanilla.Click += new System.EventHandler(this.GoPlanilla_Click);
             // 
-            // Salir
+            // GoTransporte
             // 
-            this.Salir.Name = "Salir";
-            this.Salir.Size = new System.Drawing.Size(157, 22);
-            this.Salir.Text = "&Salir";
+            this.GoTransporte.Image = ((System.Drawing.Image)(resources.GetObject("GoTransporte.Image")));
+            this.GoTransporte.Name = "GoTransporte";
+            this.GoTransporte.Size = new System.Drawing.Size(192, 22);
+            this.GoTransporte.Text = "Transporte";
+            this.GoTransporte.Click += new System.EventHandler(this.GoTransporte_Click);
+            // 
+            // GoExportaciones
+            // 
+            this.GoExportaciones.Image = ((System.Drawing.Image)(resources.GetObject("GoExportaciones.Image")));
+            this.GoExportaciones.Name = "GoExportaciones";
+            this.GoExportaciones.Size = new System.Drawing.Size(192, 22);
+            this.GoExportaciones.Text = "Exportaciones";
+            this.GoExportaciones.Click += new System.EventHandler(this.GoExportaciones_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(189, 6);
+            // 
+            // GoMantenimiento
+            // 
+            this.GoMantenimiento.Image = ((System.Drawing.Image)(resources.GetObject("GoMantenimiento.Image")));
+            this.GoMantenimiento.Name = "GoMantenimiento";
+            this.GoMantenimiento.Size = new System.Drawing.Size(192, 22);
+            this.GoMantenimiento.Text = "Mantenimiento";
+            this.GoMantenimiento.Click += new System.EventHandler(this.GoMantenimiento_Click);
+            // 
+            // GoMaquinaria
+            // 
+            this.GoMaquinaria.Image = ((System.Drawing.Image)(resources.GetObject("GoMaquinaria.Image")));
+            this.GoMaquinaria.Name = "GoMaquinaria";
+            this.GoMaquinaria.Size = new System.Drawing.Size(192, 22);
+            this.GoMaquinaria.Text = "Maquinaria";
+            this.GoMaquinaria.Click += new System.EventHandler(this.GoMaquinaria_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(189, 6);
+            // 
+            // GoSanidad
+            // 
+            this.GoSanidad.Image = ((System.Drawing.Image)(resources.GetObject("GoSanidad.Image")));
+            this.GoSanidad.Name = "GoSanidad";
+            this.GoSanidad.Size = new System.Drawing.Size(192, 22);
+            this.GoSanidad.Text = "Sanidad | FitoSanidad";
+            this.GoSanidad.Click += new System.EventHandler(this.GoSanidad_Click);
+            // 
+            // GoEvaluacionAgricola
+            // 
+            this.GoEvaluacionAgricola.Image = ((System.Drawing.Image)(resources.GetObject("GoEvaluacionAgricola.Image")));
+            this.GoEvaluacionAgricola.Name = "GoEvaluacionAgricola";
+            this.GoEvaluacionAgricola.Size = new System.Drawing.Size(192, 22);
+            this.GoEvaluacionAgricola.Text = "Evaluaciones agrícolas";
+            this.GoEvaluacionAgricola.Click += new System.EventHandler(this.GoEvaluacionAgricola_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(189, 6);
+            // 
+            // GoSistema
+            // 
+            this.GoSistema.Image = ((System.Drawing.Image)(resources.GetObject("GoSistema.Image")));
+            this.GoSistema.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.GoSistema.Name = "GoSistema";
+            this.GoSistema.Size = new System.Drawing.Size(192, 22);
+            this.GoSistema.Text = "Sistema";
+            this.GoSistema.Click += new System.EventHandler(this.GoSistema_Click);
+            // 
+            // GoSalir
+            // 
+            this.GoSalir.Name = "GoSalir";
+            this.GoSalir.Size = new System.Drawing.Size(192, 22);
+            this.GoSalir.Text = "&Salir";
+            this.GoSalir.Click += new System.EventHandler(this.GoSalir_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(189, 6);
             // 
             // editMenu
             // 
             this.editMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.RRHHCatalogoTransportistas,
-            this.RRHHparaderos,
-            this.RRHHpersonal,
-            this.RRHHRutasRecorridoTransportista,
-            this.RRH3HPrivilegiosDelSistema,
-            this.RRHHtipoDeBloqueo,
-            this.RRHHModuloSistema,
-            this.RRHHformularioDeSistema,
-            this.privilegiosYAccesosToolStripMenuItem,
-            this.configuracionDelSistemaToolStripMenuItem});
+            this.GoSistemaCatalogoConfiguracion,
+            this.GoTransportesCatalogoEmpresaTransporte,
+            this.GoSistemaCatalogoFormularios,
+            this.GoTransportesCatalogoParadero,
+            this.GoPlanillaCatalogoPersonal,
+            this.GoSistemaCatalogoPrivilegios,
+            this.GoSistemaCatalogoModulos,
+            this.GoTransportesCatalogoRuta,
+            this.GoPlanillaCatalogoTipoObservado});
             this.editMenu.Name = "editMenu";
             this.editMenu.Size = new System.Drawing.Size(51, 20);
             this.editMenu.Text = "Tablas";
             // 
-            // RRHHCatalogoTransportistas
+            // GoSistemaCatalogoConfiguracion
             // 
-            this.RRHHCatalogoTransportistas.Name = "RRHHCatalogoTransportistas";
-            this.RRHHCatalogoTransportistas.Size = new System.Drawing.Size(259, 22);
-            this.RRHHCatalogoTransportistas.Text = "Catálogo de empresa de transporte";
-            this.RRHHCatalogoTransportistas.Click += new System.EventHandler(this.transportistaToolStripMenuItem_Click);
+            this.GoSistemaCatalogoConfiguracion.Name = "GoSistemaCatalogoConfiguracion";
+            this.GoSistemaCatalogoConfiguracion.Size = new System.Drawing.Size(259, 22);
+            this.GoSistemaCatalogoConfiguracion.Text = "Configuracion del sistema";
+            this.GoSistemaCatalogoConfiguracion.Visible = false;
+            this.GoSistemaCatalogoConfiguracion.Click += new System.EventHandler(this.GoSistemaCatalogoConfiguracion_Click);
             // 
-            // RRHHparaderos
+            // GoTransportesCatalogoEmpresaTransporte
             // 
-            this.RRHHparaderos.Name = "RRHHparaderos";
-            this.RRHHparaderos.Size = new System.Drawing.Size(259, 22);
-            this.RRHHparaderos.Text = "Paraderos";
-            this.RRHHparaderos.Click += new System.EventHandler(this.RRHHparaderos_Click);
+            this.GoTransportesCatalogoEmpresaTransporte.Name = "GoTransportesCatalogoEmpresaTransporte";
+            this.GoTransportesCatalogoEmpresaTransporte.Size = new System.Drawing.Size(259, 22);
+            this.GoTransportesCatalogoEmpresaTransporte.Text = "Catálogo de empresa de transporte";
+            this.GoTransportesCatalogoEmpresaTransporte.Visible = false;
+            this.GoTransportesCatalogoEmpresaTransporte.Click += new System.EventHandler(this.transportistaToolStripMenuItem_Click);
             // 
-            // RRHHpersonal
+            // GoSistemaCatalogoFormularios
             // 
-            this.RRHHpersonal.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.GoSistemaCatalogoFormularios.Name = "GoSistemaCatalogoFormularios";
+            this.GoSistemaCatalogoFormularios.Size = new System.Drawing.Size(259, 22);
+            this.GoSistemaCatalogoFormularios.Text = "Formulario de Sistema";
+            this.GoSistemaCatalogoFormularios.Visible = false;
+            this.GoSistemaCatalogoFormularios.Click += new System.EventHandler(this.RRHHformularioDeSistema_Click);
+            // 
+            // GoTransportesCatalogoParadero
+            // 
+            this.GoTransportesCatalogoParadero.Name = "GoTransportesCatalogoParadero";
+            this.GoTransportesCatalogoParadero.Size = new System.Drawing.Size(259, 22);
+            this.GoTransportesCatalogoParadero.Text = "Paraderos";
+            this.GoTransportesCatalogoParadero.Visible = false;
+            this.GoTransportesCatalogoParadero.Click += new System.EventHandler(this.RRHHparaderos_Click);
+            // 
+            // GoPlanillaCatalogoPersonal
+            // 
+            this.GoPlanillaCatalogoPersonal.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.RRHHpersonalGeneral,
-            this.RRHHpersonalPorParadero,
-            this.RRHHpersonalBloqueado});
-            this.RRHHpersonal.Name = "RRHHpersonal";
-            this.RRHHpersonal.Size = new System.Drawing.Size(259, 22);
-            this.RRHHpersonal.Text = "Personal";
+            this.GoPlanillaCatalogoPersonalAsignarParadero,
+            this.GoPlanillaCatalogoPersonalObservados});
+            this.GoPlanillaCatalogoPersonal.Name = "GoPlanillaCatalogoPersonal";
+            this.GoPlanillaCatalogoPersonal.Size = new System.Drawing.Size(259, 22);
+            this.GoPlanillaCatalogoPersonal.Text = "Personal";
+            this.GoPlanillaCatalogoPersonal.Visible = false;
             // 
             // RRHHpersonalGeneral
             // 
             this.RRHHpersonalGeneral.Name = "RRHHpersonalGeneral";
             this.RRHHpersonalGeneral.Size = new System.Drawing.Size(190, 22);
             this.RRHHpersonalGeneral.Text = "Personal general";
+            this.RRHHpersonalGeneral.Click += new System.EventHandler(this.RRHHpersonalGeneral_Click);
             // 
-            // RRHHpersonalPorParadero
+            // GoPlanillaCatalogoPersonalAsignarParadero
             // 
-            this.RRHHpersonalPorParadero.Name = "RRHHpersonalPorParadero";
-            this.RRHHpersonalPorParadero.Size = new System.Drawing.Size(190, 22);
-            this.RRHHpersonalPorParadero.Text = "Personal por paradero";
-            this.RRHHpersonalPorParadero.Click += new System.EventHandler(this.RRHHpersonalPorParadero_Click);
+            this.GoPlanillaCatalogoPersonalAsignarParadero.Name = "GoPlanillaCatalogoPersonalAsignarParadero";
+            this.GoPlanillaCatalogoPersonalAsignarParadero.Size = new System.Drawing.Size(190, 22);
+            this.GoPlanillaCatalogoPersonalAsignarParadero.Text = "Personal por paradero";
+            this.GoPlanillaCatalogoPersonalAsignarParadero.Click += new System.EventHandler(this.RRHHpersonalPorParadero_Click);
             // 
-            // RRHHpersonalBloqueado
+            // GoPlanillaCatalogoPersonalObservados
             // 
-            this.RRHHpersonalBloqueado.Name = "RRHHpersonalBloqueado";
-            this.RRHHpersonalBloqueado.Size = new System.Drawing.Size(190, 22);
-            this.RRHHpersonalBloqueado.Text = "Personal bloqueado";
-            this.RRHHpersonalBloqueado.Click += new System.EventHandler(this.RRHHpersonalBloqueado_Click);
+            this.GoPlanillaCatalogoPersonalObservados.Name = "GoPlanillaCatalogoPersonalObservados";
+            this.GoPlanillaCatalogoPersonalObservados.Size = new System.Drawing.Size(190, 22);
+            this.GoPlanillaCatalogoPersonalObservados.Text = "Personal bloqueado";
+            this.GoPlanillaCatalogoPersonalObservados.Click += new System.EventHandler(this.RRHHpersonalBloqueado_Click);
             // 
-            // RRHHRutasRecorridoTransportista
+            // GoSistemaCatalogoPrivilegios
             // 
-            this.RRHHRutasRecorridoTransportista.Name = "RRHHRutasRecorridoTransportista";
-            this.RRHHRutasRecorridoTransportista.Size = new System.Drawing.Size(259, 22);
-            this.RRHHRutasRecorridoTransportista.Text = "Rutas para transporte";
-            this.RRHHRutasRecorridoTransportista.Click += new System.EventHandler(this.rutaToolStripMenuItem_Click);
+            this.GoSistemaCatalogoPrivilegios.Name = "GoSistemaCatalogoPrivilegios";
+            this.GoSistemaCatalogoPrivilegios.Size = new System.Drawing.Size(259, 22);
+            this.GoSistemaCatalogoPrivilegios.Text = "Privilegios y accesos";
+            this.GoSistemaCatalogoPrivilegios.Visible = false;
+            this.GoSistemaCatalogoPrivilegios.Click += new System.EventHandler(this.GoSistemaCatalogoPrivilegios_Click);
             // 
-            // RRH3HPrivilegiosDelSistema
+            // GoSistemaCatalogoModulos
             // 
-            this.RRH3HPrivilegiosDelSistema.Enabled = false;
-            this.RRH3HPrivilegiosDelSistema.Name = "RRH3HPrivilegiosDelSistema";
-            this.RRH3HPrivilegiosDelSistema.Size = new System.Drawing.Size(259, 22);
-            this.RRH3HPrivilegiosDelSistema.Text = "Privilegios de Sistema";
+            this.GoSistemaCatalogoModulos.Name = "GoSistemaCatalogoModulos";
+            this.GoSistemaCatalogoModulos.Size = new System.Drawing.Size(259, 22);
+            this.GoSistemaCatalogoModulos.Text = "Modulo de sistema";
+            this.GoSistemaCatalogoModulos.Visible = false;
+            this.GoSistemaCatalogoModulos.Click += new System.EventHandler(this.RRHHmenu_Click);
             // 
-            // RRHHtipoDeBloqueo
+            // GoTransportesCatalogoRuta
             // 
-            this.RRHHtipoDeBloqueo.Name = "RRHHtipoDeBloqueo";
-            this.RRHHtipoDeBloqueo.Size = new System.Drawing.Size(259, 22);
-            this.RRHHtipoDeBloqueo.Text = "Tipo de bloqueo para asistencia";
-            this.RRHHtipoDeBloqueo.Click += new System.EventHandler(this.tipoDeBloqueoToolStripMenuItem_Click);
+            this.GoTransportesCatalogoRuta.Name = "GoTransportesCatalogoRuta";
+            this.GoTransportesCatalogoRuta.Size = new System.Drawing.Size(259, 22);
+            this.GoTransportesCatalogoRuta.Text = "Rutas para transporte";
+            this.GoTransportesCatalogoRuta.Visible = false;
+            this.GoTransportesCatalogoRuta.Click += new System.EventHandler(this.rutaToolStripMenuItem_Click);
             // 
-            // RRHHModuloSistema
+            // GoPlanillaCatalogoTipoObservado
             // 
-            this.RRHHModuloSistema.Name = "RRHHModuloSistema";
-            this.RRHHModuloSistema.Size = new System.Drawing.Size(259, 22);
-            this.RRHHModuloSistema.Text = "Modulo de sistema";
-            this.RRHHModuloSistema.Click += new System.EventHandler(this.RRHHmenu_Click);
-            // 
-            // RRHHformularioDeSistema
-            // 
-            this.RRHHformularioDeSistema.Name = "RRHHformularioDeSistema";
-            this.RRHHformularioDeSistema.Size = new System.Drawing.Size(259, 22);
-            this.RRHHformularioDeSistema.Text = "Formulario de Sistema";
-            this.RRHHformularioDeSistema.Click += new System.EventHandler(this.RRHHformularioDeSistema_Click);
+            this.GoPlanillaCatalogoTipoObservado.Name = "GoPlanillaCatalogoTipoObservado";
+            this.GoPlanillaCatalogoTipoObservado.Size = new System.Drawing.Size(259, 22);
+            this.GoPlanillaCatalogoTipoObservado.Text = "Tipo de bloqueo para asistencia";
+            this.GoPlanillaCatalogoTipoObservado.Visible = false;
+            this.GoPlanillaCatalogoTipoObservado.Click += new System.EventHandler(this.tipoDeBloqueoToolStripMenuItem_Click);
             // 
             // viewMenu
             // 
             this.viewMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.RR3HHRegistroDeAsistenciaPersonalAdministrativo,
-            this.RRHHRegistroAsistencia});
+            this.GoPlanillaMovimientoRegistroAsistencia});
             this.viewMenu.Name = "viewMenu";
             this.viewMenu.Size = new System.Drawing.Size(84, 20);
             this.viewMenu.Text = "Movimiento";
             // 
-            // RR3HHRegistroDeAsistenciaPersonalAdministrativo
+            // GoPlanillaMovimientoRegistroAsistencia
             // 
-            this.RR3HHRegistroDeAsistenciaPersonalAdministrativo.Name = "RR3HHRegistroDeAsistenciaPersonalAdministrativo";
-            this.RR3HHRegistroDeAsistenciaPersonalAdministrativo.Size = new System.Drawing.Size(318, 22);
-            this.RR3HHRegistroDeAsistenciaPersonalAdministrativo.Text = "Registro de Asistencia Personal Administrativo";
-            this.RR3HHRegistroDeAsistenciaPersonalAdministrativo.Click += new System.EventHandler(this.registroDeAsistenciaPersonalAdministrativoToolStripMenuItem_Click);
-            // 
-            // RRHHRegistroAsistencia
-            // 
-            this.RRHHRegistroAsistencia.Name = "RRHHRegistroAsistencia";
-            this.RRHHRegistroAsistencia.Size = new System.Drawing.Size(318, 22);
-            this.RRHHRegistroAsistencia.Text = "Registro de asistencia";
-            this.RRHHRegistroAsistencia.Click += new System.EventHandler(this.RRHHRegistroAsistencia_Click);
+            this.GoPlanillaMovimientoRegistroAsistencia.Name = "GoPlanillaMovimientoRegistroAsistencia";
+            this.GoPlanillaMovimientoRegistroAsistencia.Size = new System.Drawing.Size(187, 22);
+            this.GoPlanillaMovimientoRegistroAsistencia.Text = "Registro de asistencia";
+            this.GoPlanillaMovimientoRegistroAsistencia.Visible = false;
+            this.GoPlanillaMovimientoRegistroAsistencia.Click += new System.EventHandler(this.RRHHRegistroAsistencia_Click);
             // 
             // procesoToolStripMenuItem
             // 
             this.procesoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.actualizarListadoParaSincronizacionATabletToolStripMenuItem});
+            this.GoPlanillaProcesoActualizarListaSincronizacionATablets});
             this.procesoToolStripMenuItem.Name = "procesoToolStripMenuItem";
             this.procesoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.procesoToolStripMenuItem.Text = "Proceso";
             // 
-            // actualizarListadoParaSincronizacionATabletToolStripMenuItem
+            // GoPlanillaProcesoActualizarListaSincronizacionATablets
             // 
-            this.actualizarListadoParaSincronizacionATabletToolStripMenuItem.Name = "actualizarListadoParaSincronizacionATabletToolStripMenuItem";
-            this.actualizarListadoParaSincronizacionATabletToolStripMenuItem.Size = new System.Drawing.Size(311, 22);
-            this.actualizarListadoParaSincronizacionATabletToolStripMenuItem.Text = "Actualizar listado para sincronizacion a tablet";
+            this.GoPlanillaProcesoActualizarListaSincronizacionATablets.Name = "GoPlanillaProcesoActualizarListaSincronizacionATablets";
+            this.GoPlanillaProcesoActualizarListaSincronizacionATablets.Size = new System.Drawing.Size(311, 22);
+            this.GoPlanillaProcesoActualizarListaSincronizacionATablets.Text = "Actualizar listado para sincronizacion a tablet";
+            this.GoPlanillaProcesoActualizarListaSincronizacionATablets.Visible = false;
+            this.GoPlanillaProcesoActualizarListaSincronizacionATablets.Click += new System.EventHandler(this.GoPlanillaProcesoActualizarListaSincronizacionATablets_Click);
             // 
             // toolsMenu
             // 
             this.toolsMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.RRH3HReporteDeAsistenciaPersonalAdministrativo,
-            this.RRHHReporteDeAsistenciaMóvilBuses,
-            this.RRHHreportesDeIngresoYSalidaDeUnidadesDeTransportes,
-            this.reporteDeAsistenciaDePersonalPorBusesToolStripMenuItem,
-            this.RRHHreporteDeAsistenciaObservados,
-            this.RRHHreporteDeAsistenciaEnPuertas,
-            this.RRHHReporteDeVencimientodEDocumentos});
+            this.GoTransportesReporteAsistenciaByTablets,
+            this.GoTransportesReporteIngresoSalidaBuses,
+            this.GoPlanillaReporteAsistenciaObservadas,
+            this.GoPlanillaReporteReporteAsistencia,
+            this.GoTransportesReporteVencimientoDocumentos});
             this.toolsMenu.Name = "toolsMenu";
             this.toolsMenu.Size = new System.Drawing.Size(65, 20);
             this.toolsMenu.Text = "&Reportes";
             // 
-            // RRH3HReporteDeAsistenciaPersonalAdministrativo
+            // GoTransportesReporteAsistenciaByTablets
             // 
-            this.RRH3HReporteDeAsistenciaPersonalAdministrativo.AutoSize = false;
-            this.RRH3HReporteDeAsistenciaPersonalAdministrativo.Name = "RRH3HReporteDeAsistenciaPersonalAdministrativo";
-            this.RRH3HReporteDeAsistenciaPersonalAdministrativo.Size = new System.Drawing.Size(469, 25);
-            this.RRH3HReporteDeAsistenciaPersonalAdministrativo.Text = "Reporte de Asistencia Personal Administrativo";
-            this.RRH3HReporteDeAsistenciaPersonalAdministrativo.Click += new System.EventHandler(this.reporteDeAsistenciaPersonalAdministrativoToolStripMenuItem_Click);
+            this.GoTransportesReporteAsistenciaByTablets.AutoSize = false;
+            this.GoTransportesReporteAsistenciaByTablets.Name = "GoTransportesReporteAsistenciaByTablets";
+            this.GoTransportesReporteAsistenciaByTablets.Size = new System.Drawing.Size(469, 25);
+            this.GoTransportesReporteAsistenciaByTablets.Text = "Reporte de asistencia móvil buses";
+            this.GoTransportesReporteAsistenciaByTablets.Visible = false;
+            this.GoTransportesReporteAsistenciaByTablets.Click += new System.EventHandler(this.RRHHReporteDeAsistenciaMóvilBuses_Click);
             // 
-            // RRHHReporteDeAsistenciaMóvilBuses
+            // GoTransportesReporteIngresoSalidaBuses
             // 
-            this.RRHHReporteDeAsistenciaMóvilBuses.AutoSize = false;
-            this.RRHHReporteDeAsistenciaMóvilBuses.Name = "RRHHReporteDeAsistenciaMóvilBuses";
-            this.RRHHReporteDeAsistenciaMóvilBuses.Size = new System.Drawing.Size(469, 25);
-            this.RRHHReporteDeAsistenciaMóvilBuses.Text = "Reporte de asistencia móvil buses";
-            this.RRHHReporteDeAsistenciaMóvilBuses.Click += new System.EventHandler(this.RRHHReporteDeAsistenciaMóvilBuses_Click);
+            this.GoTransportesReporteIngresoSalidaBuses.Name = "GoTransportesReporteIngresoSalidaBuses";
+            this.GoTransportesReporteIngresoSalidaBuses.Size = new System.Drawing.Size(366, 22);
+            this.GoTransportesReporteIngresoSalidaBuses.Text = "Reportes de Ingreso y Salida de unidades de transportes";
+            this.GoTransportesReporteIngresoSalidaBuses.Visible = false;
+            this.GoTransportesReporteIngresoSalidaBuses.Click += new System.EventHandler(this.GoTransportesReporteIngresoSalidaBuses_Click);
             // 
-            // RRHHreportesDeIngresoYSalidaDeUnidadesDeTransportes
+            // GoPlanillaReporteAsistenciaObservadas
             // 
-            this.RRHHreportesDeIngresoYSalidaDeUnidadesDeTransportes.Name = "RRHHreportesDeIngresoYSalidaDeUnidadesDeTransportes";
-            this.RRHHreportesDeIngresoYSalidaDeUnidadesDeTransportes.Size = new System.Drawing.Size(366, 22);
-            this.RRHHreportesDeIngresoYSalidaDeUnidadesDeTransportes.Text = "Reportes de Ingreso y Salida de unidades de transportes";
-            this.RRHHreportesDeIngresoYSalidaDeUnidadesDeTransportes.Click += new System.EventHandler(this.RRHHreportesDeIngresoYSalidaDeUnidadesDeTransportes_Click);
+            this.GoPlanillaReporteAsistenciaObservadas.Name = "GoPlanillaReporteAsistenciaObservadas";
+            this.GoPlanillaReporteAsistenciaObservadas.Size = new System.Drawing.Size(366, 22);
+            this.GoPlanillaReporteAsistenciaObservadas.Text = "Reporte de asistencia observados";
+            this.GoPlanillaReporteAsistenciaObservadas.Visible = false;
+            this.GoPlanillaReporteAsistenciaObservadas.Click += new System.EventHandler(this.RRHHreporteDeAsistenciaObservados_Click);
             // 
-            // reporteDeAsistenciaDePersonalPorBusesToolStripMenuItem
+            // GoPlanillaReporteReporteAsistencia
             // 
-            this.reporteDeAsistenciaDePersonalPorBusesToolStripMenuItem.Name = "reporteDeAsistenciaDePersonalPorBusesToolStripMenuItem";
-            this.reporteDeAsistenciaDePersonalPorBusesToolStripMenuItem.Size = new System.Drawing.Size(366, 22);
-            this.reporteDeAsistenciaDePersonalPorBusesToolStripMenuItem.Text = "Reporte de asistencia de personal por buses";
-            this.reporteDeAsistenciaDePersonalPorBusesToolStripMenuItem.Click += new System.EventHandler(this.ReporteDeAsistenciaDePersonalPorBusesToolStripMenuItem_Click);
+            this.GoPlanillaReporteReporteAsistencia.Name = "GoPlanillaReporteReporteAsistencia";
+            this.GoPlanillaReporteReporteAsistencia.Size = new System.Drawing.Size(366, 22);
+            this.GoPlanillaReporteReporteAsistencia.Text = "Reporte de asistencia en garita";
+            this.GoPlanillaReporteReporteAsistencia.Visible = false;
+            this.GoPlanillaReporteReporteAsistencia.Click += new System.EventHandler(this.RRHHreporteDeAsistenciaEnPuertas_Click);
             // 
-            // RRHHreporteDeAsistenciaObservados
+            // GoTransportesReporteVencimientoDocumentos
             // 
-            this.RRHHreporteDeAsistenciaObservados.Name = "RRHHreporteDeAsistenciaObservados";
-            this.RRHHreporteDeAsistenciaObservados.Size = new System.Drawing.Size(366, 22);
-            this.RRHHreporteDeAsistenciaObservados.Text = "Reporte de asistencia observados";
-            this.RRHHreporteDeAsistenciaObservados.Click += new System.EventHandler(this.RRHHreporteDeAsistenciaObservados_Click);
+            this.GoTransportesReporteVencimientoDocumentos.Name = "GoTransportesReporteVencimientoDocumentos";
+            this.GoTransportesReporteVencimientoDocumentos.Size = new System.Drawing.Size(366, 22);
+            this.GoTransportesReporteVencimientoDocumentos.Text = "Reporte de vencimientod e documentos";
+            this.GoTransportesReporteVencimientoDocumentos.Visible = false;
+            this.GoTransportesReporteVencimientoDocumentos.Click += new System.EventHandler(this.RRHHReporteDeVencimientodEDocumentos_Click);
             // 
-            // RRHHreporteDeAsistenciaEnPuertas
+            // utilitariosToolStripMenuItem
             // 
-            this.RRHHreporteDeAsistenciaEnPuertas.Name = "RRHHreporteDeAsistenciaEnPuertas";
-            this.RRHHreporteDeAsistenciaEnPuertas.Size = new System.Drawing.Size(366, 22);
-            this.RRHHreporteDeAsistenciaEnPuertas.Text = "Reporte de asistencia en garita";
-            this.RRHHreporteDeAsistenciaEnPuertas.Click += new System.EventHandler(this.RRHHreporteDeAsistenciaEnPuertas_Click);
+            this.utilitariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.GoSistemaUtilitariosElegirPeriodo});
+            this.utilitariosToolStripMenuItem.Name = "utilitariosToolStripMenuItem";
+            this.utilitariosToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+            this.utilitariosToolStripMenuItem.Text = "Utilitarios";
             // 
-            // RRHHReporteDeVencimientodEDocumentos
+            // GoSistemaUtilitariosElegirPeriodo
             // 
-            this.RRHHReporteDeVencimientodEDocumentos.Name = "RRHHReporteDeVencimientodEDocumentos";
-            this.RRHHReporteDeVencimientodEDocumentos.Size = new System.Drawing.Size(366, 22);
-            this.RRHHReporteDeVencimientodEDocumentos.Text = "Reporte de vencimientod e documentos";
-            this.RRHHReporteDeVencimientodEDocumentos.Click += new System.EventHandler(this.RRHHReporteDeVencimientodEDocumentos_Click);
+            this.GoSistemaUtilitariosElegirPeriodo.Name = "GoSistemaUtilitariosElegirPeriodo";
+            this.GoSistemaUtilitariosElegirPeriodo.Size = new System.Drawing.Size(152, 22);
+            this.GoSistemaUtilitariosElegirPeriodo.Text = "Elegir periodo";
+            this.GoSistemaUtilitariosElegirPeriodo.Visible = false;
             // 
             // windowsMenu
             // 
             this.windowsMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newWindowToolStripMenuItem,
-            this.cascadeToolStripMenuItem,
-            this.tileVerticalToolStripMenuItem,
-            this.tileHorizontalToolStripMenuItem,
-            this.closeAllToolStripMenuItem,
-            this.arrangeIconsToolStripMenuItem});
+            this.GoSistemaNewWindows,
+            this.GoSistemaCascade,
+            this.GoSistematileVertical,
+            this.GoSistemaTileHorizontal,
+            this.GoSistemacloseAll,
+            this.GoSistemaArrangeIcons});
             this.windowsMenu.Name = "windowsMenu";
             this.windowsMenu.Size = new System.Drawing.Size(66, 20);
             this.windowsMenu.Text = "&Ventanas";
             // 
-            // newWindowToolStripMenuItem
+            // GoSistemaNewWindows
             // 
-            this.newWindowToolStripMenuItem.Name = "newWindowToolStripMenuItem";
-            this.newWindowToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.newWindowToolStripMenuItem.Text = "&Nueva ventana";
+            this.GoSistemaNewWindows.Name = "GoSistemaNewWindows";
+            this.GoSistemaNewWindows.Size = new System.Drawing.Size(175, 22);
+            this.GoSistemaNewWindows.Text = "&Nueva ventana";
+            this.GoSistemaNewWindows.Click += new System.EventHandler(this.newWindowToolStripMenuItem_Click);
             // 
-            // cascadeToolStripMenuItem
+            // GoSistemaCascade
             // 
-            this.cascadeToolStripMenuItem.Name = "cascadeToolStripMenuItem";
-            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.cascadeToolStripMenuItem.Text = "&Cascada";
+            this.GoSistemaCascade.Name = "GoSistemaCascade";
+            this.GoSistemaCascade.Size = new System.Drawing.Size(175, 22);
+            this.GoSistemaCascade.Text = "&Cascada";
             // 
-            // tileVerticalToolStripMenuItem
+            // GoSistematileVertical
             // 
-            this.tileVerticalToolStripMenuItem.Name = "tileVerticalToolStripMenuItem";
-            this.tileVerticalToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.tileVerticalToolStripMenuItem.Text = "Mosaico &vertical";
+            this.GoSistematileVertical.Name = "GoSistematileVertical";
+            this.GoSistematileVertical.Size = new System.Drawing.Size(175, 22);
+            this.GoSistematileVertical.Text = "Mosaico &vertical";
             // 
-            // tileHorizontalToolStripMenuItem
+            // GoSistemaTileHorizontal
             // 
-            this.tileHorizontalToolStripMenuItem.Name = "tileHorizontalToolStripMenuItem";
-            this.tileHorizontalToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.tileHorizontalToolStripMenuItem.Text = "Mosaico &horizontal";
+            this.GoSistemaTileHorizontal.Name = "GoSistemaTileHorizontal";
+            this.GoSistemaTileHorizontal.Size = new System.Drawing.Size(175, 22);
+            this.GoSistemaTileHorizontal.Text = "Mosaico &horizontal";
             // 
-            // closeAllToolStripMenuItem
+            // GoSistemacloseAll
             // 
-            this.closeAllToolStripMenuItem.Name = "closeAllToolStripMenuItem";
-            this.closeAllToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.closeAllToolStripMenuItem.Text = "C&errar todo";
+            this.GoSistemacloseAll.Name = "GoSistemacloseAll";
+            this.GoSistemacloseAll.Size = new System.Drawing.Size(175, 22);
+            this.GoSistemacloseAll.Text = "C&errar todo";
             // 
-            // arrangeIconsToolStripMenuItem
+            // GoSistemaArrangeIcons
             // 
-            this.arrangeIconsToolStripMenuItem.Name = "arrangeIconsToolStripMenuItem";
-            this.arrangeIconsToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.arrangeIconsToolStripMenuItem.Text = "&Organizar iconos";
+            this.GoSistemaArrangeIcons.Name = "GoSistemaArrangeIcons";
+            this.GoSistemaArrangeIcons.Size = new System.Drawing.Size(175, 22);
+            this.GoSistemaArrangeIcons.Text = "&Organizar iconos";
             // 
             // helpMenu
             // 
@@ -420,23 +532,10 @@
             this.lblNombreDescripcion.Size = new System.Drawing.Size(400, 17);
             this.lblNombreDescripcion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // privilegiosYAccesosToolStripMenuItem
+            // bgwHilo
             // 
-            this.privilegiosYAccesosToolStripMenuItem.Name = "privilegiosYAccesosToolStripMenuItem";
-            this.privilegiosYAccesosToolStripMenuItem.Size = new System.Drawing.Size(259, 22);
-            this.privilegiosYAccesosToolStripMenuItem.Text = "Privilegios y accesos";
-            // 
-            // configuracionDelSistemaToolStripMenuItem
-            // 
-            this.configuracionDelSistemaToolStripMenuItem.Name = "configuracionDelSistemaToolStripMenuItem";
-            this.configuracionDelSistemaToolStripMenuItem.Size = new System.Drawing.Size(259, 22);
-            this.configuracionDelSistemaToolStripMenuItem.Text = "Configuracion del sistema";
-            // 
-            // utilitariosToolStripMenuItem
-            // 
-            this.utilitariosToolStripMenuItem.Name = "utilitariosToolStripMenuItem";
-            this.utilitariosToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
-            this.utilitariosToolStripMenuItem.Text = "Utilitarios";
+            this.bgwHilo.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwHilo_DoWork);
+            this.bgwHilo.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwHilo_RunWorkerCompleted);
             // 
             // Menu
             // 
@@ -448,9 +547,10 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
             this.Name = "Menu";
-            this.Text = "Agrícola San José S.A  - Sullana - Piura - Perú  V 1.1.20";
+            this.Text = "Agrícola San José S.A  | Sullana | Piura | Perú  | V 1.1.20";
             this.toolTip.SetToolTip(this, "20.08.19");
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Menu_FormClosing);
             this.Load += new System.EventHandler(this.Menu_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
@@ -464,51 +564,60 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip;
-        private System.Windows.Forms.ToolStripMenuItem fileMenu;
-        private System.Windows.Forms.ToolStripMenuItem RRHH;
-        private System.Windows.Forms.ToolStripMenuItem Salir;
         private System.Windows.Forms.ToolStripMenuItem editMenu;
         private System.Windows.Forms.ToolStripMenuItem viewMenu;
         private System.Windows.Forms.ToolStripMenuItem toolsMenu;
         private System.Windows.Forms.ToolStripMenuItem windowsMenu;
-        private System.Windows.Forms.ToolStripMenuItem newWindowToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cascadeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tileVerticalToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tileHorizontalToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem closeAllToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem arrangeIconsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem GoSistemaNewWindows;
+        private System.Windows.Forms.ToolStripMenuItem GoSistemaCascade;
+        private System.Windows.Forms.ToolStripMenuItem GoSistematileVertical;
+        private System.Windows.Forms.ToolStripMenuItem GoSistemaTileHorizontal;
+        private System.Windows.Forms.ToolStripMenuItem GoSistemacloseAll;
+        private System.Windows.Forms.ToolStripMenuItem GoSistemaArrangeIcons;
         private System.Windows.Forms.ToolStripMenuItem helpMenu;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.ToolTip toolTip;
-        private System.Windows.Forms.ToolStripMenuItem RRHHCatalogoTransportistas;
-        private System.Windows.Forms.ToolStripMenuItem RRHHRutasRecorridoTransportista;
+        private System.Windows.Forms.ToolStripMenuItem GoTransportesCatalogoEmpresaTransporte;
+        private System.Windows.Forms.ToolStripMenuItem GoTransportesCatalogoRuta;
         private System.Windows.Forms.ToolStripMenuItem procesoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem RRH3HPrivilegiosDelSistema;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel lblUsuario;
         private System.Windows.Forms.ToolStripStatusLabel lblUsuarioNombre;
         private System.Windows.Forms.ToolStripStatusLabel lblNombre;
         private System.Windows.Forms.ToolStripStatusLabel lblNombreDescripcion;
-        private System.Windows.Forms.ToolStripMenuItem RRH3HReporteDeAsistenciaPersonalAdministrativo;
-        private System.Windows.Forms.ToolStripMenuItem RR3HHRegistroDeAsistenciaPersonalAdministrativo;
-        private System.Windows.Forms.ToolStripMenuItem RRHHReporteDeAsistenciaMóvilBuses;
-        private System.Windows.Forms.ToolStripMenuItem RRHHpersonal;
+        private System.Windows.Forms.ToolStripMenuItem GoTransportesReporteAsistenciaByTablets;
+        private System.Windows.Forms.ToolStripMenuItem GoPlanillaCatalogoPersonal;
         private System.Windows.Forms.ToolStripMenuItem RRHHpersonalGeneral;
-        private System.Windows.Forms.ToolStripMenuItem RRHHpersonalPorParadero;
-        private System.Windows.Forms.ToolStripMenuItem RRHHpersonalBloqueado;
-        private System.Windows.Forms.ToolStripMenuItem RRHHtipoDeBloqueo;
-        private System.Windows.Forms.ToolStripMenuItem RRHHRegistroAsistencia;
-        private System.Windows.Forms.ToolStripMenuItem RRHHparaderos;
-        private System.Windows.Forms.ToolStripMenuItem RRHHreportesDeIngresoYSalidaDeUnidadesDeTransportes;
-        private System.Windows.Forms.ToolStripMenuItem actualizarListadoParaSincronizacionATabletToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reporteDeAsistenciaDePersonalPorBusesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem RRHHreporteDeAsistenciaObservados;
-        private System.Windows.Forms.ToolStripMenuItem RRHHreporteDeAsistenciaEnPuertas;
-        private System.Windows.Forms.ToolStripMenuItem RRHHReporteDeVencimientodEDocumentos;
-        private System.Windows.Forms.ToolStripMenuItem RRHHModuloSistema;
-        private System.Windows.Forms.ToolStripMenuItem RRHHformularioDeSistema;
-        private System.Windows.Forms.ToolStripMenuItem privilegiosYAccesosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem configuracionDelSistemaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem GoPlanillaCatalogoPersonalAsignarParadero;
+        private System.Windows.Forms.ToolStripMenuItem GoPlanillaCatalogoPersonalObservados;
+        private System.Windows.Forms.ToolStripMenuItem GoPlanillaCatalogoTipoObservado;
+        private System.Windows.Forms.ToolStripMenuItem GoPlanillaMovimientoRegistroAsistencia;
+        private System.Windows.Forms.ToolStripMenuItem GoTransportesCatalogoParadero;
+        private System.Windows.Forms.ToolStripMenuItem GoTransportesReporteIngresoSalidaBuses;
+        private System.Windows.Forms.ToolStripMenuItem GoPlanillaProcesoActualizarListaSincronizacionATablets;
+        private System.Windows.Forms.ToolStripMenuItem GoPlanillaReporteAsistenciaObservadas;
+        private System.Windows.Forms.ToolStripMenuItem GoPlanillaReporteReporteAsistencia;
+        private System.Windows.Forms.ToolStripMenuItem GoTransportesReporteVencimientoDocumentos;
+        private System.Windows.Forms.ToolStripMenuItem GoSistemaCatalogoModulos;
+        private System.Windows.Forms.ToolStripMenuItem GoSistemaCatalogoFormularios;
+        private System.Windows.Forms.ToolStripMenuItem GoSistemaCatalogoPrivilegios;
+        private System.Windows.Forms.ToolStripMenuItem GoSistemaCatalogoConfiguracion;
         private System.Windows.Forms.ToolStripMenuItem utilitariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fileMenu;
+        private System.Windows.Forms.ToolStripMenuItem GoSistema;
+        private System.Windows.Forms.ToolStripMenuItem GoPlanilla;
+        private System.Windows.Forms.ToolStripMenuItem GoTransporte;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem GoMaquinaria;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripMenuItem GoSanidad;
+        private System.Windows.Forms.ToolStripMenuItem GoEvaluacionAgricola;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem GoSalir;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripMenuItem GoMantenimiento;
+        private System.Windows.Forms.ToolStripMenuItem GoExportaciones;
+        private System.Windows.Forms.ToolStripMenuItem GoSistemaUtilitariosElegirPeriodo;
+        private System.ComponentModel.BackgroundWorker bgwHilo;
     }
 }

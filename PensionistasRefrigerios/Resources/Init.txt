@@ -1,0 +1,9 @@
+<!--##Configuracion Inicial-->
+usuario: sa
+clave: .1975Casa
+instanciaMotordbLocal: BLUESOFT
+instanciaMotordbPublica: BLUESOFT
+baseDatos01:GoSolution
+baseDatos02:GoSolution
+baseDatos03:GoSolution
+baseDatos04:GoSolution

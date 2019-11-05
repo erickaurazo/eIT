@@ -15,15 +15,27 @@ namespace Asistencia
     public partial class Modulo : Form
     {
         private ModuloSistemaController modelo;
-        private List<ModuleSystem> modulos;
-        private string period;
+        private List<ModuleSystem> modulos;        
         private ExportToExcelHelper modelExcel;
         private ModuleSystem module;
+        private string _conection;
+        private ASJ_USUARIOS _user;
+        private string _companyId;
 
         public Modulo()
         {
             InitializeComponent();
         }
+
+
+        public Modulo(string conection, ASJ_USUARIOS user, string companyId)
+        {
+            InitializeComponent();
+            _conection = conection;
+            _user = user;
+            _companyId = companyId;
+        }
+
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
@@ -56,8 +68,7 @@ namespace Asistencia
         }
 
         private void RefreshList()
-        {
-            period = DateTime.Now.Year.ToString();
+        {            
             BarraPrincipal.Enabled = false;
             gbEdit.Enabled = false;
             gbList.Enabled = false;
@@ -117,7 +128,7 @@ namespace Asistencia
             modulo.estado = 1;
             modulo.moduloCodigo = this.txtCodigo.Text;
 
-            if (modelo.ChangeState(modulo, period) == true)
+            if (modelo.ChangeState(modulo, _conection) == true)
             {
                 Limpiar();
                 RefreshList();
@@ -178,7 +189,7 @@ namespace Asistencia
         {
             modelo = new ModuloSistemaController();
             modulos = new List<ModuleSystem>();
-            modulos = modelo.GetListAll(period);
+            modulos = modelo.GetListAll(_conection);
         }
 
         private void bgwHilo_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -193,8 +204,7 @@ namespace Asistencia
         }
 
         private void btnSave_Click(object sender, EventArgs e)
-        {
-            period = DateTime.Now.Year.ToString();
+        {            
             Save();
 
         }
@@ -208,7 +218,7 @@ namespace Asistencia
             modulo.moduloCodigo = this.txtCodigo.Text;
 
             modelo = new ModuloSistemaController();
-            if (modelo.AddModulo(modulo, period) == true)
+            if (modelo.AddModulo(modulo, _conection) == true)
             {
                 MessageBox.Show("Registro satisfactorio", "Mensaje del sistema");
                 Limpiar();

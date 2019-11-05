@@ -35,7 +35,7 @@
             this.lblErrorContraseña = new System.Windows.Forms.Label();
             this.lblErrorUsuario = new System.Windows.Forms.Label();
             this.cboEmpresa = new System.Windows.Forms.ComboBox();
-            this.cboBasesDatos = new System.Windows.Forms.ComboBox();
+            this.cbodb = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtContraseña = new System.Windows.Forms.TextBox();
@@ -74,7 +74,7 @@
             this.pnDetalle.Controls.Add(this.lblErrorContraseña);
             this.pnDetalle.Controls.Add(this.lblErrorUsuario);
             this.pnDetalle.Controls.Add(this.cboEmpresa);
-            this.pnDetalle.Controls.Add(this.cboBasesDatos);
+            this.pnDetalle.Controls.Add(this.cbodb);
             this.pnDetalle.Controls.Add(this.label2);
             this.pnDetalle.Controls.Add(this.label1);
             this.pnDetalle.Controls.Add(this.txtContraseña);
@@ -112,23 +112,24 @@
             // 
             // cboEmpresa
             // 
+            this.cboEmpresa.BackColor = System.Drawing.Color.White;
             this.cboEmpresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboEmpresa.Enabled = false;
             this.cboEmpresa.FormattingEnabled = true;
             this.cboEmpresa.Location = new System.Drawing.Point(114, 36);
             this.cboEmpresa.Name = "cboEmpresa";
             this.cboEmpresa.Size = new System.Drawing.Size(232, 21);
             this.cboEmpresa.TabIndex = 4;
             // 
-            // cboBasesDatos
+            // cbodb
             // 
-            this.cboBasesDatos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboBasesDatos.Enabled = false;
-            this.cboBasesDatos.FormattingEnabled = true;
-            this.cboBasesDatos.Location = new System.Drawing.Point(114, 11);
-            this.cboBasesDatos.Name = "cboBasesDatos";
-            this.cboBasesDatos.Size = new System.Drawing.Size(232, 21);
-            this.cboBasesDatos.TabIndex = 2;
+            this.cbodb.BackColor = System.Drawing.Color.White;
+            this.cbodb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbodb.FormattingEnabled = true;
+            this.cbodb.Location = new System.Drawing.Point(114, 11);
+            this.cbodb.Name = "cbodb";
+            this.cbodb.Size = new System.Drawing.Size(232, 21);
+            this.cbodb.TabIndex = 2;
+            this.cbodb.SelectedIndexChanged += new System.EventHandler(this.cboBasesDatos_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -152,7 +153,7 @@
             // 
             this.txtContraseña.AcceptsTab = true;
             this.txtContraseña.Location = new System.Drawing.Point(114, 83);
-            this.txtContraseña.MaxLength = 25;
+            this.txtContraseña.MaxLength = 20;
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(232, 20);
             this.txtContraseña.TabIndex = 8;
@@ -218,7 +219,7 @@
             this.btnOK.Text = "ok";
             this.btnOK.UseVisualStyleBackColor = true;
             // 
-            // Acceso
+            // Login
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.ClientSize = new System.Drawing.Size(373, 259);
@@ -232,7 +233,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Acceso";
+            this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Acceso Sistema";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -250,7 +251,7 @@
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Panel pnDetalle;
         private System.Windows.Forms.ComboBox cboEmpresa;
-        private System.Windows.Forms.ComboBox cboBasesDatos;
+        private System.Windows.Forms.ComboBox cbodb;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtContraseña;

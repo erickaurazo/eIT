@@ -12,11 +12,11 @@ namespace Asistencia.Negocios
     {
         // clase con los usuarios y privilegios
 
-        public List<ASJ_USUARIOS> GetListAllUser(string period)
+        public List<ASJ_USUARIOS> GetListAllUser(string conection, string companyId)
         {
             var result = new List<ASJ_USUARIOS>();
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + period];
+            cnx = ConfigurationManager.AppSettings[conection];
             using (BDAsistenciaDataContext context = new BDAsistenciaDataContext(cnx))
             {
                 result = context.ASJ_USUARIOS.ToList();
@@ -24,11 +24,11 @@ namespace Asistencia.Negocios
             return result;
         }
 
-        public ASJ_USUARIOS FindUserByIdUser(string period, string idUser)
+        public ASJ_USUARIOS FindUserByIdUser(string conection, string idUser, string companyId)
         {
             var result = new ASJ_USUARIOS();
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + period];
+            cnx = ConfigurationManager.AppSettings[conection];
             using (BDAsistenciaDataContext context = new BDAsistenciaDataContext(cnx))
             {
                 var resultQuery = context.ASJ_USUARIOS.Where(x => x.IdUsuario.Trim() == idUser.Trim()).ToList();
@@ -41,11 +41,11 @@ namespace Asistencia.Negocios
             return result;
         }
 
-        public bool AddUser(string period, ASJ_USUARIOS user)
+        public bool AddUser(string conection, ASJ_USUARIOS user, string companyId)
         {
             bool status = false;
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + period];
+            cnx = ConfigurationManager.AppSettings[conection];
             using (TransactionScope scope = new TransactionScope())
             {
                 using (BDAsistenciaDataContext context = new BDAsistenciaDataContext(cnx))
@@ -100,11 +100,11 @@ namespace Asistencia.Negocios
             return status;
         }
 
-        public bool RemoveUser(string period, ASJ_USUARIOS user)
+        public bool RemoveUser(string conection, ASJ_USUARIOS user, string companyId)
         {
             bool status = false;
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + period];
+            cnx = ConfigurationManager.AppSettings[conection];
             using (TransactionScope scope = new TransactionScope())
             {
                 using (BDAsistenciaDataContext context = new BDAsistenciaDataContext(cnx))
@@ -136,11 +136,11 @@ namespace Asistencia.Negocios
             return status;
         }
 
-        public bool ChangeStateUser(string period, ASJ_USUARIOS user)
+        public bool ChangeStateUser(string conection, ASJ_USUARIOS user, string companyId)
         {
             bool status = false;
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + period];
+            cnx = ConfigurationManager.AppSettings[conection];
             using (TransactionScope scope = new TransactionScope())
             {
                 using (BDAsistenciaDataContext context = new BDAsistenciaDataContext(cnx))
@@ -170,7 +170,7 @@ namespace Asistencia.Negocios
             return status;
         }
 
-        public bool ResetPasswordByUser(string period, ASJ_USUARIOS user)
+        public bool ResetPasswordByUser(string period, ASJ_USUARIOS user, string companyId)
         {
             bool status = false;
             string cnx = string.Empty;
@@ -197,11 +197,11 @@ namespace Asistencia.Negocios
             return status;
         }
 
-        public bool UpdatePassWordByUser(string period, ASJ_USUARIOS user)
+        public bool UpdatePassWordByUser(string conection, ASJ_USUARIOS user, string companyId)
         {
             bool status = false;
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + period];
+            cnx = ConfigurationManager.AppSettings[conection];
             using (TransactionScope scope = new TransactionScope())
             {
                 using (BDAsistenciaDataContext context = new BDAsistenciaDataContext(cnx))
@@ -224,22 +224,22 @@ namespace Asistencia.Negocios
             return status;
         }
 
-        public List<PrivilegesByUser> GetListPrivilegesByUser(string period, string userId)
+        public List<PrivilegesByUser> GetListPrivilegesByUser(string conection, string userId, string companyId)
         {
             string cnx = string.Empty;
             List<PrivilegesByUser> result = new List<PrivilegesByUser>();
-            cnx = ConfigurationManager.AppSettings["bd" + period];
+            cnx = ConfigurationManager.AppSettings[conection];
             using (BDAsistenciaDataContext context = new BDAsistenciaDataContext(cnx))
             {
                 result = (from p in context.PrivilegioFormulario
-                          join m in context.FormularioSistema on
-                          p.formularioCodigo equals m.formularioCodigo
-                          where p.usuarioCodigo.Trim() == userId.Trim()
-                          join mm in context.ModuloSistema on
-                          m.moduloCodigo.Trim() equals mm.moduloCodigo.Trim()
+                          join m in context.FormularioSistema on p.formularioCodigo equals m.formularioCodigo
+                          join mm in context.ModuloSistema on m.moduloCodigo.Trim() equals mm.moduloCodigo.Trim()
+                          join usu in context.ASJ_USUARIOS on p.usuarioCodigo.Trim() equals usu.IdUsuario.Trim()
+                          where p.usuarioCodigo.Trim() == userId.Trim() && usu.EmpresaID.Trim() == companyId
                           select new PrivilegesByUser
                           {
                               usuarioCodigo = p.usuarioCodigo.Trim(),
+                              nameUser = usu.NombreCompleto != null ? usu.NombreCompleto.Trim() : string.Empty,
                               formularioCodigo = p.formularioCodigo.Trim(),
                               nuevo = p.nuevo,
                               editar = p.editar,
@@ -261,11 +261,11 @@ namespace Asistencia.Negocios
         }
 
 
-        public bool AddListPrivilegesByUser(string period, List<PrivilegioFormulario> privileges)
+        public bool AddListPrivilegesByUser(string conection, List<PrivilegioFormulario> privileges, string companyId)
         {
             bool status = false;
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + period];
+            cnx = ConfigurationManager.AppSettings[conection];
             using (TransactionScope scope = new TransactionScope())
             {
                 using (BDAsistenciaDataContext context = new BDAsistenciaDataContext(cnx))

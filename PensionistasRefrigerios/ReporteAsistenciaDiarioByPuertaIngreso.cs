@@ -41,6 +41,9 @@ namespace Asistencia
         private bool exportVisualSettings;
         private string fileName;
         private List<ASJ_ReporteAsistenciaByPuertaResult> listadoDetalleByMarcacion;
+        private string _conection;
+        private ASJ_USUARIOS _user;
+        private string _companyId;
 
         public ReporteAsistenciaDiarioByPuertaIngreso()
         {
@@ -51,9 +54,22 @@ namespace Asistencia
             RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
             Inicio();
             CargarCombos();
-
             ObtenerFechasIniciales();
+        }
 
+        public ReporteAsistenciaDiarioByPuertaIngreso(string conection, ASJ_USUARIOS user, string companyId)
+        {
+            InitializeComponent();
+            _conection = conection;
+            _user = user;
+            _companyId = companyId;
+            RadGridLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.GridLocalizationProviderEspanol();
+            RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
+            RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
+            RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
+            Inicio();
+            CargarCombos();
+            ObtenerFechasIniciales();
         }
 
         private void ObtenerFechasMes()

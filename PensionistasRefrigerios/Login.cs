@@ -6,57 +6,88 @@ using System.Configuration;
 using System.Security.Cryptography;
 using Asistencia.Negocios;
 using Asistencia.Datos;
+using Asistencia.Helper;
+using System.Linq;
 
 namespace Asistencia
 {
     public partial class Login : Form
     {
-        private int cont;
-        private LoginController negocio;
-        private List<Grupo> bases;
-        private List<Grupo> empresas;
-        public string usuario;
-        public ASJ_USUARIOS userSistema;
+        public string conection = string.Empty;
+        public ASJ_USUARIOS user;
+        public string companyId;
+
+        private int cont = 0;
+        private LoginController model;
+        private List<Grupo> dbs;
+        private List<Grupo> companies;
+        private string usuario;
+        private ComboBoxHelper comboBoxHelper;
+        private Grupo config;
+        private string userId;
+        private string password;
+        private string databaseId;
 
         public Login()
         {
             InitializeComponent();
-            Inicio();
-            CrearCombos();
+            //Inicio();
+            InicialControls();
             this.txtUsuario.Focus();
 
         }
 
-        private void MostrarCombos()
+        private void ShowCboDatabases()
         {
-            #region Empresas()
-            this.cboEmpresa.DataSource = empresas;
-            this.cboEmpresa.DisplayMember = "Descripcion";
-            this.cboEmpresa.ValueMember = "Id";
-            this.cboEmpresa.SelectedIndex = 0;
-            this.cboEmpresa.Enabled = false;
-
-
-            #endregion
-            this.cboBasesDatos.DataSource = bases;
-            this.cboBasesDatos.DisplayMember = "Descripcion";
-            this.cboBasesDatos.ValueMember = "Id";
-            this.cboBasesDatos.SelectedIndex = 0;
-            this.cboBasesDatos.Enabled = false;
             #region Bases de Datos()
+            cbodb.DisplayMember = "Descripcion";
+            cbodb.ValueMember = "Codigo";
+            cbodb.DataSource = dbs.ToList();
+            cbodb.Refresh();
+            cbodb.SelectedValue = "000";
+            #endregion
+        }
 
+        private void ShowCboCompanies()
+        {
+
+            #region Empresas()
+            cboEmpresa.DisplayMember = "Descripcion";
+            cboEmpresa.ValueMember = "Codigo";
+            cboEmpresa.DataSource = companies.ToList();
+            cboEmpresa.Refresh();
+            cboEmpresa.SelectedValue = "000";
+            // this.cboEmpresa.Enabled = false;
             #endregion
 
         }
 
-        private void CrearCombos()
+        private void InicialControls()
         {
-            empresas = new List<Grupo>();
-            bases = new List<Grupo>();
-            negocio = new LoginController();
-            empresas = negocio.ListarEmpresa();
-            bases = negocio.ListarBasesDatos();
-            MostrarCombos();
+            companies = new List<Grupo>();
+            dbs = new List<Grupo>();
+            model = new LoginController();
+            comboBoxHelper = new ComboBoxHelper();
+
+            config = new Grupo();
+            var globalHelper = new GlobalesHelper();
+            config = globalHelper.GetConfigInitialByLogin();
+
+            dbs = comboBoxHelper.GetComboBoxDBsByLogin();
+            companies = comboBoxHelper.GetComboBoxCompanysByLogin(conection);
+            ShowCboDatabases();
+            ShowCboCompanies();
+        }
+
+        private void InicialControls(string conexion)
+        {
+            companies = new List<Grupo>();
+            comboBoxHelper = new ComboBoxHelper();
+            //config = new Grupo();
+            //var globalHelper = new GlobalesHelper();
+            //config = globalHelper.GetConfigInitialByLogin();
+            companies = comboBoxHelper.GetComboBoxCompanysByLogin(conection);
+            ShowCboCompanies();
         }
 
         public void Inicio()
@@ -86,107 +117,98 @@ namespace Asistencia
 
         }
 
-        private bool ValidarControles()
+        private bool ValidateForm()
         {
-            bool estado = true;
+            bool estado = false;
             string msg = string.Empty;
             TextBox control = new TextBox();
 
-            if (this.txtUsuario.Text == "")
+            if (this.txtUsuario.Text.Trim() != string.Empty && this.txtContraseña.Text != string.Empty)
             {
-                control = txtUsuario;
-                msg += "Falta ingresar el usuario \n";
-                lblErrorUsuario.Visible = true;
-                estado = false;
+                //control = txtUsuario;
+                //msg += "Falta ingresar el usuario \n";
+                //lblErrorUsuario.Visible = true;     
+                if (cbodb != null && cboEmpresa != null)
+                {
+                    if (cbodb.SelectedValue.ToString().Trim() != "000" && cboEmpresa.SelectedValue.ToString().Trim() != "00")
+                    {
+                        companyId = cboEmpresa.SelectedValue.ToString().Trim();
+                        userId = this.txtUsuario.Text.Trim();
+                        password = this.txtContraseña.Text.Trim();
+                        databaseId = this.cbodb.SelectedValue.ToString().Trim();
+                        estado = true;
+                    }
+                }
             }
-            else
-            {
-                lblErrorUsuario.Visible = false;
-            }
+            //else
+            //{
+            //    lblErrorUsuario.Visible = false;
+            //}
 
-            if (this.txtContraseña.Text == "")
-            {
-                control = txtUsuario;
-                msg += "Falta ingresar la Contraseña  \n";
-                lblErrorContraseña.Visible = true;
-                estado = false;
-            }
-            else
-            {
-                lblErrorContraseña.Visible = false;
-            }
+            //if (this.txtContraseña.Text == string.Empty)
+            //{
+            //    control = txtUsuario;
+            //    msg += "Falta ingresar la Contraseña  \n";
+            //    lblErrorContraseña.Visible = true;
+            //    estado = false;
+            //}
+            //else
+            //{
+            //    lblErrorContraseña.Visible = false;
+            //}
 
 
-            if (estado == false)
-            {
-                //MessageBox.Show(msg, "Atención");
-                lblMensajeUsuario.Text = msg;
-                lblMensajeUsuario.Visible = true;
-                control.Focus();
-            }
-            else
-            {
-                lblMensajeUsuario.Text = "";
-                lblMensajeUsuario.Visible = false;
-            }
+            //if (estado == false)
+            //{
+            //    //MessageBox.Show(msg, "Atención");
+            //    lblMensajeUsuario.Text = msg;
+            //    lblMensajeUsuario.Visible = true;
+            //    control.Focus();
+            //}
+            //else
+            //{
+            //    lblMensajeUsuario.Text = string.Empty;
+            //    lblMensajeUsuario.Visible = false;
+            //}
 
             return estado;
 
         }
 
-        private bool ValidarControlesEnter()
+        private int CheckStatusSession(string usuario, string clave, string companyId, string conection)
         {
-            bool estado = true;
-            string msg = string.Empty;
-            TextBox control = new TextBox();
+            int estadoOperacion = 0;
+            model = new LoginController();
+            user = new ASJ_USUARIOS();
+            user = model.CheckStatusSession(usuario, clave, companyId, conection);
 
-            if (this.txtContraseña.Text == "")
+            if (user.IdUsuario.Trim() != string.Empty)
             {
-                control = txtUsuario;
-                msg += "Falta ingresar la Contraseña  \n";
-                lblErrorContraseña.Visible = true;
-                estado = false;
+                if (user.idestado.Trim() == "1")
+                {
+                    if (user.Password.Trim() != clave)
+                    {
+                        if ((user.Password == string.Empty))
+                        {
+                            estadoOperacion = 1; // en blanco
+                        }
+                        else
+                        {
+                            estadoOperacion = 2; // clave incorrecta
+                        }
+                    }
+                }
+                else
+                {
+                    estadoOperacion = 3; // Inactivo
+                }
             }
             else
             {
-                lblErrorContraseña.Visible = false;
+                estadoOperacion = 4; // No existe
             }
 
-
-            if (estado == false)
-            {
-                //MessageBox.Show(msg, "Atención");
-                lblMensajeUsuario.Text = msg;
-                lblMensajeUsuario.Visible = true;
-                control.Focus();
-            }
-            else
-            {
-                lblMensajeUsuario.Text = "";
-                lblMensajeUsuario.Visible = false;
-            }
-
-            return estado;
-
-        }
-
-        private bool IniciarSesion(string usuario, string clave)
-        {
-            Boolean resultado = false;
-            negocio = new LoginController();
-
-            if (negocio.VerificarSesion(usuario, clave) == true)
-            {
-                userSistema = negocio.ObtenerUsuario(usuario, clave);
-                resultado = true;
-            }
-            else
-            {
-                resultado = false;
-            }
-
-
-            return resultado;
+            return estadoOperacion;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -196,41 +218,119 @@ namespace Asistencia
 
         private void btnAceptar_Click_1(object sender, EventArgs e)
         {
-            if (ValidarControles() == true)
+            if (cbodb.SelectedValue.ToString() != "000" && cboEmpresa.SelectedValue.ToString().Trim() != "000")
             {
-                #region VerificarSession()
-                if (IniciarSesion(this.txtUsuario.Text.ToString().Trim().ToUpper(), this.txtContraseña.Text.ToString().Trim()) == true)
+                #region MyRegion                
+                if (this.txtUsuario.Text.Trim() != string.Empty && this.txtContraseña.Text.Trim() != string.Empty)
                 {
-                    usuario = this.txtUsuario.Text.ToString().Trim();
-                    this.btnOK.PerformClick();
-                }
-                else
-                {
-                    if (cont < 4)
+                    if (this.txtContraseña.Text.Trim().Length > 5)
                     {
-                        cont += 1;
-
-                        if (cont == 3)
-                        {
-                            usuario = string.Empty;
-                            MessageBox.Show("Ha intentado " + cont.ToString() + " veces \nSu contraseña y/o el sistema se cerrara ");
-                            this.txtContraseña.Clear();
-                            this.Dispose();
-                            this.Close();
-                        }
-                        else
-                        {
-                            usuario = string.Empty;
-                            MessageBox.Show(cont.ToString() + " intentos fallidos ");
-                            this.txtContraseña.Clear();
-                            this.txtUsuario.Focus();
-                        }
+                        IniciarSession();
                     }
                     else
                     {
+                        MessageBox.Show("Ingrese una contraseña de 6 dígitos como mínimo", "ADVERTENCIA DEL SISTEMA");
+                        return;
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Ingrese clave y/o contraseña válido", "ADVERTENCIA DEL SISTEMA");
+                    return;
+                }
                 #endregion
+            }
+            else
+            {
+                MessageBox.Show("Seleccione empresa y base de conexión", "ADVERTENCIA DEL SISTEMA");
+                return;
+            }
+
+        }
+
+        private void IniciarSession()
+        {
+            try
+            {
+                companyId = string.Empty;
+                userId = string.Empty;
+                password = string.Empty;
+                databaseId = string.Empty;
+                if (ValidateForm() == true)
+                {
+                    #region Verificar el estado de la sessión()
+                    int result = CheckStatusSession(userId.ToUpper(), password, companyId, conection);
+                    cont += 1;
+                    switch (result)
+                    {
+
+                        case 0: // Ok
+                            usuario = this.txtUsuario.Text.Trim();
+                            this.btnOK.PerformClick();
+                            break;
+
+                        case 1: // blanco
+                                // Formulario para configurar contraseña()
+                            ChangePassword ofrm = new ChangePassword(conection, userId.ToUpper(), companyId);
+                            ofrm.ShowDialog();
+                            break;
+
+                        case 2: // incorrecto
+                            NumberOfAttemps(cont);
+                            MessageBox.Show("Ha intentado " + cont.ToString() + " veces \nLa contraseña es incorrecta", "ADVERTENCIA DEL SISTEMA");
+                            if (cont == 3)
+                            {
+                                this.Close();
+                            }
+                            break;
+
+
+                        case 3: // Inactivo
+                            MessageBox.Show("Ha intentado " + cont.ToString() + " veces \nEl Usuario se encuentra inactivo", "ADVERTENCIA DEL SISTEMA");
+                            if (cont == 3)
+                            {
+                                this.Close();
+                            }
+                            break;
+
+                        case 4: // No existe
+                            NumberOfAttemps(cont);
+                            break;
+
+                        default:
+                            break;
+                    }
+                    #endregion
+                }
+            }
+            catch (Exception Ex)
+            {
+
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
+                return;
+            }
+        }
+
+        private void NumberOfAttemps(int cont)
+        {
+            if (cont < 4)
+            {
+                cont += 1;
+                if (cont == 3)
+                {
+                    usuario = string.Empty;
+                    MessageBox.Show("Ha intentado " + cont.ToString() + " veces \nSu contraseña y/o el sistema se cerrara al tercer intento", "ADVERTENCIA DEL SISTEMA");
+                    this.txtContraseña.Clear();
+                    this.Dispose();
+                    this.Close();
+                }
+                else
+                {
+                    usuario = string.Empty;
+                    MessageBox.Show(cont.ToString() + " intentos fallidos ");
+                    this.txtContraseña.Clear();
+                    this.txtUsuario.Focus();
+                }
             }
         }
 
@@ -238,137 +338,78 @@ namespace Asistencia
         {
             this.Dispose();
             this.Close();
-        }     
+        }
 
         private void txtContraseña_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
-                if (txtContraseña.Text.ToString().Trim() != "")
-                {
-                    #region VerificarSession()
-                    if (IniciarSesion(this.txtUsuario.Text.ToString().Trim().ToUpper(), this.txtContraseña.Text.ToString().Trim()) == true)
-                    {
-                        usuario = this.txtUsuario.Text.ToString().Trim();
-                        this.btnOK.PerformClick();
-                    }
-                    else
-                    {
-                        if (cont < 4)
-                        {
-                            cont += 1;
-
-                            if (cont == 3)
-                            {
-                                usuario = string.Empty;
-                                MessageBox.Show("Ha intentado " + cont.ToString() + " veces \nSu contraseña y/o el sistema se cerrara ");
-                                this.Dispose();
-                                this.Close();
-                            }
-                            else
-                            {
-                                usuario = string.Empty;
-                                MessageBox.Show(cont.ToString() + " intentos fallidos ");
-                                this.txtUsuario.Focus();
-                            }
-                        }
-                        else
-                        {
-                        }
-                    }
-                    #endregion
-                }
+                IniciarSession();
             }
             else if (e.KeyChar == Convert.ToChar(Keys.Escape))
             {
                 // Lo que hará al presionar Escape 
+                txtContraseña.Focus();
             }
-            else
-            {
-                // Lo que hará en cualquier otro caso 
-            } 
         }
 
-
-        public static string Encriptar(string texto)
+        private void cboBasesDatos_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             try
             {
+                if (cbodb.SelectedIndex > -1)
+                {
+                    conection = string.Empty;
+                    #region
+                    var codigoBaseDatos = cbodb.SelectedValue.ToString().Trim();
+                    var descripcionBaseDatos = cbodb.Text.Trim();
+                    if (codigoBaseDatos != "000" && descripcionBaseDatos != string.Empty)
+                    {
+                        // Lenar combo de empresas
+                        string basedatos = string.Empty;
 
-                string key = "qualityinfosolutions"; //llave para encriptar datos
+                        string[] db01 = descripcionBaseDatos.Split('|');
+                        if (db01[1] != null)
+                        {
+                            // si tiene al menos un caracter '|' es decir discrimida entre una ip publica y local
+                            var nombreIntanciaSelecionada = db01[1].Trim();
+                            // si tiene la base por ejemplo así basedatosproduccion | Local , 
+                            // seleccionare en el archivo de configuración la instancia local con el nombre de base de datos: basedeproduccion
+                            if (nombreIntanciaSelecionada.Contains("Pública"))
+                            {
+                                basedatos = db01[0].Trim();
+                                conection = ("P" + basedatos);
+                                InicialControls(conection);
 
-                byte[] keyArray;
-
-                byte[] Arreglo_a_Cifrar = UTF8Encoding.UTF8.GetBytes(texto);
-
-                //Se utilizan las clases de encriptación MD5
-
-                MD5CryptoServiceProvider hashmd5 = new MD5CryptoServiceProvider();
-
-                keyArray = hashmd5.ComputeHash(UTF8Encoding.UTF8.GetBytes(key));
-
-                hashmd5.Clear();
-
-                //Algoritmo TripleDES
-                TripleDESCryptoServiceProvider tdes = new TripleDESCryptoServiceProvider();
-
-                tdes.Key = keyArray;
-                tdes.Mode = CipherMode.ECB;
-                tdes.Padding = PaddingMode.PKCS7;
-
-                ICryptoTransform cTransform = tdes.CreateEncryptor();
-
-                byte[] ArrayResultado = cTransform.TransformFinalBlock(Arreglo_a_Cifrar, 0, Arreglo_a_Cifrar.Length);
-
-                tdes.Clear();
-
-                //se regresa el resultado en forma de una cadena
-                texto = Convert.ToBase64String(ArrayResultado, 0, ArrayResultado.Length);
-
+                            }
+                            else if (nombreIntanciaSelecionada.Contains("Local"))
+                            {
+                                basedatos = db01[0].Trim();
+                                conection = (basedatos);
+                                InicialControls(conection);
+                            }
+                        }
+                        else
+                        {
+                            // si no tiene el caracter '|' sólo se configura o una ip publica o una local
+                        }
+                    }
+                    else
+                    {
+                        InicialControls(conection);
+                    }
+                    #endregion
+                }
             }
-            catch (Exception)
+            catch (Exception Ex)
             {
 
+                MessageBox.Show(Ex.Message.ToString(), "Mensaje del sistema");
+                return;
             }
-            return texto;
+
+
         }
-
-
-        public static string Desencriptar(string textoEncriptado)
-        {
-            try
-            {
-                string key = "qualityinfosolutions";
-                byte[] keyArray;
-                byte[] Array_a_Descifrar = Convert.FromBase64String(textoEncriptado);
-
-                //algoritmo MD5
-                MD5CryptoServiceProvider hashmd5 = new MD5CryptoServiceProvider();
-
-                keyArray = hashmd5.ComputeHash(UTF8Encoding.UTF8.GetBytes(key));
-
-                hashmd5.Clear();
-
-                TripleDESCryptoServiceProvider tdes = new TripleDESCryptoServiceProvider();
-
-                tdes.Key = keyArray;
-                tdes.Mode = CipherMode.ECB;
-                tdes.Padding = PaddingMode.PKCS7;
-
-                ICryptoTransform cTransform = tdes.CreateDecryptor();
-
-                byte[] resultArray = cTransform.TransformFinalBlock(Array_a_Descifrar, 0, Array_a_Descifrar.Length);
-
-                tdes.Clear();
-                textoEncriptado = UTF8Encoding.UTF8.GetString(resultArray);
-
-            }
-            catch (Exception)
-            {
-
-            }
-            return textoEncriptado;
-        }
-
     }
 }
