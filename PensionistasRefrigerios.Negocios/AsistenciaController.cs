@@ -12,12 +12,12 @@ namespace Asistencia.Negocios
     public class AsistenciaController
     {
 
-        public List<ASJ_ReporteAsistenciaDiariaByPuertaIngresoResult> Listado(string periodo, string fechaDesde, string fechaHasta, string idplanilla, char? idfundo)
+        public List<ASJ_ReporteAsistenciaDiariaByPuertaIngresoResult> GetListAsistanceByDoor(string conection, string fechaDesde, string fechaHasta, string idplanilla, char? idfundo)
         {
             List<ASJ_ReporteAsistenciaDiariaByPuertaIngresoResult> listado = new List<ASJ_ReporteAsistenciaDiariaByPuertaIngresoResult>();
             List<ASJ_ReporteAsistenciaDiariaByPuertaIngresoResult> listadoFinal = new List<ASJ_ReporteAsistenciaDiariaByPuertaIngresoResult>();
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + periodo.ToString().Substring(0, 4)].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext Contexto = new BDAsistenciaDataContext(cnx))
             {
                 Contexto.CommandTimeout = 999909999;
@@ -143,12 +143,12 @@ namespace Asistencia.Negocios
             return listadoFinal;
         }
 
-        public List<ASJ_ReporteAsistenciaByPuertaResult> ObtenerReporteAsistenciaByPuerta(string periodo, string desde, string hasta)
+        public List<ASJ_ReporteAsistenciaByPuertaResult> ObtenerReporteAsistenciaByPuerta(string conection, string desde, string hasta)
         {
             List<ASJ_ReporteAsistenciaByPuertaResult> listado = new List<ASJ_ReporteAsistenciaByPuertaResult>();
 
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + periodo.ToString().Substring(0, 4)].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext Contexto = new BDAsistenciaDataContext(cnx))
             {
                 Contexto.CommandTimeout = 999909999;
@@ -158,12 +158,12 @@ namespace Asistencia.Negocios
             return listado;
         }
 
-        public List<ASJ_ReporteAsistenciaByPuertaByDatosCompletosResult> ObtenerReporteAsistenciaByPuertaDatosCompletos(string periodo, string desde, string hasta)
+        public List<ASJ_ReporteAsistenciaByPuertaByDatosCompletosResult> ObtenerReporteAsistenciaByPuertaDatosCompletos(string conection, string desde, string hasta)
         {
             List<ASJ_ReporteAsistenciaByPuertaByDatosCompletosResult> listado = new List<ASJ_ReporteAsistenciaByPuertaByDatosCompletosResult>();
 
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + periodo.ToString().Substring(0, 4)].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext Contexto = new BDAsistenciaDataContext(cnx))
             {
                 Contexto.CommandTimeout = 999909999;
@@ -235,16 +235,21 @@ namespace Asistencia.Negocios
                                 var listadoByDNICompleto = listadoCompletoP.Where(x => x.idcodigoGeneral.Trim() == itemdni.dniAgrupado.Trim()).ToList();
                                 try
                                 {
+                                    
                                     ASJ_ReporteAsistenciaByPuertaResult registroAsistencia = new ASJ_ReporteAsistenciaByPuertaResult();
                                     registroAsistencia.FECHA = Convert.ToDateTime(itemFecha.fechaAgrupado);
-                                    registroAsistencia.IDPERSONAL = itemdni.dniAgrupado;
-                                    registroAsistencia.NOMBRES = itemdni.dniNombres;
-                                    registroAsistencia.IDPLANILLA = listadoByDNI.FirstOrDefault().IDPLANILLA;
-                                    registroAsistencia.puerta = listadoByDNI.FirstOrDefault().puerta;
-                                    registroAsistencia.INGRESO = listadoByDNI.Where(x => x.INGRESO != string.Empty).Max(x => x.INGRESO);
-                                    registroAsistencia.SALIDA = listadoByDNI.Where(x => x.SALIDA != string.Empty).Max(x => x.SALIDA);
+                                    registroAsistencia.IDPERSONAL = itemdni.dniAgrupado != null ? itemdni.dniAgrupado : string.Empty;
+                                    registroAsistencia.NOMBRES = itemdni.dniNombres != null ? itemdni.dniNombres.Trim() : string.Empty;
+                                    registroAsistencia.IDPLANILLA = listadoByDNI.FirstOrDefault().IDPLANILLA != null ? listadoByDNI.FirstOrDefault().IDPLANILLA : string.Empty;
+                                    registroAsistencia.puerta = listadoByDNI.FirstOrDefault().puerta != null ? listadoByDNI.FirstOrDefault().puerta : string.Empty;
+                                    registroAsistencia.INGRESO = listadoByDNI.Count > 0 ?  listadoByDNI.Where(x => x.INGRESO != string.Empty).Max(x => x.INGRESO) : string.Empty;
+                                    registroAsistencia.SALIDA = listadoByDNI.Count > 0 ? listadoByDNI.Where(x => x.SALIDA != string.Empty).Max(x => x.SALIDA) : string.Empty;
                                     registroAsistencia.ROW_ = 1;
-                                    registroAsistencia.sexo = listadoByDNICompleto.FirstOrDefault().SEXO.ToString() != null ? listadoByDNICompleto.FirstOrDefault().SEXO.ToString() : string.Empty;
+                                    if (itemdni.dniAgrupado == "45038264")
+                                    {
+                                        string asass = string.Empty;
+                                    }
+                                    registroAsistencia.sexo = (listadoByDNICompleto.Count > 0 & listadoByDNICompleto.FirstOrDefault() != null) ? listadoByDNICompleto.FirstOrDefault().SEXO.ToString().Trim() : "N";
                                     registroAsistencia.tiempo = string.Empty;
                                     registroAsistencia.estadoMarcacion = "P";
 
@@ -268,8 +273,8 @@ namespace Asistencia.Negocios
 
                                     }
 
-                                    registroAsistencia.cargo = listadoByDNICompleto.FirstOrDefault().cargo != null ? listadoByDNICompleto.FirstOrDefault().cargo.ToString() : string.Empty;
-                                    registroAsistencia.grupoTrabajador = listadoByDNICompleto.FirstOrDefault().grupo != null ? listadoByDNICompleto.FirstOrDefault().grupo.ToString() : string.Empty;
+                                    registroAsistencia.cargo = (listadoByDNICompleto.Count > 0 && listadoByDNICompleto.FirstOrDefault().cargo != null) ? listadoByDNICompleto.FirstOrDefault().cargo.ToString() : string.Empty;
+                                    registroAsistencia.grupoTrabajador = (listadoByDNICompleto.Count > 0 && listadoByDNICompleto.FirstOrDefault().grupo != null) ? listadoByDNICompleto.FirstOrDefault().grupo.ToString() : string.Empty;
 
                                     listado.Add(registroAsistencia);
                                 }

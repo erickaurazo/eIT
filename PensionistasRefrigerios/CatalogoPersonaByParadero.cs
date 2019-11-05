@@ -23,6 +23,7 @@ namespace Asistencia
 
         public CatalogoPersonaByParadero(string conection, ASJ_USUARIOS user, string companyId)
         {
+            InitializeComponent();
             _conection = conection;
             _user = user;
             _companyId = companyId;

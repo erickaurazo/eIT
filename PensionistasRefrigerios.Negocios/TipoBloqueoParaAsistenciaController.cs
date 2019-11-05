@@ -10,26 +10,25 @@ namespace Asistencia.Negocios
     {
 
         string cnx = string.Empty;
-
-        public string Grabar(string periodo, ASJ_PersonalTipoBloqueo personalBloqueo)
+        public string Add(string conection, ASJ_PersonalTipoBloqueo person)
         {
             string resultado = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + periodo.Substring(0, 4)].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             List<ASJ_PersonalTipoBloqueo> resultadoConsulta = new List<ASJ_PersonalTipoBloqueo>();
             ASJ_PersonalTipoBloqueo oTipoBloqueo = new ASJ_PersonalTipoBloqueo();
 
             using (BDAsistenciaDataContext modelo = new BDAsistenciaDataContext(cnx))
             {
                 modelo.CommandTimeout = 9999900;
-                resultadoConsulta = modelo.ASJ_PersonalTipoBloqueo.Where(x => x.codigoPersonalTipoBloqueo == personalBloqueo.codigoPersonalTipoBloqueo).ToList();
+                resultadoConsulta = modelo.ASJ_PersonalTipoBloqueo.Where(x => x.codigoPersonalTipoBloqueo == person.codigoPersonalTipoBloqueo).ToList();
                 int nuevoCodigo = Convert.ToInt32(modelo.ASJ_PersonalTipoBloqueo.Max(x => x.codigoPersonalTipoBloqueo)) + 1;
 
                 if (resultadoConsulta != null && resultadoConsulta.ToList().Count == 1)
                 {
                     #region Editar()
                     oTipoBloqueo = resultadoConsulta.Single();
-                    oTipoBloqueo.descripcion = personalBloqueo.descripcion != null ? personalBloqueo.descripcion.Trim() : string.Empty;
-                    oTipoBloqueo.color = personalBloqueo.color != null ? personalBloqueo.color.Trim() : string.Empty;
+                    oTipoBloqueo.descripcion = person.descripcion != null ? person.descripcion.Trim() : string.Empty;
+                    oTipoBloqueo.color = person.color != null ? person.color.Trim() : string.Empty;
                     modelo.SubmitChanges();
                     resultado = "Transacción satisfactorio";
                     #endregion
@@ -38,8 +37,8 @@ namespace Asistencia.Negocios
                 {
                     #region Registrar()
                     oTipoBloqueo.codigoPersonalTipoBloqueo = nuevoCodigo.ToString().PadLeft(3, '0');
-                    oTipoBloqueo.descripcion = personalBloqueo.descripcion != null ? personalBloqueo.descripcion.Trim() : string.Empty;
-                    oTipoBloqueo.color = personalBloqueo.color != null ? personalBloqueo.color.Trim() : string.Empty;
+                    oTipoBloqueo.descripcion = person.descripcion != null ? person.descripcion.Trim() : string.Empty;
+                    oTipoBloqueo.color = person.color != null ? person.color.Trim() : string.Empty;
                     oTipoBloqueo.estado = 1;
                     modelo.ASJ_PersonalTipoBloqueo.InsertOnSubmit(oTipoBloqueo);
                     modelo.SubmitChanges();
@@ -51,10 +50,10 @@ namespace Asistencia.Negocios
             return resultado;
         }
 
-        public string GrabarListado(string periodo, List<ASJ_PersonalTipoBloqueo> listadoTipoBloqueo)
+        public string AddList(string conection, List<ASJ_PersonalTipoBloqueo> persons)
         {
             string resultado = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + periodo.Substring(0, 4)].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             List<ASJ_PersonalTipoBloqueo> resultadoConsulta = new List<ASJ_PersonalTipoBloqueo>();
             ASJ_PersonalTipoBloqueo oTipoBloqueo = new ASJ_PersonalTipoBloqueo();
 
@@ -66,17 +65,17 @@ namespace Asistencia.Negocios
             return resultado;
         }
 
-        public string Anular(string periodo, ASJ_PersonalTipoBloqueo personalBloqueo)
+        public string ChangeState(string conection, ASJ_PersonalTipoBloqueo person)
         {
             string resultado = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + periodo.Substring(0, 4)].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             List<ASJ_PersonalTipoBloqueo> resultadoConsulta = new List<ASJ_PersonalTipoBloqueo>();
             ASJ_PersonalTipoBloqueo oTipoBloqueo = new ASJ_PersonalTipoBloqueo();
 
             using (BDAsistenciaDataContext modelo = new BDAsistenciaDataContext(cnx))
             {
                 modelo.CommandTimeout = 9999900;
-                resultadoConsulta = modelo.ASJ_PersonalTipoBloqueo.Where(x => x.codigoPersonalTipoBloqueo == personalBloqueo.codigoPersonalTipoBloqueo).ToList();
+                resultadoConsulta = modelo.ASJ_PersonalTipoBloqueo.Where(x => x.codigoPersonalTipoBloqueo == person.codigoPersonalTipoBloqueo).ToList();
                 int nuevoCodigo = Convert.ToInt32(modelo.ASJ_PersonalTipoBloqueo.Max(x => x.codigoPersonalTipoBloqueo)) + 1;
 
                 if (resultadoConsulta != null && resultadoConsulta.ToList().Count == 1)
@@ -106,17 +105,17 @@ namespace Asistencia.Negocios
             return resultado;
         }
 
-        public string Eliminar(string periodo, ASJ_PersonalTipoBloqueo personalBloqueo)
+        public string Delete(string conection, ASJ_PersonalTipoBloqueo person)
         {
             string resultado = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + periodo.Substring(0, 4)].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             List<ASJ_PersonalTipoBloqueo> resultadoConsulta = new List<ASJ_PersonalTipoBloqueo>();
             ASJ_PersonalTipoBloqueo oTipoBloqueo = new ASJ_PersonalTipoBloqueo();
 
             using (BDAsistenciaDataContext modelo = new BDAsistenciaDataContext(cnx))
             {
                 modelo.CommandTimeout = 9999900;
-                resultadoConsulta = modelo.ASJ_PersonalTipoBloqueo.Where(x => x.codigoPersonalTipoBloqueo == personalBloqueo.codigoPersonalTipoBloqueo).ToList();
+                resultadoConsulta = modelo.ASJ_PersonalTipoBloqueo.Where(x => x.codigoPersonalTipoBloqueo == person.codigoPersonalTipoBloqueo).ToList();
                 int nuevoCodigo = Convert.ToInt32(modelo.ASJ_PersonalTipoBloqueo.Max(x => x.codigoPersonalTipoBloqueo)) + 1;
 
                 if (resultadoConsulta != null && resultadoConsulta.ToList().Count == 1)
@@ -145,11 +144,11 @@ namespace Asistencia.Negocios
             return resultado;
         }
 
-        public List<ASJ_ObtenerListadoDeTipoPersonalbloqueadoResult> ObtenerListadoTipoBloqueo(string periodo)
+        public List<ASJ_ObtenerListadoDeTipoPersonalbloqueadoResult> GetTypeLock(string conection)
         {
             List<ASJ_ObtenerListadoDeTipoPersonalbloqueadoResult> listado = new List<ASJ_ObtenerListadoDeTipoPersonalbloqueadoResult>();
 
-            cnx = ConfigurationManager.AppSettings["bd" + periodo.Substring(0, 4)].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
             {
                 Modelo.CommandTimeout = 9999900;

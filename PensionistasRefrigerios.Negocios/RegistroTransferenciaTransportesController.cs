@@ -9,11 +9,13 @@ namespace Asistencia.Negocios
     public class RegistroTransferenciaTransportesController
     {
         string cnx = string.Empty;
-        public List<ASJ_ListarRegistroMarcacionPersonalEnBusesResult> ObtenerListadoRegistroMarcacionPersonalEnBuses(string periodo, string desde, string hasta)
+
+        // listado de asistencia desde el timbrado movil en los bueses
+        public List<ASJ_ListarRegistroMarcacionPersonalEnBusesResult> ObtenerListadoRegistroMarcacionPersonalEnBuses(string conection, string desde, string hasta)
         {
 
             List<ASJ_ListarRegistroMarcacionPersonalEnBusesResult> listado = new List<ASJ_ListarRegistroMarcacionPersonalEnBusesResult>();
-            cnx = ConfigurationManager.AppSettings["bd" + periodo.Substring(0, 4)].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
             {
                 Modelo.CommandTimeout = 9999900;
@@ -23,11 +25,12 @@ namespace Asistencia.Negocios
             }
         }
 
-        public List<SJ_ListarAsistenciaSalidaUnidadesTransportePersonalByPeriodoResult> ListarAsistenciaSalidaUnidadesTransportePersonalByPeriod(string periodo, string desde, string hasta)
+        // listado de asistencia desde el timbrado movil en los bueses
+        public List<SJ_ListarAsistenciaSalidaUnidadesTransportePersonalByPeriodoResult> ListarAsistenciaSalidaUnidadesTransportePersonalByPeriod(string conection, string desde, string hasta)
         {
 
             List<SJ_ListarAsistenciaSalidaUnidadesTransportePersonalByPeriodoResult> listado = new List<SJ_ListarAsistenciaSalidaUnidadesTransportePersonalByPeriodoResult>();
-            cnx = ConfigurationManager.AppSettings["bd" + periodo.Substring(0, 4)].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
             {
                 Modelo.CommandTimeout = 9999900;
@@ -36,9 +39,10 @@ namespace Asistencia.Negocios
             }
         }
 
-        public void ActualizarPlaca(string periodo, SJ_ListarAsistenciaSalidaUnidadesTransportePersonalByPeriodoResult registro, string placa, string codigoRuta)
+        // actualizar el DNI
+        public void UpdatePlaca(string conection, SJ_ListarAsistenciaSalidaUnidadesTransportePersonalByPeriodoResult registro, string placa, string codigoRuta)
         {
-            cnx = ConfigurationManager.AppSettings["bd" + periodo.Substring(0, 4)].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
             {
                 var resultado = Modelo.ASJ_RegistroTransferenciaTransportes.Where(x => x.placa.Trim() == registro.placa.Trim() && x.fecha >= Convert.ToDateTime(registro.fecha + " 00:00:00") && x.fecha <= Convert.ToDateTime(registro.fecha + " 23:59:59")).ToList();
@@ -73,11 +77,12 @@ namespace Asistencia.Negocios
             }
         }
 
-        public List<ASJ_ReporteAsistenciaObservadosResult> ReporteAsistenciaObservados(string periodo, string desde, string hasta)
+        // ReporteAsistenciaObservados
+        public List<ASJ_ReporteAsistenciaObservadosResult> GetListAssistanceObserved(string conection, string desde, string hasta)
         {
 
             List<ASJ_ReporteAsistenciaObservadosResult> listado = new List<ASJ_ReporteAsistenciaObservadosResult>();
-            cnx = ConfigurationManager.AppSettings["bd" + periodo.Substring(0, 4)].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
             {
                 Modelo.CommandTimeout = 9999900;
@@ -132,11 +137,12 @@ namespace Asistencia.Negocios
             }
         }
 
-        public List<ASJ_ReporteAsistenciaObservadosResult> ReporteAsistenciaObservadosOnlyBuss(string periodo, string desde, string hasta)
+        // asistencia observada por buss
+        public List<ASJ_ReporteAsistenciaObservadosResult> GetListAssistanceObservedByBuss(string conection, string desde, string hasta)
         {
 
             List<ASJ_ReporteAsistenciaObservadosResult> listado = new List<ASJ_ReporteAsistenciaObservadosResult>();
-            cnx = ConfigurationManager.AppSettings["bd" + periodo.Substring(0, 4)].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
             {
                 Modelo.CommandTimeout = 9999900;
@@ -146,12 +152,12 @@ namespace Asistencia.Negocios
             }
         }
 
-
-        public List<ASJ_ReporteAsistenciaByPuertaResult> ReporteAsistenciaByPuerta(string periodo, string desde, string hasta)
+        // Asistencia por puerta
+        public List<ASJ_ReporteAsistenciaByPuertaResult> GetListAssistanceByDoor(string conection, string desde, string hasta)
         {
 
             List<ASJ_ReporteAsistenciaByPuertaResult> listado = new List<ASJ_ReporteAsistenciaByPuertaResult>();
-            cnx = ConfigurationManager.AppSettings["bd" + periodo.Substring(0, 4)].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
             {
                 Modelo.CommandTimeout = 9999900;

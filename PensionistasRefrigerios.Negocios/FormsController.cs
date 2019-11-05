@@ -9,11 +9,11 @@ namespace Asistencia.Negocios
 {
     public class FormsController
     {
-        public List<FormularioSistema> GetListForms(string periodo)
+        public List<FormularioSistema> GetListForms(string conection)
         {
             var result = new List<FormularioSistema>();
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + periodo];
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext contexto = new BDAsistenciaDataContext(cnx))
             {
                 return contexto.FormularioSistema.ToList();
@@ -22,11 +22,11 @@ namespace Asistencia.Negocios
         }
 
 
-        public bool Add(string periodo, FormularioSistema form)
+        public bool Add(string conection, FormularioSistema form)
         {
             bool status = false;
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + periodo];
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext contexto = new BDAsistenciaDataContext(cnx))
             {
                 var result = contexto.FormularioSistema.Where(x => x.formularioCodigo.Trim() == form.formularioCodigo.Trim()).ToList();
@@ -46,7 +46,7 @@ namespace Asistencia.Negocios
                     oForm.nombreEnSistema = form.nombreEnSistema != null ? form.nombreEnSistema.Trim() : string.Empty;
                     oForm.estado = 1;
                     oForm.EsModuloPrincipal = 0;
-                    oForm.Jerarquia = ObtenerJerarquía(periodo, form.Jerarquia);
+                    oForm.Jerarquia = ObtenerJerarquía(conection, form.Jerarquia);
                     oForm.formulario = form.formulario != null ? form.formulario.Trim() : string.Empty;
                     oForm.barraPadre = form.Jerarquia != null ? form.Jerarquia.Trim() : string.Empty;
 
@@ -71,10 +71,10 @@ namespace Asistencia.Negocios
             return status;
         }
 
-        private string ObtenerJerarquía(string periodo, string jerarquia)
+        private string ObtenerJerarquía(string conection, string jerarquia)
         {
             string cnx, hierarchy = string.Empty;            
-            cnx = ConfigurationManager.AppSettings["bd" + periodo];
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext contexto = new BDAsistenciaDataContext(cnx))
             {
                 //maxResult = (
@@ -104,11 +104,11 @@ namespace Asistencia.Negocios
             return hierarchy;
         }
 
-        public bool Remove(string periodo, FormularioSistema form)
+        public bool Remove(string conection, FormularioSistema form)
         {
             bool status = false;
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + periodo];
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext contexto = new BDAsistenciaDataContext(cnx))
             {
                 var result = contexto.FormularioSistema.Where(x => x.formularioCodigo.Trim() == form.formularioCodigo.Trim()).ToList();
@@ -134,11 +134,11 @@ namespace Asistencia.Negocios
             return status;
         }
 
-        public bool ChangeStatus(string periodo, FormularioSistema form)
+        public bool ChangeStatus(string conection, FormularioSistema form)
         {
             bool status = false;
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + periodo];
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext contexto = new BDAsistenciaDataContext(cnx))
             {
                 var result = contexto.FormularioSistema.Where(x => x.formularioCodigo.Trim() == form.formularioCodigo.Trim()).ToList();

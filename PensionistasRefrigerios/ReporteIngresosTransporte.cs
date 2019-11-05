@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Asistencia.Datos;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
 using Telerik.WinControls.UI.Export;
@@ -17,10 +18,22 @@ namespace Asistencia
     {
         private string fileName;
         private bool exportVisualSettings;
+        private string _conection;
+        private string v1;
+        private string v2;
+        private ASJ_USUARIOS _user;
+        private string _companyId;
 
         public ReporteIngresosTransporte()
         {
             InitializeComponent();
+        }
+
+        public ReporteIngresosTransporte(string conection, ASJ_USUARIOS user, string companyId)
+        {
+            _conection = conection;
+            _user = user;
+            _companyId = companyId;
         }
 
         private void gbRegistros_Click(object sender, EventArgs e)
@@ -40,7 +53,7 @@ namespace Asistencia
                 MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
                 return;
             }
-            
+
         }
 
         private void Exportar(RadGridView radGridView)

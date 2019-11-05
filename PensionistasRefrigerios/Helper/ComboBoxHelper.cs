@@ -186,7 +186,7 @@ namespace Asistencia.Helper
             string cnx = string.Empty;
             var dbs = new List<Grupo>();
             dbs.Add(new Grupo { Codigo = "000", Descripcion = "Seleccionar item" });
-            string path = Path.Combine(@"D:\Dev\ASJ\AsistenciaConfig.txt");
+            string path = Path.Combine(@"C:\Dev\ASJ\AsistenciaConfig.txt");
             path = Path.GetFullPath(path);
             string[] lines = System.IO.File.ReadAllLines(path);
             int count = 0;

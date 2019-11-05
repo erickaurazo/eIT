@@ -565,46 +565,6 @@
     <Parameter Name="idpersonal" Type="System.String" DbType="VarChar(9)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.ASJ_ListarRegistroMarcacionPersonalEnBuses" Method="ASJ_ListarRegistroMarcacionPersonalEnBuses">
-    <Parameter Name="FechaDesde" Parameter="fechaDesde" Type="System.String" DbType="VarChar(8)" />
-    <Parameter Name="FechaHasta" Parameter="fechaHasta" Type="System.String" DbType="VarChar(8)" />
-    <ElementType Name="ASJ_ListarRegistroMarcacionPersonalEnBusesResult">
-      <Column Name="EnListaGeneral" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="EnOtrasListas" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="UnicoLista" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="nombreDia" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="nombreMes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="numeroSemana" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="dia" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="mes" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="anio" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="placa" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
-      <Column Name="dniConductor" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
-      <Column Name="nombreConductor" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="idClieProv" Type="System.String" DbType="Char(12) NOT NULL" CanBeNull="false" />
-      <Column Name="razonSocial" Type="System.String" DbType="Char(300) NOT NULL" CanBeNull="false" />
-      <Column Name="capacidadTransporte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="efectividad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="dniColaborador" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
-      <Column Name="Nombres" Type="System.String" DbType="VarChar(152) NOT NULL" CanBeNull="false" />
-      <Column Name="IdPlanilla" Type="System.String" DbType="Char(7)" CanBeNull="true" />
-      <Column Name="dscPlanilla" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
-      <Column Name="idRegTansporte" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
-      <Column Name="idPedidoServicio" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
-      <Column Name="idOrdenServicio" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
-      <Column Name="idrutaOrigen" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ruta" Type="System.String" DbType="VarChar(303)" CanBeNull="true" />
-      <Column Name="tipo" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
-      <Column Name="MarcacionDe" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
-      <Column Name="codtipoMovilidad" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
-      <Column Name="tipoMovilidad" Type="System.String" DbType="VarChar(13) NOT NULL" CanBeNull="false" />
-      <Column Name="estado" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
-      <Column Name="hora" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="idpuerta" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="puerta" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.ASJ_ListarRegistroMarcacionPersonalEnBusesErroneos" Method="ASJ_ListarRegistroMarcacionPersonalEnBusesErroneos">
     <Parameter Name="FechaDesde" Parameter="fechaDesde" Type="System.String" DbType="VarChar(10)" />
     <Parameter Name="FechaHasta" Parameter="fechaHasta" Type="System.String" DbType="VarChar(10)" />
@@ -1151,6 +1111,46 @@
       <Column Name="diasRestantes" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="documento" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="estadoUnidadMovil" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ASJ_ListarRegistroMarcacionPersonalEnBuses" Method="ASJ_ListarRegistroMarcacionPersonalEnBuses">
+    <Parameter Name="FechaDesde" Parameter="fechaDesde" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="FechaHasta" Parameter="fechaHasta" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="ASJ_ListarRegistroMarcacionPersonalEnBusesResult">
+      <Column Name="EnListaGeneral" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EnOtrasListas" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UnicoLista" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="nombreDia" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="nombreMes" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="numeroSemana" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="mes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="anio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="placa" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="dniConductor" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="nombreConductor" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="idClieProv" Type="System.String" DbType="Char(12) NOT NULL" CanBeNull="false" />
+      <Column Name="razonSocial" Type="System.String" DbType="Char(300) NOT NULL" CanBeNull="false" />
+      <Column Name="capacidadTransporte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="efectividad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="dniColaborador" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(152) NOT NULL" CanBeNull="false" />
+      <Column Name="IdPlanilla" Type="System.String" DbType="Char(7)" CanBeNull="true" />
+      <Column Name="dscPlanilla" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="idRegTansporte" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="idPedidoServicio" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="idOrdenServicio" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="idrutaOrigen" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ruta" Type="System.String" DbType="VarChar(303)" CanBeNull="true" />
+      <Column Name="tipo" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="MarcacionDe" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="codtipoMovilidad" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="tipoMovilidad" Type="System.String" DbType="VarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="hora" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="idpuerta" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="puerta" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
 </Database>

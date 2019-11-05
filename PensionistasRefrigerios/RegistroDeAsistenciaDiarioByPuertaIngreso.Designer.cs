@@ -1,6 +1,6 @@
 ﻿namespace Asistencia
 {
-    partial class ReporteAsistenciaDiarioByPuertaIngreso
+    partial class RegistroDeAsistenciaDiarioByPuertaIngreso
     {
         /// <summary>
         /// Required designer variable.
@@ -72,7 +72,7 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn93 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn94 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.Data.SortDescriptor sortDescriptor4 = new Telerik.WinControls.Data.SortDescriptor();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteAsistenciaDiarioByPuertaIngreso));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroDeAsistenciaDiarioByPuertaIngreso));
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn95 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn96 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn97 = new Telerik.WinControls.UI.GridViewTextBoxColumn();

@@ -11,11 +11,13 @@ namespace Asistencia
 {
     public partial class ActualizarPlaca : Form
     {
-        private string periodo;
+        
         private SJ_ListarAsistenciaSalidaUnidadesTransportePersonalByPeriodoResult registroResumen;
         private RegistroTransferenciaTransportesController negocio;
         private string placaNueva;
         private string codigoRuta;
+        private string _conection;
+        private SJ_ListarAsistenciaSalidaUnidadesTransportePersonalByPeriodoResult _registroResumen;
 
         public ActualizarPlaca()
         {
@@ -23,28 +25,28 @@ namespace Asistencia
             Inicio();
         }
 
-        public ActualizarPlaca(string periodo, SJ_ListarAsistenciaSalidaUnidadesTransportePersonalByPeriodoResult registroResumen)
+        public ActualizarPlaca(SJ_ListarAsistenciaSalidaUnidadesTransportePersonalByPeriodoResult registroResumen, string conection, string companyId, ASJ_USUARIOS user)
         {
             InitializeComponent();
             Inicio();
-            this.periodo = periodo;
-            this.registroResumen = registroResumen;
-            this.txtFecha.Text = registroResumen.fecha;
-            this.txtEmpresaTransporteRUC.Text = registroResumen.categoriaMovilidad != null ? registroResumen.categoriaMovilidad : string.Empty;
-            this.txtEmpresaTransporte.Text = registroResumen.empresaTransporte != null ? registroResumen.empresaTransporte : string.Empty;
-            this.txtPlaca.Text = registroResumen.placa != null ? registroResumen.placa : string.Empty;
-            this.txtRuta.Text = registroResumen.ruta != null ? registroResumen.ruta : string.Empty;
+            _conection = conection;
+            _registroResumen = registroResumen;
+            
+            txtFecha.Text = _registroResumen.fecha;
+            txtEmpresaTransporteRUC.Text = _registroResumen.categoriaMovilidad != null ? _registroResumen.categoriaMovilidad : string.Empty;
+            txtEmpresaTransporte.Text = _registroResumen.empresaTransporte != null ? _registroResumen.empresaTransporte : string.Empty;
+            txtPlaca.Text = _registroResumen.placa != null ? _registroResumen.placa : string.Empty;
+            txtRuta.Text = _registroResumen.ruta != null ? _registroResumen.ruta : string.Empty;
 
         }
 
         public void Inicio()
         {
             try
-            {
-                periodo = DateTime.Now.Year.ToString();
+            {                
                 Globales.Servidor = ConfigurationManager.AppSettings["Servidor"].ToString();
                 Globales.UsuarioBaseDatos = ConfigurationManager.AppSettings["Usuario"].ToString();
-                Globales.BaseDatos = ConfigurationManager.AppSettings["BasesDatos" + periodo].ToString();
+                Globales.BaseDatos = ConfigurationManager.AppSettings[_conection].ToString();
                 Globales.ClaveBaseDatos = ConfigurationManager.AppSettings["Clave"].ToString();
                 Globales.IdEmpresa = "001";
                 Globales.Empresa = "EMPRESA AGRICOLA SAN JOSE SA";
@@ -81,7 +83,7 @@ namespace Asistencia
         private void bgwHilo_DoWork(object sender, DoWorkEventArgs e)
         {
             negocio = new RegistroTransferenciaTransportesController();
-            negocio.ActualizarPlaca(periodo, registroResumen, placaNueva, codigoRuta);
+            negocio.UpdatePlaca(_conection, registroResumen, placaNueva, codigoRuta);
         }
 
         private void bgwHilo_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)

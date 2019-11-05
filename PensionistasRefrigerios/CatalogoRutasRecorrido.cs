@@ -14,8 +14,7 @@ using System.IO;
 namespace Asistencia
 {
     public partial class CatalogoRutasRecorrido : Telerik.WinControls.UI.RadForm
-    {
-        private string period;
+    {        
         private List<SJ_RHListaRutasResult> routes;
         private string routeCode;
         private string estatusCode;
@@ -71,7 +70,7 @@ namespace Asistencia
         {
             try
             {
-                period = DateTime.Now.Year.ToString();
+                
                 MyControlsDataBinding.Extensions.Globales.Servidor = ConfigurationManager.AppSettings["Servidor"].ToString();
                 MyControlsDataBinding.Extensions.Globales.UsuarioBaseDatos = ConfigurationManager.AppSettings["Usuario"].ToString();
                 MyControlsDataBinding.Extensions.Globales.BaseDatos = ConfigurationManager.AppSettings[_conection].ToString();
@@ -99,7 +98,7 @@ namespace Asistencia
         {
             SJ_RHRutaNegocios RutaNeg = new SJ_RHRutaNegocios();
             routes = new List<SJ_RHListaRutasResult>();
-            routes = RutaNeg.ListarRutasDeRecorridos();
+            routes = RutaNeg.ListarRutasDeRecorridos(_conection);
 
         }
 
@@ -200,7 +199,7 @@ namespace Asistencia
                     if (oRuta.RutaDestino != string.Empty && oRuta.RutaOrigen != string.Empty)
                     {
                         model = new SJ_RHRutaNegocios();
-                        estate = model.AddRuta(oRuta);
+                        estate = model.AddRoute(oRuta, _conection);
                         //this.txtCodigo.Text = Codigo.ToString();
                     }
                 }
@@ -227,7 +226,7 @@ namespace Asistencia
                     if (oRuta.RutaDestino != string.Empty && oRuta.RutaOrigen != string.Empty)
                     {
                         model = new SJ_RHRutaNegocios();
-                        estate = model.AddRutaIdaVuelta(oRuta);
+                        estate = model.AddRoundTripRoute(oRuta, _conection);
                         //this.txtCodigo.Text = Codigo.ToString();
                     }
                 }
@@ -453,7 +452,7 @@ namespace Asistencia
                         //posicionY = this.dgvRutas.CurrentColumn.Index;
 
                         model = new SJ_RHRutaNegocios();
-                        model.Anular(Convert.ToInt32(routeCode));
+                        model.Anular(Convert.ToInt32(routeCode), _conection);
                         RadMessageBox.Show("Anulado correctamente", "Atención");
                         ObtenerListaRutas();
 
@@ -506,7 +505,7 @@ namespace Asistencia
                         //posicionY = this.dgvRutas.CurrentColumn.Index;
 
                         model = new SJ_RHRutaNegocios();
-                        model.Eliminar(Convert.ToInt32(routeCode));
+                        model.Eliminar(Convert.ToInt32(routeCode), _conection);
                         RadMessageBox.Show("Elimiado correctamente", "Atención");
                         ObtenerListaRutas();
 
@@ -737,7 +736,7 @@ namespace Asistencia
             {
                 // get abbreviated path name || obtener nombre abreviado de ruta origen
                 model = new SJ_RHRutaNegocios();
-                txtDescripcionCortaRutaOrigen.Text = model.GetSourceAbbreviatedPathName(period, txtAbreviaturaRutaOrigen.Text.ToString().Trim(), txtOrigenId.Text);
+                txtDescripcionCortaRutaOrigen.Text = model.GetSourceAbbreviatedPathName(_conection, txtAbreviaturaRutaOrigen.Text.ToString().Trim(), txtOrigenId.Text);
             }
         }
 
@@ -752,7 +751,7 @@ namespace Asistencia
             {
                 // get abbreviated path name || obtener nombre abreviado de ruta destino
                 model = new SJ_RHRutaNegocios();
-                txtDescripcionCortaRutaDestino.Text = model.GetDestinationAbbreviatedPathName(period, txtAbreviaturaRutaDestino.Text.ToString().Trim(), txtDestinoId.Text);
+                txtDescripcionCortaRutaDestino.Text = model.GetDestinationAbbreviatedPathName(_conection, txtAbreviaturaRutaDestino.Text.ToString().Trim(), txtDestinoId.Text);
             }
         }
     }

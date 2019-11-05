@@ -16,12 +16,12 @@ namespace Asistencia.Negocios
         //private Grupo Empresa;
         //private Grupo oBaseDatos;
 
-        public ASJ_USUARIOS CheckStatusSession(string userName, string password, string companyId, string db)
+        public ASJ_USUARIOS CheckStatusSession(string userName, string password, string companyId, string conection)
         {            
             string cnx = string.Empty;
             ASJ_USUARIOS user = new ASJ_USUARIOS();
             user = new ASJ_USUARIOS { IdUsuario = string.Empty, Password = string.Empty, nivel = "1", idestado = "0", EmpresaID = companyId.Trim() };
-            cnx = ConfigurationManager.AppSettings[db];
+            cnx = ConfigurationManager.AppSettings[conection];
             using (BDAsistenciaDataContext contexto = new BDAsistenciaDataContext(cnx))
             {
                 var result = contexto.ASJ_USUARIOS.Where(x => x.IdUsuario == userName && x.EmpresaID.Trim() == companyId.Trim()).ToList();
@@ -35,13 +35,13 @@ namespace Asistencia.Negocios
             return user;
         }
 
-        public ASJ_USUARIOS GetUserById(string userName, string password, string companyId, string db)
+        public ASJ_USUARIOS GetUserById(string userName, string password, string companyId, string conection)
         {
             string cnx = string.Empty;
             var user = new ASJ_USUARIOS();
             user = new ASJ_USUARIOS { IdUsuario = "", Password = "", nivel = "1", idestado = "0", EmpresaID = companyId.Trim() };
 
-            cnx = ConfigurationManager.AppSettings[db];
+            cnx = ConfigurationManager.AppSettings[conection];
             using (BDAsistenciaDataContext contexto = new BDAsistenciaDataContext(cnx))
             {
                 var result = contexto.ASJ_USUARIOS.Where(x => x.IdUsuario == userName && x.Password == password && x.idestado == "1" && x.EmpresaID.Trim() == companyId.Trim()).ToList();

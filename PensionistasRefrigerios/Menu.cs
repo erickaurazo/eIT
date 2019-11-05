@@ -18,6 +18,7 @@ namespace Asistencia
         private string _conection;
         private UsersController modelPrivileges;
         private List<PrivilegesByUser> privilegesByUser;
+        private string _descripcionConexion;
 
         public Menu()
         {
@@ -29,6 +30,7 @@ namespace Asistencia
                 _user = ofrm.user;
                 _companyId = ofrm.companyId != null ? ofrm.companyId.Trim() : string.Empty;
                 _conection = ofrm.conection != null ? ofrm.conection.Trim() : string.Empty;
+                _descripcionConexion = ofrm.descripcionConexion != null ? ofrm.descripcionConexion.Trim() : string.Empty;
                 bgwHilo.RunWorkerAsync();
             }
             else
@@ -71,11 +73,11 @@ namespace Asistencia
             GoTransporte.Visible = true;
             GoPlanilla.Enabled = true;
             GoPlanilla.Visible = true;
-            GoExportaciones.Enabled = true;
-            GoMantenimiento.Enabled = true;
-            GoMaquinaria.Enabled = true;
-            GoSanidad.Enabled = true;
-            GoEvaluacionAgricola.Enabled = true;
+            GoExportaciones.Enabled = !true;
+            GoMantenimiento.Enabled = !true;
+            GoMaquinaria.Enabled = !true;
+            GoSanidad.Enabled = !true;
+            GoEvaluacionAgricola.Enabled = !true;
             GoSistema.Enabled = true;
             GoSalir.Enabled = true;
 
@@ -206,7 +208,7 @@ namespace Asistencia
 
         private void RRHHRegistroAsistencia_Click(object sender, EventArgs e)
         {
-            ReporteAsistenciaDiarioByPuertaIngreso frmHijo = new ReporteAsistenciaDiarioByPuertaIngreso(_conection, _user, _companyId);
+            RegistroDeAsistenciaDiarioByPuertaIngreso frmHijo = new RegistroDeAsistenciaDiarioByPuertaIngreso(_conection, _user, _companyId);
             frmHijo.MdiParent = this;
             frmHijo.Show();
             frmHijo.WindowState = FormWindowState.Maximized;
@@ -226,7 +228,7 @@ namespace Asistencia
 
         private void RRHHreporteDeAsistenciaEnPuertas_Click(object sender, EventArgs e)
         {
-            ReporteAsistenciaDiarioByPuertaIngreso frmHijo = new ReporteAsistenciaDiarioByPuertaIngreso(_conection, _user, _companyId);
+            RegistroDeAsistenciaDiarioByPuertaIngreso frmHijo = new RegistroDeAsistenciaDiarioByPuertaIngreso(_conection, _user, _companyId);
             frmHijo.MdiParent = this;
             frmHijo.Show();
             frmHijo.WindowState = FormWindowState.Maximized;
@@ -354,6 +356,7 @@ namespace Asistencia
         {
             lblUsuarioNombre.Text = _user.IdUsuario != null ? _user.IdUsuario : string.Empty;
             lblNombreDescripcion.Text = _user.NombreCompleto != null ? _user.NombreCompleto : string.Empty;
+            lblConexionDescripcion.Text = _descripcionConexion != null ? _descripcionConexion.Trim() : string.Empty;
         }
 
         private void newWindowToolStripMenuItem_Click(object sender, EventArgs e)
@@ -397,7 +400,7 @@ namespace Asistencia
 
         private void GoTransportesReporteIngresoSalidaBuses_Click(object sender, EventArgs e)
         {
-            Users frmHijo = new Users();
+            ReporteIngresosTransporte frmHijo = new ReporteIngresosTransporte(_conection, _user, _companyId);
             frmHijo.MdiParent = this;
             frmHijo.Show();
             frmHijo.WindowState = FormWindowState.Maximized;

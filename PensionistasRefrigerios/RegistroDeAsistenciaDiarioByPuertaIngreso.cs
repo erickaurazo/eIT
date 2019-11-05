@@ -16,9 +16,9 @@ using Asistencia.Datos;
 
 namespace Asistencia
 {
-    public partial class ReporteAsistenciaDiarioByPuertaIngreso : Form
+    public partial class RegistroDeAsistenciaDiarioByPuertaIngreso : Form
     {
-        private string periodo;
+        
         private SemanaController modeloSemana;
         private SJ_Semanas oSemana;
         private SJ_Semanas oSemanaConsulta;
@@ -45,7 +45,7 @@ namespace Asistencia
         private ASJ_USUARIOS _user;
         private string _companyId;
 
-        public ReporteAsistenciaDiarioByPuertaIngreso()
+        public RegistroDeAsistenciaDiarioByPuertaIngreso()
         {
             InitializeComponent();
             RadGridLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.GridLocalizationProviderEspanol();
@@ -57,7 +57,7 @@ namespace Asistencia
             ObtenerFechasIniciales();
         }
 
-        public ReporteAsistenciaDiarioByPuertaIngreso(string conection, ASJ_USUARIOS user, string companyId)
+        public RegistroDeAsistenciaDiarioByPuertaIngreso(string conection, ASJ_USUARIOS user, string companyId)
         {
             InitializeComponent();
             _conection = conection;
@@ -150,7 +150,7 @@ namespace Asistencia
             oSemana = new SJ_Semanas();
             oSemanaConsulta = new SJ_Semanas();
             oSemana.año = Convert.ToInt32(this.txtPeriodo.Value);
-            oSemanaConsulta = modeloSemana.ObtenerSemanaPorNroSemana(oSemana, DateTime.Now.Year.ToString());
+            oSemanaConsulta = modeloSemana.GetWeekByNumberWeek(oSemana, _conection);
             int numeroSemana = CultureInfo.CurrentUICulture.Calendar.GetWeekOfYear(DateTime.Now, CalendarWeekRule.FirstDay, DateTime.Now.DayOfWeek) - 1;
 
 
@@ -181,10 +181,10 @@ namespace Asistencia
         {
             try
             {
-                periodo = DateTime.Now.Year.ToString();
+                
                 MyControlsDataBinding.Extensions.Globales.Servidor = ConfigurationManager.AppSettings["Servidor"].ToString();
                 MyControlsDataBinding.Extensions.Globales.UsuarioBaseDatos = ConfigurationManager.AppSettings["Usuario"].ToString();
-                MyControlsDataBinding.Extensions.Globales.BaseDatos = ConfigurationManager.AppSettings["BasesDatos" + periodo].ToString();
+                MyControlsDataBinding.Extensions.Globales.BaseDatos = ConfigurationManager.AppSettings[_conection].ToString();
                 MyControlsDataBinding.Extensions.Globales.ClaveBaseDatos = ConfigurationManager.AppSettings["Clave"].ToString();
                 MyControlsDataBinding.Extensions.Globales.IdEmpresa = "001";
                 MyControlsDataBinding.Extensions.Globales.Empresa = "EMPRESA AGRICOLA SAN JOSE SA";
@@ -398,13 +398,13 @@ namespace Asistencia
             {
                 negocio = new AsistenciaController();
                 listado = new List<ASJ_ReporteAsistenciaDiariaByPuertaIngresoResult>();
-                listado = negocio.Listado(periodo, desde, hasta, idPlanilla, idGarita).ToList();
+                listado = negocio.GetListAsistanceByDoor(_conection, desde, hasta, idPlanilla, idGarita).ToList();
 
                 listadoDetalleByMarcacion = new List<ASJ_ReporteAsistenciaByPuertaResult>();
-                listadoDetalleByMarcacion = negocio.ObtenerReporteAsistenciaByPuerta(periodo, desde, hasta).ToList();
+                listadoDetalleByMarcacion = negocio.ObtenerReporteAsistenciaByPuerta(_conection, desde, hasta).ToList();
 
                 listadoDatosCompletos = new List<ASJ_ReporteAsistenciaByPuertaByDatosCompletosResult>();
-                listadoDatosCompletos = negocio.ObtenerReporteAsistenciaByPuertaDatosCompletos(periodo, desdeP, hastaP).ToList();
+                listadoDatosCompletos = negocio.ObtenerReporteAsistenciaByPuertaDatosCompletos(_conection, desdeP, hastaP).ToList();
 
                 listadoAgrupado = new List<ASJ_ReporteAsistenciaDiariaByPuertaIngresoResult>();
 
@@ -463,7 +463,7 @@ namespace Asistencia
 
             try
             {
-                periodo = this.txtPeriodo.Value.ToString();
+                
                 desde = Convert.ToDateTime(this.txtFechaDesde.Text).ToString("yyyyMMdd", CultureInfo.InvariantCulture);
                 hasta = Convert.ToDateTime(this.txtFechaHasta.Text).ToString("yyyyMMdd", CultureInfo.InvariantCulture);
                 desdeP = Convert.ToDateTime(this.txtFechaDesde.Text).ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);

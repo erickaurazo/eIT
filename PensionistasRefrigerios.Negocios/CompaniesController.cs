@@ -10,13 +10,13 @@ namespace Asistencia.Negocios
     public class CompaniesController
     {
 
-        public List<Grupo> GetCompanies(string db)
+        public List<Grupo> GetCompanies(string conection)
         {
             var companies = new List<Grupo>();
             companies.Add(new Grupo { Codigo = "000", Descripcion = "Selecionar item" });
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings[db];
-            if (db != string.Empty)
+            cnx = ConfigurationManager.AppSettings[conection];
+            if (conection != string.Empty)
             {
                 try
                 {
@@ -48,21 +48,21 @@ namespace Asistencia.Negocios
         }
 
 
-        public List<Grupo> FindCompanyById(string db, string id)
+        public List<Grupo> FindCompanyById(string conection, string companyId)
         {
             string cnx = string.Empty;
             cnx = ConfigurationManager.AppSettings[""];
             var companies = new List<Grupo>();
             companies.Add(new Grupo { Codigo = "000", Descripcion = "Selecionar item" });
 
-            if (db != string.Empty)
+            if (conection != string.Empty)
             {
                 using (BDAsistenciaDataContext contexto = new BDAsistenciaDataContext(cnx))
                 {
 
                     companies = (
                         from item in contexto.EMPRESAS
-                        where item.IDEMPRESA.Trim() == id.Trim()
+                        where item.IDEMPRESA.Trim() == companyId.Trim()
                         group item by new { item.IDEMPRESA } into j
                         select new Grupo
                         {

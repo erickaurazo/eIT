@@ -11,12 +11,12 @@ namespace Asistencia.Negocios
     {
         private Grupo oTipoParadero;
 
-        public List<Paradero> ObtenerListaParaderos(string periodoConsulta)
+        public List<Paradero> ObtenerListaParaderos(string conection)
         {
             List<Paradero> listado = new List<Paradero>();
 
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + periodoConsulta.ToString()].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext Contexto = new BDAsistenciaDataContext(cnx))
             {
                 Contexto.CommandTimeout = 99999;
@@ -44,16 +44,16 @@ namespace Asistencia.Negocios
             return listado;
         }
 
-        public SJ_Paraderos ObtenerParadero(string periodoConsulta, SJ_Paraderos oSJ_Paradero)
+        public SJ_Paraderos ObtenerParadero(string conection, SJ_Paraderos whereabout)
         {
             SJ_Paraderos oParadero = new SJ_Paraderos();
 
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + periodoConsulta.ToString()].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext Contexto = new BDAsistenciaDataContext(cnx))
             {
                 Contexto.CommandTimeout = 99999;
-                var listado = Contexto.SJ_Paraderos.Where(x => x.IdParadero.ToString().Trim() == oSJ_Paradero.IdParadero.ToString().Trim()).ToList().OrderBy(x => x.IdParadero).ToList();
+                var listado = Contexto.SJ_Paraderos.Where(x => x.IdParadero.ToString().Trim() == whereabout.IdParadero.ToString().Trim()).ToList().OrderBy(x => x.IdParadero).ToList();
 
                 if (listado != null && listado.ToList().Count == 1)
                 {
@@ -64,29 +64,29 @@ namespace Asistencia.Negocios
             return oParadero;
         }
 
-        public void Registrar(string periodoRegistro, SJ_Paraderos oSJ_Paradero)
+        public void Registrar(string conection, SJ_Paraderos whereabout)
         {
             SJ_Paraderos oParadero = new SJ_Paraderos();
             //using (TransactionScope Scope = new TransactionScope())
             //{
             #region Transaccion
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + periodoRegistro.ToString()].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext Contexto = new BDAsistenciaDataContext(cnx))
             {
                 #region
                 Contexto.CommandTimeout = 99999;
 
-                var resultadoSubConsulta = Contexto.SJ_Paraderos.Where(x => x.IdParadero == oSJ_Paradero.IdParadero).ToList();
+                var resultadoSubConsulta = Contexto.SJ_Paraderos.Where(x => x.IdParadero == whereabout.IdParadero).ToList();
 
                 if (resultadoSubConsulta != null && resultadoSubConsulta.ToList().Count == 1)
                 {
                     #region Actualizar
                     oParadero = resultadoSubConsulta.Single();
                     //oParadero.IdParadero = oSJ_Paradero.IdParadero.ToString().Trim();
-                    oParadero.DescripcionParadero = oSJ_Paradero.DescripcionParadero != null ? oSJ_Paradero.DescripcionParadero.ToString().Trim() : string.Empty;
-                    oParadero.Observacion = oSJ_Paradero.Observacion != null ? oSJ_Paradero.Observacion.ToString().Trim() : string.Empty;
-                    oParadero.tipo = oSJ_Paradero.tipo; 
+                    oParadero.DescripcionParadero = whereabout.DescripcionParadero != null ? whereabout.DescripcionParadero.ToString().Trim() : string.Empty;
+                    oParadero.Observacion = whereabout.Observacion != null ? whereabout.Observacion.ToString().Trim() : string.Empty;
+                    oParadero.tipo = whereabout.tipo; 
 
                     //oParadero.ESTADO = oSJ_Paradero.ESTADO;
                     Contexto.SubmitChanges();
@@ -94,14 +94,14 @@ namespace Asistencia.Negocios
                 }
                 else
                 {
-                    if (oSJ_Paradero.IdParadero == "")
+                    if (whereabout.IdParadero == "")
                     {
                         #region Registro()
-                        oParadero.IdParadero = ObtenerNuevoCodigo(periodoRegistro);
-                        oParadero.DescripcionParadero = oSJ_Paradero.DescripcionParadero != null ? oSJ_Paradero.DescripcionParadero.ToString().Trim() : "";
-                        oParadero.Observacion = oSJ_Paradero.Observacion != null ? oSJ_Paradero.Observacion.ToString().Trim() : "";
-                        oParadero.ESTADO = oSJ_Paradero.ESTADO;
-                        oParadero.tipo = oSJ_Paradero.tipo; 
+                        oParadero.IdParadero = ObtenerNuevoCodigo(conection);
+                        oParadero.DescripcionParadero = whereabout.DescripcionParadero != null ? whereabout.DescripcionParadero.ToString().Trim() : "";
+                        oParadero.Observacion = whereabout.Observacion != null ? whereabout.Observacion.ToString().Trim() : "";
+                        oParadero.ESTADO = whereabout.ESTADO;
+                        oParadero.tipo = whereabout.tipo; 
                         Contexto.SJ_Paraderos.InsertOnSubmit(oParadero);
                         Contexto.SubmitChanges();
 
@@ -117,11 +117,11 @@ namespace Asistencia.Negocios
 
         }
 
-        private string ObtenerNuevoCodigo(string periodoRegistro)
+        private string ObtenerNuevoCodigo(string conection)
         {
             string cnx = string.Empty;
             string codigo = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + periodoRegistro.ToString()].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext Contexto = new BDAsistenciaDataContext(cnx))
             {
                 Contexto.CommandTimeout = 99999;
@@ -134,20 +134,20 @@ namespace Asistencia.Negocios
             return codigo;
         }
 
-        public void Eliminar(string periodoRegistro, Paradero oSJ_Paradero)
+        public void Eliminar(string conection, Paradero whereabout)
         {
             SJ_Paraderos oParadero = new SJ_Paraderos();
             //using (TransactionScope Scope = new TransactionScope())
             //{
             #region Transaccion
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + periodoRegistro.ToString()].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext Contexto = new BDAsistenciaDataContext(cnx))
             {
                 #region
                 Contexto.CommandTimeout = 99999;
 
-                var resultadoSubConsulta = Contexto.SJ_Paraderos.Where(x => x.IdParadero == oSJ_Paradero.idParadero).ToList();
+                var resultadoSubConsulta = Contexto.SJ_Paraderos.Where(x => x.IdParadero == whereabout.idParadero).ToList();
 
                 if (resultadoSubConsulta != null && resultadoSubConsulta.ToList().Count == 1)
                 {
@@ -169,20 +169,20 @@ namespace Asistencia.Negocios
         }
 
         /* Se puede anular o activar el paradero */
-        public void CambiarEstadoDocumento(string periodoRegistro, Paradero oSJ_Paradero)
+        public void CambiarEstadoDocumento(string conection, Paradero whereabout)
         {
             SJ_Paraderos oParadero = new SJ_Paraderos();
             //using (TransactionScope Scope = new TransactionScope())
             //{
             #region Transaccion
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + periodoRegistro.ToString()].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext Contexto = new BDAsistenciaDataContext(cnx))
             {
                 #region
                 Contexto.CommandTimeout = 99999;
 
-                var resultadoSubConsulta = Contexto.SJ_Paraderos.Where(x => x.IdParadero == oSJ_Paradero.idParadero).ToList();
+                var resultadoSubConsulta = Contexto.SJ_Paraderos.Where(x => x.IdParadero == whereabout.idParadero).ToList();
 
                 if (resultadoSubConsulta != null && resultadoSubConsulta.ToList().Count == 1)
                 {

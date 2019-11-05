@@ -94,6 +94,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ChangePassword";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Change password";
             this.Load += new System.EventHandler(this.ChangePassword_Load);
             this.ResumeLayout(false);

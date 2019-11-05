@@ -2,7 +2,7 @@
 usuario: sa
 clave: .1975Casa
 Local: BLUESOFT
-Publica: BLUESOFT
+Publica: 68.168.108.52
 baseDatos01:Agricola2017 | Local
 baseDatos02:Agricola2017 | Pública
 baseDatos03:bdPrueba 01 | Local

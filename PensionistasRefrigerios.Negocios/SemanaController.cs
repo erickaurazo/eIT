@@ -11,18 +11,18 @@ namespace Asistencia.Negocios
     public class SemanaController
     {
 
-
-        public SJ_Semanas ObtenerSemanaPorNroSemana(SJ_Semanas oSemanaConsulta, string periodo)
+        //ObtenerSemanaPorNroSemana
+        public SJ_Semanas GetWeekByNumberWeek(SJ_Semanas week, string conection)
         {
             SJ_Semanas oSemana = new SJ_Semanas();
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + periodo].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             try
             {
 
                 using (BDAsistenciaDataContext contexto = new BDAsistenciaDataContext(cnx))
                 {
-                    var resultadoConsulta = contexto.SJ_Semanas.Where(x => x.año == oSemanaConsulta.año && x.semana == oSemanaConsulta.semana).ToList();
+                    var resultadoConsulta = contexto.SJ_Semanas.Where(x => x.año == week.año && x.semana == week.semana).ToList();
 
                     if (resultadoConsulta != null && resultadoConsulta.ToList().Count == 1)
                     {
@@ -31,8 +31,8 @@ namespace Asistencia.Negocios
                     else
                     {
                         oSemana = new SJ_Semanas();
-                        oSemana.semana = oSemanaConsulta.semana;
-                        oSemana.año = oSemanaConsulta.año;
+                        oSemana.semana = week.semana;
+                        oSemana.año = week.año;
                         oSemana.desde = DateTime.Now;
                         oSemana.hasta = DateTime.Now;
                     }

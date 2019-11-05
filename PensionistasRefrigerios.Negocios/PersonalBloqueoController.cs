@@ -9,10 +9,10 @@ namespace Asistencia.Negocios
     public class PersonalBloqueoController
     {
         string cnx = string.Empty;
-        public string Grabar(string periodo, ASJ_PersonalBloqueo personalBloqueado)
+        public string Add(string conection, ASJ_PersonalBloqueo personalBloqueado)
         {
             string resultado = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + periodo.Substring(0, 4)].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             List<ASJ_PersonalBloqueo> resultadoConsulta = new List<ASJ_PersonalBloqueo>();
             ASJ_PersonalBloqueo oPersonalBloqueado = new ASJ_PersonalBloqueo();
 
@@ -64,10 +64,10 @@ namespace Asistencia.Negocios
             return resultado;
         }
 
-        public string GrabarListadoPersonalBloqueado(string periodo, List<ASJ_PersonalBloqueo> listadoPersonalBloqueo)
+        public string AddList(string conection, List<ASJ_PersonalBloqueo> listadoPersonalBloqueo)
         {
             string resultado = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + periodo.Substring(0, 4)].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             List<ASJ_PersonalTipoBloqueo> resultadoConsulta = new List<ASJ_PersonalTipoBloqueo>();
             ASJ_PersonalTipoBloqueo oTipoBloqueo = new ASJ_PersonalTipoBloqueo();
 
@@ -82,10 +82,10 @@ namespace Asistencia.Negocios
                 return resultado;
         }
 
-        public string Anular(string periodo, ASJ_PersonalBloqueo personalBloqueo)
+        public string CnageStatus(string conection, ASJ_PersonalBloqueo personalBloqueo)
         {
             string resultado = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + periodo.Substring(0, 4)].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             List<ASJ_PersonalBloqueo> resultadoConsulta = new List<ASJ_PersonalBloqueo>();
             ASJ_PersonalBloqueo oTipoBloqueo = new ASJ_PersonalBloqueo();
 
@@ -122,10 +122,10 @@ namespace Asistencia.Negocios
             return resultado;
         }
 
-        public string Eliminar(string periodo, ASJ_PersonalBloqueo personalBloqueo)
+        public string Delete(string conection, ASJ_PersonalBloqueo personalBloqueo)
         {
             string resultado = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + periodo.Substring(0, 4)].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             List<ASJ_PersonalBloqueo> resultadoConsulta = new List<ASJ_PersonalBloqueo>();
             ASJ_PersonalBloqueo oTipoBloqueo = new ASJ_PersonalBloqueo();
 
@@ -160,11 +160,11 @@ namespace Asistencia.Negocios
             return resultado;
         }
 
-        public List<ASJ_ObtenerListadoDePersonalbloqueadoResult> ObtenerListado(string periodo)
+        public List<ASJ_ObtenerListadoDePersonalbloqueadoResult> GetListPersonLock(string conection)
         {
             List<ASJ_ObtenerListadoDePersonalbloqueadoResult> listado = new List<ASJ_ObtenerListadoDePersonalbloqueadoResult>();
 
-            cnx = ConfigurationManager.AppSettings["bd" + periodo.Substring(0, 4)].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
             {
                 Modelo.CommandTimeout = 9999900;

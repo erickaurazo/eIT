@@ -23,7 +23,7 @@ namespace Asistencia
         private string fileName;
         private bool exportVisualSettings;
         private string hasta;
-        private string periodo;
+        
         private RegistroTransferenciaTransportesController negocio;
         private List<ASJ_ReporteAsistenciaObservadosResult> listadoAsistenciaObservados;
         private List<ASJ_ReporteAsistenciaObservadosResult> listadoAsistenciaObservadosSelecionados;
@@ -176,10 +176,10 @@ namespace Asistencia
         {
             try
             {
-                periodo = DateTime.Now.Year.ToString();
+                
                 Globales.Servidor = ConfigurationManager.AppSettings["Servidor"].ToString();
                 Globales.UsuarioBaseDatos = ConfigurationManager.AppSettings["Usuario"].ToString();
-                Globales.BaseDatos = ConfigurationManager.AppSettings["BasesDatos" + periodo].ToString();
+                Globales.BaseDatos = ConfigurationManager.AppSettings[_conection].ToString();
                 Globales.ClaveBaseDatos = ConfigurationManager.AppSettings["Clave"].ToString();
                 Globales.IdEmpresa = "001";
                 Globales.Empresa = "EMPRESA AGRICOLA SAN JOSE SA";
@@ -274,7 +274,7 @@ namespace Asistencia
         {
             negocio = new RegistroTransferenciaTransportesController();
             listadoAsistenciaObservados = new List<ASJ_ReporteAsistenciaObservadosResult>();
-            listadoAsistenciaObservados = negocio.ReporteAsistenciaObservados(periodo, desde, hasta).ToList();
+            listadoAsistenciaObservados = negocio.GetListAssistanceObserved(_conection, desde, hasta).ToList();
         }
 
         private void bgwHilo_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -414,7 +414,7 @@ namespace Asistencia
                     if (registroObservado.nombres.Trim().ToUpper() != "DESCONOCIDO")
                     {
                         AsistenciaModelo = new ControlIngresoSalidaPersonalController();
-                        AsistenciaModelo.TransferirAsistenciaObservada(periodo, registroObservado);
+                        AsistenciaModelo.TransferirAsistenciasObservadaByPersona(_conection, registroObservado,_user);
                         Consultar();
                     }
                 }
@@ -430,7 +430,7 @@ namespace Asistencia
                     if (registroObservado.nombres.Trim().ToUpper() != "DESCONOCIDO")
                     {
                         AsistenciaModelo = new ControlIngresoSalidaPersonalController();
-                        AsistenciaModelo.TransferirAsistenciasObservadaByPersona(periodo, registroObservado);
+                        AsistenciaModelo.TransferirAsistenciasObservadaByPersona(_conection, registroObservado,_user);
                         Consultar();
                     }
                 }
@@ -445,7 +445,7 @@ namespace Asistencia
                 {
                     if (registroObservado.nombres.Trim().ToUpper() == "DESCONOCIDO")
                     {
-                        ActualizarDNIObservado oFrm = new ActualizarDNIObservado(periodo, registroObservado.IDCONTROLINGRESO, registroObservado.ITEM, registroObservado.nombres.ToString(), registroObservado.idpersonal.ToString());
+                        ActualizarDNIObservado oFrm = new ActualizarDNIObservado(_conection, registroObservado.IDCONTROLINGRESO, registroObservado.ITEM, registroObservado.nombres.ToString(), registroObservado.idpersonal.ToString(), _conection, _companyId, _user);
                         oFrm.ShowDialog();
                         Consultar();
                     }
@@ -484,14 +484,14 @@ namespace Asistencia
                     foreach (var item in listadoAsistenciaObservadosSelecionados)
                     {
                         AsistenciaModelo = new ControlIngresoSalidaPersonalController();
-                        AsistenciaModelo.TransferirAsistenciasObservadaByPersona(periodo, item);
+                        AsistenciaModelo.TransferirAsistenciasObservadaByPersona(_conection, item, _user);
                     }
 
                 }
 
                 negocio = new RegistroTransferenciaTransportesController();
                 listadoAsistenciaObservados = new List<ASJ_ReporteAsistenciaObservadosResult>();
-                listadoAsistenciaObservados = negocio.ReporteAsistenciaObservados(periodo, desde, hasta).ToList();
+                listadoAsistenciaObservados = negocio.GetListAssistanceObserved(_conection, desde, hasta).ToList();
             }
             catch (Exception Ex)
             {

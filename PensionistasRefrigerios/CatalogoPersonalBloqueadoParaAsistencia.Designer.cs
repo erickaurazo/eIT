@@ -30,19 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CatalogoPersonalBloqueadoParaAsistencia));
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn15 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn16 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn17 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn2 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn18 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn19 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn20 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn21 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn22 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.Data.SortDescriptor sortDescriptor2 = new Telerik.WinControls.Data.SortDescriptor();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn1 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
             this.gbMantenimiento = new Telerik.WinControls.UI.RadGroupBox();
             this.chkEsPeriodo = new System.Windows.Forms.CheckBox();
             this.lblHasta = new Telerik.WinControls.UI.RadLabel();
@@ -470,96 +470,96 @@
             this.dgvListado.MasterTemplate.AllowAddNewRow = false;
             this.dgvListado.MasterTemplate.AutoGenerateColumns = false;
             this.dgvListado.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn12.EnableExpressionEditor = false;
-            gridViewTextBoxColumn12.FieldName = "codigoPersonalBloqueo";
-            gridViewTextBoxColumn12.HeaderText = "codigoPersonalBloqueo";
-            gridViewTextBoxColumn12.IsVisible = false;
-            gridViewTextBoxColumn12.Name = "chcodigoPersonalBloqueo";
-            gridViewTextBoxColumn12.Width = 40;
-            gridViewTextBoxColumn13.EnableExpressionEditor = false;
-            gridViewTextBoxColumn13.FieldName = "codigoPersonalGeneral";
-            gridViewTextBoxColumn13.HeaderText = "Cod.";
-            gridViewTextBoxColumn13.Name = "chcodigoPersonalGeneral";
-            gridViewTextBoxColumn13.Width = 47;
-            gridViewTextBoxColumn14.EnableExpressionEditor = false;
-            gridViewTextBoxColumn14.FieldName = "nombres";
-            gridViewTextBoxColumn14.HeaderText = "Nombres";
-            gridViewTextBoxColumn14.Name = "chnombres";
-            gridViewTextBoxColumn14.SortOrder = Telerik.WinControls.UI.RadSortOrder.Descending;
-            gridViewTextBoxColumn14.Width = 171;
-            gridViewTextBoxColumn15.EnableExpressionEditor = false;
-            gridViewTextBoxColumn15.FieldName = "codigoBloqueo";
-            gridViewTextBoxColumn15.HeaderText = "codigoBloqueo";
-            gridViewTextBoxColumn15.IsVisible = false;
-            gridViewTextBoxColumn15.Name = "chcodigoBloqueo";
-            gridViewTextBoxColumn15.Width = 44;
-            gridViewTextBoxColumn16.EnableExpressionEditor = false;
-            gridViewTextBoxColumn16.FieldName = "bloqueo";
-            gridViewTextBoxColumn16.HeaderText = "bloqueo";
-            gridViewTextBoxColumn16.Name = "chbloqueo";
-            gridViewTextBoxColumn16.Width = 48;
-            gridViewTextBoxColumn17.EnableExpressionEditor = false;
-            gridViewTextBoxColumn17.FieldName = "esPeriodo";
-            gridViewTextBoxColumn17.HeaderText = "esPeriodo";
-            gridViewTextBoxColumn17.IsVisible = false;
-            gridViewTextBoxColumn17.Name = "chesPeriodo";
-            gridViewTextBoxColumn17.Width = 46;
-            gridViewDateTimeColumn2.EnableExpressionEditor = false;
-            gridViewDateTimeColumn2.FieldName = "fechaRegistro";
-            gridViewDateTimeColumn2.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            gridViewDateTimeColumn2.FormatString = "{0:d}";
-            gridViewDateTimeColumn2.HeaderText = "Registro";
-            gridViewDateTimeColumn2.IsVisible = false;
-            gridViewDateTimeColumn2.Name = "chfechaRegistro";
-            gridViewDateTimeColumn2.Width = 46;
-            gridViewTextBoxColumn18.EnableExpressionEditor = false;
-            gridViewTextBoxColumn18.FieldName = "inicioBloqueo";
-            gridViewTextBoxColumn18.FormatString = "{0:d}";
-            gridViewTextBoxColumn18.HeaderText = "inicioBloqueo";
-            gridViewTextBoxColumn18.Name = "chinicioBloqueo";
-            gridViewTextBoxColumn18.Width = 47;
-            gridViewTextBoxColumn19.EnableExpressionEditor = false;
-            gridViewTextBoxColumn19.FieldName = "terminoBloqueo";
-            gridViewTextBoxColumn19.FormatString = "{0:d}";
-            gridViewTextBoxColumn19.HeaderText = "terminoBloqueo";
-            gridViewTextBoxColumn19.Name = "chterminoBloqueo";
-            gridViewTextBoxColumn19.Width = 42;
-            gridViewTextBoxColumn20.EnableExpressionEditor = false;
-            gridViewTextBoxColumn20.FieldName = "observaciones";
-            gridViewTextBoxColumn20.HeaderText = "observaciones";
-            gridViewTextBoxColumn20.Name = "chobservaciones";
-            gridViewTextBoxColumn20.Width = 89;
-            gridViewTextBoxColumn21.EnableExpressionEditor = false;
-            gridViewTextBoxColumn21.FieldName = "estado";
-            gridViewTextBoxColumn21.HeaderText = "estado";
-            gridViewTextBoxColumn21.IsVisible = false;
-            gridViewTextBoxColumn21.Name = "chestado";
-            gridViewTextBoxColumn21.Width = 42;
-            gridViewTextBoxColumn22.EnableExpressionEditor = false;
-            gridViewTextBoxColumn22.FieldName = "descripcionEstado";
-            gridViewTextBoxColumn22.HeaderText = "Estado";
-            gridViewTextBoxColumn22.Name = "chdescripcionEstado";
-            gridViewTextBoxColumn22.Width = 39;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "codigoPersonalBloqueo";
+            gridViewTextBoxColumn1.HeaderText = "codigoPersonalBloqueo";
+            gridViewTextBoxColumn1.IsVisible = false;
+            gridViewTextBoxColumn1.Name = "chcodigoPersonalBloqueo";
+            gridViewTextBoxColumn1.Width = 40;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "codigoPersonalGeneral";
+            gridViewTextBoxColumn2.HeaderText = "Cod.";
+            gridViewTextBoxColumn2.Name = "chcodigoPersonalGeneral";
+            gridViewTextBoxColumn2.Width = 47;
+            gridViewTextBoxColumn3.EnableExpressionEditor = false;
+            gridViewTextBoxColumn3.FieldName = "nombres";
+            gridViewTextBoxColumn3.HeaderText = "Nombres";
+            gridViewTextBoxColumn3.Name = "chnombres";
+            gridViewTextBoxColumn3.SortOrder = Telerik.WinControls.UI.RadSortOrder.Descending;
+            gridViewTextBoxColumn3.Width = 171;
+            gridViewTextBoxColumn4.EnableExpressionEditor = false;
+            gridViewTextBoxColumn4.FieldName = "codigoBloqueo";
+            gridViewTextBoxColumn4.HeaderText = "codigoBloqueo";
+            gridViewTextBoxColumn4.IsVisible = false;
+            gridViewTextBoxColumn4.Name = "chcodigoBloqueo";
+            gridViewTextBoxColumn4.Width = 44;
+            gridViewTextBoxColumn5.EnableExpressionEditor = false;
+            gridViewTextBoxColumn5.FieldName = "bloqueo";
+            gridViewTextBoxColumn5.HeaderText = "bloqueo";
+            gridViewTextBoxColumn5.Name = "chbloqueo";
+            gridViewTextBoxColumn5.Width = 48;
+            gridViewTextBoxColumn6.EnableExpressionEditor = false;
+            gridViewTextBoxColumn6.FieldName = "esPeriodo";
+            gridViewTextBoxColumn6.HeaderText = "esPeriodo";
+            gridViewTextBoxColumn6.IsVisible = false;
+            gridViewTextBoxColumn6.Name = "chesPeriodo";
+            gridViewTextBoxColumn6.Width = 46;
+            gridViewDateTimeColumn1.EnableExpressionEditor = false;
+            gridViewDateTimeColumn1.FieldName = "fechaRegistro";
+            gridViewDateTimeColumn1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            gridViewDateTimeColumn1.FormatString = "{0:d}";
+            gridViewDateTimeColumn1.HeaderText = "Registro";
+            gridViewDateTimeColumn1.IsVisible = false;
+            gridViewDateTimeColumn1.Name = "chfechaRegistro";
+            gridViewDateTimeColumn1.Width = 46;
+            gridViewTextBoxColumn7.EnableExpressionEditor = false;
+            gridViewTextBoxColumn7.FieldName = "inicioBloqueo";
+            gridViewTextBoxColumn7.FormatString = "{0:d}";
+            gridViewTextBoxColumn7.HeaderText = "inicioBloqueo";
+            gridViewTextBoxColumn7.Name = "chinicioBloqueo";
+            gridViewTextBoxColumn7.Width = 47;
+            gridViewTextBoxColumn8.EnableExpressionEditor = false;
+            gridViewTextBoxColumn8.FieldName = "terminoBloqueo";
+            gridViewTextBoxColumn8.FormatString = "{0:d}";
+            gridViewTextBoxColumn8.HeaderText = "terminoBloqueo";
+            gridViewTextBoxColumn8.Name = "chterminoBloqueo";
+            gridViewTextBoxColumn8.Width = 42;
+            gridViewTextBoxColumn9.EnableExpressionEditor = false;
+            gridViewTextBoxColumn9.FieldName = "observaciones";
+            gridViewTextBoxColumn9.HeaderText = "observaciones";
+            gridViewTextBoxColumn9.Name = "chobservaciones";
+            gridViewTextBoxColumn9.Width = 89;
+            gridViewTextBoxColumn10.EnableExpressionEditor = false;
+            gridViewTextBoxColumn10.FieldName = "estado";
+            gridViewTextBoxColumn10.HeaderText = "estado";
+            gridViewTextBoxColumn10.IsVisible = false;
+            gridViewTextBoxColumn10.Name = "chestado";
+            gridViewTextBoxColumn10.Width = 42;
+            gridViewTextBoxColumn11.EnableExpressionEditor = false;
+            gridViewTextBoxColumn11.FieldName = "descripcionEstado";
+            gridViewTextBoxColumn11.HeaderText = "Estado";
+            gridViewTextBoxColumn11.Name = "chdescripcionEstado";
+            gridViewTextBoxColumn11.Width = 39;
             this.dgvListado.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn12,
-            gridViewTextBoxColumn13,
-            gridViewTextBoxColumn14,
-            gridViewTextBoxColumn15,
-            gridViewTextBoxColumn16,
-            gridViewTextBoxColumn17,
-            gridViewDateTimeColumn2,
-            gridViewTextBoxColumn18,
-            gridViewTextBoxColumn19,
-            gridViewTextBoxColumn20,
-            gridViewTextBoxColumn21,
-            gridViewTextBoxColumn22});
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4,
+            gridViewTextBoxColumn5,
+            gridViewTextBoxColumn6,
+            gridViewDateTimeColumn1,
+            gridViewTextBoxColumn7,
+            gridViewTextBoxColumn8,
+            gridViewTextBoxColumn9,
+            gridViewTextBoxColumn10,
+            gridViewTextBoxColumn11});
             this.dgvListado.MasterTemplate.EnableAlternatingRowColor = true;
             this.dgvListado.MasterTemplate.EnableFiltering = true;
             this.dgvListado.MasterTemplate.ShowHeaderCellButtons = true;
-            sortDescriptor2.Direction = System.ComponentModel.ListSortDirection.Descending;
-            sortDescriptor2.PropertyName = "chnombres";
+            sortDescriptor1.Direction = System.ComponentModel.ListSortDirection.Descending;
+            sortDescriptor1.PropertyName = "chnombres";
             this.dgvListado.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
-            sortDescriptor2});
+            sortDescriptor1});
             this.dgvListado.Name = "dgvListado";
             this.dgvListado.ReadOnly = true;
             this.dgvListado.RightToLeft = System.Windows.Forms.RightToLeft.No;

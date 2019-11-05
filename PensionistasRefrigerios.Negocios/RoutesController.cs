@@ -10,11 +10,11 @@ namespace Asistencia.Negocios
 {
     public class SJ_RHRutaNegocios
     {
-        public List<SJ_RHListaRutasResult> ListarRutasDeRecorridos()
+        public List<SJ_RHListaRutasResult> ListarRutasDeRecorridos(string conection)
         {
             List<SJ_RHListaRutasResult> ListadoRutas = new List<SJ_RHListaRutasResult>();
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + DateTime.Now.Year.ToString()].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
 
             using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
             {
@@ -24,36 +24,36 @@ namespace Asistencia.Negocios
             return ListadoRutas.OrderByDescending(x => x.Id).ToList();
         }
 
-        public bool AddRuta(SJ_RHRuta oRuta)
+        public bool AddRoute(SJ_RHRuta route, string conection)
         {
             bool estate = false;
             using (TransactionScope Scope = new TransactionScope())
             {
                 string cnx = string.Empty;
-                cnx = ConfigurationManager.AppSettings["bd" + DateTime.Now.Year.ToString()].ToString();
+                cnx = ConfigurationManager.AppSettings[conection].ToString();
                 using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
                 {
                     #region Transaccion()
 
-                    if (oRuta.Id == 0)
+                    if (route.Id == 0)
                     {
                         #region Nuevo()
                         try
                         {
                             SJ_RHRuta objeto = new SJ_RHRuta();
                             objeto.Id = 0;
-                            objeto.RutaOrigen = oRuta.RutaOrigen;
-                            objeto.RutaDestino = oRuta.RutaDestino;
-                            objeto.Distancia = oRuta.Distancia;
-                            objeto.TiempoViaje = oRuta.TiempoViaje;
-                            objeto.Observacion = oRuta.Observacion;
-                            objeto.IdEstado = oRuta.IdEstado;
+                            objeto.RutaOrigen = route.RutaOrigen;
+                            objeto.RutaDestino = route.RutaDestino;
+                            objeto.Distancia = route.Distancia;
+                            objeto.TiempoViaje = route.TiempoViaje;
+                            objeto.Observacion = route.Observacion;
+                            objeto.IdEstado = route.IdEstado;
                             objeto.FechaRegistro = DateTime.Now;
-                            objeto.abreviaturaRutaOrigen = oRuta.abreviaturaRutaOrigen.ToString().Trim();
-                            objeto.abreviaturaRuraDestino = oRuta.abreviaturaRuraDestino.ToString().Trim();
-                            objeto.descripcionCortaDestino = oRuta.descripcionCortaDestino.ToString().Trim();
-                            objeto.descripcionCortaOrigen = oRuta.descripcionCortaOrigen.ToString().Trim();
-                            objeto.esIngreso = oRuta.esIngreso.ToString().Trim();
+                            objeto.abreviaturaRutaOrigen = route.abreviaturaRutaOrigen.ToString().Trim();
+                            objeto.abreviaturaRuraDestino = route.abreviaturaRuraDestino.ToString().Trim();
+                            objeto.descripcionCortaDestino = route.descripcionCortaDestino.ToString().Trim();
+                            objeto.descripcionCortaOrigen = route.descripcionCortaOrigen.ToString().Trim();
+                            objeto.esIngreso = route.esIngreso.ToString().Trim();
                             Modelo.SJ_RHRuta.InsertOnSubmit(objeto);
                             Modelo.SubmitChanges();
 
@@ -70,20 +70,20 @@ namespace Asistencia.Negocios
                     else
                     {
                         #region Modificar()
-                        if (Modelo.SJ_RHRuta.Where(x => x.Id == oRuta.Id).ToList().Count == 1)
+                        if (Modelo.SJ_RHRuta.Where(x => x.Id == route.Id).ToList().Count == 1)
                         {
                             SJ_RHRuta objeto = new SJ_RHRuta();
-                            objeto = Modelo.SJ_RHRuta.Where(x => x.Id == oRuta.Id).Single();
-                            objeto.RutaOrigen = oRuta.RutaOrigen;
-                            objeto.RutaDestino = oRuta.RutaDestino;
-                            objeto.Distancia = oRuta.Distancia;
-                            objeto.TiempoViaje = oRuta.TiempoViaje;
-                            objeto.Observacion = oRuta.Observacion;
-                            objeto.abreviaturaRutaOrigen = oRuta.abreviaturaRutaOrigen.ToString().Trim();
-                            objeto.abreviaturaRuraDestino = oRuta.abreviaturaRuraDestino.ToString().Trim();
-                            objeto.descripcionCortaDestino = oRuta.descripcionCortaDestino.ToString().Trim();
-                            objeto.descripcionCortaOrigen = oRuta.descripcionCortaOrigen.ToString().Trim();
-                            objeto.esIngreso = oRuta.esIngreso.ToString().Trim();
+                            objeto = Modelo.SJ_RHRuta.Where(x => x.Id == route.Id).Single();
+                            objeto.RutaOrigen = route.RutaOrigen;
+                            objeto.RutaDestino = route.RutaDestino;
+                            objeto.Distancia = route.Distancia;
+                            objeto.TiempoViaje = route.TiempoViaje;
+                            objeto.Observacion = route.Observacion;
+                            objeto.abreviaturaRutaOrigen = route.abreviaturaRutaOrigen.ToString().Trim();
+                            objeto.abreviaturaRuraDestino = route.abreviaturaRuraDestino.ToString().Trim();
+                            objeto.descripcionCortaDestino = route.descripcionCortaDestino.ToString().Trim();
+                            objeto.descripcionCortaOrigen = route.descripcionCortaOrigen.ToString().Trim();
+                            objeto.esIngreso = route.esIngreso.ToString().Trim();
                             Modelo.SubmitChanges();
                             estate = true;
                         }
@@ -98,30 +98,30 @@ namespace Asistencia.Negocios
             return estate;
         }
 
-
-        public bool AddRutaIdaVuelta(SJ_RHRuta oRuta)
+        // agregar ruta de ida y vuelta
+        public bool AddRoundTripRoute(SJ_RHRuta route, string conection)
         {
             bool estate = false;
             using (TransactionScope Scope = new TransactionScope())
             {
                 string cnx = string.Empty;
-                cnx = ConfigurationManager.AppSettings["bd" + DateTime.Now.Year.ToString()].ToString();
+                cnx = ConfigurationManager.AppSettings[conection].ToString();
                 using (BDAsistenciaDataContext context = new BDAsistenciaDataContext(cnx))
                 {
                     #region Transaccion()
 
                     var resultIda = context.SJ_RHRuta.Where(x =>
-                 x.RutaOrigen == oRuta.RutaOrigen &&
-                 x.RutaDestino == oRuta.RutaDestino &&
-                 x.abreviaturaRutaOrigen == oRuta.abreviaturaRutaOrigen &&
-                 x.abreviaturaRuraDestino == oRuta.abreviaturaRuraDestino
+                 x.RutaOrigen == route.RutaOrigen &&
+                 x.RutaDestino == route.RutaDestino &&
+                 x.abreviaturaRutaOrigen == route.abreviaturaRutaOrigen &&
+                 x.abreviaturaRuraDestino == route.abreviaturaRuraDestino
                     ).ToList();
 
                     var resultVuelta = context.SJ_RHRuta.Where(x =>
-                    x.RutaOrigen == oRuta.RutaDestino &&
-                    x.RutaDestino == oRuta.RutaOrigen &&
-                    x.abreviaturaRutaOrigen == oRuta.abreviaturaRuraDestino &&
-                    x.abreviaturaRuraDestino == oRuta.abreviaturaRutaOrigen).ToList();
+                    x.RutaOrigen == route.RutaDestino &&
+                    x.RutaDestino == route.RutaOrigen &&
+                    x.abreviaturaRutaOrigen == route.abreviaturaRuraDestino &&
+                    x.abreviaturaRuraDestino == route.abreviaturaRutaOrigen).ToList();
 
                     #region Ida()
                     if (resultIda != null && resultIda.ToList().Count == 0)
@@ -129,17 +129,17 @@ namespace Asistencia.Negocios
                         #region Agregar ida
                         SJ_RHRuta objeto = new SJ_RHRuta();
                         //objeto.Id = 0;
-                        objeto.RutaOrigen = oRuta.RutaOrigen;
-                        objeto.RutaDestino = oRuta.RutaDestino;
-                        objeto.Distancia = oRuta.Distancia;
-                        objeto.TiempoViaje = oRuta.TiempoViaje;
-                        objeto.Observacion = oRuta.Observacion;
-                        objeto.IdEstado = oRuta.IdEstado;
+                        objeto.RutaOrigen = route.RutaOrigen;
+                        objeto.RutaDestino = route.RutaDestino;
+                        objeto.Distancia = route.Distancia;
+                        objeto.TiempoViaje = route.TiempoViaje;
+                        objeto.Observacion = route.Observacion;
+                        objeto.IdEstado = route.IdEstado;
                         objeto.FechaRegistro = DateTime.Now;
-                        objeto.abreviaturaRutaOrigen = oRuta.abreviaturaRutaOrigen.ToString().Trim();
-                        objeto.abreviaturaRuraDestino = oRuta.abreviaturaRuraDestino.ToString().Trim();
-                        objeto.descripcionCortaDestino = oRuta.descripcionCortaDestino.ToString().Trim();
-                        objeto.descripcionCortaOrigen = oRuta.descripcionCortaOrigen.ToString().Trim();
+                        objeto.abreviaturaRutaOrigen = route.abreviaturaRutaOrigen.ToString().Trim();
+                        objeto.abreviaturaRuraDestino = route.abreviaturaRuraDestino.ToString().Trim();
+                        objeto.descripcionCortaDestino = route.descripcionCortaDestino.ToString().Trim();
+                        objeto.descripcionCortaOrigen = route.descripcionCortaOrigen.ToString().Trim();
                         objeto.esIngreso = "1";
                         context.SJ_RHRuta.InsertOnSubmit(objeto);
                         context.SubmitChanges();
@@ -174,17 +174,17 @@ namespace Asistencia.Negocios
                         #region Agregar Vuelta
                         SJ_RHRuta objeto = new SJ_RHRuta();
                         //objeto.Id = 0;
-                        objeto.RutaOrigen = oRuta.RutaDestino;
-                        objeto.RutaDestino = oRuta.RutaOrigen;
-                        objeto.Distancia = oRuta.Distancia;
-                        objeto.TiempoViaje = oRuta.TiempoViaje;
-                        objeto.Observacion = oRuta.Observacion;
-                        objeto.IdEstado = oRuta.IdEstado;
+                        objeto.RutaOrigen = route.RutaDestino;
+                        objeto.RutaDestino = route.RutaOrigen;
+                        objeto.Distancia = route.Distancia;
+                        objeto.TiempoViaje = route.TiempoViaje;
+                        objeto.Observacion = route.Observacion;
+                        objeto.IdEstado = route.IdEstado;
                         objeto.FechaRegistro = DateTime.Now;
-                        objeto.abreviaturaRutaOrigen = oRuta.abreviaturaRuraDestino.ToString().Trim();
-                        objeto.abreviaturaRuraDestino = oRuta.abreviaturaRutaOrigen.ToString().Trim();
-                        objeto.descripcionCortaDestino = oRuta.descripcionCortaOrigen.ToString().Trim();
-                        objeto.descripcionCortaOrigen = oRuta.descripcionCortaDestino.ToString().Trim();
+                        objeto.abreviaturaRutaOrigen = route.abreviaturaRuraDestino.ToString().Trim();
+                        objeto.abreviaturaRuraDestino = route.abreviaturaRutaOrigen.ToString().Trim();
+                        objeto.descripcionCortaDestino = route.descripcionCortaOrigen.ToString().Trim();
+                        objeto.descripcionCortaOrigen = route.descripcionCortaDestino.ToString().Trim();
                         objeto.esIngreso = "0";
                         context.SJ_RHRuta.InsertOnSubmit(objeto);
                         context.SubmitChanges();
@@ -221,7 +221,7 @@ namespace Asistencia.Negocios
         }
 
 
-        public void Anular(int CodigoRegistro)
+        public void Anular(int routerId, string conection)
         {
             using (TransactionScope Scope = new TransactionScope())
             {
@@ -229,17 +229,17 @@ namespace Asistencia.Negocios
 
                 string cnx = string.Empty;
 
-                cnx = ConfigurationManager.AppSettings["bd" + DateTime.Now.Year.ToString()].ToString();
+                cnx = ConfigurationManager.AppSettings[conection].ToString();
 
                 using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
                 {
-                    if (Modelo.SJ_RHRuta.Where(x => x.Id == CodigoRegistro).ToList().Count == 1)
+                    if (Modelo.SJ_RHRuta.Where(x => x.Id == routerId).ToList().Count == 1)
                     {
                         //Anular
                         try
                         {
                             SJ_RHRuta oRuta = new SJ_RHRuta();
-                            oRuta = Modelo.SJ_RHRuta.Where(x => x.Id == CodigoRegistro).Single();
+                            oRuta = Modelo.SJ_RHRuta.Where(x => x.Id == routerId).Single();
                             oRuta.IdEstado = "AN";
                             Modelo.SubmitChanges();
                         }
@@ -258,7 +258,7 @@ namespace Asistencia.Negocios
             }
         }
 
-        public void Eliminar(int CodigoRegistro)
+        public void Eliminar(int idRoute, string conection)
         {
             using (TransactionScope Scope = new TransactionScope())
             {
@@ -266,17 +266,17 @@ namespace Asistencia.Negocios
 
                 string cnx = string.Empty;
 
-                cnx = ConfigurationManager.AppSettings["bd" + DateTime.Now.Year.ToString()].ToString();
+                cnx = ConfigurationManager.AppSettings[conection].ToString();
 
                 using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
                 {
-                    if (Modelo.SJ_RHRuta.Where(x => x.Id == CodigoRegistro).ToList().Count == 1)
+                    if (Modelo.SJ_RHRuta.Where(x => x.Id == idRoute).ToList().Count == 1)
                     {
                         //Anular
                         try
                         {
                             SJ_RHRuta oRuta = new SJ_RHRuta();
-                            oRuta = Modelo.SJ_RHRuta.Where(x => x.Id == CodigoRegistro).Single();
+                            oRuta = Modelo.SJ_RHRuta.Where(x => x.Id == idRoute).Single();
                             Modelo.SJ_RHRuta.DeleteOnSubmit(oRuta);
                             Modelo.SubmitChanges();
                         }
@@ -295,14 +295,14 @@ namespace Asistencia.Negocios
             }
         }
 
-        public string GetSourceAbbreviatedPathName(string period, string abbreviateCode, string rutaOrigen)
+        public string GetSourceAbbreviatedPathName(string conection, string abbreviateCode, string routeSource)
         {
             string cnx, abbreviatePathName = string.Empty;
 
-            cnx = ConfigurationManager.AppSettings["bd" + period].ToString();
+            cnx = ConfigurationManager.AppSettings["bd" + conection].ToString();
             using (BDAsistenciaDataContext context = new BDAsistenciaDataContext(cnx))
             {
-                var resulta = context.SJ_RHRuta.Where(x => x.RutaOrigen == rutaOrigen && x.abreviaturaRutaOrigen.Trim() == abbreviateCode);
+                var resulta = context.SJ_RHRuta.Where(x => x.RutaOrigen == routeSource && x.abreviaturaRutaOrigen.Trim() == abbreviateCode);
                 if (resulta != null && resulta.ToList().Count > 0)
                 {
                     abbreviatePathName = resulta.FirstOrDefault().descripcionCortaOrigen.Trim();
@@ -311,11 +311,11 @@ namespace Asistencia.Negocios
             return abbreviatePathName;
         }
 
-        public string GetDestinationAbbreviatedPathName(string period, string abbreviateCode, string rutaDestino)
+        public string GetDestinationAbbreviatedPathName(string conection, string abbreviateCode, string rutaDestino)
         {
             string cnx, abbreviatePathName = string.Empty;
 
-            cnx = ConfigurationManager.AppSettings["bd" + period].ToString();
+            cnx = ConfigurationManager.AppSettings["bd" + conection].ToString();
             using (BDAsistenciaDataContext context = new BDAsistenciaDataContext(cnx))
             {
                 var resulta = context.SJ_RHRuta.Where(x => x.RutaDestino.Trim() == rutaDestino.Trim() && x.abreviaturaRuraDestino.Trim() == abbreviateCode.Trim());

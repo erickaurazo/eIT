@@ -19,12 +19,10 @@ namespace Asistencia
 {
 
     public partial class CatalogoTipoBloqueoAsistencia : Form
-    {
-        private string periodo = DateTime.Now.Year.ToString();
-        private string periodoConsulta;
+    {        
+        
         private string fileName;
         private bool exportVisualSettings;        
-
         private TipoBloqueoParaAsistenciaController modelo;
         private List<ASJ_ObtenerListadoDeTipoPersonalbloqueadoResult> listado;        
         private ASJ_ObtenerListadoDeTipoPersonalbloqueadoResult oTipoBloqueoSeleccionado;
@@ -64,7 +62,7 @@ namespace Asistencia
             {
                 MyControlsDataBinding.Extensions.Globales.Servidor = ConfigurationManager.AppSettings["Servidor"].ToString();
                 MyControlsDataBinding.Extensions.Globales.UsuarioBaseDatos = ConfigurationManager.AppSettings["Usuario"].ToString();
-                MyControlsDataBinding.Extensions.Globales.BaseDatos = ConfigurationManager.AppSettings["BasesDatos" + periodo].ToString();
+                MyControlsDataBinding.Extensions.Globales.BaseDatos = ConfigurationManager.AppSettings[_conection].ToString();
                 MyControlsDataBinding.Extensions.Globales.ClaveBaseDatos = ConfigurationManager.AppSettings["Clave"].ToString();
                 MyControlsDataBinding.Extensions.Globales.IdEmpresa = "001";
                 MyControlsDataBinding.Extensions.Globales.Empresa = "EMPRESA AGRICOLA SAN JOSE SA";
@@ -88,7 +86,7 @@ namespace Asistencia
         {
             modelo = new TipoBloqueoParaAsistenciaController();
             listado = new List<ASJ_ObtenerListadoDeTipoPersonalbloqueadoResult>();
-            listado = modelo.ObtenerListadoTipoBloqueo(periodoConsulta).ToList();
+            listado = modelo.GetTypeLock(_conection).ToList();
 
         }
 
@@ -151,7 +149,7 @@ namespace Asistencia
         {
             try
             {
-                periodoConsulta = DateTime.Now.Year.ToString();
+                
                 mnPrincipal.Enabled = false;
                 gbListado.Enabled = false;
                 gbMantenimiento.Enabled = false;
@@ -284,7 +282,7 @@ namespace Asistencia
                     personalBloqueo.descripcion = this.txtDescripcion.Text.Trim();
                     personalBloqueo.estado = Convert.ToByte(this.txtIdEstado.Text.Trim());
 
-                    string resultadoConsulta = modelo.Grabar(periodo, personalBloqueo);
+                    string resultadoConsulta = modelo.Add(_conection, personalBloqueo);
                     MessageBox.Show(resultadoConsulta, "MENSAJE DEL SISTEMA");
                     gbListado.Enabled = !false;
                     gbMantenimiento.Enabled = !true;
@@ -333,7 +331,7 @@ namespace Asistencia
                     personalBloqueo.color = this.cboColor.Text;
                     personalBloqueo.descripcion = this.txtDescripcion.Text.Trim();
                     personalBloqueo.estado = Convert.ToByte(this.txtIdEstado.Text.Trim());
-                    modelo.Anular(periodo, personalBloqueo);
+                    modelo.ChangeState(_conection, personalBloqueo);
                     gbListado.Enabled = !false;
                     gbMantenimiento.Enabled = !true;
                     btnEliminar.Enabled = !false;
@@ -364,7 +362,7 @@ namespace Asistencia
                 personalBloqueo.color = this.cboColor.Text;
                 personalBloqueo.descripcion = this.txtDescripcion.Text.Trim();
                 personalBloqueo.estado = Convert.ToByte(this.txtIdEstado.Text.Trim());
-                modelo.Eliminar(periodo, personalBloqueo);
+                modelo.Delete(_conection, personalBloqueo);
                 gbListado.Enabled = !false;
                 gbMantenimiento.Enabled = !true;
                 btnEliminar.Enabled = !false;

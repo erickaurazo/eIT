@@ -170,19 +170,19 @@ namespace Asistencia.Negocios
             return status;
         }
 
-        public bool ResetPasswordByUser(string period, ASJ_USUARIOS user, string companyId)
+        public bool ResetPasswordByUser(string conection, ASJ_USUARIOS user, string companyId)
         {
             bool status = false;
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + period];
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (TransactionScope scope = new TransactionScope())
             {
                 using (BDAsistenciaDataContext context = new BDAsistenciaDataContext(cnx))
                 {
-                    var resultQuery = context.ASJ_USUARIOS.Where(x => x.IdUsuario.Trim() == user.IdUsuario.Trim()).ToList();
+                    var resultQuery = context.ASJ_USUARIOS.Where(x => x.IdUsuario.Trim() == user.IdUsuario.Trim() && x.EmpresaID.Trim() == companyId.Trim()).ToList();
                     if (resultQuery != null && resultQuery.Count == 1)
                     {
-                        #region Edit()
+                        #region ResetPassword()
                         ASJ_USUARIOS oUserNew = new ASJ_USUARIOS();
                         oUserNew = resultQuery.Single();
                         oUserNew.Password = string.Empty;
@@ -196,6 +196,35 @@ namespace Asistencia.Negocios
             }
             return status;
         }
+
+
+        public bool ChangePasswordByUser(string conection, ASJ_USUARIOS user, string companyId)
+        {
+            bool status = false;
+            string cnx = string.Empty;
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
+            using (TransactionScope scope = new TransactionScope())
+            {
+                using (BDAsistenciaDataContext context = new BDAsistenciaDataContext(cnx))
+                {
+                    var resultQuery = context.ASJ_USUARIOS.Where(x => x.IdUsuario.Trim() == user.IdUsuario.Trim() && x.EmpresaID.Trim() == companyId.Trim()).ToList();
+                    if (resultQuery != null && resultQuery.Count == 1)
+                    {
+                        #region ResetPassword()
+                        ASJ_USUARIOS oUserNew = new ASJ_USUARIOS();
+                        oUserNew = resultQuery.Single();
+                        oUserNew.Password = user.Password;
+                        context.SubmitChanges();
+                        status = true;
+                        #endregion
+                    }
+                }
+                scope.Complete();
+
+            }
+            return status;
+        }
+
 
         public bool UpdatePassWordByUser(string conection, ASJ_USUARIOS user, string companyId)
         {

@@ -44,7 +44,7 @@ namespace Asistencia
                         ASJ_USUARIOS user = new ASJ_USUARIOS();
                         user.IdUsuario = _userId;
                         user.Password = this.txtContraseña.Text.Trim();
-                        if (model.ChangeStateUser(_conection, user, _companyId) == true)
+                        if (model.ChangePasswordByUser(_conection, user, _companyId) == true)
                         {
                             MessageBox.Show("Cambio de clave satisfactoria", "ADVERTENCIA DEL SISTEMA");
                         }

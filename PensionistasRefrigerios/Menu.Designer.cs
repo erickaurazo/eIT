@@ -86,6 +86,8 @@
             this.lblNombre = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblNombreDescripcion = new System.Windows.Forms.ToolStripStatusLabel();
             this.bgwHilo = new System.ComponentModel.BackgroundWorker();
+            this.lblConexión = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblConexionDescripcion = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -106,7 +108,7 @@
             this.menuStrip.MdiWindowListItem = this.windowsMenu;
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip.Size = new System.Drawing.Size(663, 24);
+            this.menuStrip.Size = new System.Drawing.Size(1203, 24);
             this.menuStrip.TabIndex = 11;
             this.menuStrip.Text = "MenuPrincipal";
             // 
@@ -149,6 +151,7 @@
             // 
             // GoExportaciones
             // 
+            this.GoExportaciones.Enabled = false;
             this.GoExportaciones.Image = ((System.Drawing.Image)(resources.GetObject("GoExportaciones.Image")));
             this.GoExportaciones.Name = "GoExportaciones";
             this.GoExportaciones.Size = new System.Drawing.Size(192, 22);
@@ -162,6 +165,7 @@
             // 
             // GoMantenimiento
             // 
+            this.GoMantenimiento.Enabled = false;
             this.GoMantenimiento.Image = ((System.Drawing.Image)(resources.GetObject("GoMantenimiento.Image")));
             this.GoMantenimiento.Name = "GoMantenimiento";
             this.GoMantenimiento.Size = new System.Drawing.Size(192, 22);
@@ -170,6 +174,7 @@
             // 
             // GoMaquinaria
             // 
+            this.GoMaquinaria.Enabled = false;
             this.GoMaquinaria.Image = ((System.Drawing.Image)(resources.GetObject("GoMaquinaria.Image")));
             this.GoMaquinaria.Name = "GoMaquinaria";
             this.GoMaquinaria.Size = new System.Drawing.Size(192, 22);
@@ -183,6 +188,7 @@
             // 
             // GoSanidad
             // 
+            this.GoSanidad.Enabled = false;
             this.GoSanidad.Image = ((System.Drawing.Image)(resources.GetObject("GoSanidad.Image")));
             this.GoSanidad.Name = "GoSanidad";
             this.GoSanidad.Size = new System.Drawing.Size(192, 22);
@@ -191,6 +197,7 @@
             // 
             // GoEvaluacionAgricola
             // 
+            this.GoEvaluacionAgricola.Enabled = false;
             this.GoEvaluacionAgricola.Image = ((System.Drawing.Image)(resources.GetObject("GoEvaluacionAgricola.Image")));
             this.GoEvaluacionAgricola.Name = "GoEvaluacionAgricola";
             this.GoEvaluacionAgricola.Size = new System.Drawing.Size(192, 22);
@@ -431,7 +438,7 @@
             // GoSistemaUtilitariosElegirPeriodo
             // 
             this.GoSistemaUtilitariosElegirPeriodo.Name = "GoSistemaUtilitariosElegirPeriodo";
-            this.GoSistemaUtilitariosElegirPeriodo.Size = new System.Drawing.Size(152, 22);
+            this.GoSistemaUtilitariosElegirPeriodo.Size = new System.Drawing.Size(147, 22);
             this.GoSistemaUtilitariosElegirPeriodo.Text = "Elegir periodo";
             this.GoSistemaUtilitariosElegirPeriodo.Visible = false;
             // 
@@ -497,10 +504,12 @@
             this.lblUsuario,
             this.lblUsuarioNombre,
             this.lblNombre,
-            this.lblNombreDescripcion});
-            this.statusStrip.Location = new System.Drawing.Point(0, 407);
+            this.lblNombreDescripcion,
+            this.lblConexión,
+            this.lblConexionDescripcion});
+            this.statusStrip.Location = new System.Drawing.Point(0, 433);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(663, 22);
+            this.statusStrip.Size = new System.Drawing.Size(1203, 22);
             this.statusStrip.TabIndex = 17;
             this.statusStrip.Text = "StatusStrip";
             // 
@@ -515,7 +524,7 @@
             // 
             this.lblUsuarioNombre.AutoSize = false;
             this.lblUsuarioNombre.Name = "lblUsuarioNombre";
-            this.lblUsuarioNombre.Size = new System.Drawing.Size(200, 17);
+            this.lblUsuarioNombre.Size = new System.Drawing.Size(100, 17);
             this.lblUsuarioNombre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblNombre
@@ -529,7 +538,7 @@
             // 
             this.lblNombreDescripcion.AutoSize = false;
             this.lblNombreDescripcion.Name = "lblNombreDescripcion";
-            this.lblNombreDescripcion.Size = new System.Drawing.Size(400, 17);
+            this.lblNombreDescripcion.Size = new System.Drawing.Size(200, 17);
             this.lblNombreDescripcion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // bgwHilo
@@ -537,10 +546,24 @@
             this.bgwHilo.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwHilo_DoWork);
             this.bgwHilo.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwHilo_RunWorkerCompleted);
             // 
+            // lblConexión
+            // 
+            this.lblConexión.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConexión.Name = "lblConexión";
+            this.lblConexión.Size = new System.Drawing.Size(65, 17);
+            this.lblConexión.Text = "Conexión :";
+            // 
+            // lblConexionDescripcion
+            // 
+            this.lblConexionDescripcion.AutoSize = false;
+            this.lblConexionDescripcion.Name = "lblConexionDescripcion";
+            this.lblConexionDescripcion.Size = new System.Drawing.Size(200, 17);
+            this.lblConexionDescripcion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // Menu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.ClientSize = new System.Drawing.Size(663, 429);
+            this.ClientSize = new System.Drawing.Size(1203, 455);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -619,5 +642,7 @@
         private System.Windows.Forms.ToolStripMenuItem GoExportaciones;
         private System.Windows.Forms.ToolStripMenuItem GoSistemaUtilitariosElegirPeriodo;
         private System.ComponentModel.BackgroundWorker bgwHilo;
+        private System.Windows.Forms.ToolStripStatusLabel lblConexión;
+        private System.Windows.Forms.ToolStripStatusLabel lblConexionDescripcion;
     }
 }

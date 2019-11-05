@@ -21,30 +21,22 @@ namespace Asistencia
 {
     public partial class CatalogoEmpresaDeServicioDeTransporteDePersonal : RadForm
     {
-        #region Declaración de Variables()
-        private string Periodo;
+        #region Declaración de Variables()        
         private TipoMovilidadController typeOfMobilityController; // tipo de movilidad
         private List<TipoMovilidad> typesOfMobility;
         private List<SJ_RHTransportistaChofer> driversRemoved = new List<SJ_RHTransportistaChofer>();
         private List<SJ_RHTransportistaContrato> contractRemoved = new List<SJ_RHTransportistaContrato>();
         private List<SJ_RHTransportistaContrato> documentRemoved = new List<SJ_RHTransportistaContrato>();
         private List<SJ_RHTransportistaRuta> routeRemoved = new List<SJ_RHTransportistaRuta>();
-
         private List<SJ_RHTransportistaChofer> drivers = new List<SJ_RHTransportistaChofer>();
         private List<SJ_RHTransportistaContrato> contracts = new List<SJ_RHTransportistaContrato>();
         private List<SJ_RHTransportistaRuta> routes = new List<SJ_RHTransportistaRuta>();
         private List<SJ_RHTransportistaContrato> documents = new List<SJ_RHTransportistaContrato>();
-
         private CarrierController model;
         private List<SJ_RHListarDetalleTransportistaContratoResult> contractListByPerQuery;
         private List<SJ_RHListarDetalleTransportistaContratoResult> listOfDocumentsPerQuery;
         private List<SJ_RHListarDetalleTransportistaChoferResult> driversListPerQuery;
         private List<SJ_RHListarDetalleTransportistaRutaResult> routeListPerQuery;
-
-
-
-
-
         private string message;
         private SJ_RHTransportista oTransportista;
         private int posicionX;
@@ -57,12 +49,10 @@ namespace Asistencia
         private object item;
         private SJ_RHListarCatalogoEmpresasTransportePersonalCampoResult transportUnit;
         private bool duplicado;
-        private string tradename;
-        private string period;
+        private string tradename;        
         private string _conection;
         private ASJ_USUARIOS _user;
         private string _companyId;
-
         #endregion
 
         public CatalogoEmpresaDeServicioDeTransporteDePersonal()
@@ -73,7 +63,7 @@ namespace Asistencia
             RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
             RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
             Inicio();
-            period = DateTime.Now.Year.ToString();
+            
             ObtenerListacboTipoMovilidad();
             ObtenerListaTransportistas();
             gbEdit.Enabled = false;
@@ -94,7 +84,7 @@ namespace Asistencia
             RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
             RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
             Inicio();
-            period = DateTime.Now.Year.ToString();
+            
             ObtenerListacboTipoMovilidad();
             ObtenerListaTransportistas();
             gbEdit.Enabled = false;
@@ -152,7 +142,7 @@ namespace Asistencia
         {
             CarrierController transportistaNeg = new CarrierController();
             ListadoTransportista = new List<SJ_RHListarCatalogoEmpresasTransportePersonalCampoResult>();
-            ListadoTransportista = transportistaNeg.ListarCatalogoEmpresasTransportePersonalCampo();
+            ListadoTransportista = transportistaNeg.ListarCatalogoEmpresasTransportePersonalCampo(_conection);
         }
 
         private void ShowResult()
@@ -188,10 +178,10 @@ namespace Asistencia
         {
             try
             {
-                Periodo = DateTime.Now.Year.ToString();
+                
                 MyControlsDataBinding.Extensions.Globales.Servidor = ConfigurationManager.AppSettings["Servidor"].ToString();
                 MyControlsDataBinding.Extensions.Globales.UsuarioBaseDatos = ConfigurationManager.AppSettings["Usuario"].ToString();
-                MyControlsDataBinding.Extensions.Globales.BaseDatos = ConfigurationManager.AppSettings["BasesDatos" + Periodo].ToString();
+                MyControlsDataBinding.Extensions.Globales.BaseDatos = ConfigurationManager.AppSettings[_conection].ToString();
                 MyControlsDataBinding.Extensions.Globales.ClaveBaseDatos = ConfigurationManager.AppSettings["Clave"].ToString();
                 MyControlsDataBinding.Extensions.Globales.IdEmpresa = "001";
                 MyControlsDataBinding.Extensions.Globales.Empresa = "EMPRESA AGRICOLA SAN JOSE SA";
@@ -303,7 +293,7 @@ namespace Asistencia
                 // Cargar registos en la Grilla, en caso tenga registros
                 model = new CarrierController();
                 contractListByPerQuery = new List<SJ_RHListarDetalleTransportistaContratoResult>();
-                contractListByPerQuery = model.ListContractByCarrierId(Convert.ToInt32(carrierCode)).ToList();
+                contractListByPerQuery = model.ListContractByCarrierId(Convert.ToInt32(carrierCode), _conection).ToList();
                 dgvContratos.CargarDatos(contractListByPerQuery.ToDataTable<SJ_RHListarDetalleTransportistaContratoResult>());
                 dgvContratos.Refresh();
                 dgvContratos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
@@ -328,7 +318,7 @@ namespace Asistencia
                 model = new CarrierController();
                 driversListPerQuery = new List<SJ_RHListarDetalleTransportistaChoferResult>();
 
-                driversListPerQuery = model.ListarDetalleChofer(Convert.ToInt32(carrierCode)).ToList();
+                driversListPerQuery = model.ListarDetalleChofer(Convert.ToInt32(carrierCode), _conection).ToList();
                 dgvChofer.CargarDatos(driversListPerQuery.ToDataTable<SJ_RHListarDetalleTransportistaChoferResult>());
                 dgvChofer.Refresh();
                 dgvChofer.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
@@ -354,7 +344,7 @@ namespace Asistencia
                 model = new CarrierController();
                 routeListPerQuery = new List<SJ_RHListarDetalleTransportistaRutaResult>();
 
-                routeListPerQuery = model.ListRouterByCarrierId(Convert.ToInt32(carrierCode)).ToList();
+                routeListPerQuery = model.ListRouterByCarrierId(Convert.ToInt32(carrierCode), _conection).ToList();
                 this.dgvRuta.CargarDatos(routeListPerQuery.ToDataTable<SJ_RHListarDetalleTransportistaRutaResult>());
                 this.dgvRuta.Refresh();
                 dgvRuta.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
@@ -380,7 +370,7 @@ namespace Asistencia
                 // Cargar registos en la Grilla, en caso tenga registros
                 model = new CarrierController();
                 listOfDocumentsPerQuery = new List<SJ_RHListarDetalleTransportistaContratoResult>();
-                listOfDocumentsPerQuery = model.ListDocumentsByCarrierId(Convert.ToInt32(carrierCode)).ToList();
+                listOfDocumentsPerQuery = model.ListDocumentsByCarrierId(Convert.ToInt32(carrierCode), _conection).ToList();
                 dgvDocumentacion.CargarDatos(listOfDocumentsPerQuery.ToDataTable<SJ_RHListarDetalleTransportistaContratoResult>());
                 dgvDocumentacion.Refresh();
                 dgvDocumentacion.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
@@ -596,7 +586,7 @@ namespace Asistencia
 
 
                 model = new CarrierController();
-                status = model.AddCarrier(period, oTransportista, drivers, contracts, driversRemoved, contractRemoved, routeRemoved, routes, documentRemoved, documents);
+                status = model.AddCarrier(_conection, oTransportista, drivers, contracts, driversRemoved, contractRemoved, routeRemoved, routes, documentRemoved, documents);
 
             }
             catch (Exception Ex)
@@ -1266,14 +1256,14 @@ namespace Asistencia
                     if (this.statusCode != "AN")
                     {
                         model = new CarrierController();
-                        var ValidarMovimientoFacturacion = model.ObtenerListaMovimientoFacturacionTransportistaPorProveedor(Convert.ToInt32(CodigoTransportista)).ToList();
+                        var ValidarMovimientoFacturacion = model.ObtenerListaMovimientoFacturacionTransportistaPorProveedor(Convert.ToInt32(CodigoTransportista), _conection).ToList();
                         if (ValidarMovimientoFacturacion != null && ValidarMovimientoFacturacion.ToList().Count > 0)
                         {
                             MessageBox.Show("El transportista no se puede eliminar por que tiene asociadas " + ValidarMovimientoFacturacion.ToList().Count.ToString() + " facturas.\nPara eliminar el registro, primero elimine el movimiento de facturación asociado al este proveedor", "Mensaje del Sistema");
                         }
                         else
                         {
-                            var ValidarMovimientoPartesRecorrido = model.ObtenerListaMovimientoParteRecorridoTransportistaPorProveedor(Convert.ToInt32(CodigoTransportista)).ToList();
+                            var ValidarMovimientoPartesRecorrido = model.ObtenerListaMovimientoParteRecorridoTransportistaPorProveedor(Convert.ToInt32(CodigoTransportista), _conection).ToList();
                             if (ValidarMovimientoPartesRecorrido != null && ValidarMovimientoPartesRecorrido.ToList().Count > 0)
                             {
                                 string documentos = string.Empty;
@@ -1286,7 +1276,7 @@ namespace Asistencia
                             else
                             {
                                 model = new CarrierController();
-                                model.EliminarTransportista(Convert.ToInt32(CodigoTransportista));
+                                model.EliminarTransportista(Convert.ToInt32(CodigoTransportista), _conection);
                                 RadMessageBox.Show("Eliminado correctamente", "Atención");
                                 ObtenerListaTransportistas();
                                 GetContractListByCarrieId(this.txtCodigo.Text);
@@ -1433,7 +1423,7 @@ namespace Asistencia
                     posicionY = this.dgvTransportista.CurrentColumn.Index;
 
                     model = new CarrierController();
-                    model.AnularTransportista(Convert.ToInt32(CodigoTransportista));
+                    model.AnularTransportista(Convert.ToInt32(CodigoTransportista), _conection);
                     RadMessageBox.Show("Anulado correctamente", "Atención");
 
                     ObtenerListaTransportistas();
@@ -1554,7 +1544,7 @@ namespace Asistencia
                     if (e.KeyCode == Keys.F3)
                     {
                         frmBusquedaFormatoSimple busquedas = new frmBusquedaFormatoSimple();
-                        busquedas.ListaGeneralResultado = model.GetRutasSistemaTransportistas();
+                        busquedas.ListaGeneralResultado = model.GetRutasSistemaTransportistas(_conection);
                         busquedas.Text = "Buscar Rutas";
                         busquedas.txtTextoFiltro.Text = "";
                         if (busquedas.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
@@ -1656,6 +1646,7 @@ namespace Asistencia
                                 driversRemoved = new List<SJ_RHTransportistaChofer>();
                                 contractRemoved = new List<SJ_RHTransportistaContrato>();
                                 routeRemoved = new List<SJ_RHTransportistaRuta>();
+                                documentRemoved = new List<SJ_RHTransportistaContrato>();
 
                                 GetContractListByCarrieId(CodigoTransportista);
                                 GetDriverListByCarrieId(CodigoTransportista);
@@ -1762,7 +1753,7 @@ namespace Asistencia
         {
             model = new CarrierController();
             duplicado = false;
-            duplicado = model.VerificarDuplicidadPlaca(numeroPlaca);
+            duplicado = model.VerificarDuplicidadPlaca(numeroPlaca, _conection);
 
             pcbDuplicidadPlaca.Visible = false;
             pcbValidadorPlaca.Visible = true;
@@ -1790,7 +1781,7 @@ namespace Asistencia
         {
             model = new CarrierController();
             tradename = "";
-            tradename = model.ObtenerNombreComercialByNroRUC(numeroRUC);
+            tradename = model.ObtenerNombreComercialByNroRUC(numeroRUC, _conection);
 
             this.txtNombreComercial.Text = tradename;
 
@@ -2090,7 +2081,7 @@ namespace Asistencia
                     if (e.KeyCode == Keys.F3)
                     {
                         frmBusquedaFormatoSimple search = new frmBusquedaFormatoSimple();
-                        search.ListaGeneralResultado = model.GetTypeDocumentoFormat();
+                        search.ListaGeneralResultado = model.GetTypeDocumentoFormat(_conection);
                         search.Text = "Buscar tipo de documento";
                         search.txtTextoFiltro.Text = "";
                         if (search.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)

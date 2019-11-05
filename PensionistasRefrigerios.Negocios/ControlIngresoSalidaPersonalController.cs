@@ -11,32 +11,31 @@ namespace Asistencia.Negocios
         private string cnx;
 
 
-
-        public void TransferirAsistenciaObservada(string periodo, ASJ_ReporteAsistenciaObservadosResult registroObservado)
+        // Transferir Asistencia | Transfer assistance
+        public void TransferAssistance(string conection, ASJ_ReporteAsistenciaObservadosResult Assistance)
         {
 
             try
             {
-
                 ASJ_DCONTROLINGRESOSALIDA_PERSONAL registroObservadoT = new ASJ_DCONTROLINGRESOSALIDA_PERSONAL();
                 ASJ_DCONTROLINGRESOSALIDA_PERSONAL registroObservadoU = new ASJ_DCONTROLINGRESOSALIDA_PERSONAL();
                 ASJ_RegistroTransferenciaTransportes registroAsistenciaBusT = new ASJ_RegistroTransferenciaTransportes();
 
-                cnx = ConfigurationManager.AppSettings["bd" + periodo.Substring(0, 4)].ToString();
+                cnx = ConfigurationManager.AppSettings[conection].ToString();
                 using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
                 {
                     Modelo.CommandTimeout = 9999900;
                     using (TransactionScope scope = new TransactionScope())
                     {
-                        if (registroObservado != null)
+                        if (Assistance != null)
                         {
-                            if (registroObservado.IDCONTROLINGRESO != null && registroObservado.ITEM != null)
+                            if (Assistance.IDCONTROLINGRESO != null && Assistance.ITEM != null)
                             {
                                 #region 
-                                if (registroObservado.IDCONTROLINGRESO.ToString().Trim() != string.Empty && registroObservado.ITEM.ToString().Trim() != string.Empty)
+                                if (Assistance.IDCONTROLINGRESO.ToString().Trim() != string.Empty && Assistance.ITEM.ToString().Trim() != string.Empty)
                                 {
                                     // verifico que el registro exista y que no se haya transferido antes.
-                                    var listadoRegistroObservado = Modelo.ASJ_DCONTROLINGRESOSALIDA_PERSONAL.Where(x => x.IDCONTROLINGRESO.ToString().Trim() == registroObservado.IDCONTROLINGRESO.ToString().Trim() && x.ITEM.ToString().Trim() == registroObservado.ITEM.ToString().Trim() && x.esimportado == 0).ToList();
+                                    var listadoRegistroObservado = Modelo.ASJ_DCONTROLINGRESOSALIDA_PERSONAL.Where(x => x.IDCONTROLINGRESO.ToString().Trim() == Assistance.IDCONTROLINGRESO.ToString().Trim() && x.ITEM.ToString().Trim() == Assistance.ITEM.ToString().Trim() && x.esimportado == 0).ToList();
 
                                     if (listadoRegistroObservado.ToList().Count == 1)
                                     {
@@ -44,7 +43,7 @@ namespace Asistencia.Negocios
 
 
                                         // busco que exista asistencia con el código de la cabecera
-                                        var listadoRegistroAsistenciaByFecha = Modelo.DCONTROLINGRESOSALIDA_PERSONAL.Where(x => x.IDCONTROLINGRESO == registroObservado.IDCONTROLINGRESO).ToList();
+                                        var listadoRegistroAsistenciaByFecha = Modelo.DCONTROLINGRESOSALIDA_PERSONAL.Where(x => x.IDCONTROLINGRESO == Assistance.IDCONTROLINGRESO).ToList();
                                         int ultimoCorrelativo = listadoRegistroAsistenciaByFecha.Max(x => x.CORRELATIVO) + 1;
                                         string itemUltimoCorrelativo = Modelo.ASJ_ITEMS_NUEVOS.Where(x => x.numero == ultimoCorrelativo).FirstOrDefault().item.ToString().Trim();
 
@@ -153,7 +152,7 @@ namespace Asistencia.Negocios
                                                     Modelo.SubmitChanges();
                                                 }
 
-                                                Modelo.ASJ_ActualizarAsistenciaObservada(registroObservado.IDCONTROLINGRESO.ToString().Trim(), registroObservado.ITEM.ToString().Trim());
+                                                Modelo.ASJ_ActualizarAsistenciaObservada(Assistance.IDCONTROLINGRESO.ToString().Trim(), Assistance.ITEM.ToString().Trim());
                                                 #endregion
                                             }
                                         }
@@ -177,7 +176,8 @@ namespace Asistencia.Negocios
         }
 
 
-        public void TransferirAsistenciasObservadaByPersona(string periodo, ASJ_ReporteAsistenciaObservadosResult registroObservado)
+        // transferir asistencias observadas por persona
+        public void TransferirAsistenciasObservadaByPersona(string conection, ASJ_ReporteAsistenciaObservadosResult Assistance, ASJ_USUARIOS user)
         {
 
             try
@@ -187,21 +187,21 @@ namespace Asistencia.Negocios
                 ASJ_DCONTROLINGRESOSALIDA_PERSONAL registroObservadoU = new ASJ_DCONTROLINGRESOSALIDA_PERSONAL();
                 ASJ_RegistroTransferenciaTransportes registroAsistenciaBusT = new ASJ_RegistroTransferenciaTransportes();
 
-                cnx = ConfigurationManager.AppSettings["bd" + periodo.Substring(0, 4)].ToString();
+                cnx = ConfigurationManager.AppSettings[conection].ToString();
                 using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
                 {
                     Modelo.CommandTimeout = 9999900;
                     using (TransactionScope scope = new TransactionScope())
                     {
-                        if (registroObservado != null)
+                        if (Assistance != null)
                         {
-                            if (registroObservado.IDCONTROLINGRESO != null && registroObservado.ITEM != null)
+                            if (Assistance.IDCONTROLINGRESO != null && Assistance.ITEM != null)
                             {
                                 #region 
-                                if (registroObservado.IDCONTROLINGRESO.ToString().Trim() != string.Empty && registroObservado.ITEM.ToString().Trim() != string.Empty)
+                                if (Assistance.IDCONTROLINGRESO.ToString().Trim() != string.Empty && Assistance.ITEM.ToString().Trim() != string.Empty)
                                 {
                                     // verifico que el registro exista y que no se haya transferido antes.
-                                    var listadoRegistroObservado = Modelo.ASJ_DCONTROLINGRESOSALIDA_PERSONAL.Where(x => x.IDCONTROLINGRESO.ToString().Trim() == registroObservado.IDCONTROLINGRESO.ToString().Trim() && x.ITEM.ToString().Trim() == registroObservado.ITEM.ToString().Trim() && x.esimportado == 0).ToList();
+                                    var listadoRegistroObservado = Modelo.ASJ_DCONTROLINGRESOSALIDA_PERSONAL.Where(x => x.IDCONTROLINGRESO.ToString().Trim() == Assistance.IDCONTROLINGRESO.ToString().Trim() && x.ITEM.ToString().Trim() == Assistance.ITEM.ToString().Trim() && x.esimportado == 0).ToList();
 
                                     if (listadoRegistroObservado.ToList().Count == 1)
                                     {
@@ -209,7 +209,7 @@ namespace Asistencia.Negocios
 
 
                                         // busco que exista asistencia con el código de la cabecera
-                                        var listadoRegistroAsistenciaByFecha = Modelo.DCONTROLINGRESOSALIDA_PERSONAL.Where(x => x.IDCONTROLINGRESO == registroObservado.IDCONTROLINGRESO).ToList();
+                                        var listadoRegistroAsistenciaByFecha = Modelo.DCONTROLINGRESOSALIDA_PERSONAL.Where(x => x.IDCONTROLINGRESO == Assistance.IDCONTROLINGRESO).ToList();
                                         int ultimoCorrelativo = listadoRegistroAsistenciaByFecha.Max(x => x.CORRELATIVO) + 1;
                                         string itemUltimoCorrelativo = Modelo.ASJ_ITEMS_NUEVOS.Where(x => x.numero == ultimoCorrelativo).FirstOrDefault().item.ToString().Trim();
 
@@ -232,7 +232,7 @@ namespace Asistencia.Negocios
                                                 detalleAsistenciaByGarita.TIPO = registroObservadoT.TIPO;
                                                 detalleAsistenciaByGarita.FECHACREACION = registroObservadoT.FECHACREACION;
                                                 detalleAsistenciaByGarita.idgrupo_trabajo = registroObservadoT.idgrupo_trabajo != null ? registroObservadoT.idgrupo_trabajo.ToString().Trim() : string.Empty;
-                                                detalleAsistenciaByGarita.idusuario = registroObservadoT.idusuario;
+                                                detalleAsistenciaByGarita.idusuario = user.IdUsuario != null ? user.IdUsuario.Trim() : registroObservadoT.idusuario;
                                                 //detalleAsistenciaByGarita.soloctrl_ingresosalida = registroObservadoT.soloctrl_ingresosalida;
                                                 detalleAsistenciaByGarita.origen = registroObservadoT.origen != null ? registroObservadoT.origen.ToString().Trim() : string.Empty;
                                                 detalleAsistenciaByGarita.esimportado = 1;
@@ -247,7 +247,6 @@ namespace Asistencia.Negocios
                                                 detalleAsistenciaByGarita.idlabor = registroObservadoT.idlabor != null ? registroObservadoT.idlabor.ToString().Trim() : string.Empty;
                                                 Modelo.DCONTROLINGRESOSALIDA_PERSONAL.InsertOnSubmit(detalleAsistenciaByGarita);
                                                 Modelo.SubmitChanges();
-
 
 
                                                 if (registroObservadoT.garita != null && registroObservadoT.garita.ToString().Trim() != string.Empty && registroObservadoT.origen.ToString().Trim() == "1")
@@ -313,12 +312,12 @@ namespace Asistencia.Negocios
                                                     registroAsistenciaBus.IDCONTROLINGRESO = registroObservadoT.IDCONTROLINGRESO.Trim();
                                                     registroAsistenciaBus.item = registroObservadoT.ITEM.Trim();
                                                     registroAsistenciaBus.fechaTransferencia = DateTime.Now;
-                                                    registroAsistenciaBus.usuarioTransferencia = Environment.UserName.Trim();
+                                                    registroAsistenciaBus.usuarioTransferencia = user.IdUsuario != null ? user.IdUsuario.Trim() : Environment.UserName.Trim();
                                                     Modelo.ASJ_RegistroTransferenciaTransportes.InsertOnSubmit(registroAsistenciaBus);
                                                     Modelo.SubmitChanges();
                                                 }
 
-                                                Modelo.ASJ_ActualizarAsistenciaObservada(registroObservado.IDCONTROLINGRESO.ToString().Trim(), registroObservado.ITEM.ToString().Trim());
+                                                Modelo.ASJ_ActualizarAsistenciaObservada(Assistance.IDCONTROLINGRESO.ToString().Trim(), Assistance.ITEM.ToString().Trim());
                                                 #endregion
                                             }
                                         }
@@ -339,16 +338,16 @@ namespace Asistencia.Negocios
             }
         }
 
-
-        public void ActualizarDNIAsistenciaObservada(string periodo, string codigo, string item, string dni)
+        // Actualizar DNI de asistencia observadas |         Update observed list document
+        public void UpdateObservedListDNI(string conection, string personId, string item, string dni)
         {
-            cnx = ConfigurationManager.AppSettings["bd" + periodo.Substring(0, 4)].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
             {
                 Modelo.CommandTimeout = 9999900;
                 using (TransactionScope scope = new TransactionScope())
                 {
-                    Modelo.ASJ_ActualizarDNIAsistenciaObservada(codigo, item, dni);
+                    Modelo.ASJ_ActualizarDNIAsistenciaObservada(personId, item, dni);
                     scope.Complete();
                 }
             }

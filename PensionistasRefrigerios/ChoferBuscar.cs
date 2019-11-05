@@ -14,10 +14,14 @@ namespace Asistencia
     public partial class ChoferBuscar : Telerik.WinControls.UI.RadForm
     {
         private string rucTransportista;
-        private string periodo;
+
         private CarrierController Negocios;
         private List<SJ_RHTransportistaChoferListarResult> Choferes;
         public SJ_RHTransportistaChoferListarResult Chofer;
+        private string _rucTransportista;        
+        private string _conection;
+        private ASJ_USUARIOS _user;
+        private string _companyId;
 
         public ChoferBuscar()
         {
@@ -30,12 +34,26 @@ namespace Asistencia
 
         }
 
-        public ChoferBuscar(string rucTransportista, string periodo)
+
+        public ChoferBuscar(string conection, ASJ_USUARIOS user, string companyId)
+        {
+            InitializeComponent();
+            _conection = conection;
+            _user = user;
+            _companyId = companyId;
+            RadGridLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.GridLocalizationProviderEspanol();
+            RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
+            RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
+            RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
+
+
+        }
+
+        public ChoferBuscar(string rucTransportista)
         {
             // TODO: Complete member initialization
             InitializeComponent();
-            this.rucTransportista = rucTransportista;
-            this.periodo = periodo;
+            _rucTransportista = rucTransportista;            
         }
 
         private void ChoferBuscar_Load(object sender, EventArgs e)
@@ -49,12 +67,12 @@ namespace Asistencia
             {
                 if (rucTransportista != "")
                 {
-                    if (this.periodo != "")
+                    if (_conection != string.Empty)
                     {
                         Negocios = new CarrierController();
                         Choferes = new List<SJ_RHTransportistaChoferListarResult>();
 
-                        Choferes = Negocios.ObtenerListaChoferesxTransportista(rucTransportista, this.periodo).ToList();
+                        Choferes = Negocios.ObtenerListaChoferesxTransportista(rucTransportista, _conection).ToList();
 
                         this.dgvChofer.DataSource = Choferes.ToDataTable<SJ_RHTransportistaChoferListarResult>();
                         this.dgvChofer.Refresh();
@@ -108,18 +126,18 @@ namespace Asistencia
                 {
                     Chofer = new SJ_RHTransportistaChoferListarResult();
                     Chofer.Id = 0;
-                    Chofer.DNI = "";
-                    Chofer.Nombres = "";
-                    Chofer.TipoLicencia = "";
+                    Chofer.DNI = string.Empty;
+                    Chofer.Nombres = string.Empty;
+                    Chofer.TipoLicencia = string.Empty;
                     Chofer.IdTransportista = 0;
                 }
             }
             catch (Exception Ex)
             {
-                
+
                 throw Ex;
             }
-           
+
         }
     }
 }

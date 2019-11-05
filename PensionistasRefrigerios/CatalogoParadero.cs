@@ -18,11 +18,10 @@ namespace Asistencia
 {
     public partial class CatalogoParadero : Form
     {
-        private string periodo = DateTime.Now.Year.ToString();
+        
         private ParaderosController modelo;
         private List<SJ_Paraderos> listado;
-        private SJ_Paraderos oSJ_Paraderos;
-        private string periodoConsulta;
+        private SJ_Paraderos oSJ_Paraderos;        
         private string fileName;
         private bool exportVisualSettings;
         private string _conection;
@@ -60,7 +59,7 @@ namespace Asistencia
             {
                 MyControlsDataBinding.Extensions.Globales.Servidor = ConfigurationManager.AppSettings["Servidor"].ToString();
                 MyControlsDataBinding.Extensions.Globales.UsuarioBaseDatos = ConfigurationManager.AppSettings["Usuario"].ToString();
-                MyControlsDataBinding.Extensions.Globales.BaseDatos = ConfigurationManager.AppSettings["BasesDatos" + periodo].ToString();
+                MyControlsDataBinding.Extensions.Globales.BaseDatos = ConfigurationManager.AppSettings[_conection].ToString();
                 MyControlsDataBinding.Extensions.Globales.ClaveBaseDatos = ConfigurationManager.AppSettings["Clave"].ToString();
                 MyControlsDataBinding.Extensions.Globales.IdEmpresa = "001";
                 MyControlsDataBinding.Extensions.Globales.Empresa = "EMPRESA AGRICOLA SAN JOSE SA";
@@ -97,7 +96,7 @@ namespace Asistencia
         {
             modelo = new ParaderosController();
             listado = new List<SJ_Paraderos>();
-            listado = modelo.ListarTodos(periodo).ToList();
+            listado = modelo.ListarTodos(_conection).ToList();
         }
 
         private void bgwHilo_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -184,7 +183,7 @@ namespace Asistencia
                     oSJ_Paraderos.Observacion = this.txtObservación.Text.Trim();
                     oSJ_Paraderos.ESTADO = Convert.ToDecimal(this.txtIdEstado.Text);
 
-                    modelo.Anular(periodo, oSJ_Paraderos);
+                    modelo.Anular(_conection, oSJ_Paraderos);
                     gbListado.Enabled = !false;
                     gbMantenimiento.Enabled = !true;
                     btnEliminar.Enabled = !false;
@@ -209,7 +208,7 @@ namespace Asistencia
         {
             try
             {
-                periodoConsulta = DateTime.Now.Year.ToString();
+                
                 mnPrincipal.Enabled = false;
                 gbListado.Enabled = false;
                 gbMantenimiento.Enabled = false;
@@ -235,7 +234,7 @@ namespace Asistencia
                 oSJ_Paraderos = new SJ_Paraderos();
                 oSJ_Paraderos.IdEmpresa = this.txtEmpresaCodigo.Text.Trim();
                 oSJ_Paraderos.IdParadero = this.txtCodigo.Text.Trim();
-                modelo.Eliminar(periodo, oSJ_Paraderos);
+                modelo.Eliminar(_conection, oSJ_Paraderos);
                 gbListado.Enabled = !false;
                 gbMantenimiento.Enabled = !true;
                 btnEliminar.Enabled = !false;
@@ -310,7 +309,7 @@ namespace Asistencia
                     oSJ_Paraderos.Observacion = this.txtObservación.Text.ToString().Trim();
                     oSJ_Paraderos.ESTADO = this.txtIdEstado.Text == "1" ? 1 : 0;
 
-                    string resultadoConsulta = modelo.Grabar(periodo, oSJ_Paraderos);
+                    string resultadoConsulta = modelo.Grabar(_conection, oSJ_Paraderos);
                     MessageBox.Show(resultadoConsulta, "MENSAJE DEL SISTEMA");
                     gbListado.Enabled = !false;
                     gbMantenimiento.Enabled = !true;

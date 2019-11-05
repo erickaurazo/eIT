@@ -20,11 +20,11 @@ namespace Asistencia.Negocios
         //private SJ_RHTransportistaChofer oChofer;
         //private SJ_RHTransportistaRuta oRuta;
 
-        public List<SJ_RHListarTransportistasResult> ListarTransportistas()
+        public List<SJ_RHListarTransportistasResult> ListarTransportistas(string conection)
         {
             List<SJ_RHListarTransportistasResult> Listado = new List<SJ_RHListarTransportistasResult>();
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + DateTime.Now.Year.ToString()].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext modelo = new BDAsistenciaDataContext(cnx))
             {
                 Listado = modelo.SJ_RHListarTransportistas().ToList();
@@ -33,11 +33,11 @@ namespace Asistencia.Negocios
             return Listado;
         }
 
-        public List<SJ_RHListarCatalogoEmpresasTransportePersonalCampoResult> ListarCatalogoEmpresasTransportePersonalCampo()
+        public List<SJ_RHListarCatalogoEmpresasTransportePersonalCampoResult> ListarCatalogoEmpresasTransportePersonalCampo(string conection)
         {
             List<SJ_RHListarCatalogoEmpresasTransportePersonalCampoResult> Listado = new List<SJ_RHListarCatalogoEmpresasTransportePersonalCampoResult>();
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + DateTime.Now.Year.ToString()].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
             {
                 Listado = Modelo.SJ_RHListarCatalogoEmpresasTransportePersonalCampo().ToList();
@@ -45,11 +45,11 @@ namespace Asistencia.Negocios
             return Listado;
         }
 
-        public List<SJ_RHListarTransportistasResult> ListarTransportistasActivos()
+        public List<SJ_RHListarTransportistasResult> ListarTransportistasActivos(string conection)
         {
             List<SJ_RHListarTransportistasResult> Listado = new List<SJ_RHListarTransportistasResult>();
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + DateTime.Now.Year.ToString()].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
             {
                 Listado = Modelo.SJ_RHListarTransportistas().Where(x => x.IdEstado == "AC").ToList();
@@ -65,7 +65,7 @@ namespace Asistencia.Negocios
             List<SJ_RHTransportistaChofer> ListaEliminadosChoferes,
             List<SJ_RHTransportistaContrato> ListaEliminadosContratos,
             List<SJ_RHTransportistaRuta> ListaEliminadosRuta,
-            List<SJ_RHTransportistaRuta> ListadoRutas)
+            List<SJ_RHTransportistaRuta> ListadoRutas, string conection)
         {
             Int32 CodigoRegistro;
             //using (TransactionScope Scope = new TransactionScope())
@@ -73,7 +73,7 @@ namespace Asistencia.Negocios
             #region Transacción()
             string cnx = string.Empty;
 
-            cnx = ConfigurationManager.AppSettings["bd" + DateTime.Now.Year.ToString()].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
 
             using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
             {
@@ -247,7 +247,7 @@ namespace Asistencia.Negocios
                                 {
                                     try
                                     {
-                                        EliminarChofer(item);
+                                        EliminarChofer(item,conection);
                                     }
                                     catch (Exception Ex)
                                     {
@@ -270,7 +270,7 @@ namespace Asistencia.Negocios
                                 {
                                     try
                                     {
-                                        EliminarContrato(item);
+                                        EliminarContrato(item,conection);
                                     }
                                     catch (Exception Ex)
                                     {
@@ -293,7 +293,7 @@ namespace Asistencia.Negocios
                                 {
                                     try
                                     {
-                                        EliminarRuta(item);
+                                        EliminarRuta(item,conection);
                                     }
                                     catch (Exception Ex)
                                     {
@@ -490,7 +490,7 @@ namespace Asistencia.Negocios
         }
 
         public bool AddCarrier(
-            string period,
+            string conection,
             SJ_RHTransportista carrier,
             List<SJ_RHTransportistaChofer>
             drivers, List<SJ_RHTransportistaContrato>
@@ -509,7 +509,7 @@ namespace Asistencia.Negocios
             {
                 #region Transacción()
                 string cnx = string.Empty;
-                cnx = ConfigurationManager.AppSettings["bd" + period].ToString();
+                cnx = ConfigurationManager.AppSettings[conection].ToString();
                 using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
                 {
                     // 1.- Genero la cabecera
@@ -1025,7 +1025,7 @@ namespace Asistencia.Negocios
             return status;
         }
 
-        public void EliminarTransportista(int CodigoRegistro)
+        public void EliminarTransportista(int CodigoRegistro, string conection)
         {
             //using (TransactionScope Scope = new TransactionScope())
             //{
@@ -1033,7 +1033,7 @@ namespace Asistencia.Negocios
 
             string cnx = string.Empty;
 
-            cnx = ConfigurationManager.AppSettings["bd" + DateTime.Now.Year.ToString()].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
 
             using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
             {
@@ -1045,7 +1045,7 @@ namespace Asistencia.Negocios
             //}
         }
 
-        public void AnularTransportista(int CodigoRegistro)
+        public void AnularTransportista(int CodigoRegistro, string conection)
         {
             //using (TransactionScope Scope = new TransactionScope())
             //{
@@ -1053,7 +1053,7 @@ namespace Asistencia.Negocios
 
             string cnx = string.Empty;
 
-            cnx = ConfigurationManager.AppSettings["bd" + DateTime.Now.Year.ToString()].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
 
             using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
             {
@@ -1093,10 +1093,10 @@ namespace Asistencia.Negocios
 
         #region Metodos del Objeto Detalle Chofer()
 
-        public List<SJ_RHListarDetalleTransportistaChoferResult> ListarDetalleChofer(int Codigo)
+        public List<SJ_RHListarDetalleTransportistaChoferResult> ListarDetalleChofer(int Codigo, string conection)
         {
             var ListadoChofer = new List<SJ_RHListarDetalleTransportistaChoferResult>();
-            cnx = ConfigurationManager.AppSettings["bd" + DateTime.Now.Year.ToString()].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
             {
                 ListadoChofer = Modelo.SJ_RHListarDetalleTransportistaChofer(Codigo).ToList();
@@ -1104,13 +1104,13 @@ namespace Asistencia.Negocios
             return ListadoChofer;
         }
 
-        public void EliminarChofer(SJ_RHTransportistaChofer driver)
+        public void EliminarChofer(SJ_RHTransportistaChofer driver, string conection)
         {
             using (TransactionScope Scope = new TransactionScope())
             {
                 #region Transacción()
                 string cnx = string.Empty;
-                cnx = ConfigurationManager.AppSettings["bd" + DateTime.Now.Year.ToString()].ToString();
+                cnx = ConfigurationManager.AppSettings[conection].ToString();
                 using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
                 {
 
@@ -1142,10 +1142,10 @@ namespace Asistencia.Negocios
 
         #region Metodos del Objeto Detalle Contrato()
 
-        public List<SJ_RHListarDetalleTransportistaContratoResult> ListContractByCarrierId(int carrierId)
+        public List<SJ_RHListarDetalleTransportistaContratoResult> ListContractByCarrierId(int carrierId, string conection)
         {
             var ListadoContrato = new List<SJ_RHListarDetalleTransportistaContratoResult>();
-            cnx = ConfigurationManager.AppSettings["bd" + DateTime.Now.Year.ToString()].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
             {
                 int typeDocumentContract = Modelo.SJ_RHTransportistaTipoDocumento.Where(x => x.description.Contains("CONTRATO")).FirstOrDefault().description != null ? Modelo.SJ_RHTransportistaTipoDocumento.Where(x => x.description.Contains("CONTRATO")).FirstOrDefault().TypeDocumentId : 0;
@@ -1155,14 +1155,14 @@ namespace Asistencia.Negocios
             return ListadoContrato;
         }
 
-        public void EliminarContrato(SJ_RHTransportistaContrato contract)
+        public void EliminarContrato(SJ_RHTransportistaContrato contract, string conection)
         {
             #region Transacción()
 
             using (TransactionScope Scope = new TransactionScope())
             {
                 string cnx = string.Empty;
-                cnx = ConfigurationManager.AppSettings["bd" + DateTime.Now.Year.ToString()].ToString();
+                cnx = ConfigurationManager.AppSettings[conection].ToString();
                 using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
                 {
                     #region Transacción SQL()
@@ -1193,10 +1193,10 @@ namespace Asistencia.Negocios
         #endregion
 
         #region Metodo del Objeto Detalle Ruta()
-        public List<SJ_RHListarDetalleTransportistaRutaResult> ListRouterByCarrierId(int carrierId)
+        public List<SJ_RHListarDetalleTransportistaRutaResult> ListRouterByCarrierId(int carrierId, string conection)
         {
             var ListadoRuta = new List<SJ_RHListarDetalleTransportistaRutaResult>();
-            cnx = ConfigurationManager.AppSettings["bd" + DateTime.Now.Year.ToString()].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
             {
                 ListadoRuta = Modelo.SJ_RHListarDetalleTransportistaRuta(carrierId).ToList();
@@ -1204,20 +1204,20 @@ namespace Asistencia.Negocios
             return ListadoRuta;
         }
 
-        public void EliminarRuta(SJ_RHTransportistaRuta Objeto)
+        public void EliminarRuta(SJ_RHTransportistaRuta carrier, string conection)
         {
             using (TransactionScope Scope = new TransactionScope())
             {
                 #region Transacción()
                 string cnx = string.Empty;
-                cnx = ConfigurationManager.AppSettings["bd" + DateTime.Now.Year.ToString()].ToString();
+                cnx = ConfigurationManager.AppSettings[conection].ToString();
                 using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
                 {
 
                     SJ_RHTransportistaRuta Ruta = new SJ_RHTransportistaRuta();
-                    if (Modelo.SJ_RHTransportistaRutas.Where(x => x.Id == Objeto.Id && x.IdRuta.ToString().Trim() == Objeto.IdRuta.ToString().Trim()).ToList().Count == 1)
+                    if (Modelo.SJ_RHTransportistaRutas.Where(x => x.Id == carrier.Id && x.IdRuta.ToString().Trim() == carrier.IdRuta.ToString().Trim()).ToList().Count == 1)
                     {
-                        Ruta = Modelo.SJ_RHTransportistaRutas.Where(x => x.Id == Objeto.Id && x.IdRuta.ToString().Trim() == Objeto.IdRuta.ToString().Trim()).Single();
+                        Ruta = Modelo.SJ_RHTransportistaRutas.Where(x => x.Id == carrier.Id && x.IdRuta.ToString().Trim() == carrier.IdRuta.ToString().Trim()).Single();
                         try
                         {
                             Modelo.SJ_RHTransportistaRutas.DeleteOnSubmit(Ruta);
@@ -1242,14 +1242,14 @@ namespace Asistencia.Negocios
 
         #region Metodos del Objeto Detalle Documentos()
 
-        public List<SJ_RHListarDetalleTransportistaContratoResult> ListDocumentsByCarrierId(int Codigo)
+        public List<SJ_RHListarDetalleTransportistaContratoResult> ListDocumentsByCarrierId(int carrierId, string conection)
         {
             var documents = new List<SJ_RHListarDetalleTransportistaContratoResult>();
-            cnx = ConfigurationManager.AppSettings["bd" + DateTime.Now.Year.ToString()].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
             {
                 int typeDocumentContract = Modelo.SJ_RHTransportistaTipoDocumento.Where(x => x.description.Contains("CONTRATO")).FirstOrDefault().description != null ? Modelo.SJ_RHTransportistaTipoDocumento.Where(x => x.description.Contains("CONTRATO")).FirstOrDefault().TypeDocumentId : 0;
-                documents = Modelo.SJ_RHListarDetalleTransportistaContrato(Codigo).Where(x => x.TypeDocumentId != typeDocumentContract).ToList();
+                documents = Modelo.SJ_RHListarDetalleTransportistaContrato(carrierId).Where(x => x.TypeDocumentId != typeDocumentContract).ToList();
             }
             return documents;
         }
@@ -1258,14 +1258,14 @@ namespace Asistencia.Negocios
         #endregion
 
 
-        public List<DFormatoSimple> GetRutasSistemaTransportistas()
+        public List<DFormatoSimple> GetRutasSistemaTransportistas(string conection)
         {
             List<DFormatoSimple> listado = new List<DFormatoSimple>();
 
             List<SJ_RHListaRutasResult> rutas = new List<SJ_RHListaRutasResult>();
 
             string cnx;
-            cnx = ConfigurationManager.AppSettings["bd" + DateTime.Now.Year.ToString()].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext Contexto = new BDAsistenciaDataContext(cnx))
             {
                 rutas = Contexto.SJ_RHListaRutas().Where(x => x.IdEstado.ToString().Trim() == "AC").ToList();
@@ -1282,11 +1282,11 @@ namespace Asistencia.Negocios
             return listado;
         }
 
-        public string ObtenerItemByDocumento(int CodigoRegistro)
+        public string ObtenerItemByDocumento(int CodigoRegistro, string conection)
         {
             string cnx = string.Empty;
             string item = "001";
-            cnx = ConfigurationManager.AppSettings["bd" + DateTime.Now.Year.ToString()].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
 
             using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
             {
@@ -1297,14 +1297,14 @@ namespace Asistencia.Negocios
             return item;
         }
 
-        public List<DFormatoSimple> GetTypeDocumentoFormat()
+        public List<DFormatoSimple> GetTypeDocumentoFormat(string conection)
         {
             List<DFormatoSimple> listado = new List<DFormatoSimple>();
 
             List<SJ_RHTransportistaTipoDocumento> typeDocuments = new List<SJ_RHTransportistaTipoDocumento>();
 
             string cnx;
-            cnx = ConfigurationManager.AppSettings["bd" + DateTime.Now.Year.ToString()].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext Contexto = new BDAsistenciaDataContext(cnx))
             {
                 typeDocuments = Contexto.SJ_RHTransportistaTipoDocumento.Where(x => x.status == 1).ToList();
@@ -1322,11 +1322,11 @@ namespace Asistencia.Negocios
         }
 
 
-        public List<SJ_RHTransportistaChoferListarResult> ObtenerListaChoferesxTransportista(string RUCTransportista, string periodo)
+        public List<SJ_RHTransportistaChoferListarResult> ObtenerListaChoferesxTransportista(string RUCTransportista, string conection)
         {
             List<SJ_RHTransportistaChoferListarResult> Choferes = new List<SJ_RHTransportistaChoferListarResult>();
 
-            cnx = ConfigurationManager.AppSettings["bd" + periodo].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
             {
                 Choferes = Modelo.SJ_RHTransportistaChoferListar(RUCTransportista).ToList();
@@ -1335,36 +1335,36 @@ namespace Asistencia.Negocios
             return Choferes;
         }
 
-        public List<SJ_ListaMovimientoFacturacionPorProveedorResult> ObtenerListaMovimientoFacturacionTransportistaPorProveedor(int codigoTransportista)
+        public List<SJ_ListaMovimientoFacturacionPorProveedorResult> ObtenerListaMovimientoFacturacionTransportistaPorProveedor(int carrierId, string conection)
         {
             List<SJ_ListaMovimientoFacturacionPorProveedorResult> lista = new List<SJ_ListaMovimientoFacturacionPorProveedorResult>();
 
-            cnx = ConfigurationManager.AppSettings["bd2014"].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
             {
-                lista = Modelo.SJ_ListaMovimientoFacturacionPorProveedor(codigoTransportista).ToList();
+                lista = Modelo.SJ_ListaMovimientoFacturacionPorProveedor(carrierId).ToList();
             }
 
             return lista;
         }
 
-        public List<SJ_ListaMovimientoPartesRecorridoPorProveedorResult> ObtenerListaMovimientoParteRecorridoTransportistaPorProveedor(int codigoTransportista)
+        public List<SJ_ListaMovimientoPartesRecorridoPorProveedorResult> ObtenerListaMovimientoParteRecorridoTransportistaPorProveedor(int carrierId, string conection)
         {
             List<SJ_ListaMovimientoPartesRecorridoPorProveedorResult> lista = new List<SJ_ListaMovimientoPartesRecorridoPorProveedorResult>();
 
-            cnx = ConfigurationManager.AppSettings["bd2014"].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
             {
-                lista = Modelo.SJ_ListaMovimientoPartesRecorridoPorProveedor(codigoTransportista).ToList();
+                lista = Modelo.SJ_ListaMovimientoPartesRecorridoPorProveedor(carrierId).ToList();
             }
 
             return lista;
         }
 
-        public bool VerificarDuplicidadPlaca(string numeroPlaca)
+        public bool VerificarDuplicidadPlaca(string numeroPlaca, string conection)
         {
             bool estado = false;
-            cnx = ConfigurationManager.AppSettings["bd2014"].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
             {
                 string cadena = numeroPlaca.Replace(" ", "");
@@ -1380,10 +1380,10 @@ namespace Asistencia.Negocios
             return estado;
         }
 
-        public string ObtenerNombreComercialByNroRUC(string numeroRUC)
+        public string ObtenerNombreComercialByNroRUC(string numeroRUC, string conection)
         {
             string nombreComercial = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd2014"].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
             {
 
@@ -1398,10 +1398,10 @@ namespace Asistencia.Negocios
         }
 
 
-        public List<SJ_RHListadoVencimientoDocumentosByUnidadTransportesResult> GetExpirationOfDocumentsPerTransportationUnit(string period)
+        public List<SJ_RHListadoVencimientoDocumentosByUnidadTransportesResult> GetExpirationOfDocumentsPerTransportationUnit(string conection)
         {
             List<SJ_RHListadoVencimientoDocumentosByUnidadTransportesResult> expirationOfDocuments = new List<SJ_RHListadoVencimientoDocumentosByUnidadTransportesResult>();
-            cnx = ConfigurationManager.AppSettings["bd" + period].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
             {
                 expirationOfDocuments = Modelo.SJ_RHListadoVencimientoDocumentosByUnidadTransportes().ToList();

@@ -19,8 +19,7 @@ namespace Asistencia
 {
     public partial class CatalogoPersonalBloqueadoParaAsistencia : Form
     {
-        private string periodo = DateTime.Now.Year.ToString();
-        private string periodoConsulta;
+        
         private string fileName;
         private bool exportVisualSettings;
 
@@ -68,7 +67,7 @@ namespace Asistencia
 
             listaTipoBloqueos = new List<ASJ_ObtenerListadoDeTipoPersonalbloqueadoResult>();
             modeloTipoBloqueo = new TipoBloqueoParaAsistenciaController();
-            listaTipoBloqueos = modeloTipoBloqueo.ObtenerListadoTipoBloqueo(this.periodo).ToList();
+            listaTipoBloqueos = modeloTipoBloqueo.GetTypeLock(_conection).ToList();
 
             cboMotivoBloqueo.DisplayMember = "descripcion";
             cboMotivoBloqueo.ValueMember = "codigoPersonalTipoBloqueo";
@@ -82,7 +81,7 @@ namespace Asistencia
             {
                 Globales.Servidor = ConfigurationManager.AppSettings["Servidor"].ToString();
                 Globales.UsuarioBaseDatos = ConfigurationManager.AppSettings["Usuario"].ToString();
-                Globales.BaseDatos = ConfigurationManager.AppSettings["BasesDatos" + periodo].ToString();
+                Globales.BaseDatos = ConfigurationManager.AppSettings[_conection].ToString();
                 Globales.ClaveBaseDatos = ConfigurationManager.AppSettings["Clave"].ToString();
                 Globales.IdEmpresa = "001";
                 Globales.Empresa = "EMPRESA AGRICOLA SAN JOSE SA";
@@ -171,7 +170,7 @@ namespace Asistencia
         {
             try
             {
-                periodoConsulta = DateTime.Now.Year.ToString();
+                
                 mnPrincipal.Enabled = false;
                 gbListado.Enabled = false;
                 gbMantenimiento.Enabled = false;
@@ -195,7 +194,7 @@ namespace Asistencia
         {
             modeloPersonalBloqueado = new PersonalBloqueoController();
             listado = new List<ASJ_ObtenerListadoDePersonalbloqueadoResult>();
-            listado = modeloPersonalBloqueado.ObtenerListado(periodo).ToList();
+            listado = modeloPersonalBloqueado.GetListPersonLock(_conection).ToList();
 
         }
 
@@ -324,7 +323,7 @@ namespace Asistencia
                 if (oPersonaBloqueada.codigoPersonalBloqueo > 0)
                 {
                     modeloPersonalBloqueado = new PersonalBloqueoController();
-                    modeloPersonalBloqueado.Anular(periodo, oPersonaBloqueada);
+                    modeloPersonalBloqueado.CnageStatus(_conection, oPersonaBloqueada);
                     gbListado.Enabled = !false;
                     gbMantenimiento.Enabled = !true;
                     btnEliminar.Enabled = !false;
@@ -350,7 +349,7 @@ namespace Asistencia
             if (oPersonaBloqueada.codigoPersonalBloqueo > 0)
             {
                 modeloPersonalBloqueado = new PersonalBloqueoController();
-                modeloPersonalBloqueado.Eliminar(periodo, oPersonaBloqueada);
+                modeloPersonalBloqueado.Delete(_conection, oPersonaBloqueada);
                 gbListado.Enabled = !false;
                 gbMantenimiento.Enabled = !true;
                 btnEliminar.Enabled = !false;
@@ -503,7 +502,7 @@ namespace Asistencia
                             oPersonaBloqueada.estado = 1;
 
                             modeloPersonalBloqueado = new PersonalBloqueoController();
-                            string resultadoConsulta = modeloPersonalBloqueado.Grabar(periodo, oPersonaBloqueada);
+                            string resultadoConsulta = modeloPersonalBloqueado.Add(_conection, oPersonaBloqueada);
                             MessageBox.Show(resultadoConsulta, "MENSAJE DEL SISTEMA");
                             gbListado.Enabled = !false;
                             gbMantenimiento.Enabled = !true;

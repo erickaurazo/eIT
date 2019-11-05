@@ -21,13 +21,11 @@ namespace Asistencia
         private RegistroTransferenciaTransportesController negocio;
         private List<ASJ_ListarRegistroMarcacionPersonalEnBusesResult> listado;
         private List<SJ_ListarAsistenciaSalidaUnidadesTransportePersonalByPeriodoResult> listadoByCostos;
-
         private string desde;
         private string fileName;
         private bool exportVisualSettings;
         private string desdeC;
         private SJ_ListarAsistenciaSalidaUnidadesTransportePersonalByPeriodoResult registroResumen;
-        private string periodo;
         private List<AsistenciaBusByDia> listadoResumenAsistenciaByBusByDia;
         private List<ASJ_ReporteAsistenciaObservadosResult> listadoAsistenciaObservados;
         private int incluirAsistenciaObervada;
@@ -195,12 +193,12 @@ namespace Asistencia
             negocio = new RegistroTransferenciaTransportesController();
             listado = new List<ASJ_ListarRegistroMarcacionPersonalEnBusesResult>();
             listadoByCostos = new List<SJ_ListarAsistenciaSalidaUnidadesTransportePersonalByPeriodoResult>();
-            listado = negocio.ObtenerListadoRegistroMarcacionPersonalEnBuses(DateTime.Now.Year.ToString(), desde, Hasta).ToList();
-            listadoByCostos = negocio.ListarAsistenciaSalidaUnidadesTransportePersonalByPeriod(DateTime.Now.Year.ToString(), desdeC, HastaC).ToList();
+            listado = negocio.ObtenerListadoRegistroMarcacionPersonalEnBuses(_conection, desde, Hasta).ToList();
+            listadoByCostos = negocio.ListarAsistenciaSalidaUnidadesTransportePersonalByPeriod(_conection, desdeC, HastaC).ToList();
 
 
             listadoAsistenciaObservados = new List<ASJ_ReporteAsistenciaObservadosResult>();
-            listadoAsistenciaObservados = negocio.ReporteAsistenciaObservadosOnlyBuss(periodo, desde, Hasta).ToList();
+            listadoAsistenciaObservados = negocio.GetListAssistanceObservedByBuss(_conection, desde, Hasta).ToList();
 
             //Funcion anterior
             listadoResumenAsistenciaByBusByDia = new List<AsistenciaBusByDia>();
@@ -218,18 +216,29 @@ namespace Asistencia
 
         private void bgwHilo_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            dgvAsistenciaTransferida.DataSource = listado.ToDataTable<ASJ_ListarRegistroMarcacionPersonalEnBusesResult>();
-            dgvAsistenciaTransferida.Refresh();
+            if (listado != null)
+            {
+                dgvAsistenciaTransferida.DataSource = listado.ToDataTable<ASJ_ListarRegistroMarcacionPersonalEnBusesResult>();
+                dgvAsistenciaTransferida.Refresh();
+            }
 
-            dgvAsistenciaPorFundo.DataSource = listadoByCostos.ToDataTable<SJ_ListarAsistenciaSalidaUnidadesTransportePersonalByPeriodoResult>();
-            dgvAsistenciaPorFundo.Refresh();
+            if (listadoByCostos != null)
+            {
+                dgvAsistenciaPorFundo.DataSource = listadoByCostos.ToDataTable<SJ_ListarAsistenciaSalidaUnidadesTransportePersonalByPeriodoResult>();
+                dgvAsistenciaPorFundo.Refresh();
+            }
 
+            if (listadoAsistenciaObservados != null)
+            {
+                dgvAsistenciaObservados.DataSource = listadoAsistenciaObservados.ToDataTable<ASJ_ReporteAsistenciaObservadosResult>();
+                dgvAsistenciaObservados.Refresh();
+            }
 
-            dgvAsistenciaObservados.DataSource = listadoAsistenciaObservados.ToDataTable<ASJ_ReporteAsistenciaObservadosResult>();
-            dgvAsistenciaObservados.Refresh();
-
-            dgvResumenByDia.DataSource = listadoResumenAsistenciaByBusByDia.ToDataTable<AsistenciaBusByDia>();
-            dgvResumenByDia.Refresh();
+            if (listadoResumenAsistenciaByBusByDia != null)
+            {
+                dgvResumenByDia.DataSource = listadoResumenAsistenciaByBusByDia.ToDataTable<AsistenciaBusByDia>();
+                dgvResumenByDia.Refresh();
+            }
 
             gbConsulta.Enabled = true;
             gbDetalle.Enabled = true;
@@ -332,10 +341,10 @@ namespace Asistencia
         {
             try
             {
-                periodo = DateTime.Now.Year.ToString();
+
                 Globales.Servidor = ConfigurationManager.AppSettings["Servidor"].ToString();
                 Globales.UsuarioBaseDatos = ConfigurationManager.AppSettings["Usuario"].ToString();
-                Globales.BaseDatos = ConfigurationManager.AppSettings["BasesDatos" + periodo].ToString();
+                Globales.BaseDatos = ConfigurationManager.AppSettings[_conection].ToString();
                 Globales.ClaveBaseDatos = ConfigurationManager.AppSettings["Clave"].ToString();
                 Globales.IdEmpresa = "001";
                 Globales.Empresa = "EMPRESA AGRICOLA SAN JOSE SA";
@@ -426,11 +435,8 @@ namespace Asistencia
         {
             if (registroResumen.fecha != string.Empty && registroResumen.placa != string.Empty)
             {
-                ActualizarPlaca ofrm = new ActualizarPlaca(periodo, registroResumen);
-                if (ofrm.ShowDialog() != DialogResult.OK)
-                {
-
-                }
+                ActualizarPlaca ofrm = new ActualizarPlaca(registroResumen, _conection, _companyId, _user);
+                ofrm.ShowDialog();
             }
         }
 

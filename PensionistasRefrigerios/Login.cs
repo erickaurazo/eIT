@@ -16,7 +16,7 @@ namespace Asistencia
         public string conection = string.Empty;
         public ASJ_USUARIOS user;
         public string companyId;
-
+        public string descripcionConexion = string.Empty;
         private int cont = 0;
         private LoginController model;
         private List<Grupo> dbs;
@@ -27,6 +27,7 @@ namespace Asistencia
         private string userId;
         private string password;
         private string databaseId;
+        
 
         public Login()
         {
@@ -95,8 +96,7 @@ namespace Asistencia
             try
             {
                 MyControlsDataBinding.Extensions.Globales.Servidor = ConfigurationManager.AppSettings["Servidor"].ToString();
-                MyControlsDataBinding.Extensions.Globales.UsuarioBaseDatos = ConfigurationManager.AppSettings["Usuario"].ToString();
-                MyControlsDataBinding.Extensions.Globales.BaseDatos = ConfigurationManager.AppSettings["BasesDatos" + DateTime.Now.Year.ToString()].ToString();
+                MyControlsDataBinding.Extensions.Globales.UsuarioBaseDatos = ConfigurationManager.AppSettings["Usuario"].ToString();                
                 MyControlsDataBinding.Extensions.Globales.ClaveBaseDatos = ConfigurationManager.AppSettings["Clave"].ToString();
                 MyControlsDataBinding.Extensions.Globales.IdEmpresa = "001";
                 MyControlsDataBinding.Extensions.Globales.Empresa = "EMPRESA AGRICOLA SAN JOSE SA";
@@ -108,6 +108,7 @@ namespace Asistencia
             {
 
                 throw Ex;
+                return;
             }
 
         }
@@ -218,33 +219,45 @@ namespace Asistencia
 
         private void btnAceptar_Click_1(object sender, EventArgs e)
         {
-            if (cbodb.SelectedValue.ToString() != "000" && cboEmpresa.SelectedValue.ToString().Trim() != "000")
+            try
             {
-                #region MyRegion                
-                if (this.txtUsuario.Text.Trim() != string.Empty && this.txtContraseña.Text.Trim() != string.Empty)
+                #region 
+                if (cbodb.SelectedValue.ToString() != "000" && cboEmpresa.SelectedValue.ToString().Trim() != "000")
                 {
-                    if (this.txtContraseña.Text.Trim().Length > 5)
+                    #region MyRegion                
+                    if (this.txtUsuario.Text.Trim() != string.Empty && this.txtContraseña.Text.Trim() != string.Empty)
                     {
-                        IniciarSession();
+                        if (this.txtContraseña.Text.Trim().Length > 5)
+                        {
+                            IniciarSession();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ingrese una contraseña de 6 dígitos como mínimo", "ADVERTENCIA DEL SISTEMA");
+                            return;
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Ingrese una contraseña de 6 dígitos como mínimo", "ADVERTENCIA DEL SISTEMA");
+                        MessageBox.Show("Ingrese clave y/o contraseña válido", "ADVERTENCIA DEL SISTEMA");
                         return;
                     }
+                    #endregion
                 }
                 else
                 {
-                    MessageBox.Show("Ingrese clave y/o contraseña válido", "ADVERTENCIA DEL SISTEMA");
+                    MessageBox.Show("Seleccione empresa y base de conexión", "ADVERTENCIA DEL SISTEMA");
                     return;
                 }
                 #endregion
             }
-            else
+            catch (Exception Ex)
             {
-                MessageBox.Show("Seleccione empresa y base de conexión", "ADVERTENCIA DEL SISTEMA");
+                MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
                 return;
             }
+
+           
 
         }
 
@@ -376,10 +389,11 @@ namespace Asistencia
                             var nombreIntanciaSelecionada = db01[1].Trim();
                             // si tiene la base por ejemplo así basedatosproduccion | Local , 
                             // seleccionare en el archivo de configuración la instancia local con el nombre de base de datos: basedeproduccion
-                            if (nombreIntanciaSelecionada.Contains("Pública"))
+                            if (nombreIntanciaSelecionada.Contains("Publica"))
                             {
                                 basedatos = db01[0].Trim();
                                 conection = ("P" + basedatos);
+                                descripcionConexion = "Conexión remota | db: " + basedatos;
                                 InicialControls(conection);
 
                             }
@@ -387,6 +401,7 @@ namespace Asistencia
                             {
                                 basedatos = db01[0].Trim();
                                 conection = (basedatos);
+                                descripcionConexion = "Conexión local | db: " + basedatos;
                                 InicialControls(conection);
                             }
                         }

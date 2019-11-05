@@ -339,11 +339,11 @@
     <Compile Include="Users.Designer.cs">
       <DependentUpon>Users.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReporteAsistenciaDiarioByPuertaIngreso.cs">
+    <Compile Include="RegistroDeAsistenciaDiarioByPuertaIngreso.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReporteAsistenciaDiarioByPuertaIngreso.Designer.cs">
-      <DependentUpon>ReporteAsistenciaDiarioByPuertaIngreso.cs</DependentUpon>
+    <Compile Include="RegistroDeAsistenciaDiarioByPuertaIngreso.Designer.cs">
+      <DependentUpon>RegistroDeAsistenciaDiarioByPuertaIngreso.cs</DependentUpon>
     </Compile>
     <Compile Include="ReporteAsistenciaObservados.cs">
       <SubType>Form</SubType>
@@ -440,8 +440,8 @@
     <EmbeddedResource Include="Users.resx">
       <DependentUpon>Users.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReporteAsistenciaDiarioByPuertaIngreso.resx">
-      <DependentUpon>ReporteAsistenciaDiarioByPuertaIngreso.cs</DependentUpon>
+    <EmbeddedResource Include="RegistroDeAsistenciaDiarioByPuertaIngreso.resx">
+      <DependentUpon>RegistroDeAsistenciaDiarioByPuertaIngreso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteAsistenciaObservados.resx">
       <DependentUpon>ReporteAsistenciaObservados.cs</DependentUpon>
@@ -496,7 +496,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AgricolaSanJoseSAC.ico" />
-    <Content Include="Init.txt" />
     <Content Include="Resources\10.png" />
     <None Include="Resources\TextFile1.txt" />
     <None Include="Resources\Init.txt" />

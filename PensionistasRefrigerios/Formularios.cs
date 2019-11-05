@@ -18,7 +18,7 @@ namespace Asistencia
     {
         private FormsController model;
         private List<FormularioSistema> forms;
-        private string period;
+        
         private TreeviewHelper modelHelper;
         private ComboBoxHelper modelComboBox;
         private List<Grupo> resultComboBoxStatus;
@@ -33,36 +33,22 @@ namespace Asistencia
 
         public Formularios()
         {
-            InitializeComponent();
-            period = DateTime.Now.Year.ToString();
-
+            InitializeComponent();            
             LoadInitialForm();
-
             RefreshList();
-
-
             //LoadData();
-
-
             RadMenuItem item = new RadMenuItem("None");
             item.Click += new EventHandler(item_Click);
             this.cbOrder.Items.Add(item);
-
-
             item = new RadMenuItem("Ascending");
             item.Click += new EventHandler(item_Click);
             this.cbOrder.Items.Add(item);
-
-
             item = new RadMenuItem("Descending");
             item.Click += new EventHandler(item_Click);
             this.cbOrder.Items.Add(item);
-
-
             ImagePrimitive searchIcon = new ImagePrimitive();
             searchIcon.Image = imageList1.Images[4];
             searchIcon.Alignment = ContentAlignment.MiddleRight;
-
             this.txtFormulario.TextBoxElement.Children.Add(searchIcon);
             this.txtFormulario.TextBoxElement.TextBoxItem.Alignment = ContentAlignment.MiddleLeft;
             this.txtFormulario.TextBoxElement.TextBoxItem.StretchHorizontally = false;
@@ -86,8 +72,7 @@ namespace Asistencia
             _conection = conection;
             _user = user;
             _companyId = companyId;
-
-            period = DateTime.Now.Year.ToString();
+            
 
             LoadInitialForm();
 
@@ -135,7 +120,7 @@ namespace Asistencia
 
         private void LoadInitialForm()
         {
-            period = DateTime.Now.Year.ToString();
+            
             gbEdition.Enabled = false;
             gbList.Enabled = false;
             btnNuevo.Enabled = true;
@@ -144,7 +129,7 @@ namespace Asistencia
             btnEliminarRegistro.Enabled = true;
             btnSave.Enabled = false;
             btnAtras.Enabled = false;
-            period = DateTime.Now.Year.ToString();
+            
             ProgressBar.Visible = true;
             bgwHiloInicio.RunWorkerAsync();
         }
@@ -265,7 +250,7 @@ namespace Asistencia
 
             model = new FormsController();
             forms = new List<FormularioSistema>();
-            forms = model.GetListForms(period);
+            forms = model.GetListForms(_conection);
             modelComboBox = new ComboBoxHelper();
             resultComboBoxStatus = new List<Grupo>();
             resultComboBoxModules = new List<Grupo>();
@@ -274,7 +259,7 @@ namespace Asistencia
             resultComboBoxParentForms = new List<Grupo>();
 
             resultComboBoxStatus = modelComboBox.GetComboBoxStatus();
-            resultComboBoxModules = modelComboBox.GetComboBoxModule(period);
+            resultComboBoxModules = modelComboBox.GetComboBoxModule(_conection);
             resultComboBoxHierarchies = modelComboBox.GetComboBoxHierarchy(forms);
             resultComboBoxForms = modelComboBox.GetComboBoxTypeForm(forms);
             resultComboBoxParentForms = modelComboBox.GetComboBoxParentForm(forms);
@@ -327,8 +312,7 @@ namespace Asistencia
         }
 
         private void RefreshList()
-        {
-            period = DateTime.Now.Year.ToString();
+        {            
             tvFormulario.Nodes.Clear();
             gbEdition.Enabled = false;
             gbList.Enabled = false;
@@ -337,8 +321,7 @@ namespace Asistencia
             btnAnular.Enabled = true;
             btnEliminarRegistro.Enabled = true;
             btnSave.Enabled = false;
-            btnAtras.Enabled = false;
-            period = DateTime.Now.Year.ToString();
+            btnAtras.Enabled = false;            
             ProgressBar.Visible = true;
             tvFormulario.Nodes.Clear();
             bgwHilo.RunWorkerAsync();
@@ -412,8 +395,7 @@ namespace Asistencia
         private void Save()
         {
             try
-            {
-                period = DateTime.Now.Year.ToString();
+            {                
                 model = new FormsController();
                 FormularioSistema oForm = new FormularioSistema();
                 oForm.formularioCodigo = txtFormCode.Text.Trim();
@@ -428,7 +410,7 @@ namespace Asistencia
                     #region MyRegion
 
 
-                    if (model.Add(period, oForm) == true)
+                    if (model.Add(_conection, oForm) == true)
                     {
                         MessageBox.Show("Operacion realizada satisfactoriamente", "Confirmación del sistema");
                         gbEdition.Enabled = false;
@@ -469,8 +451,7 @@ namespace Asistencia
         private void ChangeStatus()
         {
             try
-            {
-                period = DateTime.Now.Year.ToString();
+            {                
                 model = new FormsController();
                 FormularioSistema oForm = new FormularioSistema();
                 oForm.formularioCodigo = txtFormCode.Text.Trim();
@@ -488,7 +469,7 @@ namespace Asistencia
                             if (oForm.formulario.Trim().ToUpper() != "Menu".ToUpper())
                             {
                                 #region MyRegion                                
-                                if (model.ChangeStatus(period, oForm) == true)
+                                if (model.ChangeStatus(_conection, oForm) == true)
                                 {
                                     #region MyRegion                                    
                                     MessageBox.Show("Operacion realizada satisfactoriamente", "Confirmación del sistema");
@@ -546,8 +527,7 @@ namespace Asistencia
         private void Remove()
         {
             try
-            {
-                period = DateTime.Now.Year.ToString();
+            {                
                 model = new FormsController();
                 FormularioSistema oForm = new FormularioSistema();
                 oForm.formularioCodigo = txtFormCode.Text.Trim();
@@ -564,7 +544,7 @@ namespace Asistencia
                             if (oForm.formulario.Trim().ToUpper() != "Menu".ToUpper())
                             {
                                 #region MyRegion                                
-                                if (model.Remove(period, oForm) == true)
+                                if (model.Remove(_conection, oForm) == true)
                                 {
                                     MessageBox.Show("Operacion realizada satisfactoriamente", "Confirmación del sistema");
                                     gbEdition.Enabled = false;

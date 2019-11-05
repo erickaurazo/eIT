@@ -126,7 +126,7 @@
             this.BarraPrincipal.Name = "BarraPrincipal";
             this.BarraPrincipal.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
             this.BarraSuperior});
-            this.BarraPrincipal.Size = new System.Drawing.Size(1047, 62);
+            this.BarraPrincipal.Size = new System.Drawing.Size(1047, 37);
             this.BarraPrincipal.TabIndex = 1;
             this.BarraPrincipal.ThemeName = "VisualStudio2012Light";
             // 
@@ -363,8 +363,8 @@
             // 
             // gbList
             // 
-            this.gbList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.gbList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbList.Controls.Add(this.dgvList);
             this.gbList.Location = new System.Drawing.Point(12, 41);
@@ -485,7 +485,7 @@
             // 
             // gbEdition
             // 
-            this.gbEdition.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.gbEdition.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbEdition.Controls.Add(this.btnImportFromNISIRA);
             this.gbEdition.Controls.Add(this.btnAccessFromOtherUser);
@@ -522,6 +522,7 @@
             // 
             // btnImportFromNISIRA
             // 
+            this.btnImportFromNISIRA.Enabled = false;
             this.btnImportFromNISIRA.Image = ((System.Drawing.Image)(resources.GetObject("btnImportFromNISIRA.Image")));
             this.btnImportFromNISIRA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnImportFromNISIRA.Location = new System.Drawing.Point(326, 298);
@@ -533,6 +534,7 @@
             // 
             // btnAccessFromOtherUser
             // 
+            this.btnAccessFromOtherUser.Enabled = false;
             this.btnAccessFromOtherUser.Image = ((System.Drawing.Image)(resources.GetObject("btnAccessFromOtherUser.Image")));
             this.btnAccessFromOtherUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAccessFromOtherUser.Location = new System.Drawing.Point(132, 298);
@@ -552,6 +554,7 @@
             this.btnResetPassword.TabIndex = 26;
             this.btnResetPassword.Text = "   Resetear clave";
             this.btnResetPassword.UseVisualStyleBackColor = true;
+            this.btnResetPassword.Click += new System.EventHandler(this.btnResetPassword_Click);
             // 
             // cboPuerta
             // 

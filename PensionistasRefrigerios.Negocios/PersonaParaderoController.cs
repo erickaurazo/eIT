@@ -11,12 +11,13 @@ namespace Asistencia.Negocios
     public class PersonaParaderoController
     {
 
-        public List<SJM_PersonaParadero> ObtenerListadoPersonalParadero(string periodoConsulta)
+        
+        public List<SJM_PersonaParadero> GetListPersonalBywhereabouts(string conection)
         {
             List<SJM_PersonaParadero> listado = new List<SJM_PersonaParadero>();
 
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + periodoConsulta.ToString()].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext Contexto = new BDAsistenciaDataContext(cnx))
             {
                 Contexto.CommandTimeout = 99999;
@@ -66,16 +67,16 @@ namespace Asistencia.Negocios
             return listado;
         }
 
-        public SJM_PersonaParadero ObtenerPersonalParadero(string periodoConsulta, SJM_PersonaParadero oSJ_PersonaParadero)
+        public SJM_PersonaParadero GetPersonBywhereabouts(string conection, SJM_PersonaParadero person)
         {
             SJM_PersonaParadero oParaderoPersona = new SJM_PersonaParadero();
 
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + periodoConsulta.ToString()].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext Contexto = new BDAsistenciaDataContext(cnx))
             {
                 Contexto.CommandTimeout = 99999;
-                var listado = Contexto.SJM_PersonaParadero.Where(x => x.IdParadero.ToString().Trim() == oSJ_PersonaParadero.IdParadero.ToString().Trim()).ToList().OrderBy(x => x.IdParadero).ToList();
+                var listado = Contexto.SJM_PersonaParadero.Where(x => x.IdParadero.ToString().Trim() == person.IdParadero.ToString().Trim()).ToList().OrderBy(x => x.IdParadero).ToList();
 
                 if (listado != null && listado.ToList().Count == 1)
                 {
@@ -86,57 +87,57 @@ namespace Asistencia.Negocios
             return oParaderoPersona;
         }
 
-        public void Registrar(string periodoRegistro, SJM_PersonaParadero oSJ_PersonaParadero)
+        public void Add(string conection, SJM_PersonaParadero person)
         {
             SJM_PersonaParadero oPersonaParadero = new SJM_PersonaParadero();
             //using (TransactionScope Scope = new TransactionScope())
             //{
             #region Transaccion
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + periodoRegistro.ToString()].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext Contexto = new BDAsistenciaDataContext(cnx))
             {
                 #region
                 Contexto.CommandTimeout = 99999;
 
-                var resultadoSubConsulta = Contexto.SJM_PersonaParadero.Where(x => x.Id == oSJ_PersonaParadero.Id).ToList();
+                var resultadoSubConsulta = Contexto.SJM_PersonaParadero.Where(x => x.Id == person.Id).ToList();
 
                 if (resultadoSubConsulta != null && resultadoSubConsulta.ToList().Count == 1)
                 {
                     #region Actualizar
                     oPersonaParadero = resultadoSubConsulta.Single();
                     //oParadero.Id = oSJ_PersonaParadero.Id;
-                    oPersonaParadero.idCodigoPersonalGeneral = oSJ_PersonaParadero.idCodigoPersonalGeneral != null ? oSJ_PersonaParadero.idCodigoPersonalGeneral.ToString().Trim() : "";
-                    oPersonaParadero.dniTrabajador = oSJ_PersonaParadero.dniTrabajador != null ? oSJ_PersonaParadero.dniTrabajador.ToString().Trim() : "";
-                    oPersonaParadero.NombresTrabajador = oSJ_PersonaParadero.NombresTrabajador != null ? oSJ_PersonaParadero.NombresTrabajador.ToString().Trim() : "";
+                    oPersonaParadero.idCodigoPersonalGeneral = person.idCodigoPersonalGeneral != null ? person.idCodigoPersonalGeneral.ToString().Trim() : "";
+                    oPersonaParadero.dniTrabajador = person.dniTrabajador != null ? person.dniTrabajador.ToString().Trim() : "";
+                    oPersonaParadero.NombresTrabajador = person.NombresTrabajador != null ? person.NombresTrabajador.ToString().Trim() : "";
                     //oParadero.Fecha = oSJ_PersonaParadero.Fecha;
                     //oParadero.FechaTransferencia = oSJ_PersonaParadero.FechaTransferencia;
-                    oPersonaParadero.IdParadero = oSJ_PersonaParadero.IdParadero != null ? oSJ_PersonaParadero.IdParadero.ToString().Trim() : "";
-                    oPersonaParadero.paradero = oSJ_PersonaParadero.paradero != null ? oSJ_PersonaParadero.paradero.ToString().Trim() : "";
-                    oPersonaParadero.direccion = oSJ_PersonaParadero.direccion != null ? oSJ_PersonaParadero.direccion.ToString().Trim() : "";
-                    oPersonaParadero.contacto = oSJ_PersonaParadero.contacto != null ? oSJ_PersonaParadero.contacto.ToString().Trim() : "";
-                    oPersonaParadero.nroContacto = oSJ_PersonaParadero.nroContacto != null ? oSJ_PersonaParadero.nroContacto.ToString().Trim() : "";
+                    oPersonaParadero.IdParadero = person.IdParadero != null ? person.IdParadero.ToString().Trim() : "";
+                    oPersonaParadero.paradero = person.paradero != null ? person.paradero.ToString().Trim() : "";
+                    oPersonaParadero.direccion = person.direccion != null ? person.direccion.ToString().Trim() : "";
+                    oPersonaParadero.contacto = person.contacto != null ? person.contacto.ToString().Trim() : "";
+                    oPersonaParadero.nroContacto = person.nroContacto != null ? person.nroContacto.ToString().Trim() : "";
                     //oParadero.estado = oSJ_PersonaParadero.estado;
                     Contexto.SubmitChanges();
                     #endregion
                 }
                 else
                 {
-                    if (oSJ_PersonaParadero.Id == 0)
+                    if (person.Id == 0)
                     {
                         #region Registro()
                         //oParadero.Id = oSJ_PersonaParadero.Id;
-                        oPersonaParadero.idCodigoPersonalGeneral = oSJ_PersonaParadero.idCodigoPersonalGeneral != null ? oSJ_PersonaParadero.idCodigoPersonalGeneral.ToString().Trim() : "";
-                        oPersonaParadero.dniTrabajador = oSJ_PersonaParadero.dniTrabajador != null ? oSJ_PersonaParadero.dniTrabajador.ToString().Trim() : "";
-                        oPersonaParadero.NombresTrabajador = oSJ_PersonaParadero.NombresTrabajador != null ? oSJ_PersonaParadero.NombresTrabajador.ToString().Trim() : "";
-                        oPersonaParadero.Fecha = oSJ_PersonaParadero.Fecha;
-                        oPersonaParadero.FechaTransferencia = oSJ_PersonaParadero.FechaTransferencia;
-                        oPersonaParadero.IdParadero = oSJ_PersonaParadero.IdParadero != null ? oSJ_PersonaParadero.IdParadero.ToString().Trim() : "";
-                        oPersonaParadero.estado = oSJ_PersonaParadero.estado;
-                        oPersonaParadero.paradero = oSJ_PersonaParadero.paradero != null ? oSJ_PersonaParadero.paradero.ToString().Trim() : "";
-                        oPersonaParadero.direccion = oSJ_PersonaParadero.direccion != null ? oSJ_PersonaParadero.direccion.ToString().Trim() : "";
-                        oPersonaParadero.contacto = oSJ_PersonaParadero.contacto != null ? oSJ_PersonaParadero.contacto.ToString().Trim() : "";
-                        oPersonaParadero.nroContacto = oSJ_PersonaParadero.nroContacto != null ? oSJ_PersonaParadero.nroContacto.ToString().Trim() : "";
+                        oPersonaParadero.idCodigoPersonalGeneral = person.idCodigoPersonalGeneral != null ? person.idCodigoPersonalGeneral.ToString().Trim() : "";
+                        oPersonaParadero.dniTrabajador = person.dniTrabajador != null ? person.dniTrabajador.ToString().Trim() : "";
+                        oPersonaParadero.NombresTrabajador = person.NombresTrabajador != null ? person.NombresTrabajador.ToString().Trim() : "";
+                        oPersonaParadero.Fecha = person.Fecha;
+                        oPersonaParadero.FechaTransferencia = person.FechaTransferencia;
+                        oPersonaParadero.IdParadero = person.IdParadero != null ? person.IdParadero.ToString().Trim() : "";
+                        oPersonaParadero.estado = person.estado;
+                        oPersonaParadero.paradero = person.paradero != null ? person.paradero.ToString().Trim() : "";
+                        oPersonaParadero.direccion = person.direccion != null ? person.direccion.ToString().Trim() : "";
+                        oPersonaParadero.contacto = person.contacto != null ? person.contacto.ToString().Trim() : "";
+                        oPersonaParadero.nroContacto = person.nroContacto != null ? person.nroContacto.ToString().Trim() : "";
                         Contexto.SJM_PersonaParadero.InsertOnSubmit(oPersonaParadero);
                         Contexto.SubmitChanges();
 
@@ -152,19 +153,19 @@ namespace Asistencia.Negocios
 
         }
 
-        public void Eliminar(string periodoRegistro, SJM_PersonaParadero oSJ_PersonalParadero)
+        public void Delete(string conection, SJM_PersonaParadero person)
         {
             SJM_PersonaParadero oPersonaParadero = new SJM_PersonaParadero();
 
             #region Transaccion
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + periodoRegistro.ToString()].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext Contexto = new BDAsistenciaDataContext(cnx))
             {
                 #region
                 Contexto.CommandTimeout = 99999;
 
-                var resultadoSubConsulta = Contexto.SJM_PersonaParadero.Where(x => x.Id == oSJ_PersonalParadero.Id).ToList();
+                var resultadoSubConsulta = Contexto.SJM_PersonaParadero.Where(x => x.Id == person.Id).ToList();
 
                 if (resultadoSubConsulta != null && resultadoSubConsulta.ToList().Count == 1)
                 {
@@ -183,19 +184,19 @@ namespace Asistencia.Negocios
         }
 
         /* Se puede anular o activar el paradero */
-        public void CambiarEstadoDocumento(string periodoRegistro, SJM_PersonaParadero oSJ_PersonalParadero)
+        public void ChangeStatus(string conection, SJM_PersonaParadero person)
         {
             SJM_PersonaParadero oPersonaParadero = new SJM_PersonaParadero();
 
             #region Transaccion
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + periodoRegistro.ToString()].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext Contexto = new BDAsistenciaDataContext(cnx))
             {
                 #region
                 Contexto.CommandTimeout = 99999;
 
-                var resultadoSubConsulta = Contexto.SJM_PersonaParadero.Where(x => x.Id == oSJ_PersonalParadero.Id).ToList();
+                var resultadoSubConsulta = Contexto.SJM_PersonaParadero.Where(x => x.Id == person.Id).ToList();
 
                 if (resultadoSubConsulta != null && resultadoSubConsulta.ToList().Count == 1)
                 {
@@ -221,27 +222,26 @@ namespace Asistencia.Negocios
 
         }
 
-
-        public bool ValidarDuplicidadPersonal(string periodo, SJM_PersonaParadero oPersonaParadero)
+        public bool ValidarDuplicidadPersonal(string conection, SJM_PersonaParadero person)
         {
             bool estado = false;
 
             #region Transaccion
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + periodo.Trim()];
-            using (BDAsistenciaDataContext Contexto = new BDAsistenciaDataContext(cnx))
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
+            using (BDAsistenciaDataContext context = new BDAsistenciaDataContext(cnx))
             {
                 #region
-                Contexto.CommandTimeout = 99999;
+                context.CommandTimeout = 99999;
 
-                var resultadoSubConsulta = Contexto.SJM_PersonaParadero.Where(x => x.dniTrabajador == oPersonaParadero.dniTrabajador).ToList();
+                var resultadoSubConsulta = context.SJM_PersonaParadero.Where(x => x.dniTrabajador == person.dniTrabajador).ToList();
 
                 if (resultadoSubConsulta != null && resultadoSubConsulta.ToList().Count > 0)
                 {
                     estado = true;
                 }
 
-                Contexto.Connection.Close();
+                context.Connection.Close();
                 #endregion
             }
             #endregion

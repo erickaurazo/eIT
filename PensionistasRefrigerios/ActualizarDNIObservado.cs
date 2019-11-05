@@ -8,12 +8,15 @@ using Asistencia.Datos;
 namespace Asistencia
 {
     public partial class ActualizarDNIObservado : Form
-    {
-        private string periodo;
-        private string iDCONTROLINGRESO;
-        private string iTEM;
-        private string nombres;
-        private string dni;
+    {                
+        private string _conection;
+        private string _companyId;
+        private ASJ_USUARIOS _user;
+        private string _controlIngresoSalidaId;
+        private string _item;
+        private string _period;
+        private string _name;
+        private string _dni;
 
         public ControlIngresoSalidaPersonalController AsistenciaModelo { get; private set; }
 
@@ -24,18 +27,31 @@ namespace Asistencia
         }
 
 
-
-        public ActualizarDNIObservado(string periodo, string iDCONTROLINGRESO, string iTEM, string nombres, string dni) 
+        public ActualizarDNIObservado(string conection, string companyId, ASJ_USUARIOS user)
         {
             InitializeComponent();
-            this.iDCONTROLINGRESO = iDCONTROLINGRESO;
-            this.iTEM = iTEM;
-            this.periodo = periodo;
-            this.nombres = nombres;
-            this.dni = dni;
+            _conection = conection;
+            _companyId = companyId;
+            _user = user;
+            Inicio();
+        }
 
-            this.txtdniObservado.Text = this.dni;
-            this.txtNombresObservador.Text = this.nombres;
+
+
+        public ActualizarDNIObservado(string period, string controlIngresoSalidaId, string item, string name, string dni, string conection, string companyId, ASJ_USUARIOS user)
+        {
+            InitializeComponent();
+            _controlIngresoSalidaId = controlIngresoSalidaId;
+            _item = item;
+            _period = period;
+            _name = name;
+            _dni = dni;
+            _conection = conection;
+            _companyId = companyId;
+            _user = user;
+
+            this.txtdniObservado.Text = _dni;
+            this.txtNombresObservador.Text = _name;
 
             Inicio();
         }
@@ -49,10 +65,10 @@ namespace Asistencia
         {
             try
             {
-                periodo = DateTime.Now.Year.ToString();
+
                 Globales.Servidor = ConfigurationManager.AppSettings["Servidor"].ToString();
                 Globales.UsuarioBaseDatos = ConfigurationManager.AppSettings["Usuario"].ToString();
-                Globales.BaseDatos = ConfigurationManager.AppSettings["BasesDatos" + periodo].ToString();
+                Globales.BaseDatos = ConfigurationManager.AppSettings[_conection].ToString();
                 Globales.ClaveBaseDatos = ConfigurationManager.AppSettings["Clave"].ToString();
                 Globales.IdEmpresa = "001";
                 Globales.Empresa = "EMPRESA AGRICOLA SAN JOSE SA";
@@ -75,13 +91,13 @@ namespace Asistencia
         {
             try
             {
-                if (this.iDCONTROLINGRESO != string.Empty && this.iTEM != string.Empty)
+                if (_controlIngresoSalidaId != string.Empty && _item != string.Empty)
                 {
                     if (this.txtDNI.Text.Trim() != string.Empty && this.txtNombres.Text.Trim() != string.Empty)
                     {
                         AsistenciaModelo = new ControlIngresoSalidaPersonalController();
-                        AsistenciaModelo.ActualizarDNIAsistenciaObservada(this.periodo, this.iDCONTROLINGRESO, this.iTEM, this.txtDNI.Text.Trim());
-                        MessageBox.Show("Actualizado correctamente","MENSAJE DEL SISTEMA");
+                        AsistenciaModelo.UpdateObservedListDNI(_conection, _controlIngresoSalidaId, _item, this.txtDNI.Text.Trim());
+                        MessageBox.Show("Actualizado correctamente", "MENSAJE DEL SISTEMA");
                     }
                 }
             }
@@ -89,9 +105,9 @@ namespace Asistencia
             {
                 MessageBox.Show(Ex.Message.ToString(), "MENSAJE DEL SISTEMA");
                 return;
-               
+
             }
-         
+
         }
     }
 }

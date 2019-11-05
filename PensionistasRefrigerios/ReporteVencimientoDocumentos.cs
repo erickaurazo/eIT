@@ -23,8 +23,7 @@ namespace Asistencia
     public partial class ReporteVencimientoDocumentos : Form
     {
         private List<SJ_RHListadoVencimientoDocumentosByUnidadTransportesResult> expirationOfDocuments;
-        private CarrierController model;
-        private string period;
+        private CarrierController model;        
         private ExportToExcelHelper modelExcel;
         private string _conection;
         private ASJ_USUARIOS _user;
@@ -49,7 +48,7 @@ namespace Asistencia
         {
             model = new CarrierController();
             expirationOfDocuments = new List<SJ_RHListadoVencimientoDocumentosByUnidadTransportesResult>();
-            expirationOfDocuments = model.GetExpirationOfDocumentsPerTransportationUnit(period);
+            expirationOfDocuments = model.GetExpirationOfDocumentsPerTransportationUnit(_conection);
         }
 
         private void bgwHilo_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -68,8 +67,7 @@ namespace Asistencia
         }
 
         private void RefreshList()
-        {
-            period = DateTime.Now.Year.ToString();
+        {            
             gbList.Enabled = false;
             cbPrincipal.Enabled = false;
             ProgressBar.Visible = true;

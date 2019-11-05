@@ -19,7 +19,7 @@ namespace Asistencia
 {
     public partial class CatalogoUbicacionParaderos : Form
     {
-        private string periodo;
+        
         private WhereaboutsController modelo;
         private List<Paradero> ListaParaderos;
         private Paradero oParadero;
@@ -27,10 +27,28 @@ namespace Asistencia
         private string nombreArchivo;
         private bool exportVisualSettings;
         private List<Grupo> listadoTipoParadero;
+        private string _conection;
+        private ASJ_USUARIOS _user;
+        private string _companyId;
 
         public CatalogoUbicacionParaderos()
         {
             InitializeComponent();
+            RadGridLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.GridLocalizationProviderEspanol();
+            RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
+            RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
+            RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
+            Inicio();
+            CargarComboTipoParadero();
+
+        }
+
+        public CatalogoUbicacionParaderos(string conection, ASJ_USUARIOS user, string companyId)
+        {
+            InitializeComponent();
+            _conection = conection;
+            _user = user;
+            _companyId = companyId;
             RadGridLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.GridLocalizationProviderEspanol();
             RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
             RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
@@ -54,10 +72,10 @@ namespace Asistencia
         {
             try
             {
-                periodo = DateTime.Now.Year.ToString();
+                
                 MyControlsDataBinding.Extensions.Globales.Servidor = ConfigurationManager.AppSettings["Servidor"].ToString();
                 MyControlsDataBinding.Extensions.Globales.UsuarioBaseDatos = ConfigurationManager.AppSettings["Usuario"].ToString();
-                MyControlsDataBinding.Extensions.Globales.BaseDatos = ConfigurationManager.AppSettings["BasesDatos" + periodo].ToString();
+                MyControlsDataBinding.Extensions.Globales.BaseDatos = ConfigurationManager.AppSettings[_conection].ToString();
                 MyControlsDataBinding.Extensions.Globales.ClaveBaseDatos = ConfigurationManager.AppSettings["Clave"].ToString();
                 MyControlsDataBinding.Extensions.Globales.IdEmpresa = "001";
                 MyControlsDataBinding.Extensions.Globales.Empresa = "EMPRESA AGRICOLA SAN JOSE SA";
@@ -92,7 +110,7 @@ namespace Asistencia
             {
                 modelo = new WhereaboutsController();
                 ListaParaderos = new List<Paradero>();
-                ListaParaderos = modelo.ObtenerListaParaderos(periodo).ToList();
+                ListaParaderos = modelo.ObtenerListaParaderos(_conection).ToList();
             }
             catch (Exception Ex)
             {
@@ -119,8 +137,7 @@ namespace Asistencia
 
         private void RealizarConsulta()
         {
-            BarraSuperior.Enabled = false;
-            periodo = DateTime.Now.Year.ToString();
+            BarraSuperior.Enabled = false;            
             bgwHilo.RunWorkerAsync();
 
         }
@@ -309,7 +326,7 @@ namespace Asistencia
                     oParaderoRegistro.Observacion = this.txtObservación.Text.ToString().Trim();
                     oParaderoRegistro.ESTADO = this.txtEstado.Text == "Activo".ToUpper() ? 1 : 0;
                     oParaderoRegistro.tipo = this.cboTipo.SelectedValue != null ? Convert.ToChar(this.cboTipo.SelectedValue.ToString()) : Convert.ToChar("T");
-                    modelo.Registrar(periodo, oParaderoRegistro);
+                    modelo.Registrar(_conection, oParaderoRegistro);
                     MessageBox.Show("Registrado correctamente", "MENSAJE DEL SISTEMA");
                     RealizarConsulta();
                     gbMantenimientoRegistros.Enabled = false;
@@ -510,7 +527,7 @@ namespace Asistencia
             if (oParadero != null && (oParadero.estado == 1 || oParadero.estado == 0))
             {
                 modelo = new WhereaboutsController();
-                modelo.CambiarEstadoDocumento(periodo, oParadero);
+                modelo.CambiarEstadoDocumento(_conection, oParadero);
                 RealizarConsulta();
             }
         }
@@ -545,7 +562,7 @@ namespace Asistencia
             if (oParadero != null && (oParadero.estado == 1 || oParadero.estado == 0))
             {
                 modelo = new WhereaboutsController();
-                modelo.Eliminar(periodo, oParadero);
+                modelo.Eliminar(_conection, oParadero);
                 RealizarConsulta();
             }
         }

@@ -11,12 +11,12 @@ namespace Asistencia.Negocios
 
         List<HistorialObj> historiales;
 
-        public List<HistorialObj> ListarHistorialSJ(string idHistorial)
+        public List<HistorialObj> ListarHistorialSJ(string idHistorial, string conection)
         {
             historiales = new List<HistorialObj>();
 
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd2014"].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
 
             using (BDAsistenciaDataContext contexto = new BDAsistenciaDataContext(cnx))
             {
@@ -43,22 +43,22 @@ namespace Asistencia.Negocios
             return historiales;
         }
 
-        public List<HistorialObj> ListarHistorialSJ(string idLog, string tabla)
+        public List<HistorialObj> ListarHistorialSJ(string loggerId, string table, string conection)
         {
             historiales = new List<HistorialObj>();
 
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd2014"].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
 
             using (BDAsistenciaDataContext contexto = new BDAsistenciaDataContext(cnx))
             {
                 contexto.CommandTimeout = 98000;
 
 
-                var resultadoConsultaHistorial = contexto.SJ_ListarLogDeTablasxCodigoLogxNombreTabla(idLog, tabla).ToList();
+                var resultadoConsultaHistorial = contexto.SJ_ListarLogDeTablasxCodigoLogxNombreTabla(loggerId, table).ToList();
 
 
-                if (resultadoConsultaHistorial != null  && resultadoConsultaHistorial.ToList().Count > 0)
+                if (resultadoConsultaHistorial != null && resultadoConsultaHistorial.ToList().Count > 0)
                 {
                     historiales = (from items in resultadoConsultaHistorial
                                    group items by new { items.ITEM } into j
@@ -80,10 +80,10 @@ namespace Asistencia.Negocios
             return historiales;
         }
 
-        public string AsignarNumeroItemHistorial(string periodo, string idLog)
+        public string AsignarNumeroItemHistorial(string conection, string idLog)
         {
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + periodo].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             string correlativo = "001";
             using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
             {
@@ -98,10 +98,10 @@ namespace Asistencia.Negocios
             return correlativo;
         }
 
-        public void RegistrarHistorial(SJ_LogTablas historial, string periodo)
+        public void RegistrarHistorial(SJ_LogTablas historial, string conection)
         {
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings["bd" + periodo].ToString();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
             {
                 Modelo.CommandTimeout = 98000;
@@ -111,7 +111,7 @@ namespace Asistencia.Negocios
                     SJ_LogTablas oHistorial = new SJ_LogTablas();
                     oHistorial.IDEMPRESA = "001";
                     oHistorial.IDLOG = historial.IDLOG.ToString().Trim();
-                    oHistorial.ITEM = AsignarNumeroItemHistorial(periodo, historial.IDLOG);
+                    oHistorial.ITEM = AsignarNumeroItemHistorial(conection, historial.IDLOG);
                     oHistorial.TABLA = historial.TABLA.ToString().Trim();
                     oHistorial.IDCAMPO = historial.IDCAMPO.ToString().Trim();
                     oHistorial.CAMPOCLAVE = historial.CAMPOCLAVE.ToString().Trim();

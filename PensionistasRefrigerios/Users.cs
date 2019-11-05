@@ -19,7 +19,6 @@ namespace Asistencia
 {
     public partial class Users : Form
     {
-        private string period;
         private ExportToExcelHelper modelExportToExcel;
         private List<ASJ_USUARIOS> users;
         private UsersController model;
@@ -70,10 +69,10 @@ namespace Asistencia
         {
             try
             {
-                period = DateTime.Now.Year.ToString();
+
                 MyControlsDataBinding.Extensions.Globales.Servidor = ConfigurationManager.AppSettings["Servidor"].ToString();
                 MyControlsDataBinding.Extensions.Globales.UsuarioBaseDatos = ConfigurationManager.AppSettings["Usuario"].ToString();
-                MyControlsDataBinding.Extensions.Globales.BaseDatos = ConfigurationManager.AppSettings["BasesDatos" + period].ToString();
+                MyControlsDataBinding.Extensions.Globales.BaseDatos = ConfigurationManager.AppSettings[_conection].ToString();
                 MyControlsDataBinding.Extensions.Globales.ClaveBaseDatos = ConfigurationManager.AppSettings["Clave"].ToString();
                 MyControlsDataBinding.Extensions.Globales.IdEmpresa = "001";
                 MyControlsDataBinding.Extensions.Globales.Empresa = "EMPRESA AGRICOLA SAN JOSE SA";
@@ -107,7 +106,7 @@ namespace Asistencia
 
         private void RefreshList()
         {
-            period = DateTime.Now.Year.ToString();
+
             gbEdition.Enabled = false;
             gbList.Enabled = false;
             btnNuevo.Enabled = true;
@@ -116,7 +115,6 @@ namespace Asistencia
             btnEliminarRegistro.Enabled = true;
             btnSave.Enabled = false;
             btnAtras.Enabled = false;
-            period = DateTime.Now.Year.ToString();
             ProgressBar.Visible = true;
             bgwHilo.RunWorkerAsync();
         }
@@ -223,7 +221,7 @@ namespace Asistencia
                     user.SUCURSAL = cboSucursal.SelectedText.ToString().Trim();
                     user.id_puerta = Convert.ToInt32(cboPuerta.SelectedValue.ToString().Trim());
                     user.SUCURSAL = cboPuerta.SelectedText.ToString().Trim();
-                    if (model.AddUser(period, user, _companyId) == true)
+                    if (model.AddUser(_conection, user, _companyId) == true)
                     {
                         MessageBox.Show("Operacion realizada satisfactoriamente", "Confirmación del sistema");
                         gbEdition.Enabled = false;
@@ -255,27 +253,28 @@ namespace Asistencia
         private bool ValidateForm()
         {
             bool status = true;
-            if (cboArea.SelectedValue.ToString().Trim() == "0")
+            if (cboArea.SelectedValue != null && cboArea.SelectedValue.ToString().Trim() == "0")
             {
                 status = false;
             }
+
 
             if (cboLocal.SelectedValue != null && cboLocal.SelectedValue.ToString().Trim() == "0")
             {
                 status = false;
             }
 
-            if (cboNivelAcceso.SelectedValue.ToString().Trim() == "0")
+            if (cboNivelAcceso.SelectedValue != null && cboNivelAcceso.SelectedValue.ToString().Trim() == "0")
             {
                 status = false;
             }
 
-            if (cboPuerta.SelectedValue.ToString().Trim() == "0")
+            if (cboPuerta.SelectedValue != null && cboPuerta.SelectedValue.ToString().Trim() == "0")
             {
                 status = false;
             }
 
-            if (cboSucursal.SelectedValue.ToString().Trim() == "0")
+            if (cboSucursal.SelectedValue != null && cboSucursal.SelectedValue.ToString().Trim() == "0")
             {
                 status = false;
             }
@@ -312,7 +311,7 @@ namespace Asistencia
             {
                 ASJ_USUARIOS user = new ASJ_USUARIOS();
                 user.IdUsuario = txtUserCode.Text.Trim();
-                if (model.ChangeStateUser(period, user, _companyId) == true)
+                if (model.ChangeStateUser(_conection, user, _companyId) == true)
                 {
                     MessageBox.Show("Operacion realizada satisfactoriamente", "Confirmación del sistema");
                     gbEdition.Enabled = false;
@@ -350,7 +349,7 @@ namespace Asistencia
             {
                 ASJ_USUARIOS user = new ASJ_USUARIOS();
                 user.IdUsuario = txtUserCode.Text.Trim();
-                if (model.RemoveUser(period, user, _companyId) == true)
+                if (model.RemoveUser(_conection, user, _companyId) == true)
                 {
                     MessageBox.Show("Operacion realizada satisfactoriamente", "Confirmación del sistema");
                     gbEdition.Enabled = false;
@@ -461,7 +460,7 @@ namespace Asistencia
             {
                 users = new List<ASJ_USUARIOS>();
                 model = new UsersController();
-                users = model.GetListAllUser(period, _companyId).ToList();
+                users = model.GetListAllUser(_conection, _companyId).ToList();
                 modelComboBox = new ComboBoxHelper();
 
                 listAreaByComboBox = new List<Grupo>();
@@ -573,6 +572,53 @@ namespace Asistencia
                     Privileges ofrm = new Privileges(this.txtUserCode.Text.Trim(), this.txtFullName.Text.Trim(), _conection, _user, _companyId);
                     ofrm.ShowDialog();
                 }
+            }
+        }
+
+        private void btnResetPassword_Click(object sender, EventArgs e)
+        {
+            ResetPassword();
+        }
+
+        private void ResetPassword()
+        {
+            try
+            {
+                if (this.txtUserCode.Text.Trim() != string.Empty && this.txtFullName.Text.Trim() != string.Empty)
+                {
+                    ASJ_USUARIOS user = new ASJ_USUARIOS();
+                    user.IdUsuario = txtUserCode.Text.Trim();
+                    if (model.ResetPasswordByUser(_conection, user, _companyId) == true)
+                    {
+                        MessageBox.Show("Operacion realizada satisfactoriamente. Vuelva a ingresar al sistema", "Confirmación del sistema");
+                        gbEdition.Enabled = false;
+                        gbList.Enabled = true;
+                        btnNuevo.Enabled = true;
+                        btnActualizarLista.Enabled = true;
+                        btnAnular.Enabled = true;
+                        btnEliminarRegistro.Enabled = true;
+                        btnSave.Enabled = false;
+                        btnEditar.Enabled = true;
+                        btnAtras.Enabled = false;
+                        RefreshList();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Faltan datos para poder registrar el formulario", "Confirmación del sistema");
+                        return;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Faltan datos para poder registrar el formulario", "Confirmación del sistema");
+                    return;
+                }
+            }
+            catch (Exception Ex)
+            {
+
+                MessageBox.Show(Ex.Message.ToString().Trim(), "ADVERTANCIA DEL SISTEMA");
+                return;
             }
         }
     }
