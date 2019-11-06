@@ -216,13 +216,13 @@ namespace Asistencia.Negocios
             List<Grupo> listadoTipoParaderos = new List<Grupo>();
 
             oTipoParadero = new Grupo();
-            oTipoParadero.Codigo = "T";
-            oTipoParadero.Descripcion = "TRANSPORTE";
+            oTipoParadero.Codigo = "P";
+            oTipoParadero.Descripcion = "PRINCIPAL";
             listadoTipoParaderos.Add(oTipoParadero);
 
             oTipoParadero = new Grupo();
-            oTipoParadero.Codigo = "P";
-            oTipoParadero.Descripcion = "PENSION";
+            oTipoParadero.Codigo = "M";
+            oTipoParadero.Descripcion = "INTERMEDIO";
             listadoTipoParaderos.Add(oTipoParadero);
 
 

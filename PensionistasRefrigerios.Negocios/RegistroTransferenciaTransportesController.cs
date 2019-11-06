@@ -39,13 +39,17 @@ namespace Asistencia.Negocios
             }
         }
 
-        // actualizar el DNI
-        public void UpdatePlaca(string conection, SJ_ListarAsistenciaSalidaUnidadesTransportePersonalByPeriodoResult registro, string placa, string codigoRuta)
+        // actualizar Placa
+        public void UpdatePlaca(string conection, SJ_ListarAsistenciaSalidaUnidadesTransportePersonalByPeriodoResult asistance, string placaNew, string routerIdNew)
         {
             cnx = ConfigurationManager.AppSettings[conection].ToString();
             using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
             {
-                var resultado = Modelo.ASJ_RegistroTransferenciaTransportes.Where(x => x.placa.Trim() == registro.placa.Trim() && x.fecha >= Convert.ToDateTime(registro.fecha + " 00:00:00") && x.fecha <= Convert.ToDateTime(registro.fecha + " 23:59:59")).ToList();
+                var resultado = Modelo.ASJ_RegistroTransferenciaTransportes.Where(
+                    x => x.placa.Trim() == asistance.placa.Trim() && 
+                    x.fecha >= Convert.ToDateTime(asistance.fecha + " 00:00:00") 
+                    && x.fecha <= Convert.ToDateTime(asistance.fecha + " 23:59:59")
+                    ).ToList();
 
                 if (resultado != null && resultado.ToList().Count > 0)
                 {
@@ -58,14 +62,14 @@ namespace Asistencia.Negocios
                         {
                             transferenciaAsistencia = resultadoSubConsulta.Single();
 
-                            if (placa.Trim() != string.Empty)
+                            if (placaNew.Trim() != string.Empty)
                             {
-                                transferenciaAsistencia.placa = placa.Trim();
+                                transferenciaAsistencia.placa = placaNew.Trim();
                             }
 
-                            if (codigoRuta.Trim() != string.Empty)
+                            if (routerIdNew.Trim() != string.Empty)
                             {
-                                transferenciaAsistencia.idRutaOrigen = Convert.ToInt32(codigoRuta);
+                                transferenciaAsistencia.idRutaOrigen = Convert.ToInt32(routerIdNew);
                             }
 
                             Modelo.SubmitChanges();

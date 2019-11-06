@@ -59,7 +59,7 @@
             this.GoTransportesCatalogoRuta = new System.Windows.Forms.ToolStripMenuItem();
             this.GoPlanillaCatalogoTipoObservado = new System.Windows.Forms.ToolStripMenuItem();
             this.viewMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.GoPlanillaMovimientoRegistroAsistencia = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoTransportesMovimientoAsistenciaTransferenciaBuses = new System.Windows.Forms.ToolStripMenuItem();
             this.procesoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.GoPlanillaProcesoActualizarListaSincronizacionATablets = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -85,9 +85,9 @@
             this.lblUsuarioNombre = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblNombre = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblNombreDescripcion = new System.Windows.Forms.ToolStripStatusLabel();
-            this.bgwHilo = new System.ComponentModel.BackgroundWorker();
             this.lblConexión = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblConexionDescripcion = new System.Windows.Forms.ToolStripStatusLabel();
+            this.bgwHilo = new System.ComponentModel.BackgroundWorker();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -108,7 +108,7 @@
             this.menuStrip.MdiWindowListItem = this.windowsMenu;
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip.Size = new System.Drawing.Size(1203, 24);
+            this.menuStrip.Size = new System.Drawing.Size(677, 24);
             this.menuStrip.TabIndex = 11;
             this.menuStrip.Text = "MenuPrincipal";
             // 
@@ -345,18 +345,18 @@
             // viewMenu
             // 
             this.viewMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.GoPlanillaMovimientoRegistroAsistencia});
+            this.GoTransportesMovimientoAsistenciaTransferenciaBuses});
             this.viewMenu.Name = "viewMenu";
             this.viewMenu.Size = new System.Drawing.Size(84, 20);
             this.viewMenu.Text = "Movimiento";
             // 
-            // GoPlanillaMovimientoRegistroAsistencia
+            // GoTransportesMovimientoAsistenciaTransferenciaBuses
             // 
-            this.GoPlanillaMovimientoRegistroAsistencia.Name = "GoPlanillaMovimientoRegistroAsistencia";
-            this.GoPlanillaMovimientoRegistroAsistencia.Size = new System.Drawing.Size(187, 22);
-            this.GoPlanillaMovimientoRegistroAsistencia.Text = "Registro de asistencia";
-            this.GoPlanillaMovimientoRegistroAsistencia.Visible = false;
-            this.GoPlanillaMovimientoRegistroAsistencia.Click += new System.EventHandler(this.RRHHRegistroAsistencia_Click);
+            this.GoTransportesMovimientoAsistenciaTransferenciaBuses.Name = "GoTransportesMovimientoAsistenciaTransferenciaBuses";
+            this.GoTransportesMovimientoAsistenciaTransferenciaBuses.Size = new System.Drawing.Size(187, 22);
+            this.GoTransportesMovimientoAsistenciaTransferenciaBuses.Text = "Registro de asistencia";
+            this.GoTransportesMovimientoAsistenciaTransferenciaBuses.Visible = false;
+            this.GoTransportesMovimientoAsistenciaTransferenciaBuses.Click += new System.EventHandler(this.RRHHRegistroAsistencia_Click);
             // 
             // procesoToolStripMenuItem
             // 
@@ -507,9 +507,9 @@
             this.lblNombreDescripcion,
             this.lblConexión,
             this.lblConexionDescripcion});
-            this.statusStrip.Location = new System.Drawing.Point(0, 433);
+            this.statusStrip.Location = new System.Drawing.Point(0, 400);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(1203, 22);
+            this.statusStrip.Size = new System.Drawing.Size(677, 22);
             this.statusStrip.TabIndex = 17;
             this.statusStrip.Text = "StatusStrip";
             // 
@@ -541,11 +541,6 @@
             this.lblNombreDescripcion.Size = new System.Drawing.Size(200, 17);
             this.lblNombreDescripcion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // bgwHilo
-            // 
-            this.bgwHilo.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwHilo_DoWork);
-            this.bgwHilo.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwHilo_RunWorkerCompleted);
-            // 
             // lblConexión
             // 
             this.lblConexión.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -560,18 +555,23 @@
             this.lblConexionDescripcion.Size = new System.Drawing.Size(200, 17);
             this.lblConexionDescripcion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // bgwHilo
+            // 
+            this.bgwHilo.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwHilo_DoWork);
+            this.bgwHilo.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwHilo_RunWorkerCompleted);
+            // 
             // Menu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.ClientSize = new System.Drawing.Size(1203, 455);
+            this.ClientSize = new System.Drawing.Size(677, 422);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
             this.Name = "Menu";
-            this.Text = "Agrícola San José S.A  | Sullana | Piura | Perú  | V 1.1.20";
-            this.toolTip.SetToolTip(this, "20.08.19");
+            this.Text = "Agrícola San José S.A  | Sullana | Piura | Perú  | V 1.2";
+            this.toolTip.SetToolTip(this, "06.11.19");
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Menu_FormClosing);
             this.Load += new System.EventHandler(this.Menu_Load);
@@ -614,7 +614,7 @@
         private System.Windows.Forms.ToolStripMenuItem GoPlanillaCatalogoPersonalAsignarParadero;
         private System.Windows.Forms.ToolStripMenuItem GoPlanillaCatalogoPersonalObservados;
         private System.Windows.Forms.ToolStripMenuItem GoPlanillaCatalogoTipoObservado;
-        private System.Windows.Forms.ToolStripMenuItem GoPlanillaMovimientoRegistroAsistencia;
+        private System.Windows.Forms.ToolStripMenuItem GoTransportesMovimientoAsistenciaTransferenciaBuses;
         private System.Windows.Forms.ToolStripMenuItem GoTransportesCatalogoParadero;
         private System.Windows.Forms.ToolStripMenuItem GoTransportesReporteIngresoSalidaBuses;
         private System.Windows.Forms.ToolStripMenuItem GoPlanillaProcesoActualizarListaSincronizacionATablets;

@@ -248,8 +248,6 @@ namespace Asistencia.Helper
             return dbs.ToList();
         }
 
-
-
         public List<Grupo> GetComboBoxCompanysByLogin(string cnx)
         {
             var companies = new List<Grupo>();
@@ -266,6 +264,55 @@ namespace Asistencia.Helper
             companies = companyModel.FindCompanyById(db, idCompany);
             return companies;
 
+        }
+
+        public List<Grupo> GetComboTypeWhereabouts()
+        {
+            List<Grupo> result = new List<Grupo>();
+            result.Add(new Grupo { Codigo = "", Descripcion = "Seleccionar item" });
+            result.Add(new Grupo { Codigo = "P", Descripcion = "PRINCIPAL" });
+            result.Add(new Grupo { Codigo = "I", Descripcion = "INTERMEDIO" });
+
+            return result.OrderBy(x => x.Codigo).ToList(); ;
+        }
+
+
+        public List<Grupo> GetComboMonthOfYear()
+        {
+            List<Grupo> result = new List<Grupo>();
+            result.Add(new Grupo { Valor = "01", Descripcion = "ENERO" });
+            result.Add(new Grupo { Valor = "02", Descripcion = "FEBRERO" });
+            result.Add(new Grupo { Valor = "03", Descripcion = "MARZO" });
+            result.Add(new Grupo { Valor = "04", Descripcion = "ABRIL" });
+            result.Add(new Grupo { Valor = "05", Descripcion = "MAYO" });
+            result.Add(new Grupo { Valor = "06", Descripcion = "JUNIO" });
+            result.Add(new Grupo { Valor = "07", Descripcion = "JULIO" });
+            result.Add(new Grupo { Valor = "08", Descripcion = "AGOSTO" });
+            result.Add(new Grupo { Valor = "09", Descripcion = "SETIEMBRE" });
+            result.Add(new Grupo { Valor = "10", Descripcion = "OCTUBRE" });
+            result.Add(new Grupo { Valor = "11", Descripcion = "NOVIEMBRE" });
+            result.Add(new Grupo { Valor = "12", Descripcion = "DICIEMBRE" });
+            return result;
+        }
+
+        public List<Grupo> GetComboMonth()
+        {
+            List<Grupo> result = new List<Grupo>();
+            result.Add(new Grupo { Valor = "00", Descripcion = "TODOS" });
+            result.Add(new Grupo { Valor = "01", Descripcion = "ENERO" });
+            result.Add(new Grupo { Valor = "02", Descripcion = "FEBRERO" });
+            result.Add(new Grupo { Valor = "03", Descripcion = "MARZO" });
+            result.Add(new Grupo { Valor = "04", Descripcion = "ABRIL" });
+            result.Add(new Grupo { Valor = "05", Descripcion = "MAYO" });
+            result.Add(new Grupo { Valor = "06", Descripcion = "JUNIO" });
+            result.Add(new Grupo { Valor = "07", Descripcion = "JULIO" });
+            result.Add(new Grupo { Valor = "08", Descripcion = "AGOSTO" });
+            result.Add(new Grupo { Valor = "09", Descripcion = "SETIEMBRE" });
+            result.Add(new Grupo { Valor = "10", Descripcion = "OCTUBRE" });
+            result.Add(new Grupo { Valor = "11", Descripcion = "NOVIEMBRE" });
+            result.Add(new Grupo { Valor = "12", Descripcion = "DICIEMBRE" });
+            result.Add(new Grupo { Valor = "13", Descripcion = "PERSONALIZADO" });
+            return result;
         }
 
     }

@@ -258,16 +258,13 @@ namespace Asistencia.Negocios
             }
         }
 
-        public void Eliminar(int idRoute, string conection)
+        public void Delete(int idRoute, string conection)
         {
             using (TransactionScope Scope = new TransactionScope())
             {
                 #region Transacción()
-
                 string cnx = string.Empty;
-
                 cnx = ConfigurationManager.AppSettings[conection].ToString();
-
                 using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
                 {
                     if (Modelo.SJ_RHRuta.Where(x => x.Id == idRoute).ToList().Count == 1)
@@ -284,6 +281,7 @@ namespace Asistencia.Negocios
                         {
 
                             throw Ex;
+                            return;
                         }
 
                     }
@@ -293,6 +291,33 @@ namespace Asistencia.Negocios
 
                 Scope.Complete();
             }
+        }
+
+        public string ValirdarIntegridadReferencialRoute(int routerId, string conection)
+        {
+            string obs = string.Empty;
+            using (TransactionScope Scope = new TransactionScope())
+            {
+                #region Transacción()
+                string cnx = string.Empty;
+                cnx = ConfigurationManager.AppSettings[conection].ToString();
+                using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
+                {
+                    var result = Modelo.ASJ_RegistroTransferenciaTransportes.Where(x => x.idRutaOrigen == routerId).ToList();
+                    if (result.Count > 0)
+                    {
+                        // relacion con registro de asistencia
+                        obs += " Transferencia de asistencia por tablets";
+                    }
+
+
+                }
+                #endregion
+
+                Scope.Complete();
+            }
+
+            return obs;
         }
 
         public string GetSourceAbbreviatedPathName(string conection, string abbreviateCode, string routeSource)

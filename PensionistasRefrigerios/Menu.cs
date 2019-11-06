@@ -148,7 +148,7 @@ namespace Asistencia
 
         private void rutaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CatalogoRutasRecorrido frmHijo = new CatalogoRutasRecorrido(_conection, _user, _companyId);
+            GoTransportesCatalogoRutas frmHijo = new GoTransportesCatalogoRutas(_conection, _user, _companyId);
             frmHijo.MdiParent = this;
             frmHijo.Show();
             frmHijo.WindowState = FormWindowState.Maximized;
@@ -158,7 +158,7 @@ namespace Asistencia
 
         private void RRHHReporteDeAsistenciaMóvilBuses_Click(object sender, EventArgs e)
         {
-            ListadoAsistenciaTransferenciaBuses frmHijo = new ListadoAsistenciaTransferenciaBuses(_conection, _user, _companyId);
+            GoTransportesReporteAsistenciaBuses frmHijo = new GoTransportesReporteAsistenciaBuses(_conection, _user, _companyId);
             frmHijo.MdiParent = this;
             frmHijo.Show();
             frmHijo.WindowState = FormWindowState.Maximized;
@@ -168,7 +168,7 @@ namespace Asistencia
 
         private void RRHHparaderos_Click(object sender, EventArgs e)
         {
-            CatalogoParadero frmHijo = new CatalogoParadero(_conection, _user, _companyId);
+            GoTransportesCatalogoParadero frmHijo = new GoTransportesCatalogoParadero(_conection, _user, _companyId);
             frmHijo.MdiParent = this;
             frmHijo.Show();
             frmHijo.WindowState = FormWindowState.Maximized;
@@ -178,7 +178,7 @@ namespace Asistencia
 
         private void RRHHpersonalPorParadero_Click(object sender, EventArgs e)
         {
-            CatalogoPersonaByParadero frmHijo = new CatalogoPersonaByParadero(_conection, _user, _companyId);
+            GoPlanillasCatalogoPersonaPorParadero frmHijo = new GoPlanillasCatalogoPersonaPorParadero(_conection, _user, _companyId);
             frmHijo.MdiParent = this;
             frmHijo.Show();
             frmHijo.WindowState = FormWindowState.Maximized;
@@ -188,7 +188,7 @@ namespace Asistencia
 
         private void tipoDeBloqueoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CatalogoTipoBloqueoAsistencia frmHijo = new CatalogoTipoBloqueoAsistencia(_conection, _user, _companyId);
+            GoPlanillasCatalogoTiposDeBloqueo frmHijo = new GoPlanillasCatalogoTiposDeBloqueo(_conection, _user, _companyId);
             frmHijo.MdiParent = this;
             frmHijo.Show();
             frmHijo.WindowState = FormWindowState.Maximized;
@@ -198,7 +198,7 @@ namespace Asistencia
 
         private void RRHHpersonalBloqueado_Click(object sender, EventArgs e)
         {
-            CatalogoPersonalBloqueadoParaAsistencia frmHijo = new CatalogoPersonalBloqueadoParaAsistencia(_conection, _user, _companyId);
+            GoPlanillasCatalogoPersonalBloqueado frmHijo = new GoPlanillasCatalogoPersonalBloqueado(_conection, _user, _companyId);
             frmHijo.MdiParent = this;
             frmHijo.Show();
             frmHijo.WindowState = FormWindowState.Maximized;
@@ -208,7 +208,7 @@ namespace Asistencia
 
         private void RRHHRegistroAsistencia_Click(object sender, EventArgs e)
         {
-            RegistroDeAsistenciaDiarioByPuertaIngreso frmHijo = new RegistroDeAsistenciaDiarioByPuertaIngreso(_conection, _user, _companyId);
+            GoTransportesMovimientoAsistenciaBuses frmHijo = new GoTransportesMovimientoAsistenciaBuses(_conection, _user, _companyId);
             frmHijo.MdiParent = this;
             frmHijo.Show();
             frmHijo.WindowState = FormWindowState.Maximized;
@@ -218,7 +218,7 @@ namespace Asistencia
 
         private void RRHHreporteDeAsistenciaObservados_Click(object sender, EventArgs e)
         {
-            ReporteAsistenciaObservados frmHijo = new ReporteAsistenciaObservados(_conection, _user, _companyId);
+            GoPlanillasReporteAsistenciasObservadas frmHijo = new GoPlanillasReporteAsistenciasObservadas(_conection, _user, _companyId);
             frmHijo.MdiParent = this;
             frmHijo.Show();
             frmHijo.WindowState = FormWindowState.Maximized;
@@ -228,7 +228,7 @@ namespace Asistencia
 
         private void RRHHreporteDeAsistenciaEnPuertas_Click(object sender, EventArgs e)
         {
-            RegistroDeAsistenciaDiarioByPuertaIngreso frmHijo = new RegistroDeAsistenciaDiarioByPuertaIngreso(_conection, _user, _companyId);
+            GoPlanillasReporteAsistenciaPorPuerta frmHijo = new GoPlanillasReporteAsistenciaPorPuerta(_conection, _user, _companyId);
             frmHijo.MdiParent = this;
             frmHijo.Show();
             frmHijo.WindowState = FormWindowState.Maximized;
@@ -238,7 +238,7 @@ namespace Asistencia
 
         private void RRHHReporteDeVencimientodEDocumentos_Click(object sender, EventArgs e)
         {
-            ReporteVencimientoDocumentos frmHijo = new ReporteVencimientoDocumentos(_conection, _user, _companyId);
+            GoTransportesReporteVencimientoDocumentos frmHijo = new GoTransportesReporteVencimientoDocumentos(_conection, _user, _companyId);
             frmHijo.MdiParent = this;
             frmHijo.Show();
             frmHijo.WindowState = FormWindowState.Maximized;
@@ -248,7 +248,7 @@ namespace Asistencia
 
         private void RRHHmenu_Click(object sender, EventArgs e)
         {
-            Modulo frmHijo = new Modulo(_conection, _user, _companyId);
+            GoSistemaCatalogoModulos frmHijo = new GoSistemaCatalogoModulos(_conection, _user, _companyId);
             frmHijo.MdiParent = this;
             frmHijo.Show();
             frmHijo.WindowState = FormWindowState.Maximized;
@@ -258,7 +258,7 @@ namespace Asistencia
 
         private void RRHHformularioDeSistema_Click(object sender, EventArgs e)
         {
-            Formularios frmHijo = new Formularios(_conection, _user, _companyId);
+            GoSistemaCatalogoFormularios frmHijo = new GoSistemaCatalogoFormularios(_conection, _user, _companyId);
             frmHijo.MdiParent = this;
             frmHijo.Show();
             frmHijo.WindowState = FormWindowState.Maximized;
@@ -323,7 +323,7 @@ namespace Asistencia
 
         private void GoSistemaCatalogoPrivilegios_Click(object sender, EventArgs e)
         {
-            Users frmHijo = new Users(_conection, _user, _companyId);
+            GoSistemaCatalogoUsers frmHijo = new GoSistemaCatalogoUsers(_conection, _user, _companyId);
             frmHijo.MdiParent = this;
             frmHijo.Show();
             frmHijo.WindowState = FormWindowState.Maximized;
@@ -400,7 +400,7 @@ namespace Asistencia
 
         private void GoTransportesReporteIngresoSalidaBuses_Click(object sender, EventArgs e)
         {
-            ReporteIngresosTransporte frmHijo = new ReporteIngresosTransporte(_conection, _user, _companyId);
+            GoTransportesReporteIngresosBuses frmHijo = new GoTransportesReporteIngresosBuses(_conection, _user, _companyId);
             frmHijo.MdiParent = this;
             frmHijo.Show();
             frmHijo.WindowState = FormWindowState.Maximized;

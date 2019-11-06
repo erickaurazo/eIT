@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using Telerik.WinControls.UI;
 
 namespace Asistencia.Helper
 {
@@ -55,6 +56,131 @@ namespace Asistencia.Helper
 
             return config;
         }
+
+
+
+        public void ObtenerFechasMes(
+            RadDropDownList cboMes,
+            MyDataGridViewColumns.MyDataGridViewMaskedTextEditingControl txtdateFrom,
+            MyDataGridViewColumns.MyDataGridViewMaskedTextEditingControl txtdateUp,
+            RadSpinEditor txtperiod)
+        {
+            DateTime fecha1;
+            DateTime fecha2;
+
+            if (cboMes.SelectedValue.ToString() != "00")
+            {
+                #region
+                txtdateFrom.Enabled = false;
+                txtdateUp.Enabled = false;
+                if (cboMes.SelectedValue.ToString() == "12")
+                {
+                    #region Si es mes diciembre
+                    fecha1 = Convert.ToDateTime("01/" + (cboMes.SelectedValue.ToString() + "/" + txtperiod.Value.ToString()));// 
+                    fecha2 = Convert.ToDateTime("31/" + (cboMes.SelectedValue.ToString()) + "/" + txtperiod.Value.ToString());// 
+                    txtdateFrom.Text = fecha1.ToShortDateString();
+                    txtdateUp.Text = fecha2.ToShortDateString();
+                    #endregion
+
+                }
+                else
+                {
+                    #region Si es mes 13 habilitar controles de fecha, caso contrario es un mes de enero a noviembre.
+                    if (cboMes.SelectedValue.ToString() == "13")
+                    {
+                        txtdateFrom.Enabled = true;
+                        txtdateUp.Enabled = true;
+
+
+                    }
+                    else
+                    {
+                        fecha2 = Convert.ToDateTime("01/" + (Convert.ToInt32(cboMes.SelectedValue) + 1) + "/" + txtperiod.Value.ToString()).AddDays(-1);// 
+                        fecha1 = Convert.ToDateTime("01/" + (cboMes.SelectedValue.ToString()) + "/" + txtperiod.Value.ToString());// 
+                        txtdateFrom.Text = fecha1.ToShortDateString();
+                        txtdateUp.Text = fecha2.ToShortDateString();
+
+
+                    }
+                    #endregion
+                }
+                #endregion
+            }
+            else
+            {
+                if (cboMes.SelectedValue.ToString() == "00")
+                {
+                    fecha2 = Convert.ToDateTime("31/12/" + txtperiod.Value.ToString());// 
+                    fecha1 = Convert.ToDateTime("01/01/" + txtperiod.Value.ToString());//
+                    txtdateFrom.Text = fecha1.ToShortDateString();
+                    txtdateUp.Text = fecha2.ToShortDateString();
+
+                }
+
+            }
+        }
+
+        public void ObtenerFechasMesTelerik(
+           RadDropDownList cboMes,
+           RadMaskedEditBox txtdateFrom,
+           RadMaskedEditBox txtdateUp,
+           RadSpinEditor txtperiod)
+        {
+            DateTime fecha1;
+            DateTime fecha2;
+
+            if (cboMes.SelectedValue.ToString() != "00")
+            {
+                #region
+                txtdateFrom.Enabled = false;
+                txtdateUp.Enabled = false;
+                if (cboMes.SelectedValue.ToString() == "12")
+                {
+                    #region Si es mes diciembre
+                    fecha1 = Convert.ToDateTime("01/" + (cboMes.SelectedValue.ToString() + "/" + txtperiod.Value.ToString()));// 
+                    fecha2 = Convert.ToDateTime("31/" + (cboMes.SelectedValue.ToString()) + "/" + txtperiod.Value.ToString());// 
+                    txtdateFrom.Text = fecha1.ToShortDateString();
+                    txtdateUp.Text = fecha2.ToShortDateString();
+                    #endregion
+
+                }
+                else
+                {
+                    #region Si es mes 13 habilitar controles de fecha, caso contrario es un mes de enero a noviembre.
+                    if (cboMes.SelectedValue.ToString() == "13")
+                    {
+                        txtdateFrom.Enabled = true;
+                        txtdateUp.Enabled = true;
+
+
+                    }
+                    else
+                    {
+                        fecha2 = Convert.ToDateTime("01/" + (Convert.ToInt32(cboMes.SelectedValue) + 1) + "/" + txtperiod.Value.ToString()).AddDays(-1);// 
+                        fecha1 = Convert.ToDateTime("01/" + (cboMes.SelectedValue.ToString()) + "/" + txtperiod.Value.ToString());// 
+                        txtdateFrom.Text = fecha1.ToShortDateString();
+                        txtdateUp.Text = fecha2.ToShortDateString();
+
+
+                    }
+                    #endregion
+                }
+                #endregion
+            }
+            else
+            {
+                if (cboMes.SelectedValue.ToString() == "00")
+                {
+                    fecha2 = Convert.ToDateTime("31/12/" + txtperiod.Value.ToString());// 
+                    fecha1 = Convert.ToDateTime("01/01/" + txtperiod.Value.ToString());//
+                    txtdateFrom.Text = fecha1.ToShortDateString();
+                    txtdateUp.Text = fecha2.ToShortDateString();
+
+                }
+
+            }
+        }
+
 
     }
 }

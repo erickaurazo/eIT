@@ -284,7 +284,7 @@ namespace Asistencia
 
                         case 1: // blanco
                                 // Formulario para configurar contraseña()
-                            ChangePassword ofrm = new ChangePassword(conection, userId.ToUpper(), companyId);
+                            GoSistemaCatalogoUsersChangePassword ofrm = new GoSistemaCatalogoUsersChangePassword(conection, userId.ToUpper(), companyId);
                             ofrm.ShowDialog();
                             break;
 

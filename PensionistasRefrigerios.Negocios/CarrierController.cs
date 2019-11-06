@@ -1335,6 +1335,7 @@ namespace Asistencia.Negocios
             return Choferes;
         }
 
+        //obtener listado de Movimientos de facturacion por CarrierId
         public List<SJ_ListaMovimientoFacturacionPorProveedorResult> ObtenerListaMovimientoFacturacionTransportistaPorProveedor(int carrierId, string conection)
         {
             List<SJ_ListaMovimientoFacturacionPorProveedorResult> lista = new List<SJ_ListaMovimientoFacturacionPorProveedorResult>();
@@ -1348,6 +1349,7 @@ namespace Asistencia.Negocios
             return lista;
         }
 
+        //obtener listado de partes de recorrido por CarrierId
         public List<SJ_ListaMovimientoPartesRecorridoPorProveedorResult> ObtenerListaMovimientoParteRecorridoTransportistaPorProveedor(int carrierId, string conection)
         {
             List<SJ_ListaMovimientoPartesRecorridoPorProveedorResult> lista = new List<SJ_ListaMovimientoPartesRecorridoPorProveedorResult>();
@@ -1360,6 +1362,36 @@ namespace Asistencia.Negocios
 
             return lista;
         }
+
+        //obtener listado de transferencias de asistencia
+        public List<ASJ_RegistroTransferenciaTransportes>GetListAsistanceTransferByPlaca(int carrierId, string conection, string placa)
+        {
+            var lista = new List<ASJ_RegistroTransferenciaTransportes>();
+
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
+            using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
+            {
+                lista = Modelo.ASJ_RegistroTransferenciaTransportes.Where(x => x.placa.Trim() == placa.Trim()).ToList();
+            }
+
+            return lista;
+        }
+        
+
+        //obtener listado de transferencias de asistencia observadas
+        public List<ASJ_DCONTROLINGRESOSALIDA_PERSONAL> GetListAsistanceObserveredTransferByPlaca(int carrierId, string conection, string placa)
+        {
+            var lista = new List<ASJ_DCONTROLINGRESOSALIDA_PERSONAL>();
+
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
+            using (BDAsistenciaDataContext Modelo = new BDAsistenciaDataContext(cnx))
+            {
+                lista = Modelo.ASJ_DCONTROLINGRESOSALIDA_PERSONAL.Where(x => x.garita.Trim() == placa.Trim()).ToList();
+            }
+
+            return lista;
+        }
+
 
         public bool VerificarDuplicidadPlaca(string numeroPlaca, string conection)
         {

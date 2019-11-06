@@ -244,11 +244,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChangePassword.cs">
+    <Compile Include="GoSistemaCatalogoUsersChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChangePassword.Designer.cs">
-      <DependentUpon>ChangePassword.cs</DependentUpon>
+    <Compile Include="GoSistemaCatalogoUsersChangePassword.Designer.cs">
+      <DependentUpon>GoSistemaCatalogoUsersChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GoTransportesMovimientoAsistenciaBuses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GoTransportesMovimientoAsistenciaBuses.Designer.cs">
+      <DependentUpon>GoTransportesMovimientoAsistenciaBuses.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\EncriptionHelper.cs" />
     <Compile Include="Helper\GlobalesHelper.cs" />
@@ -258,110 +264,98 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="ActualizarDNIObservado.cs">
+    <Compile Include="GoPlanillasReporteAsistenciasObservadasActualizarDNI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ActualizarDNIObservado.designer.cs">
-      <DependentUpon>ActualizarDNIObservado.cs</DependentUpon>
+    <Compile Include="GoPlanillasReporteAsistenciasObservadasActualizarDNI.designer.cs">
+      <DependentUpon>GoPlanillasReporteAsistenciasObservadasActualizarDNI.cs</DependentUpon>
     </Compile>
-    <Compile Include="ActualizarPlaca.cs">
+    <Compile Include="GoTransportesMovimientoAsistenciaBusesActualizarPlacayRuta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ActualizarPlaca.Designer.cs">
-      <DependentUpon>ActualizarPlaca.cs</DependentUpon>
+    <Compile Include="GoTransportesMovimientoAsistenciaBusesActualizarPlacayRuta.Designer.cs">
+      <DependentUpon>GoTransportesMovimientoAsistenciaBusesActualizarPlacayRuta.cs</DependentUpon>
     </Compile>
-    <Compile Include="CatalogoParadero.cs">
+    <Compile Include="GoTransportesCatalogoParadero.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CatalogoParadero.Designer.cs">
-      <DependentUpon>CatalogoParadero.cs</DependentUpon>
+    <Compile Include="GoTransportesCatalogoParadero.Designer.cs">
+      <DependentUpon>GoTransportesCatalogoParadero.cs</DependentUpon>
     </Compile>
-    <Compile Include="CatalogoPersonalBloqueadoParaAsistencia.cs">
+    <Compile Include="GoPlanillasCatalogoPersonalBloqueado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CatalogoPersonalBloqueadoParaAsistencia.Designer.cs">
-      <DependentUpon>CatalogoPersonalBloqueadoParaAsistencia.cs</DependentUpon>
+    <Compile Include="GoPlanillasCatalogoPersonalBloqueado.Designer.cs">
+      <DependentUpon>GoPlanillasCatalogoPersonalBloqueado.cs</DependentUpon>
     </Compile>
-    <Compile Include="CatalogoPersonaByParadero.cs">
+    <Compile Include="GoPlanillasCatalogoPersonaPorParadero.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CatalogoPersonaByParadero.Designer.cs">
-      <DependentUpon>CatalogoPersonaByParadero.cs</DependentUpon>
+    <Compile Include="GoPlanillasCatalogoPersonaPorParadero.Designer.cs">
+      <DependentUpon>GoPlanillasCatalogoPersonaPorParadero.cs</DependentUpon>
     </Compile>
-    <Compile Include="CatalogoTipoBloqueoAsistencia.cs">
+    <Compile Include="GoPlanillasCatalogoTiposDeBloqueo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CatalogoTipoBloqueoAsistencia.Designer.cs">
-      <DependentUpon>CatalogoTipoBloqueoAsistencia.cs</DependentUpon>
+    <Compile Include="GoPlanillasCatalogoTiposDeBloqueo.Designer.cs">
+      <DependentUpon>GoPlanillasCatalogoTiposDeBloqueo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios.cs">
+    <Compile Include="GoSistemaCatalogoFormularios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios.Designer.cs">
-      <DependentUpon>Formularios.cs</DependentUpon>
+    <Compile Include="GoSistemaCatalogoFormularios.Designer.cs">
+      <DependentUpon>GoSistemaCatalogoFormularios.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\ChartCellElement.cs" />
     <Compile Include="Helper\ComboBoxHelper.cs" />
     <Compile Include="Helper\ExportToExcelHelper.cs" />
     <Compile Include="Helper\TreeviewHelper.cs" />
-    <Compile Include="ListadoAsistenciaTransferenciaBuses.cs">
+    <Compile Include="GoTransportesReporteAsistenciaBuses.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListadoAsistenciaTransferenciaBuses.Designer.cs">
-      <DependentUpon>ListadoAsistenciaTransferenciaBuses.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CatalogoUbicacionParaderos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CatalogoUbicacionParaderos.Designer.cs">
-      <DependentUpon>CatalogoUbicacionParaderos.cs</DependentUpon>
+    <Compile Include="GoTransportesReporteAsistenciaBuses.Designer.cs">
+      <DependentUpon>GoTransportesReporteAsistenciaBuses.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\GridLocalizationProviderEspanol.cs" />
     <Compile Include="Helper\PivotGridLocalizationProviderEspanol.cs" />
     <Compile Include="Helper\RadMessageBoxLocalizationProviderEspañol.cs" />
     <Compile Include="Helper\RadPageViewLocalizationProviderEspañol.cs" />
     <Compile Include="Helper\RadWizardLocalizationProviderEspañol.cs" />
-    <Compile Include="Modulo.cs">
+    <Compile Include="GoSistemaCatalogoModulos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modulo.Designer.cs">
-      <DependentUpon>Modulo.cs</DependentUpon>
+    <Compile Include="GoSistemaCatalogoModulos.Designer.cs">
+      <DependentUpon>GoSistemaCatalogoModulos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Privileges.cs">
+    <Compile Include="GoSistemaCatalogoUsersPrivileges.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Privileges.Designer.cs">
-      <DependentUpon>Privileges.cs</DependentUpon>
+    <Compile Include="GoSistemaCatalogoUsersPrivileges.Designer.cs">
+      <DependentUpon>GoSistemaCatalogoUsersPrivileges.cs</DependentUpon>
     </Compile>
-    <Compile Include="Users.cs">
+    <Compile Include="GoSistemaCatalogoUsers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Users.Designer.cs">
-      <DependentUpon>Users.cs</DependentUpon>
+    <Compile Include="GoSistemaCatalogoUsers.Designer.cs">
+      <DependentUpon>GoSistemaCatalogoUsers.cs</DependentUpon>
     </Compile>
-    <Compile Include="RegistroDeAsistenciaDiarioByPuertaIngreso.cs">
+    <Compile Include="GoPlanillasReporteAsistenciaPorPuerta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegistroDeAsistenciaDiarioByPuertaIngreso.Designer.cs">
-      <DependentUpon>RegistroDeAsistenciaDiarioByPuertaIngreso.cs</DependentUpon>
+    <Compile Include="GoPlanillasReporteAsistenciaPorPuerta.Designer.cs">
+      <DependentUpon>GoPlanillasReporteAsistenciaPorPuerta.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReporteAsistenciaObservados.cs">
+    <Compile Include="GoPlanillasReporteAsistenciasObservadas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReporteAsistenciaObservados.Designer.cs">
-      <DependentUpon>ReporteAsistenciaObservados.cs</DependentUpon>
+    <Compile Include="GoPlanillasReporteAsistenciasObservadas.Designer.cs">
+      <DependentUpon>GoPlanillasReporteAsistenciasObservadas.cs</DependentUpon>
     </Compile>
     <Compile Include="Historial.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Historial.Designer.cs">
       <DependentUpon>Historial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ChoferBuscar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ChoferBuscar.Designer.cs">
-      <DependentUpon>ChoferBuscar.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
@@ -371,86 +365,83 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReporteIngresosTransporte.cs">
+    <Compile Include="GoTransportesReporteIngresosBuses.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReporteIngresosTransporte.Designer.cs">
-      <DependentUpon>ReporteIngresosTransporte.cs</DependentUpon>
+    <Compile Include="GoTransportesReporteIngresosBuses.Designer.cs">
+      <DependentUpon>GoTransportesReporteIngresosBuses.cs</DependentUpon>
     </Compile>
-    <Compile Include="CatalogoRutasRecorrido.cs">
+    <Compile Include="GoTransportesCatalogoRutas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CatalogoRutasRecorrido.designer.cs">
-      <DependentUpon>CatalogoRutasRecorrido.cs</DependentUpon>
+    <Compile Include="GoTransportesCatalogoRutas.designer.cs">
+      <DependentUpon>GoTransportesCatalogoRutas.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\Series.cs" />
     <Compile Include="Helper\SJ_Usuario.cs" />
-    <Compile Include="CatalogoEmpresaDeServicioDeTransporteDePersonal.cs">
+    <Compile Include="GoTransportesCatalogoTransportista.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CatalogoEmpresaDeServicioDeTransporteDePersonal.designer.cs">
-      <DependentUpon>CatalogoEmpresaDeServicioDeTransporteDePersonal.cs</DependentUpon>
+    <Compile Include="GoTransportesCatalogoTransportista.designer.cs">
+      <DependentUpon>GoTransportesCatalogoTransportista.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\UsuarioGlobal.cs" />
-    <Compile Include="ReporteVencimientoDocumentos.cs">
+    <Compile Include="GoTransportesReporteVencimientoDocumentos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReporteVencimientoDocumentos.Designer.cs">
-      <DependentUpon>ReporteVencimientoDocumentos.cs</DependentUpon>
+    <Compile Include="GoTransportesReporteVencimientoDocumentos.Designer.cs">
+      <DependentUpon>GoTransportesReporteVencimientoDocumentos.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ChangePassword.resx">
-      <DependentUpon>ChangePassword.cs</DependentUpon>
+    <EmbeddedResource Include="GoSistemaCatalogoUsersChangePassword.resx">
+      <DependentUpon>GoSistemaCatalogoUsersChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GoTransportesMovimientoAsistenciaBuses.resx">
+      <DependentUpon>GoTransportesMovimientoAsistenciaBuses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ActualizarDNIObservado.resx">
-      <DependentUpon>ActualizarDNIObservado.cs</DependentUpon>
+    <EmbeddedResource Include="GoPlanillasReporteAsistenciasObservadasActualizarDNI.resx">
+      <DependentUpon>GoPlanillasReporteAsistenciasObservadasActualizarDNI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ActualizarPlaca.resx">
-      <DependentUpon>ActualizarPlaca.cs</DependentUpon>
+    <EmbeddedResource Include="GoTransportesMovimientoAsistenciaBusesActualizarPlacayRuta.resx">
+      <DependentUpon>GoTransportesMovimientoAsistenciaBusesActualizarPlacayRuta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CatalogoParadero.resx">
-      <DependentUpon>CatalogoParadero.cs</DependentUpon>
+    <EmbeddedResource Include="GoTransportesCatalogoParadero.resx">
+      <DependentUpon>GoTransportesCatalogoParadero.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CatalogoPersonalBloqueadoParaAsistencia.resx">
-      <DependentUpon>CatalogoPersonalBloqueadoParaAsistencia.cs</DependentUpon>
+    <EmbeddedResource Include="GoPlanillasCatalogoPersonalBloqueado.resx">
+      <DependentUpon>GoPlanillasCatalogoPersonalBloqueado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CatalogoPersonaByParadero.resx">
-      <DependentUpon>CatalogoPersonaByParadero.cs</DependentUpon>
+    <EmbeddedResource Include="GoPlanillasCatalogoPersonaPorParadero.resx">
+      <DependentUpon>GoPlanillasCatalogoPersonaPorParadero.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CatalogoTipoBloqueoAsistencia.resx">
-      <DependentUpon>CatalogoTipoBloqueoAsistencia.cs</DependentUpon>
+    <EmbeddedResource Include="GoPlanillasCatalogoTiposDeBloqueo.resx">
+      <DependentUpon>GoPlanillasCatalogoTiposDeBloqueo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios.resx">
-      <DependentUpon>Formularios.cs</DependentUpon>
+    <EmbeddedResource Include="GoSistemaCatalogoFormularios.resx">
+      <DependentUpon>GoSistemaCatalogoFormularios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListadoAsistenciaTransferenciaBuses.resx">
-      <DependentUpon>ListadoAsistenciaTransferenciaBuses.cs</DependentUpon>
+    <EmbeddedResource Include="GoTransportesReporteAsistenciaBuses.resx">
+      <DependentUpon>GoTransportesReporteAsistenciaBuses.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CatalogoUbicacionParaderos.resx">
-      <DependentUpon>CatalogoUbicacionParaderos.cs</DependentUpon>
+    <EmbeddedResource Include="GoSistemaCatalogoModulos.resx">
+      <DependentUpon>GoSistemaCatalogoModulos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulo.resx">
-      <DependentUpon>Modulo.cs</DependentUpon>
+    <EmbeddedResource Include="GoSistemaCatalogoUsersPrivileges.resx">
+      <DependentUpon>GoSistemaCatalogoUsersPrivileges.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Privileges.resx">
-      <DependentUpon>Privileges.cs</DependentUpon>
+    <EmbeddedResource Include="GoSistemaCatalogoUsers.resx">
+      <DependentUpon>GoSistemaCatalogoUsers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Users.resx">
-      <DependentUpon>Users.cs</DependentUpon>
+    <EmbeddedResource Include="GoPlanillasReporteAsistenciaPorPuerta.resx">
+      <DependentUpon>GoPlanillasReporteAsistenciaPorPuerta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RegistroDeAsistenciaDiarioByPuertaIngreso.resx">
-      <DependentUpon>RegistroDeAsistenciaDiarioByPuertaIngreso.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ReporteAsistenciaObservados.resx">
-      <DependentUpon>ReporteAsistenciaObservados.cs</DependentUpon>
+    <EmbeddedResource Include="GoPlanillasReporteAsistenciasObservadas.resx">
+      <DependentUpon>GoPlanillasReporteAsistenciasObservadas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Historial.resx">
       <DependentUpon>Historial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ChoferBuscar.resx">
-      <DependentUpon>ChoferBuscar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
@@ -466,17 +457,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="CatalogoRutasRecorrido.resx">
-      <DependentUpon>CatalogoRutasRecorrido.cs</DependentUpon>
+    <EmbeddedResource Include="GoTransportesCatalogoRutas.resx">
+      <DependentUpon>GoTransportesCatalogoRutas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CatalogoEmpresaDeServicioDeTransporteDePersonal.resx">
-      <DependentUpon>CatalogoEmpresaDeServicioDeTransporteDePersonal.cs</DependentUpon>
+    <EmbeddedResource Include="GoTransportesCatalogoTransportista.resx">
+      <DependentUpon>GoTransportesCatalogoTransportista.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReporteIngresosTransporte.resx">
-      <DependentUpon>ReporteIngresosTransporte.cs</DependentUpon>
+    <EmbeddedResource Include="GoTransportesReporteIngresosBuses.resx">
+      <DependentUpon>GoTransportesReporteIngresosBuses.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReporteVencimientoDocumentos.resx">
-      <DependentUpon>ReporteVencimientoDocumentos.cs</DependentUpon>
+    <EmbeddedResource Include="GoTransportesReporteVencimientoDocumentos.resx">
+      <DependentUpon>GoTransportesReporteVencimientoDocumentos.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Image\app.config">
       <SubType>Designer</SubType>
