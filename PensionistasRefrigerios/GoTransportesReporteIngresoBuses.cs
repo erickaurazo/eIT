@@ -14,7 +14,7 @@ using Telerik.WinControls.UI.Export;
 
 namespace Asistencia
 {
-    public partial class GoTransportesReporteIngresosBuses : Form
+    public partial class GoTransportesReporteIngresoBuses : Form
     {
         private string fileName;
         private bool exportVisualSettings;
@@ -24,12 +24,12 @@ namespace Asistencia
         private ASJ_USUARIOS _user;
         private string _companyId;
 
-        public GoTransportesReporteIngresosBuses()
+        public GoTransportesReporteIngresoBuses()
         {
             InitializeComponent();
         }
 
-        public GoTransportesReporteIngresosBuses(string conection, ASJ_USUARIOS user, string companyId)
+        public GoTransportesReporteIngresoBuses(string conection, ASJ_USUARIOS user, string companyId)
         {
             _conection = conection;
             _user = user;

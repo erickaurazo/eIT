@@ -1,6 +1,6 @@
 ﻿namespace Asistencia
 {
-    partial class GoTransportesReporteIngresosBuses
+    partial class GoTransportesReporteIngresoBuses
     {
         /// <summary>
         /// Required designer variable.
@@ -36,7 +36,7 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.Data.SortDescriptor sortDescriptor2 = new Telerik.WinControls.Data.SortDescriptor();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GoTransportesReporteIngresosBuses));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GoTransportesReporteIngresoBuses));
             this.gbRegistros = new Telerik.WinControls.UI.RadGroupBox();
             this.dgvAsistenciaPersonalAdm = new Telerik.WinControls.UI.RadGridView();
             this.gbConsulta = new Telerik.WinControls.UI.RadGroupBox();

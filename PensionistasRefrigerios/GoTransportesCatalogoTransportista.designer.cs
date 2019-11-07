@@ -29,33 +29,33 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn17 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn18 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn19 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn20 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn21 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn22 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn23 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn24 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn25 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn26 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn27 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn28 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn29 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn30 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn31 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn32 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.Data.SortDescriptor sortDescriptor2 = new Telerik.WinControls.Data.SortDescriptor();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn15 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn16 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CatalogoEmpresaDeServicioDeTransporteDePersonal));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbList = new Telerik.WinControls.UI.RadGroupBox();
             this.dgvTransportista = new Telerik.WinControls.UI.RadGridView();
             this.subMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -167,21 +167,6 @@
             this.btnSalir = new Telerik.WinControls.UI.CommandBarButton();
             this.btnExportar = new Telerik.WinControls.UI.CommandBarButton();
             this.btnEliminar = new Telerik.WinControls.UI.CommandBarButton();
-            this.BarraPrincipal = new Telerik.WinControls.UI.RadCommandBar();
-            this.BarraSuperior = new Telerik.WinControls.UI.CommandBarRowElement();
-            this.BarraModulo = new Telerik.WinControls.UI.CommandBarStripElement();
-            this.btnTransportes = new Telerik.WinControls.UI.CommandBarButton();
-            this.commandBarStripElement3 = new Telerik.WinControls.UI.CommandBarStripElement();
-            this.commandBarSeparator6 = new Telerik.WinControls.UI.CommandBarSeparator();
-            this.btnNuevo = new Telerik.WinControls.UI.CommandBarButton();
-            this.btnActualizarLista = new Telerik.WinControls.UI.CommandBarButton();
-            this.btnAtras = new Telerik.WinControls.UI.CommandBarButton();
-            this.btnEditar = new Telerik.WinControls.UI.CommandBarButton();
-            this.btnAnular = new Telerik.WinControls.UI.CommandBarButton();
-            this.btnEliminarRegistro = new Telerik.WinControls.UI.CommandBarButton();
-            this.commandBarButton4 = new Telerik.WinControls.UI.CommandBarButton();
-            this.btnCerrar = new Telerik.WinControls.UI.CommandBarButton();
-            this.btnHistorial = new Telerik.WinControls.UI.CommandBarButton();
             this.stsBarraEstado = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -198,6 +183,21 @@
             this.ProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.lblNumeroResultados = new System.Windows.Forms.ToolStripStatusLabel();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
+            this.BarraSuperior = new Telerik.WinControls.UI.CommandBarRowElement();
+            this.BarraModulo = new Telerik.WinControls.UI.CommandBarStripElement();
+            this.btnTransportes = new Telerik.WinControls.UI.CommandBarButton();
+            this.commandBarStripElement3 = new Telerik.WinControls.UI.CommandBarStripElement();
+            this.commandBarSeparator6 = new Telerik.WinControls.UI.CommandBarSeparator();
+            this.btnNuevo = new Telerik.WinControls.UI.CommandBarButton();
+            this.btnActualizarLista = new Telerik.WinControls.UI.CommandBarButton();
+            this.btnAtras = new Telerik.WinControls.UI.CommandBarButton();
+            this.btnEditar = new Telerik.WinControls.UI.CommandBarButton();
+            this.btnAnular = new Telerik.WinControls.UI.CommandBarButton();
+            this.btnEliminarRegistro = new Telerik.WinControls.UI.CommandBarButton();
+            this.btnExportToExcel = new Telerik.WinControls.UI.CommandBarButton();
+            this.btnCerrar = new Telerik.WinControls.UI.CommandBarButton();
+            this.btnHistorial = new Telerik.WinControls.UI.CommandBarButton();
+            this.BarraPrincipal = new Telerik.WinControls.UI.RadCommandBar();
             ((System.ComponentModel.ISupportInitialize)(this.gbList)).BeginInit();
             this.gbList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransportista)).BeginInit();
@@ -276,7 +276,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbList.Controls.Add(this.dgvTransportista);
-            this.gbList.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office;
             this.gbList.HeaderText = "";
             this.gbList.Location = new System.Drawing.Point(4, 43);
             this.gbList.Name = "gbList";
@@ -300,115 +299,115 @@
             this.dgvTransportista.MasterTemplate.AllowAddNewRow = false;
             this.dgvTransportista.MasterTemplate.AutoExpandGroups = true;
             this.dgvTransportista.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn17.EnableExpressionEditor = false;
-            gridViewTextBoxColumn17.FieldName = "Id";
-            gridViewTextBoxColumn17.HeaderText = "Id";
-            gridViewTextBoxColumn17.IsVisible = false;
-            gridViewTextBoxColumn17.Name = "chId";
-            gridViewTextBoxColumn18.EnableExpressionEditor = false;
-            gridViewTextBoxColumn18.FieldName = "Placa";
-            gridViewTextBoxColumn18.HeaderText = "Placa";
-            gridViewTextBoxColumn18.Name = "chPlaca";
-            gridViewTextBoxColumn18.Width = 51;
-            gridViewTextBoxColumn19.EnableExpressionEditor = false;
-            gridViewTextBoxColumn19.FieldName = "Ruc";
-            gridViewTextBoxColumn19.HeaderText = "RUC";
-            gridViewTextBoxColumn19.Name = "chRuc";
-            gridViewTextBoxColumn19.Width = 79;
-            gridViewTextBoxColumn20.EnableExpressionEditor = false;
-            gridViewTextBoxColumn20.FieldName = "RazonSocial";
-            gridViewTextBoxColumn20.HeaderText = "Razon Social";
-            gridViewTextBoxColumn20.IsVisible = false;
-            gridViewTextBoxColumn20.Name = "chRazonSocial";
-            gridViewTextBoxColumn20.Width = 150;
-            gridViewTextBoxColumn21.EnableExpressionEditor = false;
-            gridViewTextBoxColumn21.FieldName = "PseudoNombre";
-            gridViewTextBoxColumn21.HeaderText = "Transportista ";
-            gridViewTextBoxColumn21.Name = "chPseudoNombre";
-            gridViewTextBoxColumn21.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
-            gridViewTextBoxColumn21.Width = 275;
-            gridViewTextBoxColumn22.EnableExpressionEditor = false;
-            gridViewTextBoxColumn22.FieldName = "IdTipoMovilidad";
-            gridViewTextBoxColumn22.HeaderText = "IdTipoMovilidad";
-            gridViewTextBoxColumn22.IsVisible = false;
-            gridViewTextBoxColumn22.Name = "chIdTipoMovilidad";
-            gridViewTextBoxColumn23.EnableExpressionEditor = false;
-            gridViewTextBoxColumn23.FieldName = "TipoMovilidad";
-            gridViewTextBoxColumn23.HeaderText = "Tipo de Movilidad";
-            gridViewTextBoxColumn23.Name = "chTipoMovilidad";
-            gridViewTextBoxColumn23.Width = 70;
-            gridViewTextBoxColumn24.EnableExpressionEditor = false;
-            gridViewTextBoxColumn24.FieldName = "NumeroAsientos";
-            gridViewTextBoxColumn24.HeaderText = "Numero de Asientos";
-            gridViewTextBoxColumn24.IsVisible = false;
-            gridViewTextBoxColumn24.Name = "chNumeroAsientos";
-            gridViewTextBoxColumn25.EnableExpressionEditor = false;
-            gridViewTextBoxColumn25.FieldName = "PesoMaximo";
-            gridViewTextBoxColumn25.HeaderText = "Peso Maximo";
-            gridViewTextBoxColumn25.IsVisible = false;
-            gridViewTextBoxColumn25.Name = "chPesoMaximo";
-            gridViewTextBoxColumn26.EnableExpressionEditor = false;
-            gridViewTextBoxColumn26.FieldName = "IdEstado";
-            gridViewTextBoxColumn26.HeaderText = "Id Estado";
-            gridViewTextBoxColumn26.IsVisible = false;
-            gridViewTextBoxColumn26.Name = "chIdEstado";
-            gridViewTextBoxColumn27.EnableExpressionEditor = false;
-            gridViewTextBoxColumn27.FieldName = "Estado";
-            gridViewTextBoxColumn27.HeaderText = "Estado";
-            gridViewTextBoxColumn27.IsVisible = false;
-            gridViewTextBoxColumn27.Name = "chEstado";
-            gridViewTextBoxColumn27.Width = 92;
-            gridViewTextBoxColumn28.EnableExpressionEditor = false;
-            gridViewTextBoxColumn28.FieldName = "EsMovilidadLocal";
-            gridViewTextBoxColumn28.HeaderText = "EsMovilidadLocal";
-            gridViewTextBoxColumn28.IsVisible = false;
-            gridViewTextBoxColumn28.Name = "chEsMovilidadLocal";
-            gridViewTextBoxColumn29.EnableExpressionEditor = false;
-            gridViewTextBoxColumn29.FieldName = "EsInterLocal";
-            gridViewTextBoxColumn29.HeaderText = "EsInterLocal";
-            gridViewTextBoxColumn29.IsVisible = false;
-            gridViewTextBoxColumn29.Name = "chEsInterLocal";
-            gridViewTextBoxColumn30.EnableExpressionEditor = false;
-            gridViewTextBoxColumn30.FieldName = "AnioFabricacion";
-            gridViewTextBoxColumn30.HeaderText = "AnioFabricacion";
-            gridViewTextBoxColumn30.IsVisible = false;
-            gridViewTextBoxColumn30.Name = "chAnioFabricacion";
-            gridViewTextBoxColumn31.EnableExpressionEditor = false;
-            gridViewTextBoxColumn31.FieldName = "Marca";
-            gridViewTextBoxColumn31.HeaderText = "Marca";
-            gridViewTextBoxColumn31.IsVisible = false;
-            gridViewTextBoxColumn31.Name = "chMarca";
-            gridViewTextBoxColumn32.EnableExpressionEditor = false;
-            gridViewTextBoxColumn32.FieldName = "Modelo";
-            gridViewTextBoxColumn32.HeaderText = "Modelo";
-            gridViewTextBoxColumn32.IsVisible = false;
-            gridViewTextBoxColumn32.Name = "chModelo";
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "Id";
+            gridViewTextBoxColumn1.HeaderText = "Id";
+            gridViewTextBoxColumn1.IsVisible = false;
+            gridViewTextBoxColumn1.Name = "chId";
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "Placa";
+            gridViewTextBoxColumn2.HeaderText = "Placa";
+            gridViewTextBoxColumn2.Name = "chPlaca";
+            gridViewTextBoxColumn2.Width = 51;
+            gridViewTextBoxColumn3.EnableExpressionEditor = false;
+            gridViewTextBoxColumn3.FieldName = "Ruc";
+            gridViewTextBoxColumn3.HeaderText = "RUC";
+            gridViewTextBoxColumn3.Name = "chRuc";
+            gridViewTextBoxColumn3.Width = 79;
+            gridViewTextBoxColumn4.EnableExpressionEditor = false;
+            gridViewTextBoxColumn4.FieldName = "RazonSocial";
+            gridViewTextBoxColumn4.HeaderText = "Razon Social";
+            gridViewTextBoxColumn4.IsVisible = false;
+            gridViewTextBoxColumn4.Name = "chRazonSocial";
+            gridViewTextBoxColumn4.Width = 150;
+            gridViewTextBoxColumn5.EnableExpressionEditor = false;
+            gridViewTextBoxColumn5.FieldName = "PseudoNombre";
+            gridViewTextBoxColumn5.HeaderText = "Transportista ";
+            gridViewTextBoxColumn5.Name = "chPseudoNombre";
+            gridViewTextBoxColumn5.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
+            gridViewTextBoxColumn5.Width = 275;
+            gridViewTextBoxColumn6.EnableExpressionEditor = false;
+            gridViewTextBoxColumn6.FieldName = "IdTipoMovilidad";
+            gridViewTextBoxColumn6.HeaderText = "IdTipoMovilidad";
+            gridViewTextBoxColumn6.IsVisible = false;
+            gridViewTextBoxColumn6.Name = "chIdTipoMovilidad";
+            gridViewTextBoxColumn7.EnableExpressionEditor = false;
+            gridViewTextBoxColumn7.FieldName = "TipoMovilidad";
+            gridViewTextBoxColumn7.HeaderText = "Tipo de Movilidad";
+            gridViewTextBoxColumn7.Name = "chTipoMovilidad";
+            gridViewTextBoxColumn7.Width = 70;
+            gridViewTextBoxColumn8.EnableExpressionEditor = false;
+            gridViewTextBoxColumn8.FieldName = "NumeroAsientos";
+            gridViewTextBoxColumn8.HeaderText = "Numero de Asientos";
+            gridViewTextBoxColumn8.IsVisible = false;
+            gridViewTextBoxColumn8.Name = "chNumeroAsientos";
+            gridViewTextBoxColumn9.EnableExpressionEditor = false;
+            gridViewTextBoxColumn9.FieldName = "PesoMaximo";
+            gridViewTextBoxColumn9.HeaderText = "Peso Maximo";
+            gridViewTextBoxColumn9.IsVisible = false;
+            gridViewTextBoxColumn9.Name = "chPesoMaximo";
+            gridViewTextBoxColumn10.EnableExpressionEditor = false;
+            gridViewTextBoxColumn10.FieldName = "IdEstado";
+            gridViewTextBoxColumn10.HeaderText = "Id Estado";
+            gridViewTextBoxColumn10.IsVisible = false;
+            gridViewTextBoxColumn10.Name = "chIdEstado";
+            gridViewTextBoxColumn11.EnableExpressionEditor = false;
+            gridViewTextBoxColumn11.FieldName = "Estado";
+            gridViewTextBoxColumn11.HeaderText = "Estado";
+            gridViewTextBoxColumn11.IsVisible = false;
+            gridViewTextBoxColumn11.Name = "chEstado";
+            gridViewTextBoxColumn11.Width = 92;
+            gridViewTextBoxColumn12.EnableExpressionEditor = false;
+            gridViewTextBoxColumn12.FieldName = "EsMovilidadLocal";
+            gridViewTextBoxColumn12.HeaderText = "EsMovilidadLocal";
+            gridViewTextBoxColumn12.IsVisible = false;
+            gridViewTextBoxColumn12.Name = "chEsMovilidadLocal";
+            gridViewTextBoxColumn13.EnableExpressionEditor = false;
+            gridViewTextBoxColumn13.FieldName = "EsInterLocal";
+            gridViewTextBoxColumn13.HeaderText = "EsInterLocal";
+            gridViewTextBoxColumn13.IsVisible = false;
+            gridViewTextBoxColumn13.Name = "chEsInterLocal";
+            gridViewTextBoxColumn14.EnableExpressionEditor = false;
+            gridViewTextBoxColumn14.FieldName = "AnioFabricacion";
+            gridViewTextBoxColumn14.HeaderText = "AnioFabricacion";
+            gridViewTextBoxColumn14.IsVisible = false;
+            gridViewTextBoxColumn14.Name = "chAnioFabricacion";
+            gridViewTextBoxColumn15.EnableExpressionEditor = false;
+            gridViewTextBoxColumn15.FieldName = "Marca";
+            gridViewTextBoxColumn15.HeaderText = "Marca";
+            gridViewTextBoxColumn15.IsVisible = false;
+            gridViewTextBoxColumn15.Name = "chMarca";
+            gridViewTextBoxColumn16.EnableExpressionEditor = false;
+            gridViewTextBoxColumn16.FieldName = "Modelo";
+            gridViewTextBoxColumn16.HeaderText = "Modelo";
+            gridViewTextBoxColumn16.IsVisible = false;
+            gridViewTextBoxColumn16.Name = "chModelo";
             this.dgvTransportista.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn17,
-            gridViewTextBoxColumn18,
-            gridViewTextBoxColumn19,
-            gridViewTextBoxColumn20,
-            gridViewTextBoxColumn21,
-            gridViewTextBoxColumn22,
-            gridViewTextBoxColumn23,
-            gridViewTextBoxColumn24,
-            gridViewTextBoxColumn25,
-            gridViewTextBoxColumn26,
-            gridViewTextBoxColumn27,
-            gridViewTextBoxColumn28,
-            gridViewTextBoxColumn29,
-            gridViewTextBoxColumn30,
-            gridViewTextBoxColumn31,
-            gridViewTextBoxColumn32});
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4,
+            gridViewTextBoxColumn5,
+            gridViewTextBoxColumn6,
+            gridViewTextBoxColumn7,
+            gridViewTextBoxColumn8,
+            gridViewTextBoxColumn9,
+            gridViewTextBoxColumn10,
+            gridViewTextBoxColumn11,
+            gridViewTextBoxColumn12,
+            gridViewTextBoxColumn13,
+            gridViewTextBoxColumn14,
+            gridViewTextBoxColumn15,
+            gridViewTextBoxColumn16});
             this.dgvTransportista.MasterTemplate.EnableAlternatingRowColor = true;
             this.dgvTransportista.MasterTemplate.EnableFiltering = true;
             this.dgvTransportista.MasterTemplate.MultiSelect = true;
             this.dgvTransportista.MasterTemplate.SelectionMode = Telerik.WinControls.UI.GridViewSelectionMode.CellSelect;
             this.dgvTransportista.MasterTemplate.ShowGroupedColumns = true;
             this.dgvTransportista.MasterTemplate.ShowHeaderCellButtons = true;
-            sortDescriptor2.PropertyName = "chPseudoNombre";
+            sortDescriptor1.PropertyName = "chPseudoNombre";
             this.dgvTransportista.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
-            sortDescriptor2});
+            sortDescriptor1});
             this.dgvTransportista.Name = "dgvTransportista";
             this.dgvTransportista.Padding = new System.Windows.Forms.Padding(1);
             this.dgvTransportista.ReadOnly = true;
@@ -496,11 +495,10 @@
             this.gbEdit.Controls.Add(this.radLabel9);
             this.gbEdit.Controls.Add(this.lblModelo);
             this.gbEdit.Enabled = false;
-            this.gbEdit.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office;
             this.gbEdit.HeaderText = " Mantenimiento";
-            this.gbEdit.Location = new System.Drawing.Point(506, 43);
+            this.gbEdit.Location = new System.Drawing.Point(506, 35);
             this.gbEdit.Name = "gbEdit";
-            this.gbEdit.Size = new System.Drawing.Size(670, 415);
+            this.gbEdit.Size = new System.Drawing.Size(670, 423);
             this.gbEdit.TabIndex = 1;
             this.gbEdit.Tag = "";
             this.gbEdit.Text = " Mantenimiento";
@@ -648,7 +646,7 @@
             this.TabRegistros.Location = new System.Drawing.Point(-2, 215);
             this.TabRegistros.Name = "TabRegistros";
             this.TabRegistros.SelectedPage = this.tabDocumentacion;
-            this.TabRegistros.Size = new System.Drawing.Size(667, 165);
+            this.TabRegistros.Size = new System.Drawing.Size(667, 173);
             this.TabRegistros.TabIndex = 21;
             this.TabRegistros.Text = "TabMantenimiento";
             this.TabRegistros.ThemeName = "VisualStudio2012Light";
@@ -704,14 +702,14 @@
             this.chObservacionRuta,
             this.chIdEstadoRuta,
             this.chEstadoRuta});
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Wheat;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRuta.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Wheat;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRuta.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvRuta.GridColor = System.Drawing.SystemColors.Control;
             this.dgvRuta.Location = new System.Drawing.Point(0, 36);
             this.dgvRuta.Name = "dgvRuta";
@@ -759,8 +757,8 @@
             // 
             this.chDescripcionRuta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.chDescripcionRuta.DataPropertyName = "Ruta";
-            dataGridViewCellStyle10.Format = "d";
-            this.chDescripcionRuta.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.Format = "d";
+            this.chDescripcionRuta.DefaultCellStyle = dataGridViewCellStyle1;
             this.chDescripcionRuta.HeaderText = "Ruta";
             this.chDescripcionRuta.Name = "chDescripcionRuta";
             this.chDescripcionRuta.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -861,7 +859,7 @@
             this.tabDocumentacion.ItemSize = new System.Drawing.SizeF(194F, 24F);
             this.tabDocumentacion.Location = new System.Drawing.Point(5, 5);
             this.tabDocumentacion.Name = "tabDocumentacion";
-            this.tabDocumentacion.Size = new System.Drawing.Size(657, 130);
+            this.tabDocumentacion.Size = new System.Drawing.Size(657, 138);
             this.tabDocumentacion.Text = "Documentación";
             this.tabDocumentacion.Paint += new System.Windows.Forms.PaintEventHandler(this.tabDocumentacion_Paint);
             // 
@@ -898,14 +896,14 @@
             this.chObservacionDD,
             this.chEstadoIdDD,
             this.chEstadoDD});
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.Wheat;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDocumentacion.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Wheat;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDocumentacion.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDocumentacion.GridColor = System.Drawing.SystemColors.Control;
             this.dgvDocumentacion.Location = new System.Drawing.Point(2, 35);
             this.dgvDocumentacion.Name = "dgvDocumentacion";
@@ -917,7 +915,7 @@
             this.dgvDocumentacion.P_NumeroDigitos = 0;
             this.dgvDocumentacion.RowHeadersWidth = 10;
             this.dgvDocumentacion.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvDocumentacion.Size = new System.Drawing.Size(652, 92);
+            this.dgvDocumentacion.Size = new System.Drawing.Size(652, 100);
             this.dgvDocumentacion.TabIndex = 168;
             this.dgvDocumentacion.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvDocumentacion_KeyUp);
             // 
@@ -958,8 +956,8 @@
             // chFechaInicioDD
             // 
             this.chFechaInicioDD.DataPropertyName = "FechaInicio";
-            dataGridViewCellStyle12.Format = "d";
-            this.chFechaInicioDD.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Format = "d";
+            this.chFechaInicioDD.DefaultCellStyle = dataGridViewCellStyle3;
             this.chFechaInicioDD.HeaderText = "Inicio";
             this.chFechaInicioDD.Mask = "";
             this.chFechaInicioDD.Name = "chFechaInicioDD";
@@ -974,8 +972,8 @@
             // chFechaTerminoDD
             // 
             this.chFechaTerminoDD.DataPropertyName = "FechaTermino";
-            dataGridViewCellStyle13.Format = "d";
-            this.chFechaTerminoDD.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle4.Format = "d";
+            this.chFechaTerminoDD.DefaultCellStyle = dataGridViewCellStyle4;
             this.chFechaTerminoDD.HeaderText = "Término";
             this.chFechaTerminoDD.Mask = "";
             this.chFechaTerminoDD.Name = "chFechaTerminoDD";
@@ -1089,14 +1087,14 @@
             this.chObservacionChofer,
             this.chIdEstadoChofer,
             this.chEstadoChofer});
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Wheat;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvChofer.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Wheat;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvChofer.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvChofer.GridColor = System.Drawing.SystemColors.Control;
             this.dgvChofer.Location = new System.Drawing.Point(0, 36);
             this.dgvChofer.Name = "dgvChofer";
@@ -1293,14 +1291,14 @@
             this.chObservacionContrato,
             this.chIdEstadoContrato,
             this.chEstadoContrato});
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.Wheat;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvContratos.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Wheat;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvContratos.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvContratos.GridColor = System.Drawing.SystemColors.Control;
             this.dgvContratos.Location = new System.Drawing.Point(0, 38);
             this.dgvContratos.Name = "dgvContratos";
@@ -1336,8 +1334,8 @@
             // chFechaInicioContrato
             // 
             this.chFechaInicioContrato.DataPropertyName = "FechaInicio";
-            dataGridViewCellStyle16.Format = "d";
-            this.chFechaInicioContrato.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle7.Format = "d";
+            this.chFechaInicioContrato.DefaultCellStyle = dataGridViewCellStyle7;
             this.chFechaInicioContrato.HeaderText = "Fecha Inicio";
             this.chFechaInicioContrato.Mask = "";
             this.chFechaInicioContrato.Name = "chFechaInicioContrato";
@@ -1354,8 +1352,8 @@
             // chFechaTerminoContrato
             // 
             this.chFechaTerminoContrato.DataPropertyName = "FechaTermino";
-            dataGridViewCellStyle17.Format = "d";
-            this.chFechaTerminoContrato.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle8.Format = "d";
+            this.chFechaTerminoContrato.DefaultCellStyle = dataGridViewCellStyle8;
             this.chFechaTerminoContrato.HeaderText = "Fecha Término";
             this.chFechaTerminoContrato.Mask = "";
             this.chFechaTerminoContrato.Name = "chFechaTerminoContrato";
@@ -1439,7 +1437,7 @@
             // 
             this.btnGrabar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
-            this.btnGrabar.Location = new System.Drawing.Point(332, 386);
+            this.btnGrabar.Location = new System.Drawing.Point(332, 394);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(99, 24);
             this.btnGrabar.TabIndex = 3;
@@ -1470,7 +1468,7 @@
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.Location = new System.Drawing.Point(224, 386);
+            this.btnCancelar.Location = new System.Drawing.Point(224, 394);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(102, 24);
             this.btnCancelar.TabIndex = 2;
@@ -1767,16 +1765,99 @@
             this.btnEliminar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // BarraPrincipal
+            // stsBarraEstado
             // 
-            this.BarraPrincipal.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BarraPrincipal.Location = new System.Drawing.Point(0, 0);
-            this.BarraPrincipal.Name = "BarraPrincipal";
-            this.BarraPrincipal.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
-            this.BarraSuperior});
-            this.BarraPrincipal.Size = new System.Drawing.Size(1182, 37);
-            this.BarraPrincipal.TabIndex = 162;
-            this.BarraPrincipal.ThemeName = "VisualStudio2012Light";
+            this.stsBarraEstado.Location = new System.Drawing.Point(0, 461);
+            this.stsBarraEstado.Name = "stsBarraEstado";
+            this.stsBarraEstado.Size = new System.Drawing.Size(1182, 22);
+            this.stsBarraEstado.TabIndex = 190;
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
+            // 
+            // toolStripStatusLabel6
+            // 
+            this.toolStripStatusLabel6.Name = "toolStripStatusLabel6";
+            this.toolStripStatusLabel6.Size = new System.Drawing.Size(59, 17);
+            this.toolStripStatusLabel6.Text = "Promedio";
+            // 
+            // lblPromedio
+            // 
+            this.lblPromedio.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.lblPromedio.Name = "lblPromedio";
+            this.lblPromedio.Size = new System.Drawing.Size(32, 17);
+            this.lblPromedio.Text = "0.00";
+            // 
+            // toolStripStatusLabel5
+            // 
+            this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
+            this.toolStripStatusLabel5.Size = new System.Drawing.Size(28, 17);
+            this.toolStripStatusLabel5.Text = "       ";
+            // 
+            // toolStripStatusLabel4
+            // 
+            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
+            this.toolStripStatusLabel4.Size = new System.Drawing.Size(57, 17);
+            this.toolStripStatusLabel4.Text = "Recuento";
+            // 
+            // lblRecuento
+            // 
+            this.lblRecuento.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.lblRecuento.Name = "lblRecuento";
+            this.lblRecuento.Size = new System.Drawing.Size(14, 17);
+            this.lblRecuento.Text = "0";
+            // 
+            // toolStripStatusLabel3
+            // 
+            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(28, 17);
+            this.toolStripStatusLabel3.Text = "       ";
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(37, 17);
+            this.toolStripStatusLabel2.Text = "Suma";
+            // 
+            // lblSumaSeleccionada
+            // 
+            this.lblSumaSeleccionada.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.lblSumaSeleccionada.Name = "lblSumaSeleccionada";
+            this.lblSumaSeleccionada.Size = new System.Drawing.Size(32, 17);
+            this.lblSumaSeleccionada.Text = "0.00";
+            // 
+            // toolStripStatusLabel7
+            // 
+            this.toolStripStatusLabel7.Name = "toolStripStatusLabel7";
+            this.toolStripStatusLabel7.Size = new System.Drawing.Size(22, 17);
+            this.toolStripStatusLabel7.Text = "     ";
+            // 
+            // toolStripStatusLabel8
+            // 
+            this.toolStripStatusLabel8.Name = "toolStripStatusLabel8";
+            this.toolStripStatusLabel8.Size = new System.Drawing.Size(130, 17);
+            this.toolStripStatusLabel8.Text = "  Tiempo Transcurrido : ";
+            // 
+            // lblTiempoTranscurrido
+            // 
+            this.lblTiempoTranscurrido.Name = "lblTiempoTranscurrido";
+            this.lblTiempoTranscurrido.Size = new System.Drawing.Size(49, 17);
+            this.lblTiempoTranscurrido.Text = "00:00:00";
+            // 
+            // ProgressBar
+            // 
+            this.ProgressBar.MarqueeAnimationSpeed = 25;
+            this.ProgressBar.Name = "ProgressBar";
+            this.ProgressBar.Size = new System.Drawing.Size(160, 16);
+            this.ProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.ProgressBar.Visible = false;
+            // 
+            // lblNumeroResultados
+            // 
+            this.lblNumeroResultados.Name = "lblNumeroResultados";
+            this.lblNumeroResultados.Size = new System.Drawing.Size(0, 17);
             // 
             // BarraSuperior
             // 
@@ -1825,9 +1906,9 @@
             this.btnEditar,
             this.btnAnular,
             this.btnEliminarRegistro,
-            this.commandBarButton4,
-            this.btnCerrar,
-            this.btnHistorial});
+            this.btnHistorial,
+            this.btnExportToExcel,
+            this.btnCerrar});
             this.commandBarStripElement3.Name = "commandBarStripElement3";
             this.commandBarStripElement3.Text = "";
             this.commandBarStripElement3.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1932,20 +2013,20 @@
             this.btnEliminarRegistro.ToolTipText = "Eliminar Registro";
             this.btnEliminarRegistro.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // commandBarButton4
+            // btnExportToExcel
             // 
-            this.commandBarButton4.AccessibleDescription = "Exportar";
-            this.commandBarButton4.AccessibleName = "Exportar";
-            this.commandBarButton4.AutoSize = false;
-            this.commandBarButton4.Bounds = new System.Drawing.Rectangle(0, 0, 100, 35);
-            this.commandBarButton4.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.commandBarButton4.DisplayName = "Exportar";
-            this.commandBarButton4.Image = ((System.Drawing.Image)(resources.GetObject("commandBarButton4.Image")));
-            this.commandBarButton4.Name = "commandBarButton4";
-            this.commandBarButton4.Text = "";
-            this.commandBarButton4.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.commandBarButton4.ToolTipText = "Exportar";
-            this.commandBarButton4.Click += new System.EventHandler(this.btnExportar_Click);
+            this.btnExportToExcel.AccessibleDescription = "Exportar";
+            this.btnExportToExcel.AccessibleName = "Exportar";
+            this.btnExportToExcel.AutoSize = false;
+            this.btnExportToExcel.Bounds = new System.Drawing.Rectangle(0, 0, 100, 35);
+            this.btnExportToExcel.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.btnExportToExcel.DisplayName = "Exportar";
+            this.btnExportToExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnExportToExcel.Image")));
+            this.btnExportToExcel.Name = "btnExportToExcel";
+            this.btnExportToExcel.Text = "";
+            this.btnExportToExcel.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.btnExportToExcel.ToolTipText = "Exportar";
+            this.btnExportToExcel.Click += new System.EventHandler(this.btnExportar_Click);
             // 
             // btnCerrar
             // 
@@ -1966,116 +2047,35 @@
             // 
             this.btnHistorial.AutoSize = false;
             this.btnHistorial.Bounds = new System.Drawing.Rectangle(0, 0, 100, 35);
+            this.btnHistorial.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnHistorial.DisplayName = "Historial";
             this.btnHistorial.Image = ((System.Drawing.Image)(resources.GetObject("btnHistorial.Image")));
             this.btnHistorial.Name = "btnHistorial";
             this.btnHistorial.Text = "";
+            this.btnHistorial.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnHistorial.ToolTipText = "Historial";
             this.btnHistorial.Click += new System.EventHandler(this.btnHistorial_Click);
             // 
-            // stsBarraEstado
+            // BarraPrincipal
             // 
-            this.stsBarraEstado.Location = new System.Drawing.Point(0, 461);
-            this.stsBarraEstado.Name = "stsBarraEstado";
-            this.stsBarraEstado.Size = new System.Drawing.Size(1182, 22);
-            this.stsBarraEstado.TabIndex = 190;
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
-            // 
-            // toolStripStatusLabel6
-            // 
-            this.toolStripStatusLabel6.Name = "toolStripStatusLabel6";
-            this.toolStripStatusLabel6.Size = new System.Drawing.Size(59, 17);
-            this.toolStripStatusLabel6.Text = "Promedio";
-            // 
-            // lblPromedio
-            // 
-            this.lblPromedio.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.lblPromedio.Name = "lblPromedio";
-            this.lblPromedio.Size = new System.Drawing.Size(32, 17);
-            this.lblPromedio.Text = "0.00";
-            // 
-            // toolStripStatusLabel5
-            // 
-            this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
-            this.toolStripStatusLabel5.Size = new System.Drawing.Size(28, 17);
-            this.toolStripStatusLabel5.Text = "       ";
-            // 
-            // toolStripStatusLabel4
-            // 
-            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
-            this.toolStripStatusLabel4.Size = new System.Drawing.Size(57, 17);
-            this.toolStripStatusLabel4.Text = "Recuento";
-            // 
-            // lblRecuento
-            // 
-            this.lblRecuento.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.lblRecuento.Name = "lblRecuento";
-            this.lblRecuento.Size = new System.Drawing.Size(14, 17);
-            this.lblRecuento.Text = "0";
-            // 
-            // toolStripStatusLabel3
-            // 
-            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(28, 17);
-            this.toolStripStatusLabel3.Text = "       ";
-            // 
-            // toolStripStatusLabel2
-            // 
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(37, 17);
-            this.toolStripStatusLabel2.Text = "Suma";
-            // 
-            // lblSumaSeleccionada
-            // 
-            this.lblSumaSeleccionada.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.lblSumaSeleccionada.Name = "lblSumaSeleccionada";
-            this.lblSumaSeleccionada.Size = new System.Drawing.Size(32, 17);
-            this.lblSumaSeleccionada.Text = "0.00";
-            // 
-            // toolStripStatusLabel7
-            // 
-            this.toolStripStatusLabel7.Name = "toolStripStatusLabel7";
-            this.toolStripStatusLabel7.Size = new System.Drawing.Size(22, 17);
-            this.toolStripStatusLabel7.Text = "     ";
-            // 
-            // toolStripStatusLabel8
-            // 
-            this.toolStripStatusLabel8.Name = "toolStripStatusLabel8";
-            this.toolStripStatusLabel8.Size = new System.Drawing.Size(130, 17);
-            this.toolStripStatusLabel8.Text = "  Tiempo Transcurrido : ";
-            // 
-            // lblTiempoTranscurrido
-            // 
-            this.lblTiempoTranscurrido.Name = "lblTiempoTranscurrido";
-            this.lblTiempoTranscurrido.Size = new System.Drawing.Size(49, 17);
-            this.lblTiempoTranscurrido.Text = "00:00:00";
-            // 
-            // ProgressBar
-            // 
-            this.ProgressBar.MarqueeAnimationSpeed = 25;
-            this.ProgressBar.Name = "ProgressBar";
-            this.ProgressBar.Size = new System.Drawing.Size(160, 16);
-            this.ProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
-            this.ProgressBar.Visible = false;
-            // 
-            // lblNumeroResultados
-            // 
-            this.lblNumeroResultados.Name = "lblNumeroResultados";
-            this.lblNumeroResultados.Size = new System.Drawing.Size(0, 17);
+            this.BarraPrincipal.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BarraPrincipal.Location = new System.Drawing.Point(0, 0);
+            this.BarraPrincipal.Name = "BarraPrincipal";
+            this.BarraPrincipal.Rows.AddRange(new Telerik.WinControls.UI.CommandBarRowElement[] {
+            this.BarraSuperior});
+            this.BarraPrincipal.Size = new System.Drawing.Size(1182, 62);
+            this.BarraPrincipal.TabIndex = 162;
+            this.BarraPrincipal.ThemeName = "VisualStudio2012Light";
             // 
             // CatalogoEmpresaDeServicioDeTransporteDePersonal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1182, 483);
-            this.Controls.Add(this.stsBarraEstado);
-            this.Controls.Add(this.BarraPrincipal);
             this.Controls.Add(this.gbEdit);
             this.Controls.Add(this.gbList);
+            this.Controls.Add(this.stsBarraEstado);
+            this.Controls.Add(this.BarraPrincipal);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CatalogoEmpresaDeServicioDeTransporteDePersonal";
             // 
@@ -2260,21 +2260,6 @@
         private Telerik.WinControls.UI.CommandBarButton btnSalir;
         private Telerik.WinControls.UI.CommandBarButton btnExportar;
         private Telerik.WinControls.UI.CommandBarButton btnEliminar;
-        private Telerik.WinControls.UI.RadCommandBar BarraPrincipal;
-        private Telerik.WinControls.UI.CommandBarRowElement BarraSuperior;
-        private Telerik.WinControls.UI.CommandBarStripElement BarraModulo;
-        private Telerik.WinControls.UI.CommandBarButton btnTransportes;
-        private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement3;
-        private Telerik.WinControls.UI.CommandBarSeparator commandBarSeparator6;
-        private Telerik.WinControls.UI.CommandBarButton btnNuevo;
-        private Telerik.WinControls.UI.CommandBarButton btnActualizarLista;
-        private Telerik.WinControls.UI.CommandBarButton btnAtras;
-        private Telerik.WinControls.UI.CommandBarButton btnEditar;
-        private Telerik.WinControls.UI.CommandBarButton btnAnular;
-        private Telerik.WinControls.UI.CommandBarButton btnEliminarRegistro;
-        private Telerik.WinControls.UI.CommandBarButton commandBarButton4;
-        private Telerik.WinControls.UI.CommandBarButton btnCerrar;
-        private Telerik.WinControls.UI.CommandBarButton btnHistorial;
         private Telerik.WinControls.UI.RadLabel radLabel16;
         private System.Windows.Forms.ToolStripMenuItem verDocumentosYMovimientoAsociadosToolStripMenuItem;
         private Telerik.WinControls.UI.RadTextBox txtEstado;
@@ -2310,5 +2295,20 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn chObservacionDD;
         private System.Windows.Forms.DataGridViewTextBoxColumn chEstadoIdDD;
         private System.Windows.Forms.DataGridViewTextBoxColumn chEstadoDD;
+        private Telerik.WinControls.UI.CommandBarRowElement BarraSuperior;
+        private Telerik.WinControls.UI.CommandBarStripElement BarraModulo;
+        private Telerik.WinControls.UI.CommandBarButton btnTransportes;
+        private Telerik.WinControls.UI.CommandBarStripElement commandBarStripElement3;
+        private Telerik.WinControls.UI.CommandBarSeparator commandBarSeparator6;
+        private Telerik.WinControls.UI.CommandBarButton btnNuevo;
+        private Telerik.WinControls.UI.CommandBarButton btnActualizarLista;
+        private Telerik.WinControls.UI.CommandBarButton btnAtras;
+        private Telerik.WinControls.UI.CommandBarButton btnEditar;
+        private Telerik.WinControls.UI.CommandBarButton btnAnular;
+        private Telerik.WinControls.UI.CommandBarButton btnEliminarRegistro;
+        private Telerik.WinControls.UI.CommandBarButton btnExportToExcel;
+        private Telerik.WinControls.UI.CommandBarButton btnCerrar;
+        private Telerik.WinControls.UI.CommandBarButton btnHistorial;
+        private Telerik.WinControls.UI.RadCommandBar BarraPrincipal;
     }
 }

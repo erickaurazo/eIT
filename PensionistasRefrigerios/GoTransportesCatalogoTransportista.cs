@@ -53,6 +53,7 @@ namespace Asistencia
         private string _conection;
         private ASJ_USUARIOS _user;
         private string _companyId;
+        private PrivilegesByUser _privilege;
         #endregion
 
         public CatalogoEmpresaDeServicioDeTransporteDePersonal()
@@ -79,6 +80,27 @@ namespace Asistencia
             _conection = conection;
             _user = user;
             _companyId = companyId;
+            RadGridLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.GridLocalizationProviderEspanol();
+            RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
+            RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
+            RadMessageLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadMessageBoxLocalizationProviderEspañol();
+            Inicio();
+
+            ObtenerListacboTipoMovilidad();
+            ObtenerListaTransportistas();
+            gbEdit.Enabled = false;
+            gbTransporte.Enabled = false;
+            gbList.Enabled = false;
+            bgwHilo.RunWorkerAsync();
+        }
+
+        public CatalogoEmpresaDeServicioDeTransporteDePersonal(string conection, ASJ_USUARIOS user, string companyId, PrivilegesByUser privilege)
+        {
+            InitializeComponent();
+            _conection = conection;
+            _user = user;
+            _companyId = companyId;
+            _privilege = privilege;
             RadGridLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.GridLocalizationProviderEspanol();
             RadPageViewLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadPageViewLocalizationProviderEspañol();
             RadWizardLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.RadWizardLocalizationProviderEspañol();
@@ -204,32 +226,42 @@ namespace Asistencia
             try
             {
                 #region Edición()
-
-                if (statusCode != string.Empty && statusCode != "AN" && dgvTransportista.RowCount >= 0)
+                if (_privilege != null)
                 {
-                    //posicionX = this.dgvTransportista.CurrentRow.Index;
-                    //posicionY = this.dgvTransportista.CurrentColumn.Index;
-                    ActivarDesactivarControlEdicion(true);
-                    ActivarEdicionGrillaContrato(true);
-                    ActivarEdicionGrillaChofer(true);
-                    ActivarEdicionGrillaRuta(true);
-                    ActivarEdicionGrillaRuta(true);
+                    if (_privilege.editar == 1)
+                    {
+                        #region
+                        if (statusCode != string.Empty && statusCode != "AN" && dgvTransportista.RowCount >= 0)
+                        {
+                            //posicionX = this.dgvTransportista.CurrentRow.Index;
+                            //posicionY = this.dgvTransportista.CurrentColumn.Index;
+                            ActivarDesactivarControlEdicion(true);
+                            ActivarEdicionGrillaContrato(true);
+                            ActivarEdicionGrillaChofer(true);
+                            ActivarEdicionGrillaRuta(true);
+                            ActivarEdicionGrillaRuta(true);
 
-                    btnNuevo.Enabled = false;
-                    btnEditar.Enabled = false;
-                    btnGrabar.Enabled = true;
-                    btnCancelar.Enabled = true;
-                    btnAtras.Enabled = true;
-                    gbEdit.Enabled = true;
-                    gbList.Enabled = false;
-                    btnAnular.Enabled = false;
-                    btnEliminar.Enabled = false;
+                            btnNuevo.Enabled = false;
+                            btnEditar.Enabled = false;
+                            btnGrabar.Enabled = true;
+                            btnCancelar.Enabled = true;
+                            btnAtras.Enabled = true;
+                            gbEdit.Enabled = true;
+                            gbList.Enabled = false;
+                            btnAnular.Enabled = false;
+                            btnEliminar.Enabled = false;
 
-
-                }
-                else
-                {
-                    RadMessageBox.Show("No tiene el estado para la edición", "Atención");
+                        }
+                        else
+                        {
+                            MessageBox.Show("No tiene el estado para la edición", "ADVERTENCIA DEL SISTEMA");
+                        }
+                        #endregion
+                    }
+                    else
+                    {
+                        MessageBox.Show("No tiene privilegios para esta acción", "ADVERTENCIA DEL SISTEMA");
+                    }
                 }
                 #endregion
             }
@@ -389,7 +421,7 @@ namespace Asistencia
 
         private void btnActualizarLista_Click(object sender, EventArgs e)
         {
-            ;
+
             RefreshList();
         }
 
@@ -404,11 +436,23 @@ namespace Asistencia
             //posicionX = this.dgvTransportista.CurrentRow.Index;
             //posicionY = this.dgvTransportista.CurrentColumn.Index;
             //ObtenerListaTransportistas();            
-            gbEdit.Enabled = false;
-            gbTransporte.Enabled = false;
-            gbList.Enabled = false;
-            ProgressBar.Visible = !false;
-            bgwHilo.RunWorkerAsync();
+
+            if (_privilege != null)
+            {
+                if (_privilege.consultar == 1)
+                {
+                    gbEdit.Enabled = false;
+                    gbTransporte.Enabled = false;
+                    gbList.Enabled = false;
+                    ProgressBar.Visible = !false;
+                    bgwHilo.RunWorkerAsync();
+                }
+                else
+                {
+                    MessageBox.Show("No tiene privilegios para esta acción", "ADVERTENCIA DEL SISTEMA");
+                    return;
+                }
+            }
             //        if (posicionX > 0)
             //        {
             //            dgvTransportista.CurrentRow = dgvTransportista.Rows[posicionX];
@@ -428,12 +472,24 @@ namespace Asistencia
         private void Nuevo()
         {
             #region Nuevo() 
+            if (_privilege != null)
+            {
+                if (_privilege.nuevo == 1)
+                {
+                    LimpiarFormulario();
+                    ActivarDesactivarControlEdicion(true);
+                    ActivarEdicionGrillaChofer(true);
+                    ActivarEdicionGrillaContrato(true);
+                    ActivarEdicionGrillaRuta(true);
+                    btnCancelar.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("No tiene privilegios para esta acción", "Advertencia del sistema");
+                    return;
+                }
 
-            LimpiarFormulario();
-            ActivarDesactivarControlEdicion(true);
-            ActivarEdicionGrillaChofer(true);
-            ActivarEdicionGrillaContrato(true);
-            ActivarEdicionGrillaRuta(true);
+            }
             #endregion
         }
 
@@ -1252,83 +1308,95 @@ namespace Asistencia
             bool status = true;
             try
             {
-                if (this.statusCode != string.Empty)
+                if (_privilege != null)
                 {
-                    if (this.statusCode != "AN")
+                    if (_privilege.eliminar == 1)
                     {
-
-                        model = new CarrierController();
-                        var validarAsistenciasObservadas = model.GetListAsistanceObserveredTransferByPlaca(
-                            Convert.ToInt32(CodigoTransportista), 
-                            _conection, 
-                            txtNumeroPlaca.Text.Trim());
-                        if (validarAsistenciasObservadas != null && validarAsistenciasObservadas.Count > 0)
+                        #region 
+                        if (this.statusCode != string.Empty)
                         {
-                            MessageBox.Show("El transportista no se puede eliminar por que tiene asociadas " + validarAsistenciasObservadas.ToList().Count.ToString() + " Transferencias desde tablets.\nPara eliminar el registro, primero elimine las transferencias con este número de placa", "Mensaje del Sistema");
-                            status = false;
-                        }
-
-
-                        model = new CarrierController();
-                        var validarAsistenciasTransferidas = model.GetListAsistanceTransferByPlaca(
-                            Convert.ToInt32(CodigoTransportista),
-                            _conection,
-                            txtNumeroPlaca.Text.Trim());
-                        if (validarAsistenciasTransferidas != null && validarAsistenciasTransferidas.Count > 0)
-                        {
-                            MessageBox.Show("El transportista no se puede eliminar por que tiene asociadas " + validarAsistenciasTransferidas.ToList().Count.ToString() + " Transferencias en observación desde tablets.\nPara eliminar el registro, primero elimine las transferencias observadas con este número de placa", "Mensaje del Sistema");
-                            status = false;
-                        }
-
-                        model = new CarrierController();
-                        var ValidarMovimientoFacturacion = model.ObtenerListaMovimientoFacturacionTransportistaPorProveedor(Convert.ToInt32(CodigoTransportista), _conection).ToList();
-                        if (ValidarMovimientoFacturacion != null && ValidarMovimientoFacturacion.ToList().Count > 0)
-                        {
-                            MessageBox.Show("El transportista no se puede eliminar por que tiene asociadas " + ValidarMovimientoFacturacion.ToList().Count.ToString() + " facturas.\nPara eliminar el registro, primero elimine el movimiento de facturación asociado al este proveedor", "Mensaje del Sistema");
-                            status = false;
-                        }
-
-                        var ValidarMovimientoPartesRecorrido = model.ObtenerListaMovimientoParteRecorridoTransportistaPorProveedor(Convert.ToInt32(CodigoTransportista), _conection).ToList();
-                        if (ValidarMovimientoPartesRecorrido != null && ValidarMovimientoPartesRecorrido.ToList().Count > 0)
-                        {
-                            string documentos = string.Empty;
-                            foreach (var item in ValidarMovimientoPartesRecorrido)
+                            if (this.statusCode != "AN")
                             {
-                                documentos += item.IdDocumento + " - " + item.Serie + " - " + item.Numero + " con el estado " + item.IdEstado + "\n";
+
+                                model = new CarrierController();
+                                var validarAsistenciasObservadas = model.GetListAsistanceObserveredTransferByPlaca(
+                                    Convert.ToInt32(CodigoTransportista),
+                                    _conection,
+                                    txtNumeroPlaca.Text.Trim());
+                                if (validarAsistenciasObservadas != null && validarAsistenciasObservadas.Count > 0)
+                                {
+                                    MessageBox.Show("El transportista no se puede eliminar por que tiene asociadas " + validarAsistenciasObservadas.ToList().Count.ToString() + " Transferencias desde tablets.\nPara eliminar el registro, primero elimine las transferencias con este número de placa", "Mensaje del Sistema");
+                                    status = false;
+                                }
+
+
+                                model = new CarrierController();
+                                var validarAsistenciasTransferidas = model.GetListAsistanceTransferByPlaca(
+                                    Convert.ToInt32(CodigoTransportista),
+                                    _conection,
+                                    txtNumeroPlaca.Text.Trim());
+                                if (validarAsistenciasTransferidas != null && validarAsistenciasTransferidas.Count > 0)
+                                {
+                                    MessageBox.Show("El transportista no se puede eliminar por que tiene asociadas " + validarAsistenciasTransferidas.ToList().Count.ToString() + " Transferencias en observación desde tablets.\nPara eliminar el registro, primero elimine las transferencias observadas con este número de placa", "Mensaje del Sistema");
+                                    status = false;
+                                }
+
+                                model = new CarrierController();
+                                var ValidarMovimientoFacturacion = model.ObtenerListaMovimientoFacturacionTransportistaPorProveedor(Convert.ToInt32(CodigoTransportista), _conection).ToList();
+                                if (ValidarMovimientoFacturacion != null && ValidarMovimientoFacturacion.ToList().Count > 0)
+                                {
+                                    MessageBox.Show("El transportista no se puede eliminar por que tiene asociadas " + ValidarMovimientoFacturacion.ToList().Count.ToString() + " facturas.\nPara eliminar el registro, primero elimine el movimiento de facturación asociado al este proveedor", "Mensaje del Sistema");
+                                    status = false;
+                                }
+
+                                var ValidarMovimientoPartesRecorrido = model.ObtenerListaMovimientoParteRecorridoTransportistaPorProveedor(Convert.ToInt32(CodigoTransportista), _conection).ToList();
+                                if (ValidarMovimientoPartesRecorrido != null && ValidarMovimientoPartesRecorrido.ToList().Count > 0)
+                                {
+                                    string documentos = string.Empty;
+                                    foreach (var item in ValidarMovimientoPartesRecorrido)
+                                    {
+                                        documentos += item.IdDocumento + " - " + item.Serie + " - " + item.Numero + " con el estado " + item.IdEstado + "\n";
+                                    }
+                                    MessageBox.Show("El transportista no se puede eliminar por que tiene asociadas " + ValidarMovimientoPartesRecorrido.ToList().Count.ToString() + " partes de recorrido" + "\n" + documentos + "\nPara eliminar el transportista, primero elimine el movimiento de facturación asociado al este proveedor", "Mensaje del Sistema");
+                                    status = false;
+                                }
+
+                                if (status == true)
+                                {
+                                    model = new CarrierController();
+                                    model.EliminarTransportista(Convert.ToInt32(CodigoTransportista), _conection);
+                                    RadMessageBox.Show("Eliminado correctamente", "Atención");
+                                    ObtenerListaTransportistas();
+                                    GetContractListByCarrieId(this.txtCodigo.Text);
+                                    GetDriverListByCarrieId(this.txtCodigo.Text);
+                                    LimpiarFormulario();
+                                    gbEdit.Enabled = false;
+                                    gbTransporte.Enabled = false;
+                                    gbList.Enabled = false;
+                                    bgwHilo.RunWorkerAsync();
+
+                                }
+
                             }
-                            MessageBox.Show("El transportista no se puede eliminar por que tiene asociadas " + ValidarMovimientoPartesRecorrido.ToList().Count.ToString() + " partes de recorrido" + "\n" + documentos + "\nPara eliminar el transportista, primero elimine el movimiento de facturación asociado al este proveedor", "Mensaje del Sistema");
-                            status = false;
+                            else
+                            {
+                                RadMessageBox.Show("El registro no tiene el estado para ser eliminado", "ADVERTENCIA DEL SISTEMA");
+                                return;
+                            }
                         }
-
-                        if (status == true)
+                        else
                         {
-                            model = new CarrierController();
-                            model.EliminarTransportista(Convert.ToInt32(CodigoTransportista), _conection);
-                            RadMessageBox.Show("Eliminado correctamente", "Atención");
-                            ObtenerListaTransportistas();
-                            GetContractListByCarrieId(this.txtCodigo.Text);
-                            GetDriverListByCarrieId(this.txtCodigo.Text);
-                            LimpiarFormulario();
-                            gbEdit.Enabled = false;
-                            gbTransporte.Enabled = false;
-                            gbList.Enabled = false;
-                            bgwHilo.RunWorkerAsync();
-
+                            RadMessageBox.Show("El registro no tiene el estado para ser eliminado", "ADVERTENCIA DEL SISTEMA");
+                            return;
                         }
-
+                        #endregion
                     }
                     else
                     {
-                        RadMessageBox.Show("El registro no tiene el estado para ser eliminado", "ADVERTENCIA DEL SISTEMA");
+                        MessageBox.Show("No tiene privilegios para esta acción", "ADVERTENCIA DEL SISTEMA");
                         return;
                     }
                 }
-                else
-                {
-                    RadMessageBox.Show("El registro no tiene el estado para ser eliminado", "ADVERTENCIA DEL SISTEMA");
-                    return;
-                }
-
             }
             catch (Exception Ex)
             {
@@ -1355,11 +1423,22 @@ namespace Asistencia
 
         private void btnExportar_Click(object sender, EventArgs e)
         {
-            if (dgvTransportista != null)
+            if (_privilege != null)
             {
-                if (dgvTransportista.Rows.Count > 0)
+                if (_privilege.exportar == 1)
                 {
-                    ExportarListaTransportistas();
+                    if (dgvTransportista != null)
+                    {
+                        if (dgvTransportista.Rows.Count > 0)
+                        {
+                            ExportarListaTransportistas();
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No tiene privilegios para esta acción", "ADVERTENCIA DEL SISTEMA");
+                    return;
                 }
             }
         }
@@ -1442,25 +1521,38 @@ namespace Asistencia
         {
             try
             {
-                if (this.statusCode != "")
+                if (_privilege != null)
                 {
-                    //if (this.CodigoEstado != "AN")
-                    //{
-                    posicionX = this.dgvTransportista.CurrentRow.Index;
-                    posicionY = this.dgvTransportista.CurrentColumn.Index;
+                    if (_privilege.anular == 1)
+                    {
+                        #region
+                        if (this.statusCode != "")
+                        {
+                            //if (this.CodigoEstado != "AN")
+                            //{
+                            posicionX = this.dgvTransportista.CurrentRow.Index;
+                            posicionY = this.dgvTransportista.CurrentColumn.Index;
 
-                    model = new CarrierController();
-                    model.AnularTransportista(Convert.ToInt32(CodigoTransportista), _conection);
-                    RadMessageBox.Show("Anulado correctamente", "Atención");
+                            model = new CarrierController();
+                            model.AnularTransportista(Convert.ToInt32(CodigoTransportista), _conection);
+                            RadMessageBox.Show("Anulado correctamente", "Atención");
 
-                    ObtenerListaTransportistas();
-                    GetContractListByCarrieId(this.txtCodigo.Text);
-                    GetDriverListByCarrieId(this.txtCodigo.Text);
-                    GetListOfRoutesByCarrieId(this.txtCodigo.Text);
-                    GetListOfDocumentsByCarrieId(this.txtCodigo.Text);
+                            ObtenerListaTransportistas();
+                            GetContractListByCarrieId(this.txtCodigo.Text);
+                            GetDriverListByCarrieId(this.txtCodigo.Text);
+                            GetListOfRoutesByCarrieId(this.txtCodigo.Text);
+                            GetListOfDocumentsByCarrieId(this.txtCodigo.Text);
 
-                    dgvTransportista.CurrentRow = dgvTransportista.Rows[posicionX];
-                    //}
+                            dgvTransportista.CurrentRow = dgvTransportista.Rows[posicionX];
+                            //}
+                        }
+                        #endregion
+                    }
+                    else
+                    {
+                        MessageBox.Show("No tiene privilegios para esta acción", "ADVERTENCIA DEL SISTEMA");
+                        return;
+                    }
                 }
             }
             catch (Exception Ex)
@@ -1847,7 +1939,18 @@ namespace Asistencia
 
         private void btnHistorial_Click(object sender, EventArgs e)
         {
+            if (_privilege != null)
+            {
+                if (_privilege.editar == 1)
+                {
 
+                }
+                else
+                {
+                    MessageBox.Show("No tiene privilegios para esta acción", "ADVERTENCIA DEL SISTEMA");
+                    return;
+                }
+            }
         }
 
         private void dgvTransportista_KeyDown(object sender, KeyEventArgs e)

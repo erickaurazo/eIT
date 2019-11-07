@@ -282,7 +282,9 @@ namespace Asistencia.Negocios
                               descripcionFormulario = m.formulario.Trim() + "|  " + m.descripcion.Trim(),
                               moduloCodigo = m.moduloCodigo.Trim(),
                               modulo = mm.descripcion.Trim(),
-                              tipoFormulario = m.formulario.Trim()
+                              tipoFormulario = m.formulario.Trim(),
+                              nombreEnElSistema = m.nombreEnSistema.Trim(),
+                              barraPadre = m.barraPadre.Trim(),
                           }).ToList();
             }
 

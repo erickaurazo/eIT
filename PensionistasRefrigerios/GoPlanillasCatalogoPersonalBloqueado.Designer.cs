@@ -158,7 +158,7 @@
             this.gbMantenimiento.TabIndex = 192;
             this.gbMantenimiento.Tag = "";
             this.gbMantenimiento.Text = " Mantenimiento";
-            this.gbMantenimiento.ThemeName = "Windows8";
+            this.gbMantenimiento.ThemeName = "VisualStudio2012Light";
             // 
             // chkEsPeriodo
             // 
@@ -362,7 +362,7 @@
             this.btnGrabar.TabIndex = 26;
             this.btnGrabar.Text = "     Grabar";
             this.btnGrabar.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGrabar.ThemeName = "Windows8";
+            this.btnGrabar.ThemeName = "VisualStudio2012Light";
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
             // btnCancelar
@@ -373,7 +373,7 @@
             this.btnCancelar.Size = new System.Drawing.Size(102, 24);
             this.btnCancelar.TabIndex = 25;
             this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.ThemeName = "Windows8";
+            this.btnCancelar.ThemeName = "VisualStudio2012Light";
             // 
             // lblDescripcion
             // 
@@ -453,7 +453,7 @@
             this.gbListado.Size = new System.Drawing.Size(499, 392);
             this.gbListado.TabIndex = 191;
             this.gbListado.Text = "Listado";
-            this.gbListado.ThemeName = "Windows8";
+            this.gbListado.ThemeName = "VisualStudio2012Light";
             // 
             // dgvListado
             // 
@@ -866,7 +866,7 @@
             this.bgwHilo.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwHilo_DoWork);
             this.bgwHilo.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwHilo_RunWorkerCompleted);
             // 
-            // CatalogoPersonalBloqueadoParaAsistencia
+            // GoPlanillasCatalogoPersonalBloqueado
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.ClientSize = new System.Drawing.Size(1088, 471);
@@ -875,7 +875,7 @@
             this.Controls.Add(this.mnPrincipal);
             this.Controls.Add(this.stsBarraEstado);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "CatalogoPersonalBloqueadoParaAsistencia";
+            this.Name = "GoPlanillasCatalogoPersonalBloqueado";
             this.Text = "Catálogo|  Alta y baja de personal observado| Registro";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.CatalogoPerosnalBloqueadoParaAsistencia_Load);

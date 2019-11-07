@@ -17,7 +17,7 @@ using Asistencia.Helper;
 
 namespace Asistencia
 {
-    public partial class GoTransportesCatalogoParadero : Form
+    public partial class GoTransportesCatalogoParaderos : Form
     {
 
         private ParaderosController modelo;
@@ -31,7 +31,7 @@ namespace Asistencia
         private ComboBoxHelper comboHelper;
         private List<Grupo> typesWereabouts;
 
-        public GoTransportesCatalogoParadero()
+        public GoTransportesCatalogoParaderos()
         {
             InitializeComponent();
             RadGridLocalizationProvider.CurrentProvider = new Asistencia.ClaseTelerik.GridLocalizationProviderEspanol();
@@ -42,7 +42,7 @@ namespace Asistencia
             Consultar();
         }
 
-        public GoTransportesCatalogoParadero(string conection, ASJ_USUARIOS user, string companyId)
+        public GoTransportesCatalogoParaderos(string conection, ASJ_USUARIOS user, string companyId)
         {
             InitializeComponent();
             _conection = conection;

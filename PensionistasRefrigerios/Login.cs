@@ -349,7 +349,7 @@ namespace Asistencia
 
         private void btnCancelar_Click_1(object sender, EventArgs e)
         {
-            this.Dispose();
+            //this.Dispose();
             this.Close();
         }
 
