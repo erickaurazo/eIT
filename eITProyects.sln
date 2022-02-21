@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eIT.Datos", "PensionistasRe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eIT.Negocios", "PensionistasRefrigerios.Negocios\eIT.Negocios.csproj", "{1853DD3D-4649-4DF1-94CE-E0B0B393DE10}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{9864D6D0-03CC-493A-8215-56F6F5B1C356}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,12 +49,6 @@ Global
 		{1853DD3D-4649-4DF1-94CE-E0B0B393DE10}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{1853DD3D-4649-4DF1-94CE-E0B0B393DE10}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{1853DD3D-4649-4DF1-94CE-E0B0B393DE10}.Release|x86.ActiveCfg = Release|Any CPU
-		{9864D6D0-03CC-493A-8215-56F6F5B1C356}.Debug|Any CPU.ActiveCfg = Debug
-		{9864D6D0-03CC-493A-8215-56F6F5B1C356}.Debug|Mixed Platforms.ActiveCfg = Debug
-		{9864D6D0-03CC-493A-8215-56F6F5B1C356}.Debug|x86.ActiveCfg = Debug
-		{9864D6D0-03CC-493A-8215-56F6F5B1C356}.Release|Any CPU.ActiveCfg = Release
-		{9864D6D0-03CC-493A-8215-56F6F5B1C356}.Release|Mixed Platforms.ActiveCfg = Release
-		{9864D6D0-03CC-493A-8215-56F6F5B1C356}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
