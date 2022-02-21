@@ -26,8 +26,17 @@ namespace Asistencia.Datos.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.30.99;Initial Catalog=agricolasanjuan2014;Persist Security In" +
-            "fo=True;User ID=sa;Password=15022006")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=BLUESOFT;Initial Catalog=AGRICOLA2017;Integrated Security=True")]
+        public string AGRICOLA2017ConnectionString1 {
+            get {
+                return ((string)(this["AGRICOLA2017ConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=BLUESOFT;Initial Catalog=AGRICOLA2017;Integrated Security=True")]
         public string agricolasanjuan2014ConnectionString {
             get {
                 return ((string)(this["agricolasanjuan2014ConnectionString"]));
@@ -37,7 +46,7 @@ namespace Asistencia.Datos.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\\attBackup.mdb")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=BLUESOFT;Initial Catalog=AGRICOLA2017;Integrated Security=True")]
         public string attBackupConnectionString {
             get {
                 return ((string)(this["attBackupConnectionString"]));
@@ -47,8 +56,7 @@ namespace Asistencia.Datos.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.30.99;Initial Catalog=agricolasanjuan2014;Persist Security In" +
-            "fo=True;User ID=sa;Password=15022006")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=BLUESOFT;Initial Catalog=AGRICOLA2017;Integrated Security=True")]
         public string agricolasanjuan2014ConnectionString1 {
             get {
                 return ((string)(this["agricolasanjuan2014ConnectionString1"]));
@@ -58,8 +66,7 @@ namespace Asistencia.Datos.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(local);Initial Catalog=agricolasanjuan2014;Persist Security Info=Tru" +
-            "e;User ID=sa;Password=15022006")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=BLUESOFT;Initial Catalog=AGRICOLA2017;Integrated Security=True")]
         public string agricolasanjuan2014ConnectionString2 {
             get {
                 return ((string)(this["agricolasanjuan2014ConnectionString2"]));
@@ -69,8 +76,7 @@ namespace Asistencia.Datos.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=TINAJONES;Initial Catalog=agricolasanjuan2014;Persist Security Info=T" +
-            "rue;User ID=sa;Password=15022006")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=BLUESOFT;Initial Catalog=AGRICOLA2017;Integrated Security=True")]
         public string agricolasanjuan2014ConnectionString3 {
             get {
                 return ((string)(this["agricolasanjuan2014ConnectionString3"]));
@@ -80,8 +86,7 @@ namespace Asistencia.Datos.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=68.168.108.52;Initial Catalog=AGRICOLA2017;Persist Security Info=True" +
-            ";User ID=adminsanjose2;Password=Ag1c0l@18tz")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=BLUESOFT;Initial Catalog=AGRICOLA2017;Integrated Security=True")]
         public string AGRICOLA2017ConnectionString {
             get {
                 return ((string)(this["AGRICOLA2017ConnectionString"]));
@@ -91,10 +96,44 @@ namespace Asistencia.Datos.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=BLUESOFT;Initial Catalog=AGRICOLA2017;Integrated Security=True")]
-        public string AGRICOLA2017ConnectionString1 {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=74.208.128.178;Initial Catalog=saturno;Persist Security Info=True;Use" +
+            "r ID=vsatsaturno;Password=saturno#111")]
+        public string saturnoConnectionString {
             get {
-                return ((string)(this["AGRICOLA2017ConnectionString1"]));
+                return ((string)(this["saturnoConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.7;Initial Catalog=BDO;Persist Security Info=True;User ID=sa" +
+            ";Password=usersql$$nisira")]
+        public string BDOConnectionString {
+            get {
+                return ((string)(this["BDOConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.7;Initial Catalog=SATURNO;Persist Security Info=True;User I" +
+            "D=eaurazo;Password=.1975Casa")]
+        public string SATURNOConnectionString1 {
+            get {
+                return ((string)(this["SATURNOConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.92;Initial Catalog=NSFAJA;Persist Security Info=True;User I" +
+            "D=sa;Password=sagsa2019")]
+        public string NSFAJAConnectionString {
+            get {
+                return ((string)(this["NSFAJAConnectionString"]));
             }
         }
     }

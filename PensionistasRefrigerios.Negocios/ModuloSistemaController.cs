@@ -103,6 +103,99 @@ namespace Asistencia.Negocios
             return estate;
         }
 
+        public bool ToRegister(ModuloSistema modulo, string conection)
+        {
+            bool estate = false;
+            string cnx = string.Empty;
+            FormularioSistema formularioSistema = new FormularioSistema();
+            cnx = ConfigurationManager.AppSettings[conection].ToString();
+
+            using (TransactionScope scope = new TransactionScope())
+            {
+                using (BDAsistenciaDataContext context = new BDAsistenciaDataContext(cnx))
+                {
+                    context.CommandTimeout = 999909999;
+                    var result = context.ModuloSistema.Where(x => x.moduloCodigo.Trim() == modulo.moduloCodigo.Trim()).ToList();
+                    if (result.Count == 0)
+                    {
+                        #region Add() 
+                        //TrimStart('0')
+                        int id = (context.ModuloSistema.ToList().Count > 0 ?
+                            Convert.ToInt32(context.ModuloSistema.Max(x => x.moduloCodigo).TrimStart('0')) + 1 :
+                            1);
+                        ModuloSistema module = new ModuloSistema();
+                        module.moduloCodigo = id.ToString().PadLeft(3, '0');
+                        module.descripcion = modulo.descripcion != null ? modulo.descripcion : string.Empty;
+                        module.abreviatura = modulo.abreviatura != null ? modulo.abreviatura : string.Empty;
+                        module.estado = 1;
+                        context.ModuloSistema.InsertOnSubmit(module);
+                        context.SubmitChanges();
+
+                        int idMenu = (
+                            context.FormularioSistema.ToList().Count > 0 ?
+                            Convert.ToInt32(context.FormularioSistema.Max(X => X.formularioCodigo).TrimStart('0')) + 1 :
+                            1);
+                        formularioSistema = new FormularioSistema();
+                        formularioSistema.formularioCodigo = idMenu.ToString().PadLeft(3, '0');
+                        formularioSistema.moduloCodigo = id.ToString().PadLeft(3, '0');
+                        formularioSistema.descripcion = "Modulo | " + modulo.descripcion;
+                        formularioSistema.nombreEnSistema = "Go" + modulo.descripcion;
+                        formularioSistema.estado = 1;
+                        formularioSistema.EsModuloPrincipal = 1;
+                        formularioSistema.Jerarquia = id.ToString().PadLeft(3, '0');
+                        formularioSistema.formulario = "Menu";
+                        formularioSistema.barraPadre = string.Empty;
+                        context.FormularioSistema.InsertOnSubmit(formularioSistema);
+                        context.SubmitChanges();
+
+                        #region Agregar tambien al menu principal
+                        for (int i = 1; i < 6; i++)
+                        {
+                            var resultd = context.FormularioSistema.ToList();
+                            string aa = resultd.Max(x => x.formularioCodigo).ToString().TrimStart('0');
+
+                            int idSubMenu = (
+                                context.FormularioSistema.ToList().Count > 0 ?
+                                Convert.ToInt32(context.FormularioSistema.Max(x => x.formularioCodigo).ToString().TrimStart('0')) + 1 :
+                                1);
+                            formularioSistema = new FormularioSistema();
+                            formularioSistema.formularioCodigo = idSubMenu.ToString().PadLeft(3, '0');
+                            formularioSistema.moduloCodigo = id.ToString().PadLeft(3, '0');
+                            formularioSistema.descripcion = ConvetirNombreSubMenu(i);
+                            formularioSistema.nombreEnSistema = "Go" + modulo.descripcion + ConvetirNombreSubMenu(i);
+                            formularioSistema.estado = 1;
+                            formularioSistema.EsModuloPrincipal = 0;
+                            formularioSistema.Jerarquia = id.ToString().PadLeft(3, '0') + '.' + i.ToString().PadLeft(3, '0');
+                            formularioSistema.formulario = "subMenu";
+                            formularioSistema.barraPadre = id.ToString().PadLeft(3, '0');
+                            context.FormularioSistema.InsertOnSubmit(formularioSistema);
+                            context.SubmitChanges();
+                        }
+                        #endregion
+
+
+                        estate = true;
+                        #endregion
+                    }
+                    else if (result.Count == 1)
+                    {
+                        #region Update() 
+                        ModuloSistema module = new ModuloSistema();
+                        module = result.Single();
+                        module.descripcion = modulo.descripcion;
+                        module.abreviatura = modulo.abreviatura;
+                        context.SubmitChanges();
+                        estate = true;
+                        #endregion
+                    }
+
+                }
+                scope.Complete();
+            }
+            return estate;
+        }
+
+
         private string ConvetirNombreSubMenu(int i)
         {
             string nombre = string.Empty;
@@ -185,11 +278,11 @@ namespace Asistencia.Negocios
         {
             var result = new List<ModuleSystem>();
             string cnx = string.Empty;
-            cnx = ConfigurationManager.AppSettings[conection].ToString();
-            using (BDAsistenciaDataContext context = new BDAsistenciaDataContext(cnx))
+            cnx = ConfigurationManager.AppSettings[conection != null ? conection : "SAS"].ToString();
+            using (SATURNODataContext context = new SATURNODataContext(cnx))
             {
                 context.CommandTimeout = 999909999;
-                result = (from item in context.ModuloSistema.ToList()
+                result = (from item in context.SAS_ModuloSistema.ToList()
                           where item.moduloCodigo != null
                           group item by new { item.moduloCodigo } into j
                           select new ModuleSystem

@@ -9,7 +9,7 @@ namespace Asistencia.Helper
 {
     public class TreeviewHelper
     {
-        public RadTreeView BuildTreeViewForms(RadTreeView myTreeview, List<FormularioSistema> forms)
+        public RadTreeView BuildTreeViewForms(RadTreeView myTreeview, List<SAS_FormularioSistema> forms)
         {
             myTreeview.Nodes.Clear();
 
@@ -28,7 +28,7 @@ namespace Asistencia.Helper
                                }
                            ).ToList();
 
-                if (modules != null && modules.OrderBy(x => x.Id).ToList().Count > 1)
+                if (modules != null && modules.OrderBy(x => x.Id).ToList().Count > 0)
                 {
                     #region 
                     foreach (var modul in modules)
@@ -44,26 +44,27 @@ namespace Asistencia.Helper
                                                 IdSubForm = j.Key.formularioCodigo.Trim(),
                                                 Description = j.FirstOrDefault().descripcion != null ? j.FirstOrDefault().descripcion.Trim() : string.Empty,
                                                 Jerarquia = j.FirstOrDefault().Jerarquia.Trim(),
-                                            }).ToList();
+                                            }).OrderBy(x => x.Jerarquia).ToList();
 
-                        List<FormularioSistema> listadoAgregados = new List<FormularioSistema>();
+                        List<SAS_FormularioSistema> listadoAgregados = new List<SAS_FormularioSistema>();
                         if (itemsByModul != null && itemsByModul.ToList().Count > 0)
                         {
                             #region 
                             foreach (var subForm in itemsByModul)
                             {
                                 #region 
-                                var itemsBySubModul = forms.Where(x => x.barraPadre.Trim() == subForm.Jerarquia.Trim()).ToList();
+                                var itemsBySubModul = forms.Where(x => x.barraPadre.Trim() == subForm.Jerarquia.Trim()).OrderBy(x=> x.Jerarquia).ToList();
                                 // por cada submenu verificar si tiene hijos, si no tiene hijos agrego una jerarquia
                                 // caso contratio creo un nuevo submenu
                                 if (itemsBySubModul != null && itemsBySubModul.ToList().Count == 0)
                                 {
+                                    #region
                                     if (listadoAgregados.Where(x => x.formularioCodigo.Trim() == (subForm.IdSubForm.Trim())).ToList().Count == 0)
                                     {
                                         root.Nodes.Add(subForm.IdSubForm.Trim(), subForm.Description.Trim(), 2);
-                                        listadoAgregados.Add(new FormularioSistema { formularioCodigo = subForm.IdSubForm.Trim() });
+                                        listadoAgregados.Add(new SAS_FormularioSistema { formularioCodigo = subForm.IdSubForm.Trim() });
                                     }
-
+                                    #endregion
                                 }
                                 else if (itemsBySubModul != null && itemsBySubModul.ToList().Count > 0)
                                 {
@@ -102,7 +103,7 @@ namespace Asistencia.Helper
                                                 if (listadoAgregados.Where(x => x.formularioCodigo.Trim() == (itemForm.IdSubForm02.Trim())).ToList().Count == 0)
                                                 {
                                                     folderSub01.Nodes.Add(itemForm.IdSubForm02.Trim(), itemForm.Description02.Trim(), 3);
-                                                    listadoAgregados.Add(new FormularioSistema { formularioCodigo = itemForm.IdSubForm02.Trim() });
+                                                    listadoAgregados.Add(new SAS_FormularioSistema { formularioCodigo = itemForm.IdSubForm02.Trim() });
                                                 }
 
                                             }
@@ -112,7 +113,7 @@ namespace Asistencia.Helper
                                                 if (listadoAgregados.Where(x => x.formularioCodigo.Trim() == (itemForm.IdSubForm02.Trim())).ToList().Count == 0)
                                                 {
                                                     RadTreeNode folderSub02 = folderSub01.Nodes.Add(itemForm.IdSubForm02.Trim(), itemForm.Description02.Trim(), 2);
-                                                    listadoAgregados.Add(new FormularioSistema { formularioCodigo = itemForm.IdSubForm02.Trim() });
+                                                    listadoAgregados.Add(new SAS_FormularioSistema { formularioCodigo = itemForm.IdSubForm02.Trim() });
 
                                                     var itemsByForm03 = (from item in forms
                                                                          where item.barraPadre.Trim() == itemForm.Jerarquia02.Trim() && item.EsModuloPrincipal == 0
@@ -142,7 +143,7 @@ namespace Asistencia.Helper
                                                             if (listadoAgregados.Where(x => x.formularioCodigo.Trim() == (itemForm03.IdSubForm03.Trim())).ToList().Count == 0)
                                                             {
                                                                 folderSub02.Nodes.Add(itemForm03.IdSubForm03, itemForm03.Description03, 3);
-                                                                listadoAgregados.Add(new FormularioSistema { formularioCodigo = itemForm03.IdSubForm03.Trim() });
+                                                                listadoAgregados.Add(new SAS_FormularioSistema { formularioCodigo = itemForm03.IdSubForm03.Trim() });
                                                             }
 
                                                         }
@@ -151,7 +152,7 @@ namespace Asistencia.Helper
                                                             if (listadoAgregados.Where(x => x.formularioCodigo.Trim() == (itemForm03.IdSubForm03.Trim())).ToList().Count == 0)
                                                             {
                                                                 RadTreeNode folderSub03 = folderSub02.Nodes.Add(itemForm03.IdSubForm03, itemForm03.Description03, 2);
-                                                                listadoAgregados.Add(new FormularioSistema { formularioCodigo = itemForm03.IdSubForm03.Trim() });
+                                                                listadoAgregados.Add(new SAS_FormularioSistema { formularioCodigo = itemForm03.IdSubForm03.Trim() });
                                                             }
 
                                                         }

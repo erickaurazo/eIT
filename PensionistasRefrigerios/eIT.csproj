@@ -1,0 +1,1031 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C511763B-5EFC-404A-AB18-CCC65405236C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ComparativoHorasVisualSATNISIRA</RootNamespace>
+    <AssemblyName>Administrativo</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>D:\Dev\Faja_09122020\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <UpdateUrl>http://201.240.148.185/Updates/</UpdateUrl>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo4.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <Win32Resource>
+    </Win32Resource>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>557D4B9F512FB12C4790A2F477387C3D574060DB</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Asistencia_ClaveTemporal.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Design, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\librerias\Nueva carpeta\CrystalDecisions.CrystalReports.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\librerias\Nueva carpeta\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\librerias\Nueva carpeta\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EQATEC.Analytics.Monitor, Version=3.2.1.0, Culture=neutral, PublicKeyToken=213c7c68adb58a17, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\EQATEC.Analytics.Monitor.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Gma.QrCodeNet.Encoding, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\QrCode.Net.0.4.0.0\lib\net40\Gma.QrCodeNet.Encoding.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.2015.12.0.2.2403\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.2015.12.0.2.2403\lib\net40\Microsoft.ReportViewer.DataVisualization.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.2015.12.0.2.2403\lib\net40\Microsoft.ReportViewer.Design.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.2015.12.0.2.2403\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.2015.12.0.2.2403\lib\net40\Microsoft.ReportViewer.WebDesign.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.2015.12.0.2.2403\lib\net40\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.2015.12.0.2.2403\lib\net40\Microsoft.ReportViewer.WinForms.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.2015.12.0.2.2403\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MyControlsDataBinding">
+      <HintPath>C:\Librerias\MyControlsDataBinding.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCoder, Version=1.4.3.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.4.3\lib\net40\QRCoder.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RadControlSpy, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\RadControlSpy.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.WinControls, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Analytics, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.ChartView, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.ChartView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.GridView, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.GridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.PdfViewer, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.PdfViewer.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.PivotGrid, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.PivotGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadChart, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.RadChart.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadDiagram, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.RadDiagram.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadDock, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.RadDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadMarkupEditor, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.RadMarkupEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Scheduler, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Scheduler.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Aqua, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.Aqua.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Breeze, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.Breeze.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Desert, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.Desert.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.HighContrastBlack, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.HighContrastBlack.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2007Black, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.Office2007Black.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2007Silver, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.Office2007Silver.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2010Black, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.Office2010Black.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2010Blue, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.Office2010Blue.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2010Silver, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.Office2010Silver.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2013Dark, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.Office2013Dark.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2013Light, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.Office2013Light.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.TelerikMetro, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.TelerikMetro.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.TelerikMetroBlue, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.TelerikMetroBlue.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.TelerikMetroTouch, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.TelerikMetroTouch.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Dark, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.VisualStudio2012Dark.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Light, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.VisualStudio2012Light.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Windows7, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.Windows7.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Windows8, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.Themes.Windows8.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI.Design, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\Telerik.WinControls.UI.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="TelerikCommon, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\TelerikCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="TelerikData, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\TelerikData.dll</HintPath>
+    </Reference>
+    <Reference Include="VisualStyleBuilder.Design, Version=2015.1.225.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q1 2015\Bin\VisualStyleBuilder.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="zxing, Version=0.16.7.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.7\lib\net40\zxing.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.7.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.7\lib\net40\zxing.presentation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="T.I\AreaDeTrabajo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T.I\AreaDeTrabajo.Designer.cs">
+      <DependentUpon>AreaDeTrabajo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T.I\ColaboradoresListado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T.I\.Designer.cs">
+      <DependentUpon>ColaboradoresListado.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contabilidad\DetalleRevisionDatosContableSAS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contabilidad\DetalleRevisionDatosContableSAS.Designer.cs">
+      <DependentUpon>DetalleRevisionDatosContableSAS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T.I\Colores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T.I\Colores.Designer.cs">
+      <DependentUpon>Colores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T.I\CuentaDeCorreos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T.I\CuentaDeCorreos.Designer.cs">
+      <DependentUpon>CuentaDeCorreos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T.I\CuentaDeDominio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T.I\CuentaDeDominio.Designer.cs">
+      <DependentUpon>CuentaDeDominio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T.I\CuentaVPN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T.I\CuentaVPN.Designer.cs">
+      <DependentUpon>CuentaVPN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T.I\DispositivosEdicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T.I\DispositivosEdicion.Designer.cs">
+      <DependentUpon>DispositivosEdicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T.I\DispositivosEdicionImprimirEtiquetas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T.I\DispositivosEdicionImprimirEtiquetas.Designer.cs">
+      <DependentUpon>DispositivosEdicionImprimirEtiquetas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T.I\DispositivosEdicionImprimirEtiquetasQRDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DispositivosEdicionImprimirEtiquetasQRDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="T.I\DispositivosEdicionImprimirEtiquetasQRRPT.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DispositivosEdicionImprimirEtiquetasQRRPT.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="T.I\DispositivosListado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T.I\DispositivosListado.Designer.cs">
+      <DependentUpon>DispositivosListado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\GestionDeSolicitudPedidoParaCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistica\GestionDeSolicitudPedidoParaCompras.Designer.cs">
+      <DependentUpon>GestionDeSolicitudPedidoParaCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maquinaria\GoMaquinariaReporteUsoMaquinariaPorSemana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maquinaria\GoMaquinariaReporteUsoMaquinariaPorSemana.Designer.cs">
+      <DependentUpon>GoMaquinariaReporteUsoMaquinariaPorSemana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion del sistema\GoSistemaCatalogoUsersChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion del sistema\GoSistemaCatalogoUsersChangePassword.Designer.cs">
+      <DependentUpon>GoSistemaCatalogoUsersChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T.I\ColaboradorAsociarConAreaDeTrabajo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T.I\ColaboradorAsociarConAreaDeTrabajo.Designer.cs">
+      <DependentUpon>ColaboradorAsociarConAreaDeTrabajo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T.I\Example01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T.I\Example01.Designer.cs">
+      <DependentUpon>Example01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T.I\Gerencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T.I\Gerencias.Designer.cs">
+      <DependentUpon>Gerencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T.I\LineasCelulares.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T.I\LineasCelulares.Designer.cs">
+      <DependentUpon>LineasCelulares.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T.I\Marca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T.I\Marca.Designer.cs">
+      <DependentUpon>Marca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T.I\Modelos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T.I\Modelos.Designer.cs">
+      <DependentUpon>Modelos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T.I\NumeroIP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T.I\NumeroIP.Designer.cs">
+      <DependentUpon>NumeroIP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T.I\OperadorDeServiciosMoviles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T.I\OperadorDeServiciosMoviles.Designer.cs">
+      <DependentUpon>OperadorDeServiciosMoviles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T.I\PersonalExterno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T.I\PersonalExterno.Designer.cs">
+      <DependentUpon>PersonalExterno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T.I\PlanDeMantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T.I\PlanDeMantenimiento.Designer.cs">
+      <DependentUpon>PlanDeMantenimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T.I\PlanesDeLineasMoviles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T.I\PlanesDeLineasMoviles.Designer.cs">
+      <DependentUpon>PlanesDeLineasMoviles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T.I\ReporteDeLineasCelulares.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T.I\ReporteDeLineasCelulares.Designer.cs">
+      <DependentUpon>ReporteDeLineasCelulares.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T.I\SegmentoDeRed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T.I\SegmentoDeRed.Designer.cs">
+      <DependentUpon>SegmentoDeRed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T.I\SolicitudDeEquipamientoTecnologico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T.I\SolicitudDeEquipamientoTecnologico.Designer.cs">
+      <DependentUpon>SolicitudDeEquipamientoTecnologico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T.I\SolicitudDeEquipamientoTecnologicoMantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T.I\SolicitudDeEquipamientoTecnologicoMantenimiento.Designer.cs">
+      <DependentUpon>SolicitudDeEquipamientoTecnologicoMantenimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T.I\TipoCaracteristicasHardware.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T.I\TipoCaracteristicasHardware.Designer.cs">
+      <DependentUpon>TipoCaracteristicasHardware.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T.I\TipoCaracteristicasSoftware.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T.I\TipoCaracteristicasSoftware.Designer.cs">
+      <DependentUpon>TipoCaracteristicasSoftware.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T.I\TipoDeDispositivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T.I\TipoDeDispositivos.Designer.cs">
+      <DependentUpon>TipoDeDispositivos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T.I\TipoLicenciaCorreo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T.I\TipoLicenciaCorreo.Designer.cs">
+      <DependentUpon>TipoLicenciaCorreo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transportes\GoTransportesMovimientoAsistenciaBuses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transportes\GoTransportesMovimientoAsistenciaBuses.Designer.cs">
+      <DependentUpon>GoTransportesMovimientoAsistenciaBuses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion\ImpresionTicketsAbastecimientoMateriaPrimaImprimirDS.cs">
+      <DependentUpon>ImpresionTicketsAbastecimientoMateriaPrimaImprimirDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion\ReasignacionDeClientesEnPaletasLibres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\ReasignacionDeClientesEnPaletasLibres.Designer.cs">
+      <DependentUpon>ReasignacionDeClientesEnPaletasLibres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion\ReasignacionDeClientesEnPaletasLibresEdicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\ReasignacionDeClientesEnPaletasLibresEdicion.Designer.cs">
+      <DependentUpon>ReasignacionDeClientesEnPaletasLibresEdicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\GoVentasHabilitarSegundaLiquidación.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\GoVentasHabilitarSegundaLiquidación.Designer.cs">
+      <DependentUpon>GoVentasHabilitarSegundaLiquidación.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\EncriptionHelper.cs" />
+    <Compile Include="Helper\GlobalesHelper.cs" />
+    <Compile Include="Produccion\ImpresionTicketsAbastecimientoMateriaPrimaImprimirDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ImpresionTicketsAbastecimientoMateriaPrimaImprimirDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion\ImpresionTicketsAbastecimientoMateriaPrima.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\.Designer.cs">
+      <DependentUpon>ImpresionTicketsAbastecimientoMateriaPrima.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\ImpresionTicketsAbastecimientoMateriaPrimaDetalleImpresion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\ImpresionTicketsAbastecimientoMateriaPrimaDetalleImpresion.Designer.cs">
+      <DependentUpon>ImpresionTicketsAbastecimientoMateriaPrimaDetalleImpresion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion\ImpresionTicketsAbastecimientoMateriaPrimaImprimir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produccion\ImpresionTicketsAbastecimientoMateriaPrimaImprimir.Designer.cs">
+      <DependentUpon>ImpresionTicketsAbastecimientoMateriaPrimaImprimir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion\ImpresionTicketsAbastecimientoMateriaPrimaImprimirRPT.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ImpresionTicketsAbastecimientoMateriaPrimaImprimirRPT.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Administracion del sistema\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion del sistema\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transportes\GoPlanillasReporteAsistenciasObservadasActualizarDNI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transportes\GoPlanillasReporteAsistenciasObservadasActualizarDNI.designer.cs">
+      <DependentUpon>GoPlanillasReporteAsistenciasObservadasActualizarDNI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transportes\GoTransportesMovimientoAsistenciaBusesActualizarPlacayRuta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transportes\GoTransportesMovimientoAsistenciaBusesActualizarPlacayRuta.Designer.cs">
+      <DependentUpon>GoTransportesMovimientoAsistenciaBusesActualizarPlacayRuta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transportes\GoTransportesCatalogoParaderos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transportes\GoTransportesCatalogoParaderos.Designer.cs">
+      <DependentUpon>GoTransportesCatalogoParaderos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transportes\GoPlanillasCatalogoPersonalBloqueado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transportes\GoPlanillasCatalogoPersonalBloqueado.Designer.cs">
+      <DependentUpon>GoPlanillasCatalogoPersonalBloqueado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transportes\GoPlanillasCatalogoPersonaPorParadero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transportes\GoPlanillasCatalogoPersonaPorParadero.Designer.cs">
+      <DependentUpon>GoPlanillasCatalogoPersonaPorParadero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transportes\GoPlanillasCatalogoTiposDeBloqueo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transportes\GoPlanillasCatalogoTiposDeBloqueo.Designer.cs">
+      <DependentUpon>GoPlanillasCatalogoTiposDeBloqueo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion del sistema\GoSistemaCatalogoFormularios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion del sistema\GoSistemaCatalogoFormularios.Designer.cs">
+      <DependentUpon>GoSistemaCatalogoFormularios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\ChartCellElement.cs" />
+    <Compile Include="Helper\ComboBoxHelper.cs" />
+    <Compile Include="Helper\ExportToExcelHelper.cs" />
+    <Compile Include="Helper\TreeviewHelper.cs" />
+    <Compile Include="Transportes\GoTransportesReporteAsistenciaBuses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transportes\GoTransportesReporteAsistenciaBuses.Designer.cs">
+      <DependentUpon>GoTransportesReporteAsistenciaBuses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\GridLocalizationProviderEspanol.cs" />
+    <Compile Include="Helper\PivotGridLocalizationProviderEspanol.cs" />
+    <Compile Include="Helper\RadMessageBoxLocalizationProviderEspañol.cs" />
+    <Compile Include="Helper\RadPageViewLocalizationProviderEspañol.cs" />
+    <Compile Include="Helper\RadWizardLocalizationProviderEspañol.cs" />
+    <Compile Include="Administracion del sistema\GoSistemaCatalogoModulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion del sistema\GoSistemaCatalogoModulos.Designer.cs">
+      <DependentUpon>GoSistemaCatalogoModulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion del sistema\GoSistemaCatalogoUsersPrivileges.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion del sistema\GoSistemaCatalogoUsersPrivileges.Designer.cs">
+      <DependentUpon>GoSistemaCatalogoUsersPrivileges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion del sistema\GoSistemaCatalogoUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion del sistema\GoSistemaCatalogoUsers.Designer.cs">
+      <DependentUpon>GoSistemaCatalogoUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transportes\GoPlanillasReporteAsistenciaPorPuerta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transportes\GoPlanillasReporteAsistenciaPorPuerta.Designer.cs">
+      <DependentUpon>GoPlanillasReporteAsistenciaPorPuerta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transportes\GoPlanillasReporteAsistenciasObservadas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transportes\GoPlanillasReporteAsistenciasObservadas.Designer.cs">
+      <DependentUpon>GoPlanillasReporteAsistenciasObservadas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion del sistema\Historial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion del sistema\Historial.Designer.cs">
+      <DependentUpon>Historial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion del sistema\Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion del sistema\Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Transportes\GoTransportesReporteIngresoBuses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transportes\GoTransportesReporteIngresoBuses.Designer.cs">
+      <DependentUpon>GoTransportesReporteIngresoBuses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transportes\GoTransportesCatalogoRutas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transportes\GoTransportesCatalogoRutas.designer.cs">
+      <DependentUpon>GoTransportesCatalogoRutas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\Series.cs" />
+    <Compile Include="Helper\SJ_Usuario.cs" />
+    <Compile Include="Transportes\GoTransportesCatalogoTransportista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transportes\GoTransportesCatalogoTransportista.designer.cs">
+      <DependentUpon>GoTransportesCatalogoTransportista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\UsuarioGlobal.cs" />
+    <Compile Include="Transportes\GoTransportesReporteVencimientoDocumentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transportes\GoTransportesReporteVencimientoDocumentos.Designer.cs">
+      <DependentUpon>GoTransportesReporteVencimientoDocumentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\ReporteDiferencialTipoCambio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contabilidad\ReporteDiferencialTipoCambio.Designer.cs">
+      <DependentUpon>ReporteDiferencialTipoCambio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Almacen\ReporteStockProductosRequerimientosPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Almacen\ReporteStockProductosRequerimientosPedidos.Designer.cs">
+      <DependentUpon>ReporteStockProductosRequerimientosPedidos.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="T.I\AreaDeTrabajo.resx">
+      <DependentUpon>AreaDeTrabajo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T.I\ColaboradoresListado.resx">
+      <DependentUpon>ColaboradoresListado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contabilidad\DetalleRevisionDatosContableSAS.resx">
+      <DependentUpon>DetalleRevisionDatosContableSAS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T.I\Colores.resx">
+      <DependentUpon>Colores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T.I\CuentaDeCorreos.resx">
+      <DependentUpon>CuentaDeCorreos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T.I\CuentaDeDominio.resx">
+      <DependentUpon>CuentaDeDominio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T.I\CuentaVPN.resx">
+      <DependentUpon>CuentaVPN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T.I\DispositivosEdicion.resx">
+      <DependentUpon>DispositivosEdicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T.I\DispositivosEdicionImprimirEtiquetas.resx">
+      <DependentUpon>DispositivosEdicionImprimirEtiquetas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T.I\DispositivosEdicionImprimirEtiquetasQRRPT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DispositivosEdicionImprimirEtiquetasQRRPT.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T.I\DispositivosListado.resx">
+      <DependentUpon>DispositivosListado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistica\GestionDeSolicitudPedidoParaCompras.resx">
+      <DependentUpon>GestionDeSolicitudPedidoParaCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maquinaria\GoMaquinariaReporteUsoMaquinariaPorSemana.resx">
+      <DependentUpon>GoMaquinariaReporteUsoMaquinariaPorSemana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion del sistema\GoSistemaCatalogoUsersChangePassword.resx">
+      <DependentUpon>GoSistemaCatalogoUsersChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T.I\ColaboradorAsociarConAreaDeTrabajo.resx">
+      <DependentUpon>ColaboradorAsociarConAreaDeTrabajo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T.I\Example01.resx">
+      <DependentUpon>Example01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T.I\Gerencias.resx">
+      <DependentUpon>Gerencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T.I\LineasCelulares.resx">
+      <DependentUpon>LineasCelulares.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T.I\Marca.resx">
+      <DependentUpon>Marca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T.I\Modelos.resx">
+      <DependentUpon>Modelos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T.I\NumeroIP.resx">
+      <DependentUpon>NumeroIP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T.I\OperadorDeServiciosMoviles.resx">
+      <DependentUpon>OperadorDeServiciosMoviles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T.I\PersonalExterno.resx">
+      <DependentUpon>PersonalExterno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T.I\PlanesDeLineasMoviles.resx">
+      <DependentUpon>PlanesDeLineasMoviles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T.I\ReporteDeLineasCelulares.resx">
+      <DependentUpon>ReporteDeLineasCelulares.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T.I\SegmentoDeRed.resx">
+      <DependentUpon>SegmentoDeRed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T.I\SolicitudDeEquipamientoTecnologico.resx">
+      <DependentUpon>SolicitudDeEquipamientoTecnologico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T.I\SolicitudDeEquipamientoTecnologicoMantenimiento.resx">
+      <DependentUpon>SolicitudDeEquipamientoTecnologicoMantenimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T.I\TipoCaracteristicasHardware.resx">
+      <DependentUpon>TipoCaracteristicasHardware.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T.I\TipoCaracteristicasSoftware.resx">
+      <DependentUpon>TipoCaracteristicasSoftware.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T.I\TipoDeDispositivos.resx">
+      <DependentUpon>TipoDeDispositivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T.I\TipoLicenciaCorreo.resx">
+      <DependentUpon>TipoLicenciaCorreo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transportes\GoTransportesMovimientoAsistenciaBuses.resx">
+      <DependentUpon>GoTransportesMovimientoAsistenciaBuses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\ReasignacionDeClientesEnPaletasLibres.resx">
+      <DependentUpon>ReasignacionDeClientesEnPaletasLibres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\ReasignacionDeClientesEnPaletasLibresEdicion.resx">
+      <DependentUpon>ReasignacionDeClientesEnPaletasLibresEdicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\GoVentasHabilitarSegundaLiquidación.resx">
+      <DependentUpon>GoVentasHabilitarSegundaLiquidación.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\ImpresionTicketsAbastecimientoMateriaPrima.resx">
+      <DependentUpon>ImpresionTicketsAbastecimientoMateriaPrima.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\ImpresionTicketsAbastecimientoMateriaPrimaDetalleImpresion.resx">
+      <DependentUpon>ImpresionTicketsAbastecimientoMateriaPrimaDetalleImpresion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\ImpresionTicketsAbastecimientoMateriaPrimaImprimir.resx">
+      <DependentUpon>ImpresionTicketsAbastecimientoMateriaPrimaImprimir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\ImpresionTicketsAbastecimientoMateriaPrimaImprimirRPT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ImpresionTicketsAbastecimientoMateriaPrimaImprimirRPT.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion del sistema\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transportes\GoPlanillasReporteAsistenciasObservadasActualizarDNI.resx">
+      <DependentUpon>GoPlanillasReporteAsistenciasObservadasActualizarDNI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transportes\GoTransportesMovimientoAsistenciaBusesActualizarPlacayRuta.resx">
+      <DependentUpon>GoTransportesMovimientoAsistenciaBusesActualizarPlacayRuta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transportes\GoTransportesCatalogoParaderos.resx">
+      <DependentUpon>GoTransportesCatalogoParaderos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transportes\GoPlanillasCatalogoPersonalBloqueado.resx">
+      <DependentUpon>GoPlanillasCatalogoPersonalBloqueado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transportes\GoPlanillasCatalogoPersonaPorParadero.resx">
+      <DependentUpon>GoPlanillasCatalogoPersonaPorParadero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transportes\GoPlanillasCatalogoTiposDeBloqueo.resx">
+      <DependentUpon>GoPlanillasCatalogoTiposDeBloqueo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion del sistema\GoSistemaCatalogoFormularios.resx">
+      <DependentUpon>GoSistemaCatalogoFormularios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transportes\GoTransportesReporteAsistenciaBuses.resx">
+      <DependentUpon>GoTransportesReporteAsistenciaBuses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion del sistema\GoSistemaCatalogoModulos.resx">
+      <DependentUpon>GoSistemaCatalogoModulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion del sistema\GoSistemaCatalogoUsersPrivileges.resx">
+      <DependentUpon>GoSistemaCatalogoUsersPrivileges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion del sistema\GoSistemaCatalogoUsers.resx">
+      <DependentUpon>GoSistemaCatalogoUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transportes\GoPlanillasReporteAsistenciaPorPuerta.resx">
+      <DependentUpon>GoPlanillasReporteAsistenciaPorPuerta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transportes\GoPlanillasReporteAsistenciasObservadas.resx">
+      <DependentUpon>GoPlanillasReporteAsistenciasObservadas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion del sistema\Historial.resx">
+      <DependentUpon>Historial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion del sistema\Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transportes\GoTransportesCatalogoRutas.resx">
+      <DependentUpon>GoTransportesCatalogoRutas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transportes\GoTransportesCatalogoTransportista.resx">
+      <DependentUpon>GoTransportesCatalogoTransportista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transportes\GoTransportesReporteIngresoBuses.resx">
+      <DependentUpon>GoTransportesReporteIngresoBuses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transportes\GoTransportesReporteVencimientoDocumentos.resx">
+      <DependentUpon>GoTransportesReporteVencimientoDocumentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contabilidad\ReporteDiferencialTipoCambio.resx">
+      <DependentUpon>ReporteDiferencialTipoCambio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Almacen\ReporteStockProductosRequerimientosPedidos.resx">
+      <DependentUpon>ReporteStockProductosRequerimientosPedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="appC.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Asistencia_ClaveTemporal.pfx" />
+    <None Include="Image\app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Produccion\ImpresionTicketsAbastecimientoMateriaPrimaImprimirDS.xsc">
+      <DependentUpon>ImpresionTicketsAbastecimientoMateriaPrimaImprimirDS.xsd</DependentUpon>
+    </None>
+    <None Include="Produccion\ImpresionTicketsAbastecimientoMateriaPrimaImprimirDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ImpresionTicketsAbastecimientoMateriaPrimaImprimirDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Produccion\ImpresionTicketsAbastecimientoMateriaPrimaImprimirDS.xss">
+      <DependentUpon>ImpresionTicketsAbastecimientoMateriaPrimaImprimirDS.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="T.I\DispositivosEdicionImprimirEtiquetasQRDS.xsc">
+      <DependentUpon>DispositivosEdicionImprimirEtiquetasQRDS.xsd</DependentUpon>
+    </None>
+    <None Include="T.I\DispositivosEdicionImprimirEtiquetasQRDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DispositivosEdicionImprimirEtiquetasQRDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="T.I\DispositivosEdicionImprimirEtiquetasQRDS.xss">
+      <DependentUpon>DispositivosEdicionImprimirEtiquetasQRDS.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AgricolaSanJoseSAC.ico" />
+    <Content Include="Image\nisira2.ico" />
+    <Content Include="logo3.ico" />
+    <Content Include="logo4.ico" />
+    <Content Include="nisira2.ico" />
+    <Content Include="Resources\10.png" />
+    <None Include="Resources\nuevo1.png" />
+    <None Include="Resources\Grabar  %282%29.png" />
+    <None Include="Resources\Grabar  %281%29.png" />
+    <None Include="Resources\grabar %281%29.png" />
+    <None Include="Resources\grabar %282%29.png" />
+    <None Include="Resources\grabar.png" />
+    <None Include="Resources\mensaje.png" />
+    <None Include="Resources\logo4.png" />
+    <None Include="Resources\imprime.png" />
+    <None Include="Resources\importar.png" />
+    <None Include="Resources\icono Modulo2.png" />
+    <None Include="Resources\historial.png" />
+    <None Include="Resources\Aprobed.png" />
+    <None Include="Resources\historial1.bmp" />
+    <None Include="Resources\historial.bmp" />
+    <None Include="Resources\icono Modulo1.png" />
+    <None Include="Resources\icono Modulo.png" />
+    <None Include="Resources\2135922_mobile_mobile shopping_tablet_icon.png" />
+    <None Include="Resources\ANULAR.png" />
+    <None Include="Resources\GrabarMini %282%29.png" />
+    <None Include="Resources\EXCEL.png" />
+    <None Include="Resources\ELIMINAR.png" />
+    <None Include="Resources\NUEVO.png" />
+    <None Include="Resources\EDITAR.png" />
+    <None Include="Resources\TextFile1.txt" />
+    <None Include="Resources\Init.txt" />
+    <None Include="Resources\Init.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PensionistasRefrigerios.Datos\eIT.Datos.csproj">
+      <Project>{915BAA64-C7B0-4275-8D4C-B7982905DB2C}</Project>
+      <Name>eIT.Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PensionistasRefrigerios.Negocios\eIT.Negocios.csproj">
+      <Project>{1853DD3D-4649-4DF1-94CE-E0B0B393DE10}</Project>
+      <Name>eIT.Negocios</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="RRHH\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -24,6 +24,20 @@ namespace Asistencia.Negocios
             return result;
         }
 
+        public List<SAS_ListadoDeUsuariosDelSistema> GetListAllUserSystem(string conection, string companyId)
+        {
+            var result = new List<SAS_ListadoDeUsuariosDelSistema>();
+            string cnx = string.Empty;
+            cnx = ConfigurationManager.AppSettings[conection];
+            using (SATURNODataContext context = new SATURNODataContext(cnx))
+            {
+                result = context.SAS_ListadoDeUsuariosDelSistema.ToList();
+            }
+            return result;
+        }
+
+
+
         public ASJ_USUARIOS FindUserByIdUser(string conection, string idUser, string companyId)
         {
             var result = new ASJ_USUARIOS();
@@ -258,12 +272,57 @@ namespace Asistencia.Negocios
             string cnx = string.Empty;
             List<PrivilegesByUser> result = new List<PrivilegesByUser>();
             cnx = ConfigurationManager.AppSettings[conection];
-            using (BDAsistenciaDataContext context = new BDAsistenciaDataContext(cnx))
+            using (SATURNODataContext context = new SATURNODataContext(cnx))
             {
-                result = (from p in context.PrivilegioFormulario
-                          join m in context.FormularioSistema on p.formularioCodigo equals m.formularioCodigo
-                          join mm in context.ModuloSistema on m.moduloCodigo.Trim() equals mm.moduloCodigo.Trim()
-                          join usu in context.ASJ_USUARIOS on p.usuarioCodigo.Trim() equals usu.IdUsuario.Trim()
+
+                context.SAS_CompletarPrivilegiosParaUsuario(userId);
+
+                result = (from p in context.SAS_PrivilegioFormulario
+                          join m in context.SAS_FormularioSistema on p.formularioCodigo equals m.formularioCodigo
+                          join mm in context.SAS_ModuloSistema on m.moduloCodigo.Trim() equals mm.moduloCodigo.Trim()
+                          join usu in context.SAS_USUARIOS on p.usuarioCodigo.Trim() equals usu.IdUsuario.Trim()
+                          where p.usuarioCodigo.Trim() == userId.Trim() && usu.EmpresaID.Trim() == companyId
+                          select new PrivilegesByUser
+                          {
+                              usuarioCodigo = p.usuarioCodigo.Trim(),
+                              nameUser = usu.NombreCompleto != null ? usu.NombreCompleto.Trim() : string.Empty,
+                              formularioCodigo = p.formularioCodigo,
+                              nuevo = p.nuevo,
+                              editar = p.editar,
+                              anular = p.anular,
+                              eliminar = p.eliminar,
+                              imprimir = p.imprimir,
+                              exportar = p.exportar,
+                              ninguno = p.ninguno,
+                              consultar = p.consultar,
+                              jerarquia = m.Jerarquia.Trim(),
+                              descripcionFormulario = m.formulario.Trim() + "|  " + m.descripcion.Trim(),
+                              moduloCodigo = m.moduloCodigo.Trim(),
+                              modulo = mm.descripcion.Trim(),
+                              tipoFormulario = m.formulario.Trim(),
+                              nombreEnElSistema = m.nombreEnSistema.Trim(),
+                              barraPadre = m.barraPadre.Trim(),
+                          }).ToList();
+            }
+
+            return result.OrderBy(x => x.jerarquia).ToList();
+        }
+
+
+
+        public List<PrivilegesByUser> ObtenerListadoPrivilegiosPorUsuario(string conection, string userId, string companyId)
+        {
+            string cnx = string.Empty;
+            List<PrivilegesByUser> result = new List<PrivilegesByUser>();
+            cnx = ConfigurationManager.AppSettings["SAS"];
+            using (SATURNODataContext context = new SATURNODataContext(cnx))
+            {
+                var listadoUsuario = context.SAS_USUARIOS.ToList();
+
+                result = (from p in context.SAS_PrivilegioFormulario
+                          join m in context.SAS_FormularioSistema on p.formularioCodigo equals m.formularioCodigo
+                          join mm in context.SAS_ModuloSistema on m.moduloCodigo.Trim() equals mm.moduloCodigo.Trim()
+                          join usu in context.SAS_USUARIOS on p.usuarioCodigo.Trim() equals usu.IdUsuario.Trim()
                           where p.usuarioCodigo.Trim() == userId.Trim() && usu.EmpresaID.Trim() == companyId
                           select new PrivilegesByUser
                           {

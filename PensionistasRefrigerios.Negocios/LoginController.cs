@@ -35,6 +35,26 @@ namespace Asistencia.Negocios
             return user;
         }
 
+
+        public SAS_USUARIOS VerificarStatusDeInicioSesion(string userName, string password, string companyId, string conection)
+        {
+            string cnx = string.Empty;
+            SAS_USUARIOS user = new SAS_USUARIOS();
+            user = new SAS_USUARIOS { IdUsuario = string.Empty, Password = string.Empty, nivel = "1", idestado = "0", EmpresaID = companyId.Trim() };
+            cnx = ConfigurationManager.AppSettings["SAS"];
+            using (SATURNODataContext contexto = new SATURNODataContext(cnx))
+            {
+                var result = contexto.SAS_USUARIOS.Where(x => x.IdUsuario == userName && x.EmpresaID.Trim() == companyId.Trim()).ToList();
+                if (result != null && result.Count == 1)
+                {
+                    user = new SAS_USUARIOS();
+                    user = result.Single();
+                }
+            }
+
+            return user;
+        }
+
         public ASJ_USUARIOS GetUserById(string userName, string password, string companyId, string conection)
         {
             string cnx = string.Empty;
@@ -81,6 +101,37 @@ namespace Asistencia.Negocios
 
             //listadoBaseDatos = new List<Grupo>();
             oBaseDatos = new Grupo() { Id = "01", Descripcion = "AGRICOLA2017 | Local".ToUpper() };
+            listadoBaseDatos.Add(oBaseDatos);
+
+            return listadoBaseDatos;
+        }
+
+        public List<Grupo> ObtenerBasesDatos()
+        {
+            bool resultadoConexionInternet = false;
+            Grupo oBaseDatos;
+            try
+            {
+                using (var client = new WebClient())
+                using (client.OpenRead("http://www.google.com"))
+                {
+                    resultadoConexionInternet = true;
+                }
+            }
+            catch
+            {
+                resultadoConexionInternet = false; ;
+            }
+
+            List<Grupo> listadoBaseDatos = new List<Grupo>();
+            if (resultadoConexionInternet == true)
+            {
+                oBaseDatos = new Grupo() { Id = "10", Descripcion = "SATURNO | Publica".ToUpper() };
+                listadoBaseDatos.Add(oBaseDatos);
+            }
+
+            //listadoBaseDatos = new List<Grupo>();
+            oBaseDatos = new Grupo() { Id = "01", Descripcion = "SATURNO_TEST | Local".ToUpper() };
             listadoBaseDatos.Add(oBaseDatos);
 
             return listadoBaseDatos;

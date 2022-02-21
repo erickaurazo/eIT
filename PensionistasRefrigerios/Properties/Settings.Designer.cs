@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Asistencia.Properties {
+namespace ComparativoHorasVisualSATNISIRA.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -26,32 +26,22 @@ namespace Asistencia.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\\att.mdb")]
-        public string AsistenciaPersonalAdministrativoConexion {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.92;Initial Catalog=NSFAJA;Persist Security Info=True;User I" +
+            "D=sa;Password=sagsa2019")]
+        public string NSFAJAConnectionString {
             get {
-                return ((string)(this["AsistenciaPersonalAdministrativoConexion"]));
+                return ((string)(this["NSFAJAConnectionString"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=68.168.108.52;Initial Catalog=AGRICOLA2017;Persist Security Info=True" +
-            ";User ID=adminsanjose2;Password=Ag1c0l@18tz")]
-        public string AGRICOLA2017ConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.7;Initial Catalog=SATURNO;Persist Security Info=True;User I" +
+            "D=eaurazo;Password=.1975Casa")]
+        public string SATURNOConnectionString {
             get {
-                return ((string)(this["AGRICOLA2017ConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=68.168.108.52;Initial Catalog=AGRICOLA2017;Persist Security Info=True" +
-            ";User ID=adminsanjose2;Password=Ag1c0l@18tz")]
-        public string agricolasanjuan2014ConnectionString {
-            get {
-                return ((string)(this["agricolasanjuan2014ConnectionString"]));
+                return ((string)(this["SATURNOConnectionString"]));
             }
         }
     }

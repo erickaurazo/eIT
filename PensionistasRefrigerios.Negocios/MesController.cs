@@ -11,9 +11,7 @@ namespace Asistencia.Negocios
         MesesObj obj = new MesesObj();
 
         public List<MesesObj> ListarMeses()
-        {
-            
-
+        {            
             obj = new MesesObj();
             obj.Valor = "00";
             obj.Descripcion = "TODOS";
@@ -83,6 +81,135 @@ namespace Asistencia.Negocios
             obj = new MesesObj();
             obj.Valor = "13";
             obj.Descripcion = "PERSONALIZADO";
+            Meses.Add(obj);
+
+            return Meses.ToList();
+        }
+
+
+        public List<MesesObj> ObtenerListadoPeriodos()
+        {
+            
+            obj = new MesesObj();
+            obj.Valor = "202001";
+            obj.Descripcion = "ENERO 2020";
+            Meses.Add(obj);
+
+            obj = new MesesObj();
+            obj.Valor = "202002";
+            obj.Descripcion = "FEBRERO 2020";
+            Meses.Add(obj);
+
+            obj = new MesesObj();
+            obj.Valor = "202003";
+            obj.Descripcion = "MARZO 2020";
+            Meses.Add(obj);
+
+            obj = new MesesObj();
+            obj.Valor = "202004";
+            obj.Descripcion = "ABRIL 2020";
+            Meses.Add(obj);
+
+            obj = new MesesObj();
+            obj.Valor = "202005";
+            obj.Descripcion = "MAYO 2020";
+            Meses.Add(obj);
+
+            obj = new MesesObj();
+            obj.Valor = "202006";
+            obj.Descripcion = "JUNIO 2020";
+            Meses.Add(obj);
+
+            obj = new MesesObj();
+            obj.Valor = "202007";
+            obj.Descripcion = "JULIO 2020";
+            Meses.Add(obj);
+
+            obj = new MesesObj();
+            obj.Valor = "202008";
+            obj.Descripcion = "AGOSTO 2020";
+            Meses.Add(obj);
+
+            obj = new MesesObj();
+            obj.Valor = "202009";
+            obj.Descripcion = "SETIEMBRE 2020";
+            Meses.Add(obj);
+
+            obj = new MesesObj();
+            obj.Valor = "202010";
+            obj.Descripcion = "OCTUBRE 2020";
+            Meses.Add(obj);
+
+            obj = new MesesObj();
+            obj.Valor = "202011";
+            obj.Descripcion = "NOVIEMBRE 2020";
+            Meses.Add(obj);
+
+            obj = new MesesObj();
+            obj.Valor = "202012";
+            obj.Descripcion = "DICIEMBRE 2020";
+            Meses.Add(obj);
+
+
+
+            obj = new MesesObj();
+            obj.Valor = "202101";
+            obj.Descripcion = "ENERO 2021";
+            Meses.Add(obj);
+
+            obj = new MesesObj();
+            obj.Valor = "202102";
+            obj.Descripcion = "FEBRERO 2021";
+            Meses.Add(obj);
+
+            obj = new MesesObj();
+            obj.Valor = "202103";
+            obj.Descripcion = "MARZO 2021";
+            Meses.Add(obj);
+
+            obj = new MesesObj();
+            obj.Valor = "202104";
+            obj.Descripcion = "ABRIL 2021";
+            Meses.Add(obj);
+
+            obj = new MesesObj();
+            obj.Valor = "202105";
+            obj.Descripcion = "MAYO 2021";
+            Meses.Add(obj);
+
+            obj = new MesesObj();
+            obj.Valor = "202106";
+            obj.Descripcion = "JUNIO 2021";
+            Meses.Add(obj);
+
+            obj = new MesesObj();
+            obj.Valor = "202107";
+            obj.Descripcion = "JULIO 2021";
+            Meses.Add(obj);
+
+            obj = new MesesObj();
+            obj.Valor = "202108";
+            obj.Descripcion = "AGOSTO 2021";
+            Meses.Add(obj);
+
+            obj = new MesesObj();
+            obj.Valor = "202109";
+            obj.Descripcion = "SETIEMBRE 2021";
+            Meses.Add(obj);
+
+            obj = new MesesObj();
+            obj.Valor = "202110";
+            obj.Descripcion = "OCTUBRE 2021";
+            Meses.Add(obj);
+
+            obj = new MesesObj();
+            obj.Valor = "202111";
+            obj.Descripcion = "NOVIEMBRE 2021";
+            Meses.Add(obj);
+
+            obj = new MesesObj();
+            obj.Valor = "202112";
+            obj.Descripcion = "DICIEMBRE 2021";
             Meses.Add(obj);
 
             return Meses.ToList();

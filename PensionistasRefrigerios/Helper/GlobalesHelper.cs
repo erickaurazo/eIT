@@ -14,7 +14,7 @@ namespace Asistencia.Helper
         {
             string cnx = string.Empty;
             var config = new Grupo();
-            string path = Path.Combine(@"C:\Dev\ASJ\AsistenciaConfig.txt");
+            string path = Path.Combine(@"C:\SOLUTION\AsistenciaConfig.txt");
             path = Path.GetFullPath(path);
             string[] lines = System.IO.File.ReadAllLines(path);
             int count = 0;
