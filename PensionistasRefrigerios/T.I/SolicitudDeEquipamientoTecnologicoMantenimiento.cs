@@ -611,7 +611,7 @@ namespace ComparativoHorasVisualSATNISIRA.T.I
                 for (int i = 1; i <= 5; i++)
                 {
                     SAS_SolicitudDeEquipamientoTecnologicoSedeDeTrabajo sedeEnSolicitudRegistro = new SAS_SolicitudDeEquipamientoTecnologicoSedeDeTrabajo();
-                    //sedeEnSolicitudRegistro.
+                    sedeEnSolicitudRegistro.idSolicitudEquipamientoTecnologico = solicitud.id;
                 }
 
 
